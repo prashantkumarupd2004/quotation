@@ -33,7 +33,7 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="container grid gap-10 py-16 lg:grid-cols-[1fr_1.2fr]">
+      <section className="container grid grid-cols-1 gap-10 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <div className="space-y-4">
           {[
             { icon: Mail, title: 'Email us', value: siteConfig.contactEmail, href: `mailto:${siteConfig.contactEmail}` },

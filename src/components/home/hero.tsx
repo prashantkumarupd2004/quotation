@@ -24,8 +24,8 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-40 top-0 -z-10 h-[30rem] w-[30rem] rounded-full bg-primary/20 blur-[120px]" />
       <div className="pointer-events-none absolute -right-40 top-40 -z-10 h-[30rem] w-[30rem] rounded-full bg-secondary/20 blur-[120px]" />
 
-      <div className="container grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
-        <div>
+      <div className="container grid grid-cols-1 items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
+        <div className="min-w-0">
           <motion.span custom={0} variants={fadeUp} initial="hidden" animate="show" className="section-eyebrow">
             <Sparkles className="h-3.5 w-3.5" /> India&apos;s #1 Free Quotation Maker
           </motion.span>
@@ -91,7 +91,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.94, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative"
+          className="relative min-w-0"
         >
           <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-primary/30 via-secondary/20 to-accent/30 blur-2xl" />
           <motion.div

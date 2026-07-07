@@ -155,14 +155,14 @@ export function BuilderShell() {
         </button>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,540px)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,540px)_minmax(0,1fr)]">
         {/* Form */}
-        <div className={cn('no-print', mobileView === 'preview' && 'hidden lg:block')}>
+        <div className={cn('no-print min-w-0', mobileView === 'preview' && 'hidden lg:block')}>
           <BuilderForm />
         </div>
 
         {/* Live preview */}
-        <div className={cn(mobileView === 'edit' && 'hidden lg:block')}>
+        <div className={cn('min-w-0', mobileView === 'edit' && 'hidden lg:block')}>
           <div className="lg:sticky lg:top-32">
             <div className="no-print mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
               <Eye className="h-4 w-4" /> Live Preview

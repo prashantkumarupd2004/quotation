@@ -75,7 +75,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </div>
       </PageHero>
 
-      <div className="container grid gap-12 py-16 lg:grid-cols-[1fr_360px]">
+      <div className="container grid grid-cols-1 gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_360px]">
         <article className="min-w-0 space-y-14">
           {/* Intro */}
           <section className="prose-quote">

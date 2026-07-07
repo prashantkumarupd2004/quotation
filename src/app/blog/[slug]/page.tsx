@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </PageHero>
 
-      <div className="container grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
+      <div className="container grid grid-cols-1 gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article className="min-w-0">
           <p className="text-xl leading-relaxed text-muted-foreground">{post.intro}</p>
 
