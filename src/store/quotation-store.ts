@@ -46,6 +46,53 @@ function persist(q: Quotation) {
   }
 }
 
+// Writing to localStorage means JSON.stringify-ing the whole quotation (which can
+// embed base64 logo/signature/stamp images). Doing that on every keystroke stutters
+// typing, so we debounce the write and coalesce a burst of edits into one.
+const PERSIST_DELAY = 500;
+let persistTimer: ReturnType<typeof setTimeout> | null = null;
+let pendingPersist: Quotation | null = null;
+
+function schedulePersist(q: Quotation) {
+  if (typeof window === 'undefined') return;
+  pendingPersist = q;
+  if (persistTimer) clearTimeout(persistTimer);
+  persistTimer = setTimeout(flushPersist, PERSIST_DELAY);
+}
+
+function flushPersist() {
+  if (persistTimer) {
+    clearTimeout(persistTimer);
+    persistTimer = null;
+  }
+  if (pendingPersist) {
+    persist(pendingPersist);
+    pendingPersist = null;
+  }
+}
+
+/** Cancel any pending debounced write and persist immediately. */
+function persistNow(q: Quotation) {
+  if (persistTimer) {
+    clearTimeout(persistTimer);
+    persistTimer = null;
+  }
+  pendingPersist = null;
+  persist(q);
+}
+
+// Never lose the last few hundred ms of edits if the tab is closed mid-burst.
+if (typeof window !== 'undefined') {
+  window.addEventListener('beforeunload', flushPersist);
+  window.addEventListener('pagehide', flushPersist);
+}
+
+// Consecutive edits within this window collapse into a single undo step, so
+// typing a word is one Ctrl+Z instead of one per character (and we avoid
+// copying the whole quotation onto the history stack on every keystroke).
+const HISTORY_COALESCE_MS = 500;
+let lastEditAt = 0;
+
 export const useQuotationStore = create<QuotationState>((set, get) => ({
   quotation: createDefaultQuotation(),
   past: [],
@@ -72,11 +119,21 @@ export const useQuotationStore = create<QuotationState>((set, get) => ({
   update: (updater, opts = { history: true }) => {
     const state = get();
     const next = updater(state.quotation);
-    const past = opts.history
-      ? [...state.past, state.quotation].slice(-HISTORY_LIMIT)
-      : state.past;
-    persist(next);
-    set({ quotation: next, past, future: opts.history ? [] : state.future, savedAt: Date.now() });
+    const now = Date.now();
+
+    let past = state.past;
+    if (opts.history) {
+      // Skip pushing a new history entry if this edit is part of a rapid burst —
+      // the entry captured at the start of the burst already lets undo revert it.
+      const coalesce = state.past.length > 0 && now - lastEditAt < HISTORY_COALESCE_MS;
+      if (!coalesce) {
+        past = [...state.past, state.quotation].slice(-HISTORY_LIMIT);
+      }
+      lastEditAt = now;
+    }
+
+    schedulePersist(next);
+    set({ quotation: next, past, future: opts.history ? [] : state.future, savedAt: now });
   },
 
   setQuotation: (patch, opts) => {
@@ -142,7 +199,7 @@ export const useQuotationStore = create<QuotationState>((set, get) => ({
     if (state.past.length === 0) return;
     const previous = state.past[state.past.length - 1];
     const past = state.past.slice(0, -1);
-    persist(previous);
+    persistNow(previous);
     set({
       quotation: previous,
       past,
@@ -155,7 +212,7 @@ export const useQuotationStore = create<QuotationState>((set, get) => ({
     const state = get();
     if (state.future.length === 0) return;
     const next = state.future[0];
-    persist(next);
+    persistNow(next);
     set({
       quotation: next,
       past: [...state.past, state.quotation].slice(-HISTORY_LIMIT),

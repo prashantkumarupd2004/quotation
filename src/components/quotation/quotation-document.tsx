@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, type CSSProperties } from 'react';
+import { forwardRef, memo, type CSSProperties } from 'react';
 import type { Quotation } from '@/types/quotation';
 import { calculateTotals, lineItemAmount } from '@/lib/calculations';
 import { formatMoney, numberToWordsIndian } from '@/lib/currency';
@@ -19,7 +19,7 @@ interface Props {
  * colors (never theme CSS variables) so html2canvas/jsPDF output is pixel-consistent
  * and always light, independent of the app's dark mode.
  */
-export const QuotationDocument = forwardRef<HTMLDivElement, Props>(function QuotationDocument(
+const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function QuotationDocument(
   { quotation, className, id },
   ref
 ) {
@@ -332,6 +332,13 @@ export const QuotationDocument = forwardRef<HTMLDivElement, Props>(function Quot
     </div>
   );
 });
+
+/**
+ * Memoized so the (twice-rendered) document only re-renders when the quotation
+ * itself changes — not when unrelated builder UI state (busy flags, mobile
+ * view toggle, share dialog) updates.
+ */
+export const QuotationDocument = memo(QuotationDocumentInner);
 
 /* ---------- small helpers ---------- */
 
