@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FileText, Mail } from 'lucide-react';
+import { FileText, Instagram, Mail } from 'lucide-react';
 import { footerNav, siteConfig } from '@/lib/site';
 
 const columns: { title: string; links: readonly { title: string; href: string }[] }[] = [
@@ -58,6 +58,18 @@ export function Footer() {
             © {year} {siteConfig.name}. All rights reserved.
           </p>
           <p>Made in India 🇮🇳 for businesses everywhere.</p>
+          <p className="flex items-center gap-1.5">
+            Developed by{' '}
+            <a
+              href="https://www.instagram.com/prashantkrupd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+            >
+              <Instagram className="h-3.5 w-3.5" />
+              Prashant Upadhyay
+            </a>
+          </p>
         </div>
       </div>
     </footer>
