@@ -8,6 +8,9 @@ import { JsonLd } from '@/components/json-ld';
 import { organizationSchema, webAppSchema, websiteSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
+import { GoogleAnalytics } from '@next/third-parties/google';
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID ?? 'G-R49PCT53VW';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -64,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </body>
+      {process.env.NODE_ENV === 'production' && gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }

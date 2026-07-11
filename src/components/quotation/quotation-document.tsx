@@ -5,6 +5,7 @@ import type { Quotation } from '@/types/quotation';
 import { calculateTotals, lineItemAmount } from '@/lib/calculations';
 import { formatMoney, numberToWordsIndian } from '@/lib/currency';
 import { getTemplate } from '@/lib/templates';
+import { renderPremiumTemplate } from './premium/registry';
 
 interface Props {
   quotation: Quotation;
@@ -23,6 +24,17 @@ export const QuotationDocument = forwardRef<HTMLDivElement, Props>(function Quot
   ref
 ) {
   const template = getTemplate(quotation.meta.templateId);
+
+  // Premium templates render their own bespoke layout. Wrap in the same
+  // ref/id container so the export/print target still works unchanged.
+  if (template.premium) {
+    return (
+      <div ref={ref} id={id} className={className}>
+        {renderPremiumTemplate(quotation)}
+      </div>
+    );
+  }
+
   const accent = quotation.meta.accentColor || template.accent;
   const accent2 = template.accent2;
   const totals = calculateTotals(quotation);

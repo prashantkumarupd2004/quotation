@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Catering quotation format illustration">
+  <defs>
+    <linearGradient id="cat-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A0A0A"/><stop offset="1" stop-color="#2D1006"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#cat-bg)"/>
+  <circle cx="680" cy="90" r="120" fill="#F59E0B" opacity="0.09"/>
+  <circle cx="120" cy="420" r="100" fill="#EF4444" opacity="0.07"/>
+  <!-- Plate + food icons -->
+  <circle cx="400" cy="200" r="110" fill="#2A1508" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="400" cy="200" r="90" fill="#1A0A04" stroke="#92400E" stroke-width="1" stroke-dasharray="6,4"/>
+  <!-- Food emoji style text -->
+  <text x="335" y="185" font-family="system-ui,sans-serif" font-size="44" text-anchor="middle">🍛</text>
+  <text x="400" y="235" font-family="system-ui,sans-serif" font-size="44" text-anchor="middle">🥗</text>
+  <text x="465" y="185" font-family="system-ui,sans-serif" font-size="44" text-anchor="middle">🍰</text>
+  <!-- Fork & Knife -->
+  <rect x="268" y="90" width="8" height="80" rx="4" fill="#F59E0B" opacity="0.6"/>
+  <rect x="286" y="90" width="8" height="80" rx="4" fill="#F59E0B" opacity="0.6"/>
+  <rect x="508" y="90" width="8" height="80" rx="4" fill="#F59E0B" opacity="0.6"/>
+  <!-- Price per head banner -->
+  <rect x="260" y="325" width="280" height="44" rx="12" fill="#F59E0B" opacity="0.9"/>
+  <text x="400" y="352" font-family="system-ui,sans-serif" font-size="17" font-weight="800" fill="#1A0A04" text-anchor="middle">₹650 per plate · Min 50 pax</text>
+  <!-- Labels -->
+  <text x="400" y="420" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">Catering Business Quotations</text>
+  <text x="400" y="450" font-family="system-ui,sans-serif" font-size="15" fill="#92400E" text-anchor="middle">Per-plate pricing, menu, and event terms</text>
+</svg>

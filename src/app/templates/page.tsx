@@ -10,12 +10,15 @@ import { buildMetadata } from '@/lib/seo';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
-  title: '15+ Free Quotation Templates — Modern, Corporate, GST',
+  title: '25+ Free Quotation Templates — Modern, Corporate, Premium, GST',
   description:
-    'Browse 15+ professionally designed quotation templates. Modern, corporate, minimal, construction, freelancer and more. Pick one and download your quote as PDF for free.',
+    'Browse 25+ professionally designed quotation templates, including 10 premium layouts. Modern Corporate, Luxury Gold, Dark Professional and more. Pick one and download your quote as PDF for free.',
   path: '/templates',
-  keywords: ['quotation templates', 'quotation format', 'free quote template', 'gst quotation template india'],
+  keywords: ['quotation templates', 'quotation format', 'free quote template', 'gst quotation template india', 'premium quotation template'],
 });
+
+// Show the premium (bespoke-layout) templates first.
+const orderedTemplates = [...templates].sort((a, b) => Number(Boolean(b.premium)) - Number(Boolean(a.premium)));
 
 export default function TemplatesPage() {
   return (
@@ -27,7 +30,7 @@ export default function TemplatesPage() {
         ])}
       />
       <PageHero
-        eyebrow="15+ Premium Designs"
+        eyebrow="25+ Premium Designs"
         title="Quotation templates for every business"
         description="Every template is print-ready, GST-compatible and fully editable. Choose one to start — you can switch designs anytime without losing your data."
         crumbs={[
@@ -42,9 +45,14 @@ export default function TemplatesPage() {
 
       <section className="container py-16">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {templates.map((t, i) => (
+          {orderedTemplates.map((t, i) => (
             <Reveal key={t.id} delay={(i % 3) * 0.05}>
-              <div className="glass-card group flex h-full flex-col overflow-hidden p-4">
+              <div className="glass-card group relative flex h-full flex-col overflow-hidden p-4">
+                {t.premium ? (
+                  <span className="absolute right-6 top-6 z-10 rounded-full bg-amber-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white shadow">
+                    Premium
+                  </span>
+                ) : null}
                 <TemplateThumb template={t} />
                 <div className="mt-4 flex flex-1 flex-col">
                   <div className="flex items-center justify-between gap-2">

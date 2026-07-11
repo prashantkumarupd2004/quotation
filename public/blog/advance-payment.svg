@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Advance payment split illustration">
+  <defs>
+    <linearGradient id="ap-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/><stop offset="0.55" stop-color="#7C3AED"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="ap-coin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#dbeafe"/></linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#ap-bg)"/>
+  <circle cx="120" cy="90" r="140" fill="#ffffff" opacity="0.06"/>
+  <circle cx="700" cy="430" r="170" fill="#ffffff" opacity="0.05"/>
+  <rect x="150" y="150" width="500" height="200" rx="18" fill="#ffffff" opacity="0.12"/>
+  <rect x="150" y="150" width="200" height="200" rx="18" fill="#ffffff" opacity="0.20"/>
+  <text x="250" y="265" font-family="system-ui,Segoe UI,sans-serif" font-size="64" font-weight="800" fill="#ffffff" text-anchor="middle">50%</text>
+  <text x="500" y="258" font-family="system-ui,Segoe UI,sans-serif" font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle" opacity="0.85">Advance</text>
+  <text x="500" y="300" font-family="system-ui,Segoe UI,sans-serif" font-size="22" font-weight="500" fill="#ffffff" text-anchor="middle" opacity="0.7">Balance on delivery</text>
+  <circle cx="620" cy="120" r="46" fill="url(#ap-coin)"/>
+  <text x="620" y="136" font-family="system-ui,Segoe UI,sans-serif" font-size="44" font-weight="800" fill="#4F46E5" text-anchor="middle">₹</text>
+</svg>

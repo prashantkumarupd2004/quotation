@@ -27,7 +27,14 @@ export function TemplatePicker() {
               className="mb-2 h-10 w-full rounded-lg"
               style={{ background: `linear-gradient(120deg, ${t.accent}, ${t.accent2})` }}
             />
-            <div className="text-sm font-semibold">{t.name}</div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm font-semibold">{t.name}</span>
+              {t.premium ? (
+                <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-400">
+                  Premium
+                </span>
+              ) : null}
+            </div>
             <div className="text-[11px] text-muted-foreground">{t.category}</div>
             {active ? (
               <span className="absolute right-2 top-2 grid h-5 w-5 place-items-center rounded-full bg-primary text-white">

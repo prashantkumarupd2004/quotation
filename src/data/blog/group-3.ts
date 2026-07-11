@@ -1,0 +1,315 @@
+import type { BlogPost } from '@/data/blog-types';
+
+export const blogPosts3: BlogPost[] = [
+  {
+    slug: 'how-to-send-quotation-by-email',
+    title: 'How to Send a Quotation by Email (With a Subject Line That Gets Opened)',
+    seoTitle: 'How to Send a Business Quotation by Email India 2026',
+    metaDescription: 'Learn the exact email format for sending quotations in India — what subject line to use, how to write the body, when to follow up, and common mistakes to avoid.',
+    keywords: ['send quotation by email', 'quotation email format', 'business email India', 'quotation email subject line', 'how to email a quote'],
+    date: '2026-07-07',
+    readingTime: 7,
+    category: 'Quotation Tips',
+    heroImage: '/blog/email-quotation-tips.svg',
+    heroAlt: 'Sending business quotation by email illustration',
+    excerpt: 'The way you email a quotation matters as much as the document itself — here is the exact format that gets opened, read, and approved faster.',
+    intro: 'Most businesses put all their effort into creating a well-formatted quotation and then send it with a two-line email that says "please find attached." That email almost never gets a fast response. The subject line, the body, and even the timing of your quotation email are what determine whether it gets opened in the next ten minutes or buried under thirty other unread messages.',
+    sections: [
+      {
+        heading: 'Start with a subject line that is specific, not generic',
+        body: 'The worst subject lines for quotation emails look like "Quotation" or "As discussed" or "Please find attached." These tell the recipient nothing and look identical to every other vendor email they receive.\n\nA better subject line format is: "Quotation #QUO-2026-047 — Office Furniture Supply for Sharma Associates, valid until 22 July." This gives them the document type, a reference number, what it covers, and when it expires — all before they even open it.\n\nIf you are following up on a discussion, reference the conversation: "Quotation as requested — Website Redesign for ABC Pvt Ltd (post our 8 July call)" performs significantly better than a blank subject line.',
+      },
+      {
+        heading: 'The email body: short, warm, and action-oriented',
+        body: 'Your email body should do three things: confirm what the attachment contains, mention the key total amount so they can mentally prepare before opening, and tell them exactly what to do next.\n\nA simple structure: "Dear [Name], Thank you for your inquiry regarding [project]. Please find our detailed quotation attached — the total comes to Rs [X] including 18% GST, valid until [date]. To confirm, please reply to this email or WhatsApp me at [number]." Short enough to read in thirty seconds but complete enough that they do not need to immediately open the PDF just to understand the context.',
+      },
+      {
+        heading: 'Attach it as a PDF, not a Word file or Excel sheet',
+        body: 'Sending a quotation as a Word document or Excel file has two problems: it looks editable and unfinished, and it may not render correctly on the client\'s device. A PDF looks professional, cannot be accidentally edited, and opens consistently on every device.\n\nName your PDF sensibly: "QuotationMaker_Sharma_Associates_July2026.pdf" is far more useful than "Quotation.pdf," especially if the client is comparing multiple vendor quotes at once.',
+        bullets: [
+          'Always export as PDF before attaching',
+          'Include your business name and the client name in the filename',
+          'Keep the file size under 2 MB — compress if your template is image-heavy',
+          'Never send in Excel unless the client has specifically requested a working spreadsheet',
+        ],
+      },
+      {
+        heading: 'Timing: when to send for best results',
+        body: 'Tuesday to Thursday mornings between 9 AM and 11 AM consistently produce higher open rates for business emails in India. Monday mornings are cluttered with weekend backlog; Friday afternoons get ignored until the following week.\n\nIf a client requested a quotation during a call, sending it within two hours of that call is ideal — your name and the conversation are still fresh. Avoid sending quotations late at night or over the weekend unless the client specifically asked you to.',
+      },
+      {
+        heading: 'What to write in the follow-up email',
+        body: 'If there is no response within two to three days, a brief follow-up works well. Do not write "just following up" — instead, add one piece of value: "I wanted to check if you had a chance to review the quotation. I can also separate the furniture and installation charges if that makes budget approval easier on your end — happy to revise if needed."\n\nThis signals that you are flexible and attentive, not just chasing a yes. If there is still no response after the first follow-up, wait another five to seven days before sending a final polite check-in.',
+      },
+      {
+        heading: 'Common email mistakes that delay approvals',
+        body: 'Sending from a personal Gmail instead of a business email address erodes trust significantly — many Indian SME clients will not take a quotation seriously if it comes from a free email provider. If you have a domain, use it.\n\nAlso avoid: sending without a greeting or sign-off (looks like spam), attaching multiple versions confusingly labeled v1 and v2, and cc-ing colleagues the client has never met without introducing them. Keep the first email clean and direct.',
+      },
+    ],
+    faqs: [
+      { q: 'Should I WhatsApp the quotation or email it?', a: 'Email is preferable for formal quotations since it creates a paper trail, but following up over WhatsApp after emailing is very effective in India — a quick "sent you the quote on email, please check" dramatically improves open rates.' },
+      { q: 'What if the client asks for the quotation on WhatsApp directly?', a: 'Send the PDF over WhatsApp if that is what they asked for, but simultaneously email it to them as well — email creates a more traceable record and is better if there is a dispute later.' },
+      { q: 'How many times should I follow up on an unanswered quotation?', a: 'Three follow-ups over about 15 days is a reasonable limit — day 3, day 8, and a final close-the-loop message around day 15 asking if the project is still active.' },
+      { q: 'Should I mention a discount in the email body?', a: 'Avoid mentioning a potential discount proactively — it immediately signals that your original price was not your best price and opens up negotiation before the client has even read the quote.' },
+      { q: 'Is it okay to send a quotation on a public holiday?', a: 'Schedule it to send on the next working morning instead — most email platforms let you delay send, and a holiday email often gets buried or missed when the recipient returns.' },
+    ],
+    relatedSlugs: ['how-to-write-a-professional-quotation', 'small-business-sales-guide', 'quotation-negotiation-tips'],
+  },
+  {
+    slug: 'quotation-negotiation-tips',
+    title: 'How to Negotiate a Quotation Without Losing the Client (or Your Margin)',
+    seoTitle: 'Quotation Negotiation Tips for Indian Businesses 2026',
+    metaDescription: 'Practical negotiation strategies for Indian businesses — how to handle price pushback, what to concede, when to hold firm, and how to protect your profit margin during a quote negotiation.',
+    keywords: ['quotation negotiation', 'how to negotiate price India', 'handling price objections', 'business negotiation tips', 'discount negotiation'],
+    date: '2026-07-08',
+    readingTime: 8,
+    category: 'Sales & Negotiation',
+    heroImage: '/blog/quotation-negotiation.svg',
+    heroAlt: 'Business negotiation handshake illustration',
+    excerpt: 'When a client asks for a lower price, most businesses either panic and discount immediately or lose the deal by holding too rigid. Here is a smarter middle path.',
+    intro: 'Price negotiation is one of the most uncomfortable parts of running a business in India. The client says "it\'s too high," and suddenly every hour of work you put into that proposal feels like it is about to be undervalued. The good news: negotiation is a skill, not a personality trait — and understanding what clients actually want when they push back on price is the first step to handling it better than 90% of your competitors.',
+    sections: [
+      {
+        heading: 'Understand what "it\'s too expensive" usually means',
+        body: 'When a prospect says your quote is too high, they rarely mean they literally cannot afford it. More often it means one of three things: they have a lower competing quote, they are not yet convinced the value matches the price, or they are testing to see if you will blink.\n\nYour first move is to ask a simple question: "Can I ask what figure you had in mind, or are you comparing it with another quote?" Their answer tells you everything. If they say "we got a quote for Rs 40,000 and you quoted Rs 65,000," that is a scope conversation. If they say "our budget is tighter this quarter," that might be a payment terms conversation, not a price conversation.',
+      },
+      {
+        heading: 'Never discount without removing scope',
+        body: 'The biggest mistake businesses make when faced with price pushback is offering a discount without changing anything — just dropping the number to save the deal. This sets a dangerous precedent: the client learns that your first price was inflated, and they will always negotiate with you in future.\n\nInstead, offer to reduce the price by reducing the scope. "I can bring this to Rs 50,000 if we move the third phase — the social media integration — to a Phase 2 scope after initial launch." Now you have maintained your rate per hour or unit; you have simply done less work. The client gets to feel like they won something real.',
+        bullets: [
+          'Remove a deliverable or phase rather than cutting the rate',
+          'Offer a smaller initial project to prove value before the full engagement',
+          'Separate optional add-ons clearly so the client can self-select',
+          'Never discount more than 10% without a structural change to scope',
+        ],
+      },
+      {
+        heading: 'Offer payment flexibility before reducing price',
+        body: 'Many clients push back on price not because the total is unacceptable but because the immediate outflow is uncomfortable. Before reducing your rate, try restructuring payment: "Instead of 50% upfront, I can do 30% on signing, 40% at the midpoint, and 30% on delivery — does that work better for your cash flow?"\n\nFor larger projects, monthly invoicing instead of milestone-based can also unlock deals that would otherwise fall through on price alone. Cash flow is the real constraint for most SME clients, not the total contract value.',
+      },
+      {
+        heading: 'Know your walk-away number before the conversation starts',
+        body: 'Before you send any quotation, decide internally what the minimum acceptable number is — below which you would rather not do the work at all. This is not pessimism; it is preparation. When you know your floor, you negotiate from a calm, clear position instead of making decisions under pressure.\n\nIf a client\'s final counter is below your floor, it is completely professional to say: "I appreciate the conversation, but at that price point I wouldn\'t be able to deliver the quality you are expecting. If your budget opens up, I\'d love to revisit this." Losing a deal you would have resented doing is not a loss.',
+      },
+      {
+        heading: 'Use the "split the difference" technique carefully',
+        body: 'When you and the client are genuinely close — say, Rs 5,000 apart on a Rs 60,000 project — a simple split can close the deal cleanly. "You\'re at Rs 55,000 and I\'m at Rs 60,000. If we meet at Rs 57,500, I\'ll take care of the delivery on the same timeline and add one extra revision round for free." The small sweetener (extra revision) gives the client a reason to feel they got a good deal, even though the discount was minimal.',
+      },
+      {
+        heading: 'Document every agreed change in writing immediately',
+        body: 'Once you reach an agreement, revise the quotation immediately and send the updated version before any work begins. Verbal agreements about revised scope or price get forgotten or misremembered, especially if the project spans weeks or months.\n\nA revised quotation with the new figure, the removed or changed scope, and a fresh acceptance deadline protects both sides and gives you a clean starting document for the eventual invoice.',
+      },
+    ],
+    faqs: [
+      { q: 'Is it unprofessional to negotiate on a quotation in India?', a: 'No — negotiation is expected in most Indian B2B contexts. What matters is how you negotiate: professionally, with clear reasoning, and without desperation. Clients respect vendors who can hold a principled position.' },
+      { q: 'What if the client says a competitor quoted 40% less?', a: 'Ask what is included in that quote. Often a dramatically lower quote has missing scope, no GST, or different quality assumptions. Walk through your quotation line by line and demonstrate the value difference rather than racing to match their price.' },
+      { q: 'Should I ever offer an upfront discount to close faster?', a: 'Only if it is genuinely mutual — like "if you can confirm by Friday, I can hold this price and fit you into our schedule next week." Make it time-bound and tied to a commitment, not just a freebie.' },
+      { q: 'How do I say no to a client whose budget is too low?', a: 'Be direct and kind: "Based on what you\'ve described, I don\'t think I can deliver what you need at that budget without compromising on quality. I\'d rather be upfront now than disappoint you mid-project."' },
+    ],
+    relatedSlugs: ['how-to-write-a-professional-quotation', 'small-business-sales-guide', 'how-to-send-quotation-by-email'],
+  },
+  {
+    slug: 'how-to-write-retail-quotation',
+    title: 'How to Write a Retail Quotation That Converts Enquiries Into Orders',
+    seoTitle: 'Retail Quotation Format India 2026 | How to Write a Shop Quotation',
+    metaDescription: 'Step-by-step guide to writing retail quotations in India — covering product descriptions, GST, delivery terms, bulk discounts, and what to include for B2B retail buyers.',
+    keywords: ['retail quotation format', 'shop quotation India', 'B2B retail quote', 'product quotation template', 'wholesale quotation'],
+    date: '2026-07-08',
+    readingTime: 7,
+    category: 'Industry Guides',
+    heroImage: '/blog/retail-quotation.svg',
+    heroAlt: 'Retail store quotation illustration with products and pricing',
+    excerpt: 'A retail quotation is your first commercial document — here is what separates the ones that get approved from the ones that go to a competitor.',
+    intro: 'Whether you run a shop, a wholesale distribution business, or a product-based startup, sending a well-structured quotation is one of the most important sales steps you will take. Retail buyers — particularly B2B ones like retailers, resellers, and institutions — judge your professionalism and reliability almost entirely on the quality of your first quotation. Here is exactly how to write one that closes deals.',
+    sections: [
+      {
+        heading: 'What makes a retail quotation different from a service quote',
+        body: 'A service quotation describes work. A retail quotation describes products — and that distinction changes almost everything about its structure.\n\nIn a retail or product quotation, the emphasis is on precise specifications (size, colour, model number, brand), accurate unit pricing, minimum order quantities, and delivery or logistics terms. A buyer comparing three vendor quotations for 500 units of an office chair needs to be able to read your quote in thirty seconds and know exactly what they are buying, at what price per unit, with what delivery date and minimum order requirement.',
+      },
+      {
+        heading: 'List every product detail that matters to the buyer',
+        body: 'Vague product descriptions kill retail quotations. "Office Chair — Rs 3,500 per unit" tells the buyer almost nothing. "Ergonomic Mesh Office Chair, Model No. EC-405, High Back, Black, 1-year warranty — Rs 3,500/unit" tells them exactly what they are comparing.\n\nFor each line item include: product name, model or SKU, brand (if applicable), specifications (dimensions, material, colour options), unit price, minimum order quantity, and any lead time for delivery. If your product has an HSN code — which all goods sold under GST do — include it to make the buyer\'s tax accounting easier.',
+        bullets: [
+          'Product name and model/SKU number',
+          'Key specifications (size, material, colour, power rating, etc.)',
+          'Unit price and bulk pricing tiers if applicable',
+          'Minimum order quantity (MOQ)',
+          'HSN code for each product category',
+          'Lead time and delivery terms',
+        ],
+      },
+      {
+        heading: 'Show bulk discount tiers clearly',
+        body: 'Most retail buyers expect quantity-based pricing, and showing it upfront signals that you are set up for B2B trade. A simple pricing tier table does this cleanly:\n\n1-50 units: Rs 3,500/unit | 51-200 units: Rs 3,200/unit | 201+ units: Rs 2,900/unit\n\nThis does two things: it immediately communicates that you offer volume pricing, and it incentivises the buyer to increase their order size to access the next tier. Many buyers will bump their order from 45 units to 55 just to cross into the next price band.',
+      },
+      {
+        heading: 'Delivery, freight, and warranty terms',
+        body: 'Three of the most common post-quotation disputes in retail trade are about who pays for freight, what happens if goods arrive damaged, and what the warranty coverage actually means. Cover all three in your quotation.\n\nFor freight: specify whether your price is ex-works (buyer arranges transport), FOB (you deliver to the loading point), or delivered (you include last-mile delivery in the price). For damage: state that inspection must happen within 48 hours of delivery and that claims will only be accepted with photographic evidence. For warranty: state the coverage period and whether it is a replacement warranty or a repair warranty.',
+      },
+      {
+        heading: 'Payment terms for retail B2B buyers',
+        body: 'Most established retail buyers will push for credit terms — 30, 45, or 60 days. If you are new to a buyer relationship, it is reasonable to start with full advance or a 50/50 split for the first two orders, and extend credit terms once you have established a track record together.\n\nInclude your bank account details for NEFT/RTGS transfers and your UPI ID for smaller orders. Specify whether cheques are accepted and, if so, the clearance period before goods are dispatched.',
+      },
+    ],
+    faqs: [
+      { q: 'Should I include my GSTIN on a retail quotation even for small orders?', a: 'Yes, always. It signals you are a registered, compliant business and allows B2B buyers to claim input tax credit, which is often a deciding factor in vendor selection.' },
+      { q: 'How long should a retail quotation be valid?', a: 'Seven to fifteen days is standard for product quotations since raw material and logistics costs fluctuate. State the validity clearly and stick to it — honouring your quoted price builds trust, but so does being upfront when prices change.' },
+      { q: 'Can I send the same quotation to multiple buyers?', a: 'Yes, but personalise the buyer name and reference number. A quotation with another company\'s name visible at the top of the document loses deals instantly.' },
+      { q: 'What if a buyer wants a sample before placing an order?', a: 'Include a sample policy in your quotation if this is common for your product category — stating sample cost, lead time, and whether it is refundable against the first order.' },
+    ],
+    relatedSlugs: ['how-to-write-a-professional-quotation', 'gst-in-quotations', 'quotation-negotiation-tips'],
+  },
+  {
+    slug: 'quotation-validity-period-guide',
+    title: 'Quotation Validity Period: How Long Should Your Quote Be Valid?',
+    seoTitle: 'Quotation Validity Period India 2026 | How Long Should a Quote Last?',
+    metaDescription: 'Learn how to set the right validity period for your business quotations in India — why it matters legally and commercially, what happens when quotes expire, and industry norms.',
+    keywords: ['quotation validity period', 'how long is a quotation valid', 'quote expiry India', 'quotation terms', 'business quote validity'],
+    date: '2026-07-08',
+    readingTime: 6,
+    category: 'Quotation Basics',
+    heroImage: '/blog/quotation-validity.svg',
+    heroAlt: 'Calendar and quotation validity timeline illustration',
+    excerpt: 'Setting the right validity period protects your pricing, prevents disputes, and signals professional seriousness — most businesses get this wrong.',
+    intro: 'The validity period on a quotation is one of those details that seems like a formality but can cause real commercial problems if you ignore it. An undated or open-ended quotation can come back to haunt you months later when material costs have risen, your team\'s schedule has changed, or the project requirements have shifted — and the client expects you to honour a price you quoted in a completely different market context.',
+    sections: [
+      {
+        heading: 'Why quotation validity exists and what it protects',
+        body: 'A validity period is a commercial offer with a time limit. It tells the client: "This is our best current pricing based on today\'s costs, and we guarantee it until this date. After that, we may need to revise."\n\nFrom your side, it protects you from being locked into old pricing when material costs, labour rates, or exchange rates move. From the client\'s side, it creates urgency to make a decision. Both parties benefit from a clearly stated expiry — it prevents the awkward conversation where a client waves a six-month-old quotation at you and expects the same prices.',
+      },
+      {
+        heading: 'Standard validity periods by industry in India',
+        body: 'Different industries have settled into different norms based on price volatility and project complexity:\n\nConstruction and civil work: 7 to 15 days — material prices like steel, cement, and aggregates fluctuate weekly.\n\nIT and software services: 30 to 60 days — rates are more stable and projects take longer to approve internally.\n\nManufacturing and supply: 15 to 30 days — depends on raw material price exposure.\n\nEvent management and catering: 7 to 14 days — venue availability and vendor sub-contracting make longer validity risky.\n\nConsulting and professional services: 30 to 45 days — scope can be held steady for longer without cost risk.\n\nAs a rule: the more your costs fluctuate, the shorter your validity period should be.',
+      },
+      {
+        heading: 'How to word the validity clause professionally',
+        body: 'Avoid vague language like "approximately 30 days" or "subject to change." Use a specific date: "This quotation is valid until 25 July 2026. After this date, prices are subject to revision."\n\nIf you want to add a conditional validity — for example, tied to availability — you can write: "This quotation is valid until 20 July 2026, subject to material availability at the time of order confirmation." This gives you a legitimate reason to revise if supply chain issues arise.',
+      },
+      {
+        heading: 'What happens when a client accepts an expired quotation',
+        body: 'If a client tries to confirm an order on the basis of an expired quotation, you are under no legal obligation to honour the old price — but how you handle it determines whether you keep the relationship.\n\nA professional approach: "Thank you for confirming — I should mention that the quotation QUO-2026-045 expired on 15 July. Our current pricing for the same scope is [X], which reflects a [Y]% change due to [material cost increase / revised labour rates]. I\'ll send you an updated quotation shortly." Most reasonable clients will accept this if the increase is explained honestly.',
+        bullets: [
+          'Never simply ignore an expired quotation acceptance — acknowledge it promptly',
+          'Explain the reason for any price revision, even if briefly',
+          'Send a fresh quotation with a new validity period immediately',
+          'If the price has not changed, you can choose to honour the old quote and note it in writing',
+        ],
+      },
+      {
+        heading: 'Using validity to create genuine urgency',
+        body: 'A quotation that expires in 7 days creates more urgency than one valid for 90 days — but only if the client believes the urgency is real. If you routinely extend validity on request without reason, it signals that your prices are soft and the deadline is meaningless.\n\nReserve extensions for clients who are genuinely interested but have an internal approval process taking slightly longer. When you extend, state a reason: "Given your committee meets next Tuesday, I\'ve extended the validity to 20 July — after that, I\'ll need to check if our production slot is still open." This keeps the urgency credible.',
+      },
+    ],
+    faqs: [
+      { q: 'Is it legally required to include a validity period on a quotation?', a: 'Not legally required under Indian law, but highly recommended. Without it, you may be bound by an offer for an unreasonably long time if a client accepts much later.' },
+      { q: 'Can a client force you to honour an expired quotation?', a: 'Generally, no. A quotation with a stated validity date that has passed is no longer a binding offer. However, if you behaved in a way that suggested the offer was still open, a court might see it differently — which is why clear communication matters.' },
+      { q: 'Should I state validity in days or as a specific date?', a: 'A specific date is clearer: "Valid until 30 July 2026" leaves no ambiguity about whether the 15 days is calendar days or business days.' },
+      { q: 'What if I need more time to prepare the quotation than the validity allows?', a: 'Prepare and send the quotation as quickly as possible. A quotation sent three weeks after an enquiry with a 15-day validity leaves the client almost no time. In that case, consider a 30-day validity or send a preliminary estimate to hold the relationship while you finalize the formal quote.' },
+    ],
+    relatedSlugs: ['how-to-write-a-professional-quotation', 'quotation-format-in-india', 'gst-in-quotations'],
+  },
+  {
+    slug: 'payment-terms-in-quotations',
+    title: 'Payment Terms in Quotations: What to Include and How to Word Them',
+    seoTitle: 'Payment Terms in Business Quotations India 2026 | Complete Guide',
+    metaDescription: 'A practical guide to writing clear payment terms in your quotations — advance payment, milestone billing, credit periods, late payment clauses, and examples for Indian businesses.',
+    keywords: ['payment terms quotation', 'advance payment clause', 'quotation payment conditions', 'net 30 payment terms India', 'milestone billing quotation'],
+    date: '2026-07-09',
+    readingTime: 8,
+    category: 'Quotation Basics',
+    heroImage: '/blog/payment-terms-guide.svg',
+    heroAlt: 'Payment terms and billing schedule illustration',
+    excerpt: 'Unclear payment terms are the number one cause of cash flow problems and client disputes — here is exactly how to write them so there are no surprises.',
+    intro: 'Payment terms are not just an administrative footnote at the bottom of your quotation — they are a commercial agreement that determines when your money arrives, how much risk you carry, and how your cash flow operates for weeks or months. Most disputes between businesses and clients are not about the quality of work; they are about misaligned expectations on payment that were never clearly stated in the original quotation.',
+    sections: [
+      {
+        heading: 'The four most common payment structures for Indian businesses',
+        body: 'Full advance payment: The client pays 100% before work begins or goods are dispatched. This is common for custom manufacturing, event-related bookings, and first-time clients. It eliminates credit risk entirely.\n\n50% advance, 50% on completion: The most widely used structure in services. The advance covers your input costs and establishes commitment; the balance is settled on delivery or acceptance.\n\nMilestone-based: Common for longer projects — software development, construction, interior design. Payment is linked to specific project stages: 30% on signing, 30% on design approval, 40% on final delivery.\n\nCredit terms (Net 15/30/45/60): The client pays within an agreed number of days after invoice. Common with established corporate buyers. Higher risk for smaller businesses and requires proper follow-up processes.',
+      },
+      {
+        heading: 'How to word payment terms so there is no ambiguity',
+        body: 'Vague payment terms cause disputes. "50% advance, balance on delivery" sounds clear but raises immediate questions: delivery to the site, or delivery to the factory gate? Physical delivery, or delivery of digital files? Upon delivery, or within three days of delivery?\n\nClear wording: "50% of the total quoted amount (Rs 25,000) is due upon acceptance of this quotation, prior to commencement of work. The remaining 50% (Rs 25,000) is due within 3 business days of final delivery of completed files to the client." Every word earns its place.',
+        bullets: [
+          'State exact amounts, not just percentages, to avoid calculation disputes',
+          'Define what constitutes "delivery" or "completion" precisely',
+          'Specify business days versus calendar days for payment windows',
+          'State whether GST is included in the payment or additional to it',
+        ],
+      },
+      {
+        heading: 'Advance payment clauses: protecting yourself without alienating clients',
+        body: 'Asking for advance payment makes many businesses uncomfortable — they worry it signals distrust or will push the client away. In reality, advance payment is professionally normal across virtually every industry in India, and clients who refuse any advance should be considered carefully.\n\nFrame it as a process rather than a distrust signal: "As is standard for custom projects, we require 50% advance before commencing work to schedule your slot and procure materials." This normalises it and removes any personal element.',
+      },
+      {
+        heading: 'Late payment clauses: whether and how to include them',
+        body: 'A late payment clause states that a penalty (typically 1.5% to 2% per month) applies to outstanding amounts past the due date. Including this in a quotation is entirely professional, but the wording and positioning matter.\n\nPlace it in the Terms and Conditions section at the bottom, not prominently mid-page — it should read as standard boilerplate, not as an accusation before you have even started working together. Wording example: "Amounts outstanding beyond the due date are subject to a late payment charge of 1.5% per month until settlement."\n\nIn practice, enforce it selectively — with long-term clients you value, a polite reminder will usually suffice before invoking the clause.',
+      },
+      {
+        heading: 'Payment mode: include your bank details and UPI in the quotation',
+        body: 'Every quotation should include your accepted payment methods and relevant details so the client can pay immediately on acceptance without needing to ask. Include your bank account name, account number, IFSC code, and UPI ID.\n\nIf you accept online transfers only, state it. If you accept cheques, specify the name to write on the cheque. The fewer friction points between acceptance and payment, the faster your money arrives.',
+      },
+    ],
+    faqs: [
+      { q: 'Is it legal to charge interest on late payments in India?', a: 'Yes, you can contract for late payment interest in your terms and conditions. The MSME Development Act also provides for interest on delayed payments to micro and small enterprises specifically, at three times the bank rate.' },
+      { q: 'What if a client refuses to pay the advance?', a: 'You can negotiate the structure — for example, a smaller advance of 25% — but avoid starting work with zero advance for new or unfamiliar clients. If they refuse any advance at all, ask yourself what that signals about the relationship.' },
+      { q: 'Should payment terms be the same for all clients?', a: 'Not necessarily. You might offer Net 30 to an established corporate client but require 50% advance from a new one. Just make sure any differentiation is based on business risk, not personal favoritism.' },
+      { q: 'How do I handle a client who keeps asking for extensions?', a: 'Establish a firm policy in writing and apply it consistently. One extension with a new payment date is usually reasonable; recurring requests without payment signal a cash flow or commitment problem on their side.' },
+    ],
+    relatedSlugs: ['how-to-write-a-professional-quotation', 'quotation-validity-period-guide', 'quotation-negotiation-tips'],
+  },
+  {
+    slug: 'common-quotation-mistakes',
+    title: '10 Quotation Mistakes That Are Costing You Business (And How to Fix Them)',
+    seoTitle: 'Common Quotation Mistakes Indian Businesses Make 2026 | How to Fix',
+    metaDescription: 'Discover the 10 most common quotation mistakes Indian businesses make — from vague pricing to missing GST details — and exactly how to fix each one to win more deals.',
+    keywords: ['quotation mistakes', 'business quote errors', 'why quotations get rejected', 'professional quotation tips India', 'common quote mistakes'],
+    date: '2026-07-09',
+    readingTime: 9,
+    category: 'Quotation Tips',
+    heroImage: '/blog/mistakes.svg',
+    heroAlt: 'Red X marks showing common quotation mistakes illustration',
+    excerpt: 'Most lost deals are not lost on price — they are lost because the quotation itself created doubt, confusion, or a poor first impression.',
+    intro: 'After looking at hundreds of quotations sent by Indian businesses, the same mistakes appear repeatedly. They are not complex errors — they are fixable gaps in structure, clarity, and presentation that quietly cost deals. Here are the ten most common ones, and what to do instead.',
+    sections: [
+      {
+        heading: 'Mistake 1: No quotation number or date',
+        body: 'A quotation without a reference number or date looks like it was put together in a hurry. More practically, it makes it impossible to track in conversation: "which version of the quote?" becomes an awkward back-and-forth.\n\nFix: Always include a sequential quotation number (QUO-2026-001) and the date of issue at the top. This takes thirty seconds and makes every subsequent conversation cleaner.',
+      },
+      {
+        heading: 'Mistake 2: Vague line item descriptions',
+        body: 'The most common complaint from B2B buyers reviewing multiple vendor quotations is that they cannot compare them because the descriptions are too vague. "Consulting services — Rs 50,000" tells a buyer nothing. What services? For how long? What deliverables?\n\nFix: Every line item should answer: what, how much of it, in what unit, and at what rate. "Brand strategy consulting — 3 sessions (2 hours each) + written strategy document — Rs 50,000" is completable and comparable.',
+      },
+      {
+        heading: 'Mistake 3: Missing or incorrectly calculated GST',
+        body: 'GST errors are the number one reason quotations get sent back for revision in India. Whether you have applied CGST+SGST when you should have applied IGST, used the wrong percentage, or simply left GST off entirely — it slows down the approval process.\n\nFix: Check whether the transaction is intra-state or inter-state. Use the correct GST rate for your HSN/SAC code. Show the calculation explicitly: subtotal, CGST 9%, SGST 9% (or IGST 18%), and final total.',
+      },
+      {
+        heading: 'Mistake 4: No validity period',
+        body: 'An open-ended quotation is a commercial liability. Clients have come back to businesses six months later with outdated quotations and expected the same prices. Without a validity clause, you have very little ground to stand on.\n\nFix: Always include a specific expiry date, not just a number of days. "Valid until 25 July 2026" is clearer and harder to misread than "valid for 15 days."',
+      },
+      {
+        heading: 'Mistake 5: Sending a Word document instead of a PDF',
+        body: 'Word documents look unfinished, can be accidentally edited, may render differently on different devices, and signal a lack of process. PDFs look professional and are consistent across all platforms.\n\nFix: Always save as PDF before sending. If you are using quotation software, export as PDF automatically. Name the file something sensible — not just "Quotation.pdf."',
+      },
+      {
+        heading: 'Mistake 6: No payment terms stated',
+        body: 'Leaving payment terms out of a quotation guarantees a follow-up conversation that could have been avoided. Worse, it gives a client room to request terms you are not comfortable with once you are already committed to the project.\n\nFix: State your payment structure explicitly in every quotation: advance percentage, balance timing, accepted payment modes, and bank details.',
+      },
+      {
+        heading: 'Mistake 7: Totals that do not add up',
+        body: 'Arithmetic errors in quotations are embarrassingly common when they are built manually in Word or Excel. A client who catches a maths mistake in your quotation will immediately wonder what else is wrong.\n\nFix: Use quotation software or at minimum double-check every total with a calculator before sending. Most modern quotation tools do the arithmetic automatically.',
+      },
+      {
+        heading: 'Mistakes 8, 9, and 10: Presentation and follow-up failures',
+        body: 'Mistake 8: Sending from a personal Gmail instead of a business domain email address — it signals either a freelancer with no business structure or a company too small to invest in a basic business email.\n\nMistake 9: No terms and conditions section — leaving out delivery terms, warranty clauses, dispute resolution, and cancellation policy means you have no documented basis if anything goes wrong.\n\nMistake 10: Not following up — sending a quotation and waiting passively for a response. The single most effective thing most businesses can do to win more deals is send one structured follow-up email three days after the quotation.',
+      },
+    ],
+    faqs: [
+      { q: 'How long should a good quotation take to prepare?', a: 'With a proper template, 10 to 20 minutes for a standard project. The goal is a repeatable process, not starting from scratch each time. QuotationMaker handles the formatting and calculation automatically.' },
+      { q: 'Should every quotation be as detailed as possible?', a: 'Detail should match complexity. A simple one-item quotation for a regular product does not need three pages. A complex services proposal with multiple phases should be comprehensive. Match the level of detail to the decision the buyer needs to make.' },
+      { q: 'What is the best way to avoid GST errors?', a: 'Use a tool that automatically applies the correct GST rate based on your business location and the client\'s state, and calculates CGST/SGST vs IGST correctly. Manual calculation in Excel is where most errors happen.' },
+      { q: 'Is there a way to know if my quotation has been opened?', a: 'QuotationMaker includes read receipts that tell you when a client has opened the link to your quotation — so you can time your follow-up call for when the conversation is fresh.' },
+    ],
+    relatedSlugs: ['how-to-write-a-professional-quotation', 'gst-in-quotations', 'how-to-send-quotation-by-email'],
+  },
+];

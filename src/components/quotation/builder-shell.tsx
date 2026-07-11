@@ -8,10 +8,12 @@ import {
   Eye,
   FileDown,
   Image as ImageIcon,
+  MessageCircle,
   Pencil,
   Printer,
   Redo2,
   RotateCcw,
+  Share2,
   Undo2,
 } from 'lucide-react';
 import { useQuotationStore } from '@/store/quotation-store';
@@ -20,6 +22,7 @@ import { getTemplate } from '@/lib/templates';
 import { cn } from '@/lib/utils';
 import { BuilderForm } from './builder-form';
 import { QuotationDocument } from './quotation-document';
+import { ShareDialog } from './share-dialog';
 
 type Busy = null | 'pdf' | 'png';
 
@@ -34,6 +37,7 @@ export function BuilderShell() {
   const docRef = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState<Busy>(null);
   const [mobileView, setMobileView] = useState<'edit' | 'preview'>('edit');
+  const [shareOpen, setShareOpen] = useState(false);
 
   useEffect(() => {
     hydrate();
@@ -84,6 +88,29 @@ export function BuilderShell() {
       alert('Sorry, the PDF could not be generated. Please try again.');
     } finally {
       setBusy(null);
+    }
+  };
+
+  const [waBusy, setWaBusy] = useState(false);
+  const handleWhatsapp = async () => {
+    setWaBusy(true);
+    try {
+      const res = await fetch('/api/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(quotation),
+      });
+      if (!res.ok) throw new Error('share failed');
+      const { id } = await res.json();
+      const url = `${window.location.origin}/q/${id}`;
+      const company = quotation.company.name || 'us';
+      const msg = `Quotation ${quotation.meta.number} from ${company}: ${url}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    } catch (err) {
+      console.error('WhatsApp share failed', err);
+      alert('Sorry, the share link could not be created. Please try again.');
+    } finally {
+      setWaBusy(false);
     }
   };
 
@@ -138,6 +165,16 @@ export function BuilderShell() {
           label="Reset"
           icon={RotateCcw}
         />
+        <button onClick={() => setShareOpen(true)} className="btn-secondary px-3 py-2 text-xs">
+          <Share2 className="h-4 w-4" /> Share
+        </button>
+        <button
+          onClick={handleWhatsapp}
+          disabled={waBusy}
+          className="inline-flex items-center gap-1.5 rounded-xl bg-[#25D366] px-3 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+        >
+          <MessageCircle className="h-4 w-4" /> {waBusy ? 'Sharing…' : 'WhatsApp'}
+        </button>
         <button onClick={printNode} className="btn-secondary px-3 py-2 text-xs">
           <Printer className="h-4 w-4" /> Print
         </button>
@@ -190,6 +227,8 @@ export function BuilderShell() {
       <div className="export-target" aria-hidden style={{ width: 820 }}>
         <QuotationDocument id="print-area" ref={docRef} quotation={quotation} />
       </div>
+
+      {shareOpen ? <ShareDialog quotation={quotation} onClose={() => setShareOpen(false)} /> : null}
     </div>
   );
 }

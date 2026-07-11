@@ -20,6 +20,10 @@ export interface BlogPost {
   category: string;
   /** One-sentence excerpt for cards and meta. */
   excerpt: string;
+  /** Path to the hero illustration, e.g. '/blog/deposit.svg'. Optional. */
+  heroImage?: string;
+  /** Alt text for the hero illustration. */
+  heroAlt?: string;
   /** Lead paragraph shown under the title. */
   intro: string;
   sections: BlogSection[];

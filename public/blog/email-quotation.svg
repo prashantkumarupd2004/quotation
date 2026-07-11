@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Emailing a quotation illustration">
+  <defs>
+    <linearGradient id="em-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9"/><stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#em-bg)"/>
+  <circle cx="680" cy="420" r="150" fill="#ffffff" opacity="0.06"/>
+  <rect x="230" y="150" width="340" height="220" rx="18" fill="#ffffff"/>
+  <path d="M230 168 l170 130 l170 -130" fill="none" stroke="#4F46E5" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M470 300 l180 -150" stroke="#ffffff" stroke-width="5" stroke-dasharray="4 8" stroke-linecap="round" opacity="0.8"/>
+  <g transform="rotate(35 640 150)">
+    <path d="M600 130 l90 20 -40 30 -10 40 -20 -35 -40 -5 z" fill="#ffffff"/>
+    <path d="M600 130 l50 35" stroke="#0EA5E9" stroke-width="3"/>
+  </g>
+  <text x="400" y="430" font-family="system-ui,Segoe UI,sans-serif" font-size="26" font-weight="600" fill="#ffffff" text-anchor="middle" opacity="0.9">Send it so it gets opened</text>
+</svg>

@@ -1,8 +1,10 @@
 import type { BlogPost } from '@/data/blog-types';
 import { blogPosts1 } from './group-1';
 import { blogPosts2 } from './group-2';
+import { blogPosts3 } from './group-3';
+import { blogPosts4 } from './group-4';
 
-export const blogPosts: BlogPost[] = [...blogPosts1, ...blogPosts2].sort(
+export const blogPosts: BlogPost[] = [...blogPosts1, ...blogPosts2, ...blogPosts3, ...blogPosts4].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 

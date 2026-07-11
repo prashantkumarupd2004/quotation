@@ -11,6 +11,9 @@ next-env.d.ts
 # production
 /build
 
+# shared quotations (server-side store)
+/data/
+
 # misc
 .DS_Store
 *.pem
@@ -30,3 +33,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# test screenshots
+.mobtest*.png

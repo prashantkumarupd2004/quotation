@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Quotation validity period guide illustration">
+  <defs>
+    <linearGradient id="vl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1628"/><stop offset="1" stop-color="#0F2030"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#vl-bg)"/>
+  <circle cx="700" cy="100" r="110" fill="#06B6D4" opacity="0.09"/>
+  <!-- Clock / calendar -->
+  <circle cx="280" cy="200" r="100" fill="#1E293B" stroke="#06B6D4" stroke-width="2"/>
+  <circle cx="280" cy="200" r="8" fill="#06B6D4"/>
+  <!-- Clock hands -->
+  <line x1="280" y1="200" x2="280" y2="130" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/>
+  <line x1="280" y1="200" x2="340" y2="200" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+  <!-- Clock ticks -->
+  <line x1="280" y1="108" x2="280" y2="120" stroke="#334155" stroke-width="3"/>
+  <line x1="372" y1="200" x2="360" y2="200" stroke="#334155" stroke-width="3"/>
+  <line x1="280" y1="292" x2="280" y2="280" stroke="#334155" stroke-width="3"/>
+  <line x1="188" y1="200" x2="200" y2="200" stroke="#334155" stroke-width="3"/>
+  <!-- Days counter -->
+  <rect x="420" y="120" width="240" height="160" rx="16" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="540" y="175" font-family="system-ui,sans-serif" font-size="64" font-weight="900" fill="#F59E0B" text-anchor="middle">15</text>
+  <text x="540" y="210" font-family="system-ui,sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle">days validity</text>
+  <text x="540" y="236" font-family="system-ui,sans-serif" font-size="13" fill="#64748B" text-anchor="middle">Expires: 25 July 2026</text>
+  <!-- Warning bar -->
+  <rect x="420" y="295" width="240" height="36" rx="8" fill="#EF4444" opacity="0.15" stroke="#EF4444" stroke-width="1"/>
+  <text x="540" y="318" font-family="system-ui,sans-serif" font-size="13" fill="#EF4444" text-anchor="middle">⚠ 3 days left — respond now</text>
+  <!-- Labels -->
+  <text x="400" y="420" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">Quotation Validity Period Guide</text>
+  <text x="400" y="450" font-family="system-ui,sans-serif" font-size="15" fill="#64748B" text-anchor="middle">7, 15, or 30 days — which to choose and why</text>
+</svg>

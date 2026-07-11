@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Event management quotation illustration">
+  <defs>
+    <linearGradient id="ev-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F0A2E"/><stop offset="1" stop-color="#1A0A3E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#ev-bg)"/>
+  <!-- Confetti / sparkles -->
+  <circle cx="150" cy="100" r="8" fill="#F59E0B" opacity="0.7"/>
+  <circle cx="650" cy="90" r="10" fill="#EC4899" opacity="0.6"/>
+  <circle cx="720" cy="200" r="6" fill="#10B981" opacity="0.5"/>
+  <circle cx="80" cy="300" r="9" fill="#6366F1" opacity="0.5"/>
+  <circle cx="680" cy="380" r="7" fill="#F59E0B" opacity="0.6"/>
+  <circle cx="120" cy="420" r="5" fill="#EC4899" opacity="0.5"/>
+  <!-- Stage/event area -->
+  <ellipse cx="400" cy="370" rx="260" ry="30" fill="#6366F1" opacity="0.12"/>
+  <!-- Banner -->
+  <rect x="220" y="110" width="360" height="80" rx="14" fill="#6366F1" opacity="0.85"/>
+  <text x="400" y="160" font-family="system-ui,sans-serif" font-size="28" font-weight="800" fill="#fff" text-anchor="middle">🎉 EVENT PROPOSAL</text>
+  <!-- 3 cards - venue, catering, decor -->
+  <rect x="150" y="220" width="140" height="120" rx="10" fill="#1E1040" stroke="#EC4899" stroke-width="1.5"/>
+  <text x="220" y="268" font-family="system-ui,sans-serif" font-size="30" fill="#EC4899" text-anchor="middle">🏛️</text>
+  <text x="220" y="296" font-family="system-ui,sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">Venue</text>
+  <text x="220" y="316" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">₹85,000</text>
+
+  <rect x="330" y="220" width="140" height="120" rx="10" fill="#1E1040" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="400" y="268" font-family="system-ui,sans-serif" font-size="30" fill="#F59E0B" text-anchor="middle">🍽️</text>
+  <text x="400" y="296" font-family="system-ui,sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">Catering</text>
+  <text x="400" y="316" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">₹1,20,000</text>
+
+  <rect x="510" y="220" width="140" height="120" rx="10" fill="#1E1040" stroke="#10B981" stroke-width="1.5"/>
+  <text x="580" y="268" font-family="system-ui,sans-serif" font-size="30" fill="#10B981" text-anchor="middle">🎊</text>
+  <text x="580" y="296" font-family="system-ui,sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">Décor</text>
+  <text x="580" y="316" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">₹45,000</text>
+
+  <!-- Labels -->
+  <text x="400" y="430" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">Event Management Quotations</text>
+  <text x="400" y="458" font-family="system-ui,sans-serif" font-size="15" fill="#64748B" text-anchor="middle">Venue · Catering · Décor · Logistics</text>
+</svg>

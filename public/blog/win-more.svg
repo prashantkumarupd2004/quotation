@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Winning more quotations trophy illustration">
+  <defs>
+    <linearGradient id="wm-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/><stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="wm-cup" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#wm-bg)"/>
+  <circle cx="130" cy="380" r="150" fill="#ffffff" opacity="0.06"/>
+  <path d="M330 130 h140 v40 a70 70 0 0 1 -140 0 z" fill="url(#wm-cup)"/>
+  <path d="M330 140 h-40 a30 30 0 0 0 40 50 z" fill="none" stroke="#f59e0b" stroke-width="10"/>
+  <path d="M470 140 h40 a30 30 0 0 1 -40 50 z" fill="none" stroke="#f59e0b" stroke-width="10"/>
+  <rect x="385" y="235" width="30" height="40" fill="#f59e0b"/>
+  <rect x="350" y="275" width="100" height="24" rx="8" fill="#fde68a"/>
+  <rect x="335" y="299" width="130" height="20" rx="8" fill="#f59e0b"/>
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.8">
+    <path d="M250 210 l-30 -10 M255 250 l-34 6 M560 210 l30 -10 M552 250 l34 6"/>
+  </g>
+  <text x="400" y="155" font-family="system-ui,Segoe UI,sans-serif" font-size="40" font-weight="800" fill="#7C3AED" text-anchor="middle">1</text>
+  <text x="400" y="420" font-family="system-ui,Segoe UI,sans-serif" font-size="26" font-weight="600" fill="#ffffff" text-anchor="middle" opacity="0.9">Turn quotes into orders</text>
+</svg>

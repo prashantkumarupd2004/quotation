@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Pricing strategy growth chart illustration">
+  <defs>
+    <linearGradient id="ps-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#ps-bg)"/>
+  <circle cx="680" cy="100" r="140" fill="#ffffff" opacity="0.06"/>
+  <g>
+    <rect x="200" y="330" width="60" height="80" rx="8" fill="#ffffff" opacity="0.35"/>
+    <rect x="290" y="270" width="60" height="140" rx="8" fill="#ffffff" opacity="0.5"/>
+    <rect x="380" y="210" width="60" height="200" rx="8" fill="#ffffff" opacity="0.7"/>
+    <rect x="470" y="150" width="60" height="260" rx="8" fill="#ffffff"/>
+  </g>
+  <path d="M210 300 L320 250 L410 200 L530 120" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M500 120 h30 v30" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="530" cy="120" r="12" fill="#22c55e"/>
+  <text x="560" y="380" font-family="system-ui,Segoe UI,sans-serif" font-size="46" font-weight="800" fill="#ffffff" opacity="0.9">₹</text>
+</svg>
