@@ -107,7 +107,18 @@ export const useQuotationStore = create<QuotationState>((set, get) => ({
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as Quotation;
-        set({ quotation: { ...createDefaultQuotation(), ...parsed }, hydrated: true });
+        const base = createDefaultQuotation();
+        // Deep-merge nested objects so quotations saved before newer fields
+        // (meta.category, legal.*) existed still get sensible defaults.
+        set({
+          quotation: {
+            ...base,
+            ...parsed,
+            meta: { ...base.meta, ...parsed.meta },
+            legal: { ...base.legal, ...parsed.legal },
+          },
+          hydrated: true,
+        });
         return;
       }
     } catch {

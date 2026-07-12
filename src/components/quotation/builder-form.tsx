@@ -5,18 +5,21 @@ import {
   Building2,
   FileText,
   IndianRupee,
+  Layers,
   Layout,
   Percent,
   QrCode,
+  Scale,
   StickyNote,
   User,
 } from 'lucide-react';
 import { useQuotationStore } from '@/store/quotation-store';
 import { currencies } from '@/lib/currency';
 import { taxModeLabels } from '@/lib/calculations';
+import { CATEGORY_LIST, getCategory } from '@/lib/categories';
 import { generateQrDataUrl } from '@/lib/export';
 import { toNumber } from '@/lib/utils';
-import type { DiscountType, TaxMode } from '@/types/quotation';
+import type { DiscountType, QuotationCategory, TaxMode } from '@/types/quotation';
 import { ItemsEditor } from './items-editor';
 import { TemplatePicker } from './template-picker';
 import { ImageUpload } from './image-upload';
@@ -94,9 +97,58 @@ export function BuilderForm() {
   const setMeta = (patch: Partial<typeof q.meta>) => setQuotation({ meta: { ...q.meta, ...patch } });
   const setTotals = (patch: Partial<typeof q.totals>) =>
     setQuotation({ totals: { ...q.totals, ...patch } });
+  const setLegal = (patch: Partial<typeof q.legal>) =>
+    setQuotation({ legal: { ...q.legal, ...patch } });
+
+  const category = getCategory(q.meta.category);
+
+  // Switching category applies that category's sensible defaults. Notes/terms are
+  // only replaced when they still hold a category preset (i.e. the user hasn't
+  // written their own), so custom wording is never clobbered.
+  const setCategory = (next: QuotationCategory) => {
+    const cfg = getCategory(next);
+    update((prev) => {
+      const notesUntouched = !prev.notes || CATEGORY_LIST.some((c) => c.notes === prev.notes);
+      const termsUntouched = !prev.terms || CATEGORY_LIST.some((c) => c.terms === prev.terms);
+      return {
+        ...prev,
+        meta: { ...prev.meta, category: next },
+        totals: {
+          ...prev.totals,
+          taxMode: prev.totals.taxMode === 'none' ? 'none' : cfg.defaultTaxMode,
+        },
+        notes: notesUntouched ? cfg.notes : prev.notes,
+        terms: termsUntouched ? cfg.terms : prev.terms,
+      };
+    });
+  };
 
   return (
     <div className="space-y-5">
+      <Section icon={Layers} title="Quotation Type" description="Choose a category — fields and labels adapt to it.">
+        <div className="grid gap-3 sm:grid-cols-2">
+          {CATEGORY_LIST.map((c) => {
+            const active = category.id === c.id;
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => setCategory(c.id)}
+                aria-pressed={active}
+                className={`rounded-xl border p-3 text-left transition ${
+                  active
+                    ? 'border-primary bg-primary/5 ring-1 ring-primary'
+                    : 'border-border hover:border-primary/50 hover:bg-muted/40'
+                }`}
+              >
+                <span className="block text-sm font-semibold">{c.label}</span>
+                <span className="mt-1 block text-xs text-muted-foreground">{c.hint}</span>
+              </button>
+            );
+          })}
+        </div>
+      </Section>
+
       <Section icon={Layout} title="Template" description="Pick a design — switch anytime.">
         <TemplatePicker />
         <div className="mt-4 flex items-center gap-3">
@@ -158,6 +210,45 @@ export function BuilderForm() {
           </div>
         </div>
       </Section>
+
+      {q.meta.category === 'legal' ? (
+        <Section
+          icon={Scale}
+          title="Case / Matter Details"
+          description="Legal-specific details shown on the quotation."
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <Field label="Matter / Nature of Engagement">
+                <textarea
+                  className="field-input min-h-[70px]"
+                  value={q.legal.matter}
+                  onChange={(e) => setLegal({ matter: e.target.value })}
+                  placeholder="e.g. Filing and representation in a property title dispute"
+                />
+              </Field>
+            </div>
+            <Field label="Case / Suit / Petition No.">
+              <input className="field-input" value={q.legal.caseNumber} onChange={(e) => setLegal({ caseNumber: e.target.value })} placeholder="CS(OS) 123/2026" />
+            </Field>
+            <Field label="Court / Tribunal">
+              <input className="field-input" value={q.legal.court} onChange={(e) => setLegal({ court: e.target.value })} placeholder="High Court of Delhi" />
+            </Field>
+            <Field label="Jurisdiction">
+              <input className="field-input" value={q.legal.jurisdiction} onChange={(e) => setLegal({ jurisdiction: e.target.value })} placeholder="New Delhi" />
+            </Field>
+            <Field label="Next Hearing / Key Date">
+              <input type="date" className="field-input" value={q.legal.hearingDate} onChange={(e) => setLegal({ hearingDate: e.target.value })} />
+            </Field>
+            <Field label="Advocate / Counsel in Charge">
+              <input className="field-input" value={q.legal.advocateName} onChange={(e) => setLegal({ advocateName: e.target.value })} placeholder="Adv. Priya Sharma" />
+            </Field>
+            <Field label="Bar Council Enrolment No.">
+              <input className="field-input" value={q.legal.barCouncilId} onChange={(e) => setLegal({ barCouncilId: e.target.value })} placeholder="D/1234/2015" />
+            </Field>
+          </div>
+        </Section>
+      ) : null}
 
       <Section icon={FileText} title="Quotation Details">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

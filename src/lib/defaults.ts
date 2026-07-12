@@ -1,5 +1,6 @@
 import type { Quotation, LineItem } from '@/types/quotation';
 import { generateQuotationNumber } from './calculations';
+import { createEmptyLegalDetails } from './categories';
 import { uid } from './utils';
 
 export function createEmptyItem(): LineItem {
@@ -30,6 +31,7 @@ export function createDefaultQuotation(): Quotation {
       currency: 'INR',
       templateId: 'modern',
       accentColor: '#4f46e5',
+      category: 'general',
     },
     company: {
       name: '',
@@ -67,6 +69,7 @@ export function createDefaultQuotation(): Quotation {
       flatTaxRate: 18,
       roundOff: true,
     },
+    legal: createEmptyLegalDetails(),
     notes: 'Thank you for the opportunity to quote. We look forward to working with you.',
     terms:
       '1. This quotation is valid until the expiry date mentioned above.\n2. 50% advance payment is required to confirm the order.\n3. Prices are subject to change without prior notice after expiry.\n4. Delivery timeline will be confirmed upon order confirmation.',

@@ -5,16 +5,19 @@ import { useState } from 'react';
 import { useQuotationStore } from '@/store/quotation-store';
 import { lineItemAmount } from '@/lib/calculations';
 import { formatMoney } from '@/lib/currency';
+import { getCategory } from '@/lib/categories';
 import { toNumber } from '@/lib/utils';
-
-const units = ['Nos', 'Set', 'Sq.ft', 'Sq.m', 'Rft', 'Hour', 'Day', 'Month', 'Kg', 'Ltr', 'Unit', 'Lot'];
 
 export function ItemsEditor() {
   const items = useQuotationStore((s) => s.quotation.items);
   const currency = useQuotationStore((s) => s.quotation.meta.currency);
   const taxMode = useQuotationStore((s) => s.quotation.totals.taxMode);
+  const category = useQuotationStore((s) => s.quotation.meta.category);
   const { addItem, updateItem, removeItem, duplicateItem, moveItem } = useQuotationStore();
   const [dragIndex, setDragIndex] = useState<number | null>(null);
+
+  const cfg = getCategory(category);
+  const { itemLabels: labels, units } = cfg;
 
   return (
     <div>
@@ -23,11 +26,11 @@ export function ItemsEditor() {
           <thead>
             <tr className="border-b border-border bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
               <th className="w-8 px-2 py-2.5" />
-              <th className="px-2 py-2.5">Description</th>
-              <th className="w-20 px-2 py-2.5">HSN/SAC</th>
+              <th className="px-2 py-2.5">{labels.description}</th>
+              <th className="w-20 px-2 py-2.5">{labels.code}</th>
               <th className="w-16 px-2 py-2.5">Qty</th>
               <th className="w-20 px-2 py-2.5">Unit</th>
-              <th className="w-24 px-2 py-2.5">Rate</th>
+              <th className="w-24 px-2 py-2.5">{labels.rate}</th>
               {taxMode !== 'none' && taxMode !== 'flat' ? <th className="w-16 px-2 py-2.5">Tax%</th> : null}
               <th className="w-24 px-2 py-2.5 text-right">Amount</th>
               <th className="w-16 px-2 py-2.5" />

@@ -1,6 +1,9 @@
 export type TaxMode = 'none' | 'gst-intra' | 'gst-inter' | 'flat';
 export type DiscountType = 'percent' | 'flat';
 
+/** The kind of quotation being prepared. Drives category-specific fields and labels. */
+export type QuotationCategory = 'general' | 'legal';
+
 export interface CompanyDetails {
   name: string;
   logo: string; // data URL
@@ -38,6 +41,19 @@ export interface QuotationMeta {
   currency: string;
   templateId: string;
   accentColor: string;
+  /** Which category of quotation this is. Defaults to 'general'. */
+  category: QuotationCategory;
+}
+
+/** Extra details shown on legal / law-firm quotations (fee proposals). */
+export interface LegalDetails {
+  matter: string; // brief of the matter / nature of engagement
+  caseNumber: string; // case / suit / petition number
+  court: string; // court or tribunal
+  jurisdiction: string; // city / state jurisdiction
+  advocateName: string; // advocate / counsel in charge
+  barCouncilId: string; // Bar Council enrolment number
+  hearingDate: string; // next hearing / important date (ISO)
 }
 
 export interface Totals {
@@ -57,6 +73,8 @@ export interface Quotation {
   client: ClientDetails;
   items: LineItem[];
   totals: Totals;
+  /** Populated only when meta.category is 'legal'. */
+  legal: LegalDetails;
   notes: string;
   terms: string;
   signature: string; // data URL

@@ -4,6 +4,7 @@ import { forwardRef, memo, type CSSProperties } from 'react';
 import type { Quotation } from '@/types/quotation';
 import { calculateTotals, lineItemAmount } from '@/lib/calculations';
 import { formatMoney, numberToWordsIndian } from '@/lib/currency';
+import { hasLegalDetails, itemLabelsFor } from '@/lib/categories';
 import { getTemplate } from '@/lib/templates';
 import { renderPremiumTemplate } from './premium/registry';
 
@@ -47,6 +48,7 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
   const softBg = template.dark ? '#111a2e' : '#f8fafc';
 
   const money = (n: number) => formatMoney(n, currency);
+  const labels = itemLabelsFor(quotation.meta.category);
 
   const styles: Record<string, CSSProperties> = {
     paper: {
@@ -188,11 +190,11 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
             <thead>
               <tr style={{ background: accent, color: '#fff' }}>
                 <th style={thCell('left', 28)}>#</th>
-                <th style={thCell('left')}>Description</th>
-                <th style={thCell('center', 60)}>HSN/SAC</th>
+                <th style={thCell('left')}>{labels.description}</th>
+                <th style={thCell('center', 60)}>{labels.code}</th>
                 <th style={thCell('right', 48)}>Qty</th>
                 <th style={thCell('center', 48)}>Unit</th>
-                <th style={thCell('right', 80)}>Rate</th>
+                <th style={thCell('right', 80)}>{labels.rate}</th>
                 {quotation.totals.taxMode !== 'none' ? <th style={thCell('right', 48)}>Tax%</th> : null}
                 <th style={thCell('right', 92)}>Amount</th>
               </tr>
@@ -279,6 +281,37 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
               </div>
             </div>
           </div>
+
+          {/* ---------- MATTER / CASE DETAILS (legal) ---------- */}
+          {quotation.meta.category === 'legal' && hasLegalDetails(quotation.legal) ? (
+            <div style={{ marginTop: 20, border: `1px solid ${lineColor}`, borderRadius: 8, padding: '12px 14px', background: softBg }}>
+              <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, color: accent, fontWeight: 700 }}>
+                Matter / Case Details
+              </div>
+              {quotation.legal.matter ? (
+                <div style={{ fontSize: 12.5, color: ink, whiteSpace: 'pre-line', marginTop: 6, fontWeight: 600 }}>
+                  {quotation.legal.matter}
+                </div>
+              ) : null}
+              <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px' }}>
+                {[
+                  { label: 'Case / Suit No.', value: quotation.legal.caseNumber },
+                  { label: 'Court / Tribunal', value: quotation.legal.court },
+                  { label: 'Jurisdiction', value: quotation.legal.jurisdiction },
+                  { label: 'Next Hearing', value: quotation.legal.hearingDate ? fmtDate(quotation.legal.hearingDate) : '' },
+                  { label: 'Advocate in Charge', value: quotation.legal.advocateName },
+                  { label: 'Bar Council No.', value: quotation.legal.barCouncilId },
+                ]
+                  .filter((r) => r.value)
+                  .map((r) => (
+                    <div key={r.label} style={{ fontSize: 12, color: muted }}>
+                      <span>{r.label}: </span>
+                      <span style={{ color: ink, fontWeight: 600 }}>{r.value}</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ) : null}
 
           {/* ---------- NOTES / TERMS ---------- */}
           {(quotation.notes || quotation.terms) && (

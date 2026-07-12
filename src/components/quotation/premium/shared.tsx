@@ -4,6 +4,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import type { CalculatedTotals, Quotation } from '@/types/quotation';
 import { lineItemAmount } from '@/lib/calculations';
 import { numberToWordsIndian } from '@/lib/currency';
+import { hasLegalDetails, itemLabelsFor } from '@/lib/categories';
 
 /** Props every premium template component receives. */
 export interface PremiumTemplateProps {
@@ -68,6 +69,7 @@ interface ItemsTableProps {
 
 export function ItemsTable({ quotation, money, pal, variant = 'solid', striped = false }: ItemsTableProps) {
   const tax = showTax(quotation);
+  const labels = itemLabelsFor(quotation.meta.category);
 
   const headStyle: CSSProperties =
     variant === 'solid' || variant === 'pill'
@@ -83,11 +85,11 @@ export function ItemsTable({ quotation, money, pal, variant = 'solid', striped =
       <thead>
         <tr style={headStyle}>
           <th style={{ ...th('left', 26), borderTopLeftRadius: radius }}>#</th>
-          <th style={th('left')}>Description</th>
-          <th style={th('center', 62)}>HSN/SAC</th>
+          <th style={th('left')}>{labels.description}</th>
+          <th style={th('center', 62)}>{labels.code}</th>
           <th style={th('right', 46)}>Qty</th>
           <th style={th('center', 46)}>Unit</th>
-          <th style={th('right', 82)}>Rate</th>
+          <th style={th('right', 82)}>{labels.rate}</th>
           {tax ? <th style={th('right', 46)}>Tax%</th> : null}
           <th style={{ ...th('right', 94), borderTopRightRadius: radius }}>Amount</th>
         </tr>
@@ -231,10 +233,52 @@ export function TaxSummary({ quotation, totals, money, pal }: PremiumTemplatePro
 /* Notes / terms                                                       */
 /* ------------------------------------------------------------------ */
 
-export function NotesTerms({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
-  if (!quotation.notes && !quotation.terms) return null;
+/**
+ * Matter / case details block for legal quotations. Renders nothing for other
+ * categories or when no legal fields are filled in. Used by every template via
+ * NotesTerms, so it appears consistently across all designs.
+ */
+export function MatterDetails({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
+  if (quotation.meta.category !== 'legal' || !hasLegalDetails(quotation.legal)) return null;
+  const l = quotation.legal;
+  const rows: { label: string; value: string }[] = [
+    { label: 'Case / Suit No.', value: l.caseNumber },
+    { label: 'Court / Tribunal', value: l.court },
+    { label: 'Jurisdiction', value: l.jurisdiction },
+    { label: 'Next Hearing', value: l.hearingDate ? fmtDate(l.hearingDate) : '' },
+    { label: 'Advocate in Charge', value: l.advocateName },
+    { label: 'Bar Council No.', value: l.barCouncilId },
+  ].filter((r) => r.value);
+
   return (
-    <div style={{ marginTop: 22, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+    <div style={{ marginTop: 20, border: `1px solid ${pal.line}`, borderRadius: 8, padding: '12px 14px', background: pal.soft }}>
+      <SectionLabel pal={pal}>Matter / Case Details</SectionLabel>
+      {l.matter ? (
+        <div style={{ fontSize: 12.5, color: pal.ink, whiteSpace: 'pre-line', marginTop: 6, fontWeight: 600 }}>{l.matter}</div>
+      ) : null}
+      {rows.length > 0 ? (
+        <div style={{ marginTop: l.matter ? 8 : 6, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px' }}>
+          {rows.map((r) => (
+            <div key={r.label} style={{ fontSize: 12, color: pal.muted }}>
+              <span>{r.label}: </span>
+              <span style={{ color: pal.ink, fontWeight: 600 }}>{r.value}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+export function NotesTerms({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
+  const matter = <MatterDetails quotation={quotation} pal={pal} />;
+  if (!quotation.notes && !quotation.terms) {
+    return matter;
+  }
+  return (
+    <>
+      {matter}
+      <div style={{ marginTop: 22, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
       {quotation.notes ? (
         <div>
           <SectionLabel pal={pal}>Notes</SectionLabel>
@@ -249,7 +293,8 @@ export function NotesTerms({ quotation, pal }: { quotation: Quotation; pal: Pale
           <div style={{ fontSize: 12, color: pal.muted, whiteSpace: 'pre-line', marginTop: 6 }}>{quotation.terms}</div>
         </div>
       ) : null}
-    </div>
+      </div>
+    </>
   );
 }
 
