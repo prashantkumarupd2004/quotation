@@ -4,7 +4,7 @@ import { forwardRef, memo, type CSSProperties } from 'react';
 import type { Quotation } from '@/types/quotation';
 import { calculateTotals, lineItemAmount } from '@/lib/calculations';
 import { formatMoney, numberToWordsIndian } from '@/lib/currency';
-import { hasLegalDetails, itemLabelsFor } from '@/lib/categories';
+import { hasCategoryDetails, getCategory } from '@/lib/categories';
 import { getTemplate } from '@/lib/templates';
 import { renderPremiumTemplate } from './premium/registry';
 
@@ -48,7 +48,11 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
   const softBg = template.dark ? '#111a2e' : '#f8fafc';
 
   const money = (n: number) => formatMoney(n, currency);
-  const labels = itemLabelsFor(quotation.meta.category);
+  const category = getCategory(quotation.meta.category);
+  const labels = category.itemLabels;
+  const detailFields = category.fields
+    .map((f) => ({ ...f, value: (quotation.details[f.key] ?? '').trim() }))
+    .filter((f) => f.value);
 
   const styles: Record<string, CSSProperties> = {
     paper: {
@@ -282,31 +286,27 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
             </div>
           </div>
 
-          {/* ---------- MATTER / CASE DETAILS (legal) ---------- */}
-          {quotation.meta.category === 'legal' && hasLegalDetails(quotation.legal) ? (
+          {/* ---------- CATEGORY DETAILS (legal / project / site / event…) ---------- */}
+          {hasCategoryDetails(quotation.meta.category, quotation.details) ? (
             <div style={{ marginTop: 20, border: `1px solid ${lineColor}`, borderRadius: 8, padding: '12px 14px', background: softBg }}>
               <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, color: accent, fontWeight: 700 }}>
-                Matter / Case Details
+                {category.detailsTitle}
               </div>
-              {quotation.legal.matter ? (
-                <div style={{ fontSize: 12.5, color: ink, whiteSpace: 'pre-line', marginTop: 6, fontWeight: 600 }}>
-                  {quotation.legal.matter}
-                </div>
-              ) : null}
+              {detailFields
+                .filter((f) => f.full || f.type === 'textarea')
+                .map((f) => (
+                  <div key={f.key} style={{ marginTop: 6 }}>
+                    <span style={{ fontSize: 11, color: muted }}>{f.label}: </span>
+                    <span style={{ fontSize: 12.5, color: ink, whiteSpace: 'pre-line', fontWeight: 600 }}>{f.value}</span>
+                  </div>
+                ))}
               <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px' }}>
-                {[
-                  { label: 'Case / Suit No.', value: quotation.legal.caseNumber },
-                  { label: 'Court / Tribunal', value: quotation.legal.court },
-                  { label: 'Jurisdiction', value: quotation.legal.jurisdiction },
-                  { label: 'Next Hearing', value: quotation.legal.hearingDate ? fmtDate(quotation.legal.hearingDate) : '' },
-                  { label: 'Advocate in Charge', value: quotation.legal.advocateName },
-                  { label: 'Bar Council No.', value: quotation.legal.barCouncilId },
-                ]
-                  .filter((r) => r.value)
-                  .map((r) => (
-                    <div key={r.label} style={{ fontSize: 12, color: muted }}>
-                      <span>{r.label}: </span>
-                      <span style={{ color: ink, fontWeight: 600 }}>{r.value}</span>
+                {detailFields
+                  .filter((f) => !f.full && f.type !== 'textarea')
+                  .map((f) => (
+                    <div key={f.key} style={{ fontSize: 12, color: muted }}>
+                      <span>{f.label}: </span>
+                      <span style={{ color: ink, fontWeight: 600 }}>{f.type === 'date' ? fmtDate(f.value) : f.value}</span>
                     </div>
                   ))}
               </div>

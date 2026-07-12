@@ -106,16 +106,17 @@ export const useQuotationStore = create<QuotationState>((set, get) => ({
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
-        const parsed = JSON.parse(raw) as Quotation;
+        const parsed = JSON.parse(raw) as Quotation & { legal?: Record<string, string> };
         const base = createDefaultQuotation();
         // Deep-merge nested objects so quotations saved before newer fields
-        // (meta.category, legal.*) existed still get sensible defaults.
+        // (meta.category, details) existed still get sensible defaults. Older
+        // saves used a `legal` object — fold it into the generic details map.
         set({
           quotation: {
             ...base,
             ...parsed,
             meta: { ...base.meta, ...parsed.meta },
-            legal: { ...base.legal, ...parsed.legal },
+            details: { ...(parsed.legal ?? {}), ...(parsed.details ?? {}) },
           },
           hydrated: true,
         });

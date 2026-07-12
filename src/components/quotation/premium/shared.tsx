@@ -4,7 +4,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import type { CalculatedTotals, Quotation } from '@/types/quotation';
 import { lineItemAmount } from '@/lib/calculations';
 import { numberToWordsIndian } from '@/lib/currency';
-import { hasLegalDetails, itemLabelsFor } from '@/lib/categories';
+import { getCategory, hasCategoryDetails, itemLabelsFor } from '@/lib/categories';
 
 /** Props every premium template component receives. */
 export interface PremiumTemplateProps {
@@ -234,34 +234,36 @@ export function TaxSummary({ quotation, totals, money, pal }: PremiumTemplatePro
 /* ------------------------------------------------------------------ */
 
 /**
- * Matter / case details block for legal quotations. Renders nothing for other
- * categories or when no legal fields are filled in. Used by every template via
- * NotesTerms, so it appears consistently across all designs.
+ * Category-specific details block (matter/case, project, site, event, etc.).
+ * Renders nothing when the active category has no fields or none are filled.
+ * Used by every template via NotesTerms, so it appears consistently.
  */
-export function MatterDetails({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
-  if (quotation.meta.category !== 'legal' || !hasLegalDetails(quotation.legal)) return null;
-  const l = quotation.legal;
-  const rows: { label: string; value: string }[] = [
-    { label: 'Case / Suit No.', value: l.caseNumber },
-    { label: 'Court / Tribunal', value: l.court },
-    { label: 'Jurisdiction', value: l.jurisdiction },
-    { label: 'Next Hearing', value: l.hearingDate ? fmtDate(l.hearingDate) : '' },
-    { label: 'Advocate in Charge', value: l.advocateName },
-    { label: 'Bar Council No.', value: l.barCouncilId },
-  ].filter((r) => r.value);
+export function CategoryDetails({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
+  const cfg = getCategory(quotation.meta.category);
+  if (!hasCategoryDetails(quotation.meta.category, quotation.details)) return null;
+  const d = quotation.details;
+
+  const filled = cfg.fields
+    .map((f) => ({ ...f, value: (d[f.key] ?? '').trim() }))
+    .filter((f) => f.value);
+  const wide = filled.filter((f) => f.full || f.type === 'textarea');
+  const rows = filled.filter((f) => !f.full && f.type !== 'textarea');
 
   return (
     <div style={{ marginTop: 20, border: `1px solid ${pal.line}`, borderRadius: 8, padding: '12px 14px', background: pal.soft }}>
-      <SectionLabel pal={pal}>Matter / Case Details</SectionLabel>
-      {l.matter ? (
-        <div style={{ fontSize: 12.5, color: pal.ink, whiteSpace: 'pre-line', marginTop: 6, fontWeight: 600 }}>{l.matter}</div>
-      ) : null}
+      <SectionLabel pal={pal}>{cfg.detailsTitle}</SectionLabel>
+      {wide.map((f) => (
+        <div key={f.key} style={{ marginTop: 6 }}>
+          <span style={{ fontSize: 11, color: pal.muted }}>{f.label}: </span>
+          <span style={{ fontSize: 12.5, color: pal.ink, whiteSpace: 'pre-line', fontWeight: 600 }}>{f.value}</span>
+        </div>
+      ))}
       {rows.length > 0 ? (
-        <div style={{ marginTop: l.matter ? 8 : 6, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px' }}>
-          {rows.map((r) => (
-            <div key={r.label} style={{ fontSize: 12, color: pal.muted }}>
-              <span>{r.label}: </span>
-              <span style={{ color: pal.ink, fontWeight: 600 }}>{r.value}</span>
+        <div style={{ marginTop: 8, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px' }}>
+          {rows.map((f) => (
+            <div key={f.key} style={{ fontSize: 12, color: pal.muted }}>
+              <span>{f.label}: </span>
+              <span style={{ color: pal.ink, fontWeight: 600 }}>{f.type === 'date' ? fmtDate(f.value) : f.value}</span>
             </div>
           ))}
         </div>
@@ -271,7 +273,7 @@ export function MatterDetails({ quotation, pal }: { quotation: Quotation; pal: P
 }
 
 export function NotesTerms({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
-  const matter = <MatterDetails quotation={quotation} pal={pal} />;
+  const matter = <CategoryDetails quotation={quotation} pal={pal} />;
   if (!quotation.notes && !quotation.terms) {
     return matter;
   }

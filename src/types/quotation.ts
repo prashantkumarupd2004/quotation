@@ -2,7 +2,19 @@ export type TaxMode = 'none' | 'gst-intra' | 'gst-inter' | 'flat';
 export type DiscountType = 'percent' | 'flat';
 
 /** The kind of quotation being prepared. Drives category-specific fields and labels. */
-export type QuotationCategory = 'general' | 'legal';
+export type QuotationCategory =
+  | 'general'
+  | 'legal'
+  | 'freelancer'
+  | 'plumbing'
+  | 'electrical'
+  | 'interior'
+  | 'it-software'
+  | 'photography'
+  | 'medical'
+  | 'catering'
+  | 'tutoring'
+  | 'transport';
 
 export interface CompanyDetails {
   name: string;
@@ -45,16 +57,12 @@ export interface QuotationMeta {
   category: QuotationCategory;
 }
 
-/** Extra details shown on legal / law-firm quotations (fee proposals). */
-export interface LegalDetails {
-  matter: string; // brief of the matter / nature of engagement
-  caseNumber: string; // case / suit / petition number
-  court: string; // court or tribunal
-  jurisdiction: string; // city / state jurisdiction
-  advocateName: string; // advocate / counsel in charge
-  barCouncilId: string; // Bar Council enrolment number
-  hearingDate: string; // next hearing / important date (ISO)
-}
+/**
+ * Category-specific extra fields, keyed by the field id declared in the
+ * category config (see lib/categories.ts). Only the active category's fields
+ * are shown, but values persist if the user switches categories.
+ */
+export type CategoryDetails = Record<string, string>;
 
 export interface Totals {
   discountType: DiscountType;
@@ -73,8 +81,8 @@ export interface Quotation {
   client: ClientDetails;
   items: LineItem[];
   totals: Totals;
-  /** Populated only when meta.category is 'legal'. */
-  legal: LegalDetails;
+  /** Category-specific field values (keyed by field id). */
+  details: CategoryDetails;
   notes: string;
   terms: string;
   signature: string; // data URL

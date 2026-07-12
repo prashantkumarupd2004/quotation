@@ -3,13 +3,13 @@
 import { useEffect } from 'react';
 import {
   Building2,
+  ClipboardList,
   FileText,
   IndianRupee,
   Layers,
   Layout,
   Percent,
   QrCode,
-  Scale,
   StickyNote,
   User,
 } from 'lucide-react';
@@ -97,8 +97,8 @@ export function BuilderForm() {
   const setMeta = (patch: Partial<typeof q.meta>) => setQuotation({ meta: { ...q.meta, ...patch } });
   const setTotals = (patch: Partial<typeof q.totals>) =>
     setQuotation({ totals: { ...q.totals, ...patch } });
-  const setLegal = (patch: Partial<typeof q.legal>) =>
-    setQuotation({ legal: { ...q.legal, ...patch } });
+  const setDetail = (key: string, value: string) =>
+    setQuotation({ details: { ...q.details, [key]: value } });
 
   const category = getCategory(q.meta.category);
 
@@ -211,41 +211,35 @@ export function BuilderForm() {
         </div>
       </Section>
 
-      {q.meta.category === 'legal' ? (
+      {category.fields.length > 0 ? (
         <Section
-          icon={Scale}
-          title="Case / Matter Details"
-          description="Legal-specific details shown on the quotation."
+          icon={ClipboardList}
+          title={category.detailsTitle}
+          description={`${category.label} — specific details shown on the quotation.`}
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="sm:col-span-2">
-              <Field label="Matter / Nature of Engagement">
-                <textarea
-                  className="field-input min-h-[70px]"
-                  value={q.legal.matter}
-                  onChange={(e) => setLegal({ matter: e.target.value })}
-                  placeholder="e.g. Filing and representation in a property title dispute"
-                />
-              </Field>
-            </div>
-            <Field label="Case / Suit / Petition No.">
-              <input className="field-input" value={q.legal.caseNumber} onChange={(e) => setLegal({ caseNumber: e.target.value })} placeholder="CS(OS) 123/2026" />
-            </Field>
-            <Field label="Court / Tribunal">
-              <input className="field-input" value={q.legal.court} onChange={(e) => setLegal({ court: e.target.value })} placeholder="High Court of Delhi" />
-            </Field>
-            <Field label="Jurisdiction">
-              <input className="field-input" value={q.legal.jurisdiction} onChange={(e) => setLegal({ jurisdiction: e.target.value })} placeholder="New Delhi" />
-            </Field>
-            <Field label="Next Hearing / Key Date">
-              <input type="date" className="field-input" value={q.legal.hearingDate} onChange={(e) => setLegal({ hearingDate: e.target.value })} />
-            </Field>
-            <Field label="Advocate / Counsel in Charge">
-              <input className="field-input" value={q.legal.advocateName} onChange={(e) => setLegal({ advocateName: e.target.value })} placeholder="Adv. Priya Sharma" />
-            </Field>
-            <Field label="Bar Council Enrolment No.">
-              <input className="field-input" value={q.legal.barCouncilId} onChange={(e) => setLegal({ barCouncilId: e.target.value })} placeholder="D/1234/2015" />
-            </Field>
+            {category.fields.map((f) => (
+              <div key={f.key} className={f.full ? 'sm:col-span-2' : undefined}>
+                <Field label={f.label}>
+                  {f.type === 'textarea' ? (
+                    <textarea
+                      className="field-input min-h-[70px]"
+                      value={q.details[f.key] ?? ''}
+                      onChange={(e) => setDetail(f.key, e.target.value)}
+                      placeholder={f.placeholder}
+                    />
+                  ) : (
+                    <input
+                      type={f.type === 'date' ? 'date' : 'text'}
+                      className="field-input"
+                      value={q.details[f.key] ?? ''}
+                      onChange={(e) => setDetail(f.key, e.target.value)}
+                      placeholder={f.placeholder}
+                    />
+                  )}
+                </Field>
+              </div>
+            ))}
           </div>
         </Section>
       ) : null}
