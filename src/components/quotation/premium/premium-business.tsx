@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   ContactBits,
@@ -21,6 +22,7 @@ import {
 
 /** Premium Business — two-tone header, section chips, elevated total card. */
 export function PremiumBusiness({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
 
@@ -42,7 +44,7 @@ export function PremiumBusiness({ quotation, totals, money, accent, accent2 }: P
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: 1 }}>QUOTATION</div>
+          <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: 1 }}>{doc.title}</div>
           <div style={{ fontSize: 12, opacity: 0.9 }}>{quotation.meta.number}</div>
         </div>
       </div>
@@ -57,10 +59,14 @@ export function PremiumBusiness({ quotation, totals, money, accent, accent2 }: P
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 12.5, color: pal.muted }}>Date</div>
+          <div style={{ fontSize: 12.5, color: pal.muted }}>{doc.dateLabel}</div>
           <div style={{ fontWeight: 600, marginBottom: 6 }}>{fmtDate(quotation.meta.date)}</div>
-          <div style={{ fontSize: 12.5, color: pal.muted }}>Valid Until</div>
-          <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+          {doc.secondaryDateLabel ? (
+            <>
+              <div style={{ fontSize: 12.5, color: pal.muted }}>{doc.secondaryDateLabel}</div>
+              <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+            </>
+          ) : null}
         </div>
       </div>
 

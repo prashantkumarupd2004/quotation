@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site';
 import { industries } from '@/data/industries';
 import { blogPosts } from '@/data/blog';
+import { DOCUMENT_TYPE_LIST } from '@/lib/document-types';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -28,6 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }));
 
+  // Every document generator tool page, straight from the registry.
+  const toolEntries: MetadataRoute.Sitemap = DOCUMENT_TYPE_LIST.filter((t) => t.id !== 'quotation').map((t) => ({
+    url: `${base}${t.path}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  }));
+
   const industryEntries: MetadataRoute.Sitemap = industries.map((i) => ({
     url: `${base}/industries/${i.slug}`,
     lastModified: now,
@@ -42,5 +51,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  return [...staticEntries, ...industryEntries, ...blogEntries];
+  return [...staticEntries, ...toolEntries, ...industryEntries, ...blogEntries];
 }

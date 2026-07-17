@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   ContactBits,
@@ -20,6 +21,7 @@ import {
 
 /** Luxury Gold — cream paper, gold rules, centered serif monogram header. */
 export function LuxuryGold({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const gold = accent || '#b8860b';
   const pal: Palette = {
     accent: gold,
@@ -50,7 +52,7 @@ export function LuxuryGold({ quotation, totals, money, accent, accent2 }: Premiu
         <div style={{ fontSize: 12, color: pal.muted, whiteSpace: 'pre-line', marginTop: 2 }}>{c.address}</div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, margin: '16px 0 4px' }}>
           <span style={{ height: 1, width: 60, background: gold }} />
-          <span style={{ fontSize: 16, letterSpacing: 6, color: gold, fontWeight: 600 }}>QUOTATION</span>
+          <span style={{ fontSize: 16, letterSpacing: 6, color: gold, fontWeight: 600 }}>{doc.title}</span>
           <span style={{ height: 1, width: 60, background: gold }} />
         </div>
         <div style={{ fontSize: 12, color: pal.muted }}>

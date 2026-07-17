@@ -4,8 +4,9 @@ import { forwardRef, memo, type CSSProperties } from 'react';
 import type { Quotation } from '@/types/quotation';
 import { calculateTotals, lineItemAmount } from '@/lib/calculations';
 import { formatMoney, numberToWordsIndian } from '@/lib/currency';
-import { hasCategoryDetails, getCategory } from '@/lib/categories';
+import { getCategory } from '@/lib/categories';
 import { getTemplate } from '@/lib/templates';
+import { getDocRenderMeta } from '@/lib/document-types/render';
 import { renderPremiumTemplate } from './premium/registry';
 
 interface Props {
@@ -48,11 +49,17 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
   const softBg = template.dark ? '#111a2e' : '#f8fafc';
 
   const money = (n: number) => formatMoney(n, currency);
+  const doc = getDocRenderMeta(quotation);
+  const isQuotation = doc.config.id === 'quotation';
   const category = getCategory(quotation.meta.category);
-  const labels = category.itemLabels;
-  const detailFields = category.fields
-    .map((f) => ({ ...f, value: (quotation.details[f.key] ?? '').trim() }))
-    .filter((f) => f.value);
+  const labels = isQuotation ? category.itemLabels : doc.config.itemLabels;
+  // Category-specific fields (quotation industries) plus document-type fields
+  // (transport, payment mode, original invoice ref, …) print in one block.
+  const detailFields = [
+    ...(isQuotation ? category.fields : []).map((f) => ({ ...f, value: (quotation.details[f.key] ?? '').trim() })),
+    ...doc.config.fields.map((f) => ({ ...f, value: (quotation.details[f.key] ?? '').trim() })),
+  ].filter((f) => f.value);
+  const detailsTitle = (isQuotation && category.detailsTitle) || doc.config.detailsTitle || `${doc.config.shortName} Details`;
 
   const styles: Record<string, CSSProperties> = {
     paper: {
@@ -110,7 +117,7 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: 1 }}>QUOTATION</div>
+            <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: 1 }}>{doc.title}</div>
             <div style={{ fontSize: 12, opacity: 0.95, marginTop: 4 }}>{quotation.meta.number}</div>
           </div>
         </div>
@@ -140,7 +147,7 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: 24, fontWeight: 800, color: ink, letterSpacing: 1 }}>QUOTATION</div>
+            <div style={{ fontSize: 24, fontWeight: 800, color: ink, letterSpacing: 1 }}>{doc.title}</div>
             <div style={{ fontSize: 12, color: muted, marginTop: 4 }}>{quotation.meta.number}</div>
           </div>
         </div>
@@ -157,9 +164,9 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
       <div style={{ display: isSidebar ? 'flex' : 'block' }}>
         {isSidebar ? (
           <aside style={{ width: 210, background: accent, color: '#fff', padding: '22px 20px', flexShrink: 0 }}>
-            <SidebarBlock label="Quotation No." value={quotation.meta.number} />
-            <SidebarBlock label="Date" value={fmtDate(quotation.meta.date)} />
-            <SidebarBlock label="Valid Until" value={fmtDate(quotation.meta.expiryDate)} />
+            <SidebarBlock label={doc.numberLabel} value={quotation.meta.number} />
+            <SidebarBlock label={doc.dateLabel} value={fmtDate(quotation.meta.date)} />
+            {doc.secondaryDateLabel ? <SidebarBlock label={doc.secondaryDateLabel} value={fmtDate(quotation.meta.expiryDate)} /> : null}
             <div style={{ height: 1, background: 'rgba(255,255,255,0.25)', margin: '16px 0' }} />
             <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, opacity: 0.8 }}>Bill To</div>
             <div style={{ fontWeight: 700, marginTop: 6 }}>{quotation.client.name || 'Client Name'}</div>
@@ -182,9 +189,9 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
                 {quotation.client.phone ? <div style={{ fontSize: 12.5, color: muted }}>{quotation.client.phone}</div> : null}
               </div>
               <div style={{ textAlign: 'right', minWidth: 180 }}>
-                <MetaRow label="Quotation No." value={quotation.meta.number} muted={muted} ink={ink} />
-                <MetaRow label="Date" value={fmtDate(quotation.meta.date)} muted={muted} ink={ink} />
-                <MetaRow label="Valid Until" value={fmtDate(quotation.meta.expiryDate)} muted={muted} ink={ink} />
+                <MetaRow label={doc.numberLabel} value={quotation.meta.number} muted={muted} ink={ink} />
+                <MetaRow label={doc.dateLabel} value={fmtDate(quotation.meta.date)} muted={muted} ink={ink} />
+                {doc.secondaryDateLabel ? <MetaRow label={doc.secondaryDateLabel} value={fmtDate(quotation.meta.expiryDate)} muted={muted} ink={ink} /> : null}
               </div>
             </div>
           ) : null}
@@ -287,10 +294,10 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
           </div>
 
           {/* ---------- CATEGORY DETAILS (legal / project / site / event…) ---------- */}
-          {hasCategoryDetails(quotation.meta.category, quotation.details) ? (
+          {detailFields.length > 0 ? (
             <div style={{ marginTop: 20, border: `1px solid ${lineColor}`, borderRadius: 8, padding: '12px 14px', background: softBg }}>
               <div style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, color: accent, fontWeight: 700 }}>
-                {category.detailsTitle}
+                {detailsTitle}
               </div>
               {detailFields
                 .filter((f) => f.full || f.type === 'textarea')
@@ -360,7 +367,7 @@ const QuotationDocumentInner = forwardRef<HTMLDivElement, Props>(function Quotat
       </div>
 
       <div style={{ background: softBg, textAlign: 'center', padding: '10px', fontSize: 11, color: muted, borderTop: `1px solid ${lineColor}` }}>
-        This is a computer-generated quotation created with QuotationMaker.in
+        This is a computer-generated {doc.config.shortName.toLowerCase()} created with QuotationMaker.in
       </div>
     </div>
   );

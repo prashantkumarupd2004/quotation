@@ -2,6 +2,7 @@
 
 import type { CSSProperties } from 'react';
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   ContactBits,
@@ -21,6 +22,7 @@ import {
 
 /** Dark Professional — dark paper, neon accents, card-sectioned body. */
 export function DarkProfessional({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal: Palette = {
     accent,
     accent2,
@@ -44,7 +46,7 @@ export function DarkProfessional({ quotation, totals, money, accent, accent2 }: 
           </div>
         </div>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 25, fontWeight: 800, letterSpacing: 1, color: accent }}>QUOTATION</div>
+          <div style={{ fontSize: 25, fontWeight: 800, letterSpacing: 1, color: accent }}>{doc.title}</div>
           <div style={{ fontSize: 12, color: pal.muted }}>{quotation.meta.number}</div>
         </div>
       </div>
@@ -54,8 +56,8 @@ export function DarkProfessional({ quotation, totals, money, accent, accent2 }: 
           <BillTo quotation={quotation} pal={pal} />
         </div>
         <div style={{ ...card, minWidth: 180 }}>
-          <MetaLine label="Date" value={fmtDate(quotation.meta.date)} pal={pal} />
-          <MetaLine label="Valid Until" value={fmtDate(quotation.meta.expiryDate)} pal={pal} />
+          <MetaLine label={doc.dateLabel} value={fmtDate(quotation.meta.date)} pal={pal} />
+          {doc.secondaryDateLabel ? <MetaLine label={doc.secondaryDateLabel} value={fmtDate(quotation.meta.expiryDate)} pal={pal} /> : null}
           {c.gstin ? <MetaLine label="GSTIN" value={c.gstin} pal={pal} /> : null}
         </div>
       </div>

@@ -27,7 +27,7 @@ export function Hero() {
       <div className="container grid grid-cols-1 items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
         <div className="min-w-0">
           <motion.span custom={0} variants={fadeUp} initial="hidden" animate="show" className="section-eyebrow">
-            <Sparkles className="h-3.5 w-3.5" /> India&apos;s #1 Free Quotation Maker
+            <Sparkles className="h-3.5 w-3.5" /> India&apos;s Free Business Document Platform
           </motion.span>
 
           <motion.h1
@@ -37,7 +37,7 @@ export function Hero() {
             animate="show"
             className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-6xl"
           >
-            Create professional <span className="gradient-text">quotations</span> in 30 seconds
+            Create <span className="gradient-text">quotations, invoices</span> &amp; every business document — free
           </motion.h1>
 
           <motion.p
@@ -47,8 +47,9 @@ export function Hero() {
             animate="show"
             className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
           >
-            The free online quotation generator built for Indian businesses. Add GST, upload your
-            logo, pick a premium template, and download a polished PDF instantly. No signup required.
+            Ten free document generators built for Indian businesses — quotations, invoices, GST
+            bills, purchase orders, challans and more. Add GST, upload your logo, pick a premium
+            template, and download a polished PDF instantly. No signup required.
           </motion.p>
 
           <motion.div
@@ -61,8 +62,8 @@ export function Hero() {
             <Link href="/create" className="btn-primary text-base">
               <Zap className="h-4 w-4" /> Create Free Quotation
             </Link>
-            <Link href="/templates" className="btn-secondary text-base">
-              Browse Templates <ArrowRight className="h-4 w-4" />
+            <Link href="/#tools" className="btn-secondary text-base">
+              Explore All 10 Tools <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
 

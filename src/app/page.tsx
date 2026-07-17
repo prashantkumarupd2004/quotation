@@ -10,6 +10,7 @@ import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
 import { faqSchema } from '@/lib/schema';
 import { templates } from '@/lib/templates';
+import { DOCUMENT_TYPE_LIST } from '@/lib/document-types';
 import {
   homeBenefits,
   homeCategories,
@@ -37,6 +38,13 @@ export const metadata: Metadata = buildMetadata({
     'proforma invoice maker',
     'quote generator',
     'quotation maker app',
+    'business document generator',
+    'invoice maker free',
+    'gst bill maker online',
+    'free business documents online India',
+    'quotation and invoice maker online free',
+    'how to create business documents online free',
+    'billing and quotation software free no signup',
   ],
 });
 
@@ -85,8 +93,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* All document tools */}
+      <section id="tools" className="container py-20 sm:py-28">
+        <SectionHeader
+          eyebrow="10 free tools, one platform"
+          title="Every business document, one place"
+          description="Quotations are just the start — generate invoices, GST bills, purchase orders, challans and more with the same fast editor."
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {DOCUMENT_TYPE_LIST.map((tool, i) => (
+            <Reveal key={tool.id} delay={(i % 4) * 0.04}>
+              <Link
+                href={tool.path}
+                className="glass-card group flex h-full flex-col p-5 transition-all hover:-translate-y-1 hover:border-primary/40"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <Icon name={tool.icon} className="h-5 w-5" />
+                </span>
+                <span className="mt-3 flex items-center gap-1.5 font-display font-bold">
+                  {tool.label}
+                  {tool.id === 'quotation' ? (
+                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+                      Popular
+                    </span>
+                  ) : null}
+                </span>
+                <span className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{tool.tagline}</span>
+                <span className="mt-auto flex items-center gap-1 pt-3 text-sm font-semibold text-primary">
+                  Create free <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Features */}
-      <section id="features" className="container py-20 sm:py-28">
+      <section id="features" className="border-y border-border/60 bg-muted/30 py-20 sm:py-28">
+        <div className="container">
         <SectionHeader
           eyebrow="Everything you need"
           title="A complete quotation toolkit, free"
@@ -105,10 +149,11 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
       {/* How it works */}
-      <section className="border-y border-border/60 bg-muted/30 py-20 sm:py-28">
+      <section className="py-20 sm:py-28">
         <div className="container">
           <SectionHeader
             eyebrow="How it works"

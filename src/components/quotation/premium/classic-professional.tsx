@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   GrandTotal,
@@ -19,6 +20,7 @@ import {
 
 /** Classic Professional — traditional centered letterhead, ruled sections. */
 export function ClassicProfessional({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
 
@@ -42,7 +44,7 @@ export function ClassicProfessional({ quotation, totals, money, accent, accent2 
 
       <div style={{ textAlign: 'center', padding: '14px 40px 0' }}>
         <span style={{ display: 'inline-block', border: `1px solid ${accent}`, color: accent, padding: '4px 22px', fontSize: 15, fontWeight: 700, letterSpacing: 3 }}>
-          QUOTATION
+          {doc.title}
         </span>
       </div>
 
@@ -51,7 +53,7 @@ export function ClassicProfessional({ quotation, totals, money, accent, accent2 
         <div style={{ textAlign: 'right', fontSize: 12.5 }}>
           <div><span style={{ color: pal.muted }}>No.: </span><strong>{quotation.meta.number}</strong></div>
           <div><span style={{ color: pal.muted }}>Date: </span><strong>{fmtDate(quotation.meta.date)}</strong></div>
-          <div><span style={{ color: pal.muted }}>Valid Until: </span><strong>{fmtDate(quotation.meta.expiryDate)}</strong></div>
+          {doc.secondaryDateLabel ? <div><span style={{ color: pal.muted }}>{doc.secondaryDateLabel}: </span><strong>{fmtDate(quotation.meta.expiryDate)}</strong></div> : null}
         </div>
       </div>
 

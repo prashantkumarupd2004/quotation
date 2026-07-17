@@ -1,4 +1,6 @@
 import type { Quotation, LineItem } from '@/types/quotation';
+import type { BusinessDocument, DocumentTypeId } from '@/types/document';
+import { getDocumentType } from './document-types';
 import { generateQuotationNumber } from './calculations';
 import { uid } from './utils';
 
@@ -108,5 +110,30 @@ export function createSampleQuotation(): Quotation {
       { id: 'i4', description: 'Wall Texture & Premium Emulsion Paint', hsn: '9954', quantity: 1600, unit: 'Sq.ft', rate: 38, taxRate: 18 },
     ],
     notes: 'Design consultation and 3D visualisation are included at no extra cost.',
+  };
+}
+
+/** Document number like INV-2026-0001 using the type's prefix. */
+export function generateDocumentNumber(docType: DocumentTypeId, seed = 1): string {
+  const year = new Date().getFullYear();
+  return `${getDocumentType(docType).numberPrefix}-${year}-${String(seed).padStart(4, '0')}`;
+}
+
+/**
+ * Default document for any type on the platform. The quotation defaults are the
+ * source of truth; other types swap in their number prefix, default tax mode
+ * and type-specific notes/terms from the registry.
+ */
+export function createDefaultDocument(docType: DocumentTypeId): BusinessDocument {
+  const base = createDefaultQuotation();
+  if (docType === 'quotation') return { ...base, docType };
+  const cfg = getDocumentType(docType);
+  return {
+    ...base,
+    docType,
+    meta: { ...base.meta, number: generateDocumentNumber(docType) },
+    totals: { ...base.totals, taxMode: cfg.defaultTaxMode },
+    notes: cfg.defaultNotes,
+    terms: cfg.defaultTerms,
   };
 }

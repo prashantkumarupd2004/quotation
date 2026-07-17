@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   ContactBits,
@@ -20,6 +21,7 @@ import {
 
 /** Creative Gradient — vibrant diagonal header, pill table, gradient total. */
 export function CreativeGradient({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
 
@@ -44,7 +46,7 @@ export function CreativeGradient({ quotation, totals, money, accent, accent2 }: 
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 1 }}>QUOTATION</div>
+            <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 1 }}>{doc.title}</div>
             <div style={{ fontSize: 12, opacity: 0.95 }}>{quotation.meta.number}</div>
           </div>
         </div>
@@ -53,10 +55,14 @@ export function CreativeGradient({ quotation, totals, money, accent, accent2 }: 
       <div style={{ padding: '4px 34px 0', display: 'flex', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
         <BillTo quotation={quotation} pal={pal} />
         <div style={{ textAlign: 'right', fontSize: 12.5 }}>
-          <div style={{ color: pal.muted }}>Date</div>
+          <div style={{ color: pal.muted }}>{doc.dateLabel}</div>
           <div style={{ fontWeight: 600, marginBottom: 6 }}>{fmtDate(quotation.meta.date)}</div>
-          <div style={{ color: pal.muted }}>Valid Until</div>
-          <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+                    {doc.secondaryDateLabel ? (
+            <>
+              <div style={{ color: pal.muted }}>{doc.secondaryDateLabel}</div>
+              <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+            </>
+          ) : null}
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   ContactBits,
@@ -18,6 +19,7 @@ import {
 
 /** Minimal Clean — max whitespace, hairline rules, monochrome. */
 export function MinimalClean({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
 
@@ -26,7 +28,7 @@ export function MinimalClean({ quotation, totals, money, accent, accent2 }: Prem
       <div style={{ padding: '42px 48px 0' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 24 }}>
           <div>
-            <div style={{ fontSize: 26, fontWeight: 300, letterSpacing: 6, color: pal.ink }}>QUOTATION</div>
+            <div style={{ fontSize: 26, fontWeight: 300, letterSpacing: 6, color: pal.ink }}>{doc.title}</div>
             <div style={{ fontSize: 12, color: pal.muted, marginTop: 4, letterSpacing: 1 }}>{quotation.meta.number}</div>
           </div>
           <div style={{ textAlign: 'right' }}>
@@ -40,10 +42,14 @@ export function MinimalClean({ quotation, totals, money, accent, accent2 }: Prem
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: 24 }}>
           <BillTo quotation={quotation} pal={pal} />
           <div style={{ textAlign: 'right', fontSize: 12.5 }}>
-            <div style={{ color: pal.muted }}>Date</div>
+            <div style={{ color: pal.muted }}>{doc.dateLabel}</div>
             <div style={{ fontWeight: 600, marginBottom: 8 }}>{fmtDate(quotation.meta.date)}</div>
-            <div style={{ color: pal.muted }}>Valid Until</div>
-            <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+                        {doc.secondaryDateLabel ? (
+            <>
+              <div style={{ color: pal.muted }}>{doc.secondaryDateLabel}</div>
+              <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+            </>
+          ) : null}
           </div>
         </div>
       </div>

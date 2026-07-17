@@ -13,10 +13,10 @@ import {
   StickyNote,
   User,
 } from 'lucide-react';
-import { useQuotationStore } from '@/store/quotation-store';
+import { useDocumentStore, useDocumentConfig } from '@/components/document/document-context';
 import { currencies } from '@/lib/currency';
 import { taxModeLabels } from '@/lib/calculations';
-import { CATEGORY_LIST, getCategory } from '@/lib/categories';
+import { CATEGORY_LIST, getCategory, type CategoryField } from '@/lib/categories';
 import { generateQrDataUrl } from '@/lib/export';
 import { toNumber } from '@/lib/utils';
 import type { DiscountType, QuotationCategory, TaxMode } from '@/types/quotation';
@@ -67,9 +67,10 @@ function Field({
 }
 
 export function BuilderForm() {
-  const q = useQuotationStore((s) => s.quotation);
-  const setQuotation = useQuotationStore((s) => s.setQuotation);
-  const update = useQuotationStore((s) => s.update);
+  const { config } = useDocumentConfig();
+  const q = useDocumentStore((s) => s.quotation);
+  const setQuotation = useDocumentStore((s) => s.setQuotation);
+  const update = useDocumentStore((s) => s.update);
 
   // Regenerate QR whenever the source data changes and QR is enabled.
   useEffect(() => {
@@ -77,7 +78,7 @@ export function BuilderForm() {
     const payload =
       q.qrData && !q.qrData.startsWith('data:')
         ? q.qrData
-        : `Quotation ${q.meta.number}\n${q.company.name}\nTotal payable as per quotation.`;
+        : `${config.shortName} ${q.meta.number}\n${q.company.name}\nTotal payable as per quotation.`;
     let cancelled = false;
     generateQrDataUrl(payload).then((url) => {
       if (!cancelled && url && url !== q.qrData) {
@@ -125,6 +126,7 @@ export function BuilderForm() {
 
   return (
     <div className="space-y-5">
+      {config.showCategoryPicker ? (
       <Section icon={Layers} title="Quotation Type" description="Choose a category — fields and labels adapt to it.">
         <div className="grid gap-3 sm:grid-cols-2">
           {CATEGORY_LIST.map((c) => {
@@ -148,6 +150,7 @@ export function BuilderForm() {
           })}
         </div>
       </Section>
+      ) : null}
 
       <Section icon={Layout} title="Template" description="Pick a design — switch anytime.">
         <TemplatePicker />
@@ -163,7 +166,7 @@ export function BuilderForm() {
         </div>
       </Section>
 
-      <Section icon={Building2} title="Your Company" description="Appears at the top of the quotation.">
+      <Section icon={Building2} title={config.partyLabels.from} description={config.partyLabels.fromHint}>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Company Name">
             <input className="field-input" value={q.company.name} onChange={(e) => setCompany({ name: e.target.value })} placeholder="Acme Enterprises" />
@@ -189,7 +192,7 @@ export function BuilderForm() {
         </div>
       </Section>
 
-      <Section icon={User} title="Client Details" description="Who the quotation is for.">
+      <Section icon={User} title={config.partyLabels.to} description={config.partyLabels.toHint}>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Client Name">
             <input className="field-input" value={q.client.name} onChange={(e) => setClient({ name: e.target.value })} placeholder="Rahul Mehta" />
@@ -211,42 +214,29 @@ export function BuilderForm() {
         </div>
       </Section>
 
-      {category.fields.length > 0 ? (
+      {config.showCategoryPicker && category.fields.length > 0 ? (
         <Section
           icon={ClipboardList}
           title={category.detailsTitle}
           description={`${category.label} — specific details shown on the quotation.`}
         >
-          <div className="grid gap-4 sm:grid-cols-2">
-            {category.fields.map((f) => (
-              <div key={f.key} className={f.full ? 'sm:col-span-2' : undefined}>
-                <Field label={f.label}>
-                  {f.type === 'textarea' ? (
-                    <textarea
-                      className="field-input min-h-[70px]"
-                      value={q.details[f.key] ?? ''}
-                      onChange={(e) => setDetail(f.key, e.target.value)}
-                      placeholder={f.placeholder}
-                    />
-                  ) : (
-                    <input
-                      type={f.type === 'date' ? 'date' : 'text'}
-                      className="field-input"
-                      value={q.details[f.key] ?? ''}
-                      onChange={(e) => setDetail(f.key, e.target.value)}
-                      placeholder={f.placeholder}
-                    />
-                  )}
-                </Field>
-              </div>
-            ))}
-          </div>
+          <DetailFieldsGrid fields={category.fields} details={q.details} onChange={setDetail} />
         </Section>
       ) : null}
 
-      <Section icon={FileText} title="Quotation Details">
+      {config.fields.length > 0 ? (
+        <Section
+          icon={ClipboardList}
+          title={config.detailsTitle || `${config.shortName} Specifics`}
+          description={`Shown on the ${config.shortName.toLowerCase()}.`}
+        >
+          <DetailFieldsGrid fields={config.fields} details={q.details} onChange={setDetail} />
+        </Section>
+      ) : null}
+
+      <Section icon={FileText} title={`${config.shortName} Details`}>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Field label="Quotation No.">
+          <Field label={config.numberLabel}>
             <input className="field-input" value={q.meta.number} onChange={(e) => setMeta({ number: e.target.value })} />
           </Field>
           <Field label="Currency">
@@ -258,12 +248,14 @@ export function BuilderForm() {
               ))}
             </select>
           </Field>
-          <Field label="Date">
+          <Field label={config.dateLabel}>
             <input type="date" className="field-input" value={q.meta.date} onChange={(e) => setMeta({ date: e.target.value })} />
           </Field>
-          <Field label="Valid Until">
-            <input type="date" className="field-input" value={q.meta.expiryDate} onChange={(e) => setMeta({ expiryDate: e.target.value })} />
-          </Field>
+          {config.secondaryDateLabel ? (
+            <Field label={config.secondaryDateLabel}>
+              <input type="date" className="field-input" value={q.meta.expiryDate} onChange={(e) => setMeta({ expiryDate: e.target.value })} />
+            </Field>
+          ) : null}
         </div>
       </Section>
 
@@ -324,7 +316,7 @@ export function BuilderForm() {
           <div className="sm:col-span-2">
             <label className="flex items-center gap-2 text-sm font-medium">
               <input type="checkbox" checked={q.showQr} onChange={(e) => setQuotation({ showQr: e.target.checked })} className="h-4 w-4 rounded border-border text-primary focus:ring-primary" />
-              Show QR code on quotation
+              Show QR code on document
             </label>
             {q.showQr ? (
               <div className="mt-3">
@@ -336,6 +328,56 @@ export function BuilderForm() {
           </div>
         </div>
       </Section>
+    </div>
+  );
+}
+
+/** Renders a registry-driven grid of detail fields (text / textarea / date / select). */
+function DetailFieldsGrid({
+  fields,
+  details,
+  onChange,
+}: {
+  fields: CategoryField[];
+  details: Record<string, string>;
+  onChange: (key: string, value: string) => void;
+}) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {fields.map((f) => (
+        <div key={f.key} className={f.full ? 'sm:col-span-2' : undefined}>
+          <Field label={f.label}>
+            {f.type === 'textarea' ? (
+              <textarea
+                className="field-input min-h-[70px]"
+                value={details[f.key] ?? ''}
+                onChange={(e) => onChange(f.key, e.target.value)}
+                placeholder={f.placeholder}
+              />
+            ) : f.type === 'select' ? (
+              <select
+                className="field-input"
+                value={details[f.key] ?? f.options?.[0] ?? ''}
+                onChange={(e) => onChange(f.key, e.target.value)}
+              >
+                {(f.options ?? []).map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                type={f.type === 'date' ? 'date' : 'text'}
+                className="field-input"
+                value={details[f.key] ?? ''}
+                onChange={(e) => onChange(f.key, e.target.value)}
+                placeholder={f.placeholder}
+              />
+            )}
+          </Field>
+        </div>
+      ))}
     </div>
   );
 }

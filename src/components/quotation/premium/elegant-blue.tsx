@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   GrandTotal,
   ItemsTable,
@@ -18,6 +19,7 @@ import {
 
 /** Elegant Blue — full-height gradient sidebar carrying meta + bill-to. */
 export function ElegantBlue({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
   const cl = quotation.client;
@@ -37,12 +39,16 @@ export function ElegantBlue({ quotation, totals, money, accent, accent2 }: Premi
 
           <div style={{ height: 1, background: 'rgba(255,255,255,0.25)', margin: '18px 0' }} />
 
-          {sideLabel('Quotation No.')}
+          {sideLabel(doc.numberLabel)}
           <div style={{ fontWeight: 700 }}>{quotation.meta.number}</div>
-          {sideLabel('Date')}
+          {sideLabel(doc.dateLabel)}
           <div style={{ fontWeight: 700 }}>{fmtDate(quotation.meta.date)}</div>
-          {sideLabel('Valid Until')}
-          <div style={{ fontWeight: 700 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+          {doc.secondaryDateLabel ? (
+            <>
+              {sideLabel(doc.secondaryDateLabel)}
+              <div style={{ fontWeight: 700 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+            </>
+          ) : null}
 
           <div style={{ height: 1, background: 'rgba(255,255,255,0.25)', margin: '18px 0' }} />
 
@@ -63,7 +69,7 @@ export function ElegantBlue({ quotation, totals, money, accent, accent2 }: Premi
 
         {/* Body */}
         <div style={{ flex: 1, padding: '30px 30px 24px', minWidth: 0 }}>
-          <div style={{ fontSize: 30, fontWeight: 800, color: accent, letterSpacing: 1 }}>QUOTATION</div>
+          <div style={{ fontSize: 30, fontWeight: 800, color: accent, letterSpacing: 1 }}>{doc.title}</div>
           <div style={{ height: 3, width: 60, background: accent2, margin: '10px 0 20px' }} />
 
           <ItemsTable quotation={quotation} money={money} pal={pal} variant="solid" striped />

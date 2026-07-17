@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  docMeta,
   AmountInWords,
   BillTo,
   ContactBits,
@@ -20,6 +21,7 @@ import {
 
 /** Modern Corporate — bold top band, floating meta card, striped table. */
 export function ModernCorporate({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
 
@@ -38,10 +40,10 @@ export function ModernCorporate({ quotation, totals, money, accent, accent2 }: P
         </div>
         {/* Floating meta card */}
         <div style={{ background: pal.soft, border: `1px solid ${pal.line}`, borderRadius: 12, padding: '14px 18px', minWidth: 210 }}>
-          <div style={{ fontSize: 22, fontWeight: 800, color: pal.ink, letterSpacing: 1 }}>QUOTATION</div>
+          <div style={{ fontSize: 22, fontWeight: 800, color: pal.ink, letterSpacing: 1 }}>{doc.title}</div>
           <MetaLine label="No." value={quotation.meta.number} pal={pal} />
-          <MetaLine label="Date" value={fmtDate(quotation.meta.date)} pal={pal} />
-          <MetaLine label="Valid Until" value={fmtDate(quotation.meta.expiryDate)} pal={pal} />
+          <MetaLine label={doc.dateLabel} value={fmtDate(quotation.meta.date)} pal={pal} />
+          {doc.secondaryDateLabel ? <MetaLine label={doc.secondaryDateLabel} value={fmtDate(quotation.meta.expiryDate)} pal={pal} /> : null}
         </div>
       </div>
 

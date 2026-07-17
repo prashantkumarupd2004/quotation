@@ -4,6 +4,7 @@ import { footerNav, siteConfig } from '@/lib/site';
 
 const columns: { title: string; links: readonly { title: string; href: string }[] }[] = [
   { title: 'Product', links: footerNav.product },
+  { title: 'Free Tools', links: footerNav.tools },
   { title: 'Industries', links: footerNav.industries },
   { title: 'Resources', links: footerNav.resources },
   { title: 'Company', links: footerNav.company },
@@ -14,7 +15,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-muted/30">
       <div className="container py-16">
-        <div className="grid gap-10 lg:grid-cols-6">
+        <div className="grid gap-10 lg:grid-cols-7">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white">

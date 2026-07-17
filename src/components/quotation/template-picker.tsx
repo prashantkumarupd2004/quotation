@@ -2,12 +2,12 @@
 
 import { Check } from 'lucide-react';
 import { templates } from '@/lib/templates';
-import { useQuotationStore } from '@/store/quotation-store';
+import { useDocumentStore } from '@/components/document/document-context';
 import { cn } from '@/lib/utils';
 
 export function TemplatePicker() {
-  const activeId = useQuotationStore((s) => s.quotation.meta.templateId);
-  const setTemplate = useQuotationStore((s) => s.setTemplate);
+  const activeId = useDocumentStore((s) => s.quotation.meta.templateId);
+  const setTemplate = useDocumentStore((s) => s.setTemplate);
 
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">

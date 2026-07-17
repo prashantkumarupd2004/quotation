@@ -5,7 +5,9 @@ export interface CategoryField {
   key: string;
   label: string;
   placeholder?: string;
-  type?: 'text' | 'textarea' | 'date';
+  type?: 'text' | 'textarea' | 'date' | 'select';
+  /** Options when type is 'select'. */
+  options?: string[];
   /** Span the full width of the two-column grid. */
   full?: boolean;
 }

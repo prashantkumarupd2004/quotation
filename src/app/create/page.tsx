@@ -10,7 +10,22 @@ export const metadata: Metadata = buildMetadata({
   description:
     'Create a professional GST quotation online in 30 seconds. Add your logo, items and tax, preview live, and download a clean PDF or PNG. Free, no signup.',
   path: '/create',
-  keywords: ['create quotation online', 'free quotation generator', 'quotation pdf download', 'gst quotation maker'],
+  keywords: [
+    'quotation maker',
+    'quotation generator',
+    'create quotation online',
+    'free quotation generator',
+    'quotation pdf download',
+    'gst quotation maker',
+    'quotation format',
+    'quotation maker online free without login',
+    'how to make quotation online free',
+    'quotation format with gst in India',
+    'price quotation maker for small business',
+    'quotation maker with logo and signature',
+    'professional quotation format pdf download free',
+    'estimate and quotation maker online',
+  ],
 });
 
 const steps = [

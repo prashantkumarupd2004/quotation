@@ -13,10 +13,12 @@ import {
   FONT_SANS,
   fmtDate,
   lightPalette,
+  docMeta,
 } from './shared';
 
 /** Invoice-Style — fully bordered tax-invoice grid with GST breakup + declaration. */
 export function InvoiceStyle({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
   const cl = quotation.client;
@@ -28,7 +30,7 @@ export function InvoiceStyle({ quotation, totals, money, accent, accent2 }: Prem
     <Paper bg="#ffffff" ink={pal.ink} line={pal.line} rounded={false} fontFamily={FONT_SANS}>
       {/* Title bar */}
       <div style={{ background: accent, color: '#fff', textAlign: 'center', padding: '10px', fontSize: 16, fontWeight: 800, letterSpacing: 2 }}>
-        QUOTATION / ESTIMATE
+        {doc.title}
       </div>
 
       {/* Seller + meta grid */}
@@ -47,9 +49,9 @@ export function InvoiceStyle({ quotation, totals, money, accent, accent2 }: Prem
               </div>
             </td>
             <td style={{ ...cell, padding: 0 }}>
-              <GridRow label="Quotation No." value={quotation.meta.number} border={border} />
-              <GridRow label="Date" value={fmtDate(quotation.meta.date)} border={border} />
-              <GridRow label="Valid Until" value={fmtDate(quotation.meta.expiryDate)} border={border} last />
+              <GridRow label={doc.numberLabel} value={quotation.meta.number} border={border} />
+              <GridRow label={doc.dateLabel} value={fmtDate(quotation.meta.date)} border={border} />
+              {doc.secondaryDateLabel ? <GridRow label={doc.secondaryDateLabel} value={fmtDate(quotation.meta.expiryDate)} border={border} last /> : null}
             </td>
           </tr>
           <tr>

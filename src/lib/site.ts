@@ -78,12 +78,12 @@ export const siteConfig = {
 
 export const mainNav = [
   { title: 'Home', href: '/' },
-  { title: 'Create Quotation', href: '/create' },
+  { title: 'Quotation Maker', href: '/create' },
+  { title: 'Invoice Maker', href: '/invoice-maker' },
+  { title: 'All Tools', href: '/#tools' },
   { title: 'Templates', href: '/templates' },
-  { title: 'Industries', href: '/industries' },
-  { title: 'Features', href: '/features' },
   { title: 'Blog', href: '/blog' },
-  { title: 'Contact', href: '/contact' },
+  { title: 'Dashboard', href: '/dashboard' },
 ] as const;
 
 export const footerNav = {
@@ -91,7 +91,19 @@ export const footerNav = {
     { title: 'Quotation Maker', href: '/create' },
     { title: 'Templates', href: '/templates' },
     { title: 'Features', href: '/features' },
+    { title: 'Dashboard', href: '/dashboard' },
     { title: 'Pricing', href: '/pricing' },
+  ],
+  tools: [
+    { title: 'Invoice Maker', href: '/invoice-maker' },
+    { title: 'GST Invoice Maker', href: '/gst-invoice-maker' },
+    { title: 'Estimate Maker', href: '/estimate-maker' },
+    { title: 'Proforma Invoice', href: '/proforma-invoice-maker' },
+    { title: 'Purchase Order', href: '/purchase-order-generator' },
+    { title: 'Delivery Challan', href: '/delivery-challan-generator' },
+    { title: 'Payment Receipt', href: '/payment-receipt-generator' },
+    { title: 'Credit Note', href: '/credit-note-generator' },
+    { title: 'Debit Note', href: '/debit-note-generator' },
   ],
   industries: [
     { title: 'Construction', href: '/industries/construction-quotation-maker' },
@@ -102,6 +114,8 @@ export const footerNav = {
   ],
   resources: [
     { title: 'Blog', href: '/blog' },
+    { title: 'GST Invoice Rules 2026', href: '/blog/gst-invoice-rules-guide' },
+    { title: 'Invoice Making Guide', href: '/blog/free-invoice-maker-online-guide' },
     { title: 'How to Write a Quotation', href: '/blog/how-to-write-a-professional-quotation' },
     { title: 'GST in Quotations', href: '/blog/gst-in-quotations' },
     { title: 'Quotation Format India', href: '/blog/quotation-format-in-india' },

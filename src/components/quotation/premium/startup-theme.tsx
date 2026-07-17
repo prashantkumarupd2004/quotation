@@ -17,10 +17,12 @@ import {
   FONT_SANS,
   fmtDate,
   lightPalette,
+  docMeta,
 } from './shared';
 
 /** Startup Theme — friendly rounded header, icon accents, chunky total pill. */
 export function StartupTheme({ quotation, totals, money, accent, accent2 }: PremiumTemplateProps) {
+  const doc = docMeta(quotation);
   const pal = lightPalette(accent, accent2);
   const c = quotation.company;
 
@@ -51,7 +53,7 @@ export function StartupTheme({ quotation, totals, money, accent, accent2 }: Prem
           </div>
           <div style={{ textAlign: 'right' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(255,255,255,0.2)', borderRadius: 999, padding: '5px 12px', fontSize: 13, fontWeight: 700 }}>
-              <Sparkles size={14} /> QUOTATION
+              <Sparkles size={14} /> {doc.title}
             </div>
             <div style={{ fontSize: 12, opacity: 0.95, marginTop: 6 }}>{quotation.meta.number}</div>
           </div>
@@ -61,10 +63,14 @@ export function StartupTheme({ quotation, totals, money, accent, accent2 }: Prem
       <div style={{ padding: '20px 28px 0', display: 'flex', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
         <BillTo quotation={quotation} pal={pal} />
         <div style={{ textAlign: 'right', fontSize: 12.5 }}>
-          <div style={{ color: pal.muted }}>Date</div>
+          <div style={{ color: pal.muted }}>{doc.dateLabel}</div>
           <div style={{ fontWeight: 600, marginBottom: 6 }}>{fmtDate(quotation.meta.date)}</div>
-          <div style={{ color: pal.muted }}>Valid Until</div>
-          <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+                    {doc.secondaryDateLabel ? (
+            <>
+              <div style={{ color: pal.muted }}>{doc.secondaryDateLabel}</div>
+              <div style={{ fontWeight: 600 }}>{fmtDate(quotation.meta.expiryDate)}</div>
+            </>
+          ) : null}
         </div>
       </div>
 

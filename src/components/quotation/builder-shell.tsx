@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {
   Check,
+  Save,
   Download,
   Eye,
   FileDown,
@@ -16,7 +17,8 @@ import {
   Share2,
   Undo2,
 } from 'lucide-react';
-import { useQuotationStore } from '@/store/quotation-store';
+import { useDocumentStore, useDocumentConfig } from '@/components/document/document-context';
+import { saveDoc, listSavedDocs } from '@/lib/document-library';
 import { downloadPdf, downloadPng, printNode } from '@/lib/export';
 import { getTemplate } from '@/lib/templates';
 import { cn } from '@/lib/utils';
@@ -27,12 +29,13 @@ import { ShareDialog } from './share-dialog';
 type Busy = null | 'pdf' | 'png';
 
 export function BuilderShell() {
+  const { config } = useDocumentConfig();
   const params = useSearchParams();
-  const quotation = useQuotationStore((s) => s.quotation);
-  const hydrate = useQuotationStore((s) => s.hydrate);
-  const hydrated = useQuotationStore((s) => s.hydrated);
-  const savedAt = useQuotationStore((s) => s.savedAt);
-  const { undo, redo, reset, setTemplate, canUndo, canRedo } = useQuotationStore();
+  const quotation = useDocumentStore((s) => s.quotation);
+  const hydrate = useDocumentStore((s) => s.hydrate);
+  const hydrated = useDocumentStore((s) => s.hydrated);
+  const savedAt = useDocumentStore((s) => s.savedAt);
+  const { undo, redo, reset, setTemplate, canUndo, canRedo } = useDocumentStore();
 
   const docRef = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState<Busy>(null);
@@ -76,7 +79,7 @@ export function BuilderShell() {
     return () => window.removeEventListener('keydown', onKey);
   }, [undo, redo]);
 
-  const fileName = (quotation.meta.number || 'quotation').replace(/[^a-z0-9-_]/gi, '_');
+  const fileName = (quotation.meta.number || config.id).replace(/[^a-z0-9-_]/gi, '_');
 
   const handlePdf = async () => {
     if (!docRef.current) return;
@@ -89,6 +92,18 @@ export function BuilderShell() {
     } finally {
       setBusy(null);
     }
+  };
+
+  const [savedToLibrary, setSavedToLibrary] = useState(false);
+  // Save to the local document library (dashboard). Re-saving the same
+  // number+type updates the existing entry instead of piling up copies.
+  const handleSave = () => {
+    const existing = listSavedDocs().find(
+      (d) => d.docType === (quotation.docType ?? 'quotation') && d.number === quotation.meta.number
+    );
+    saveDoc({ ...quotation, docType: quotation.docType ?? config.id }, existing?.id);
+    setSavedToLibrary(true);
+    setTimeout(() => setSavedToLibrary(false), 2000);
   };
 
   const [waBusy, setWaBusy] = useState(false);
@@ -104,7 +119,7 @@ export function BuilderShell() {
       const { id } = await res.json();
       const url = `${window.location.origin}/q/${id}`;
       const company = quotation.company.name || 'us';
-      const msg = `Quotation ${quotation.meta.number} from ${company}: ${url}`;
+      const msg = `${config.shortName} ${quotation.meta.number} from ${company}: ${url}`;
       window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     } catch (err) {
       console.error('WhatsApp share failed', err);
@@ -165,6 +180,9 @@ export function BuilderShell() {
           label="Reset"
           icon={RotateCcw}
         />
+        <button onClick={handleSave} className="btn-secondary px-3 py-2 text-xs" title="Save to dashboard">
+          <Save className="h-4 w-4" /> {savedToLibrary ? 'Saved ✓' : 'Save'}
+        </button>
         <button onClick={() => setShareOpen(true)} className="btn-secondary px-3 py-2 text-xs">
           <Share2 className="h-4 w-4" /> Share
         </button>

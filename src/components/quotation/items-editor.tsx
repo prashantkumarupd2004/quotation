@@ -2,18 +2,18 @@
 
 import { Copy, GripVertical, Plus, Trash2 } from 'lucide-react';
 import { useState } from 'react';
-import { useQuotationStore } from '@/store/quotation-store';
+import { useDocumentStore } from '@/components/document/document-context';
 import { lineItemAmount } from '@/lib/calculations';
 import { formatMoney } from '@/lib/currency';
 import { getCategory } from '@/lib/categories';
 import { toNumber } from '@/lib/utils';
 
 export function ItemsEditor() {
-  const items = useQuotationStore((s) => s.quotation.items);
-  const currency = useQuotationStore((s) => s.quotation.meta.currency);
-  const taxMode = useQuotationStore((s) => s.quotation.totals.taxMode);
-  const category = useQuotationStore((s) => s.quotation.meta.category);
-  const { addItem, updateItem, removeItem, duplicateItem, moveItem } = useQuotationStore();
+  const items = useDocumentStore((s) => s.quotation.items);
+  const currency = useDocumentStore((s) => s.quotation.meta.currency);
+  const taxMode = useDocumentStore((s) => s.quotation.totals.taxMode);
+  const category = useDocumentStore((s) => s.quotation.meta.category);
+  const { addItem, updateItem, removeItem, duplicateItem, moveItem } = useDocumentStore();
   const [dragIndex, setDragIndex] = useState<number | null>(null);
 
   const cfg = getCategory(category);

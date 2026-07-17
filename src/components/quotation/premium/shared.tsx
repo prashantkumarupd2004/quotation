@@ -4,7 +4,8 @@ import type { CSSProperties, ReactNode } from 'react';
 import type { CalculatedTotals, Quotation } from '@/types/quotation';
 import { lineItemAmount } from '@/lib/calculations';
 import { numberToWordsIndian } from '@/lib/currency';
-import { getCategory, hasCategoryDetails, itemLabelsFor } from '@/lib/categories';
+import { getCategory, itemLabelsFor } from '@/lib/categories';
+import { getDocRenderMeta, type DocRenderMeta } from '@/lib/document-types/render';
 
 /** Props every premium template component receives. */
 export interface PremiumTemplateProps {
@@ -49,6 +50,11 @@ export function fmtDate(iso: string): string {
   return `${day} ${SHORT_MONTHS[Number(month) - 1] ?? month} ${year}`;
 }
 
+/** Document-type labels (title, number/date labels, extra fields) for the paper. */
+export function docMeta(q: Quotation): DocRenderMeta {
+  return getDocRenderMeta(q);
+}
+
 export function showTax(q: Quotation): boolean {
   return q.totals.taxMode !== 'none';
 }
@@ -69,7 +75,8 @@ interface ItemsTableProps {
 
 export function ItemsTable({ quotation, money, pal, variant = 'solid', striped = false }: ItemsTableProps) {
   const tax = showTax(quotation);
-  const labels = itemLabelsFor(quotation.meta.category);
+  const doc = docMeta(quotation);
+  const labels = doc.config.id === 'quotation' ? itemLabelsFor(quotation.meta.category) : doc.config.itemLabels;
 
   const headStyle: CSSProperties =
     variant === 'solid' || variant === 'pill'
@@ -239,19 +246,22 @@ export function TaxSummary({ quotation, totals, money, pal }: PremiumTemplatePro
  * Used by every template via NotesTerms, so it appears consistently.
  */
 export function CategoryDetails({ quotation, pal }: { quotation: Quotation; pal: Palette }) {
+  const doc = docMeta(quotation);
+  const isQuotation = doc.config.id === 'quotation';
   const cfg = getCategory(quotation.meta.category);
-  if (!hasCategoryDetails(quotation.meta.category, quotation.details)) return null;
-  const d = quotation.details;
+  const d = quotation.details ?? {};
 
-  const filled = cfg.fields
+  const filled = [...(isQuotation ? cfg.fields : []), ...doc.config.fields]
     .map((f) => ({ ...f, value: (d[f.key] ?? '').trim() }))
     .filter((f) => f.value);
+  if (filled.length === 0) return null;
+  const title = (isQuotation && cfg.detailsTitle) || doc.config.detailsTitle || `${doc.config.shortName} Details`;
   const wide = filled.filter((f) => f.full || f.type === 'textarea');
   const rows = filled.filter((f) => !f.full && f.type !== 'textarea');
 
   return (
     <div style={{ marginTop: 20, border: `1px solid ${pal.line}`, borderRadius: 8, padding: '12px 14px', background: pal.soft }}>
-      <SectionLabel pal={pal}>{cfg.detailsTitle}</SectionLabel>
+      <SectionLabel pal={pal}>{title}</SectionLabel>
       {wide.map((f) => (
         <div key={f.key} style={{ marginTop: 6 }}>
           <span style={{ fontSize: 11, color: pal.muted }}>{f.label}: </span>
