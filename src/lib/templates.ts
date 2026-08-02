@@ -364,6 +364,15 @@ export const templates: TemplateStyle[] = [
   },
 ];
 
+/**
+ * Single source of truth for the template count quoted in copy and schema.
+ * Deriving it prevents the "15+ vs 25+" inconsistency the site used to ship.
+ */
+export const TEMPLATE_COUNT = templates.length;
+
+/** Number of bespoke-layout ("premium") designs. */
+export const PREMIUM_TEMPLATE_COUNT = templates.filter((t) => t.premium).length;
+
 export function getTemplate(id: string): TemplateStyle {
   return templates.find((t) => t.id === id) ?? templates[0];
 }

@@ -8,18 +8,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   const now = new Date();
 
+  /*
+   * Only pages that are genuinely worth a search result belong here.
+   * Deliberately excluded: /dashboard (private, per-browser), /q/[id] (private
+   * share links) and /offline (a PWA fallback) — all three serve `noindex`.
+   */
   const staticRoutes: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
     { path: '/', priority: 1, freq: 'weekly' },
     { path: '/create', priority: 0.95, freq: 'monthly' },
+    { path: '/tools', priority: 0.9, freq: 'monthly' },
     { path: '/templates', priority: 0.9, freq: 'monthly' },
     { path: '/industries', priority: 0.85, freq: 'monthly' },
-    { path: '/features', priority: 0.7, freq: 'monthly' },
     { path: '/blog', priority: 0.8, freq: 'weekly' },
+    { path: '/features', priority: 0.7, freq: 'monthly' },
+    { path: '/about', priority: 0.6, freq: 'monthly' },
+    { path: '/contact', priority: 0.5, freq: 'yearly' },
     { path: '/pricing', priority: 0.5, freq: 'monthly' },
-    { path: '/about', priority: 0.4, freq: 'yearly' },
-    { path: '/contact', priority: 0.4, freq: 'yearly' },
-    { path: '/privacy', priority: 0.3, freq: 'yearly' },
-    { path: '/terms', priority: 0.3, freq: 'yearly' },
+    // Trust pages. Low priority, but they must be crawlable and indexable —
+    // an AdSense reviewer looks for them, and so do users checking legitimacy.
+    { path: '/privacy', priority: 0.35, freq: 'yearly' },
+    { path: '/terms', priority: 0.35, freq: 'yearly' },
+    { path: '/disclaimer', priority: 0.35, freq: 'yearly' },
+    { path: '/cookies', priority: 0.3, freq: 'yearly' },
+    { path: '/refund-policy', priority: 0.3, freq: 'yearly' },
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((r) => ({

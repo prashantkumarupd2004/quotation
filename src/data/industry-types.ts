@@ -12,6 +12,32 @@ export interface IndustrySampleItem {
   description: string;
   unit: string;
   hsn?: string;
+  /** Typical Indian market rate in INR for one `unit`. */
+  rate: number;
+  /** Quantity used in this trade's worked example quotation. */
+  qty: number;
+}
+
+/**
+ * The demo business shown in each industry's preview quotation. Every trade gets
+ * its own firm, city and client so no two industry pages render the same
+ * document — a single shared demo was previously repeated across all 20.
+ */
+export interface IndustryParty {
+  company: string;
+  /** Multi-line postal address. */
+  address: string;
+  /** State code must match the address city. */
+  gstin: string;
+  phone: string;
+  email: string;
+  clientName: string;
+  clientCompany: string;
+  clientAddress: string;
+  /** Trade-specific note printed under the items table. */
+  note: string;
+  /** Numbered terms for this trade. Generic terms would repeat across all 20 pages. */
+  terms: string[];
 }
 
 export interface Industry {
@@ -48,6 +74,8 @@ export interface Industry {
   faqs: IndustryFaq[]; // 6-8
   /** Realistic sample line items for this trade (4-6). */
   sampleItems: IndustrySampleItem[];
+  /** The demo firm and client used in this page's preview quotation. */
+  demo: IndustryParty;
   /** Slugs of 3-4 related industries for internal linking. */
   relatedSlugs: string[];
 }

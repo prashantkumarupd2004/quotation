@@ -7,8 +7,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        // Keep crawl budget on real content, not Next.js internals or the PWA worker.
-        disallow: ['/api/', '/_next/', '/offline', '/sw.js'],
+        /*
+         * Keep crawl budget on real content.
+         *
+         * `/offline`, `/dashboard` and `/q/` are deliberately NOT disallowed here:
+         * they each serve `noindex`, and a crawler has to be able to fetch a page
+         * to see that directive. Blocking them in robots.txt would leave Google
+         * unable to read the noindex, which is exactly how a blocked URL ends up
+         * indexed with no snippet.
+         */
+        disallow: ['/api/', '/_next/', '/sw.js'],
       },
       { userAgent: 'Googlebot', allow: '/' },
       { userAgent: 'Googlebot-Image', allow: '/' },

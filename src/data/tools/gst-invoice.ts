@@ -36,6 +36,129 @@ export const gstInvoiceContent: ToolContent = {
   h1: 'Free GST Invoice Maker for India',
   intro:
     'Issue a statutory GST tax invoice with automatic CGST, SGST and IGST calculation, HSN/SAC codes, place of supply and reverse charge fields — then download a print-ready PDF in seconds. No signup, no charges, and everything stays in your browser.',
+  badge: {
+    label: 'GST Compliant ✓',
+    colorClass: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700',
+  },
+  theme: 'emerald',
+  layout: {
+    hero: 'stat-band',
+    howTo: 'timeline',
+    features: 'checklist',
+    useCases: 'columns',
+    example: 'table',
+  },
+  order: [
+    'whatIs',
+    'custom',
+    'widget',
+    'howTo',
+    'example',
+    'features',
+    'sections',
+    'useCases',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Auto CGST, SGST & IGST split',
+    'HSN/SAC code and place of supply fields',
+    'Reverse charge and e-way bill references',
+    'Consecutive 16-character serial numbering',
+  ],
+  widget: 'gst-calculator',
+  relatedBlogSlugs: [
+    'gst-invoice-rules-guide',
+    'gst-in-quotations',
+    'invoice-vs-quotation',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'GST Rate Slabs and the HSN/SAC Codes Behind Them',
+      intro:
+        'Every line on a tax invoice needs a rate and a code. These are the slabs in force and the categories that typically sit in each, with sample HSN codes for goods and SAC codes for services.',
+      columns: ['Slab', 'Typical supplies', 'Sample HSN / SAC'],
+      rows: [
+        [
+          'Nil / exempt',
+          'Fresh produce, unbranded flour and cereals, most educational and healthcare services.',
+          '0713 (pulses), 9992 (education)',
+        ],
+        [
+          '5%',
+          'Packaged food staples, footwear under ₹1,000, small restaurants, goods transport by road.',
+          '1905 (bakery), 9965 (transport)',
+        ],
+        [
+          '12%',
+          'Processed foods, business-class air travel, works contracts for affordable housing.',
+          '2106 (food preparations), 9954 (construction)',
+        ],
+        [
+          '18%',
+          'The default slab — most services, IT and software, consulting, machinery, electronics.',
+          '9983 (professional), 8471 (computers), 9971 (financial)',
+        ],
+        [
+          '28%',
+          'Luxury and demerit goods: cars, air conditioners, aerated drinks, tobacco. Often carries cess on top.',
+          '8703 (motor cars), 2402 (cigarettes)',
+        ],
+      ],
+      note:
+        'Rates and classifications change at GST Council meetings. Verify the exact code for your product on the CBIC rate finder before you rely on it — a wrong code carrying the right rate is still a mismatch, and it surfaces during GSTR-1 reconciliation rather than at the time you raise the invoice.',
+    },
+    {
+      kind: 'checklist',
+      heading: 'Rule 46 Checklist: Particulars a Tax Invoice Must Carry',
+      intro:
+        'Rule 46 of the CGST Rules lists what a tax invoice must contain. If any of these is missing, your buyer’s input tax credit can be questioned — which is why registered buyers send defective invoices back rather than paying against them.',
+      items: [
+        {
+          title: 'Supplier name, address and GSTIN',
+          text: 'Your registered legal name exactly as it appears on the GST certificate, the principal place of business address, and the 15-character GSTIN. A trade name may be printed alongside but cannot replace the registered name.',
+        },
+        {
+          title: 'A consecutive serial number, unique for the year',
+          text: 'Up to 16 characters, using letters, digits, hyphen and slash only. It must run unbroken for the financial year — gaps and duplicates are the fastest way to attract scrutiny during a departmental audit.',
+        },
+        {
+          title: 'Date of issue',
+          text: 'The date the invoice is raised, which also fixes the tax period the supply falls into. For services this is generally within 30 days of supply; for goods it is on or before removal or delivery.',
+        },
+        {
+          title: 'Recipient name, address and GSTIN',
+          text: 'Mandatory for registered buyers. For unregistered buyers the name and address are still needed when the invoice value exceeds ₹50,000, along with the delivery address and state.',
+        },
+        {
+          title: 'HSN or SAC code for every line item',
+          text: 'Goods carry an HSN code, services carry a SAC. The number of digits required scales with your aggregate turnover in the preceding financial year.',
+        },
+        {
+          title: 'Description, quantity, unit and taxable value',
+          text: 'Each supply described specifically enough to identify it, with quantity and unit of measure for goods, and the taxable value after any discount that was agreed before or at the time of supply.',
+        },
+        {
+          title: 'Tax rate and amount, split by head',
+          text: 'CGST and SGST/UTGST shown separately for intra-state supplies, or IGST for inter-state — never a single combined "GST" figure. Cess, where applicable, is a further separate line.',
+        },
+        {
+          title: 'Place of supply with state name',
+          text: 'Required on every inter-state invoice. Place of supply is what decides CGST+SGST versus IGST, and getting it wrong means tax paid under the wrong head, which cannot simply be re-adjusted later.',
+        },
+        {
+          title: 'Whether tax is payable on reverse charge',
+          text: 'An explicit yes or no. Where reverse charge applies the recipient pays the tax directly, and the invoice must say so rather than leaving it to be inferred.',
+        },
+        {
+          title: 'Signature or digital signature of the supplier',
+          text: 'A physical signature, or a digital signature for electronically issued invoices. Invoices issued through an e-invoicing portal with a valid IRN are exempt from this requirement.',
+        },
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a GST Tax Invoice?',
     paragraphs: [
@@ -61,7 +184,7 @@ export const gstInvoiceContent: ToolContent = {
       },
       {
         title: 'Preview, download and share',
-        text: 'Check the live preview, choose from 25+ templates, add your signature and stamp, then export the tax invoice as PDF or PNG, print it, or send it to the buyer over WhatsApp. The total in words appears automatically in Indian lakh/crore format.',
+        text: 'Check the live preview, choose from 25 templates, add your signature and stamp, then export the tax invoice as PDF or PNG, print it, or send it to the buyer over WhatsApp. The total in words appears automatically in Indian lakh/crore format.',
       },
     ],
   },
@@ -187,8 +310,11 @@ export const gstInvoiceContent: ToolContent = {
     },
     {
       q: 'Is this GST invoice generator really free, and where is my data stored?',
-      a: 'Completely free — unlimited invoices, all 25+ templates, PDF and PNG downloads, no watermark and no signup. Your invoices autosave in your browser’s local storage on your own device; nothing is uploaded unless you deliberately create a WhatsApp share link for a specific document.',
+      a: 'Completely free — unlimited invoices, all 25 templates, PDF and PNG downloads, no watermark and no signup. Your invoices autosave in your browser’s local storage on your own device; nothing is uploaded unless you deliberately create a WhatsApp share link for a specific document.',
     },
   ],
+  relatedHeading: 'Other GST Documents You May Need to Issue',
+  relatedNote:
+    'A tax invoice is one of several documents the GST rules prescribe — corrections, movement and advances each have their own.',
   related: ['invoice', 'quotation', 'credit-note', 'debit-note', 'delivery-challan', 'proforma-invoice'],
 };

@@ -7,11 +7,11 @@ import { createSampleQuotation } from '@/lib/defaults';
 import { QuotationDocument } from './quotation-document';
 
 /** A non-interactive scaled preview of a template using sample data. */
-export function TemplateThumb({ template }: { template: TemplateStyle }) {
+export function TemplateThumb({ template, quotation }: { template: TemplateStyle; quotation?: Quotation }) {
   const sample: Quotation = useMemo(() => {
-    const base = createSampleQuotation();
+    const base = quotation ?? createSampleQuotation();
     return { ...base, meta: { ...base.meta, templateId: template.id, accentColor: template.accent } };
-  }, [template.id, template.accent]);
+  }, [template.id, template.accent, quotation]);
 
   return (
     <div className="pointer-events-none relative h-[300px] w-full overflow-hidden rounded-xl border border-border bg-slate-100 dark:bg-slate-900/50">

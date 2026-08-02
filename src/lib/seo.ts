@@ -35,8 +35,10 @@ export function buildMetadata({
     creator: siteConfig.author,
     publisher: siteConfig.author,
     category: 'Business Software',
-    // Phone/email/address auto-linking hurts the polished quotation preview.
-    formatDetection: { telephone: false, email: false, address: false },
+    // Stop iOS Safari auto-linking numbers in the quotation preview (it turns
+    // amounts and GSTINs into phone links). Email/address detection is left on
+    // so contact details elsewhere on the site stay tappable.
+    formatDetection: { telephone: false },
     alternates: {
       canonical: url,
       languages: { [siteConfig.language]: url, 'x-default': url },
@@ -66,13 +68,13 @@ export function buildMetadata({
       siteName: siteConfig.name,
       images,
     },
+    // No site/creator handle is declared — we don't run a verified X account, and
+    // pointing the tag at a handle we don't own would be a false attribution.
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description: desc,
       images: images.map((i) => i.url),
-      site: siteConfig.twitter,
-      creator: siteConfig.twitter,
     },
     // Only emitted when a token is set in siteConfig — safe to leave blank.
     ...(siteConfig.googleSiteVerification

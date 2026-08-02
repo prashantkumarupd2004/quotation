@@ -12,7 +12,7 @@ import { homeFeatures } from '@/data/home';
 export const metadata: Metadata = buildMetadata({
   title: 'Features — Free GST Quotation Generator',
   description:
-    'Explore every feature: automatic GST/CGST/SGST/IGST calculation, 15+ templates, live preview, PDF & PNG export, multi-currency, logo, signature, stamp, QR code, autosave, undo/redo and offline PWA support.',
+    'Explore every feature: automatic GST/CGST/SGST/IGST calculation, 25 templates, live preview, PDF & PNG export, multi-currency, logo, signature, stamp, QR code, autosave, undo/redo and offline PWA support.',
   path: '/features',
   keywords: ['quotation software features', 'gst calculator', 'quotation pdf generator features'],
 });
@@ -43,7 +43,7 @@ const detailed = [
   {
     group: 'Branding & Output',
     items: [
-      '15+ premium, print-ready templates',
+      '25 premium, print-ready templates (10 with bespoke layouts)',
       'Custom accent colour to match your brand',
       'Upload logo, authorised signature and company stamp',
       'Attach a UPI or payment QR code',

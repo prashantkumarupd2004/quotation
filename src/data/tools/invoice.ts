@@ -34,7 +34,119 @@ export const invoiceContent: ToolContent = {
   },
   h1: 'Free Online Invoice Maker',
   intro:
-    'Create a polished, professional invoice in your browser — add your logo, items, tax and due date, then download a print-ready PDF instantly. Free forever, no signup, and your data never leaves your device.',
+    'Create a polished, professional invoice in your browser — add your logo, items, tax and due date, then download a print-ready PDF instantly. Free forever, no signup, and your documents stay in your browser unless you choose to share one.',
+  badge: {
+    label: 'Payment Tracker',
+    colorClass: 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 border border-blue-300 dark:border-blue-700',
+  },
+  theme: 'blue',
+  layout: {
+    hero: 'split',
+    howTo: 'band',
+    features: 'grid',
+    useCases: 'cards',
+    example: 'table',
+  },
+  order: [
+    'widget',
+    'whatIs',
+    'howTo',
+    'custom',
+    'features',
+    'example',
+    'useCases',
+    'sections',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Track Paid, Unpaid & Partial status',
+    'Custom due dates and payment terms',
+    'Print your bank details or a UPI QR',
+    'Amount in words, Indian lakh/crore format',
+  ],
+  widget: 'invoice-vs-receipt',
+  relatedBlogSlugs: [
+    'free-invoice-maker-online-guide',
+    'invoice-vs-quotation',
+    'payment-terms-in-quotations',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'Payment Terms Cheat Sheet: What to Put on the Invoice',
+      intro:
+        'The payment term you print decides when the money actually arrives. These are the terms Indian small businesses use most, what each one means in practice, and when it is the right choice.',
+      columns: ['Term', 'What it means', 'Best used when'],
+      rows: [
+        [
+          'Due on receipt',
+          'Payment is expected immediately, with no credit period.',
+          'Retail sales, first-time customers, small amounts you do not want to chase.',
+        ],
+        [
+          'Net 15',
+          'Full payment within 15 days of the invoice date.',
+          'Freelancers and small agencies with individual or owner-run clients.',
+        ],
+        [
+          'Net 30',
+          'Full payment within 30 days — the default in most B2B relationships.',
+          'Corporate customers with a formal accounts-payable cycle.',
+        ],
+        [
+          'Net 45 / Net 60',
+          'A long credit period, usually demanded by large buyers.',
+          'Only when your cash flow can genuinely absorb the wait, or margins cover the cost.',
+        ],
+        [
+          '50% advance, 50% on delivery',
+          'Half up front to start, the balance before or on handover.',
+          'Custom work, made-to-order goods, or any job with material cost up front.',
+        ],
+        [
+          'Milestone billing',
+          'The value is split across defined project stages, each invoiced separately.',
+          'Projects running longer than a month — construction, software, event work.',
+        ],
+      ],
+      note:
+        'Whatever you choose, print it as a date rather than a phrase. "Due 14 August 2026" enters a payment calendar; "Net 30" has to be calculated by someone first, and often is not.',
+    },
+    {
+      kind: 'checklist',
+      heading: 'A Follow-Up Sequence for Overdue Invoices',
+      intro:
+        'Most late payments are not refusals — the invoice simply stopped moving inside the customer’s process. A predictable, unemotional sequence recovers the majority of them without damaging the relationship.',
+      items: [
+        {
+          title: '3 days before the due date — remind, do not chase',
+          text: 'Forward the original invoice with one line: "This falls due on Friday, sharing it again so it is handy." This single message prevents more late payments than every other step combined, because it lands while there is still time to schedule the transfer.',
+        },
+        {
+          title: 'Due date + 1 — confirm receipt, not payment',
+          text: 'Ask whether the invoice reached the accounts team and whether anything else is needed — a PO number, a vendor form, a GST detail. Framing it as a process question surfaces the real blocker instead of putting the customer on the defensive.',
+        },
+        {
+          title: 'Due date + 7 — go to whoever releases the funds',
+          text: 'Your buyer contact is rarely the person who pays. Politely ask to be put in touch with accounts payable, and send them the PDF directly along with the invoice number and any PO reference.',
+        },
+        {
+          title: 'Due date + 15 — state the consequence plainly',
+          text: 'Restate the amount, the number of days overdue, and what happens next: work paused, further supply on advance, or interest as per your printed terms. Keep it factual — no adjectives, no apology.',
+        },
+        {
+          title: 'Due date + 30 — put it in writing formally',
+          text: 'Send a written demand listing every invoice outstanding, by email and by post. If you are a registered MSME, cite the MSMED Act: buyers become liable for compound interest on payments held beyond 45 days, and that line alone often triggers release.',
+        },
+        {
+          title: 'Throughout — keep the paper trail together',
+          text: 'Save each invoice PDF alongside every reminder you sent. If the matter ever reaches a lawyer, a conciliation council or a court, an unbroken record of a numbered invoice and dated follow-ups is what decides it.',
+        },
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is an Invoice and Why Does It Matter?',
     paragraphs: [
@@ -44,7 +156,7 @@ export const invoiceContent: ToolContent = {
     ],
   },
   howTo: {
-    heading: 'How to Make an Invoice Online in 4 Steps',
+    heading: 'How to Make an Invoice Online in 5 Steps',
     steps: [
       {
         title: 'Add your business and customer details',
@@ -57,6 +169,10 @@ export const invoiceContent: ToolContent = {
       {
         title: 'Set the due date and payment status',
         text: 'Pick an invoice date and due date, mark the invoice as Paid, Partially Paid or Unpaid, and add payment instructions such as your bank account or UPI ID so the customer knows exactly how to pay.',
+      },
+      {
+        title: 'Check the number against your last invoice',
+        text: 'Confirm the suggested number continues your series without a gap or a repeat. Sequential numbering is what lets you reconcile a customer statement line by line at month end, and it is the first thing an auditor looks at.',
       },
       {
         title: 'Download, print or share',
@@ -188,5 +304,8 @@ export const invoiceContent: ToolContent = {
       a: 'Yes. Your last invoice loads automatically when you return. Update the invoice number and dates, adjust any line items, and download — a recurring monthly invoice takes well under a minute.',
     },
   ],
+  relatedHeading: 'Documents That Come Before and After an Invoice',
+  relatedNote:
+    'An invoice rarely travels alone — it follows a quotation and is usually closed by a receipt.',
   related: ['quotation', 'gst-invoice', 'proforma-invoice', 'payment-receipt', 'credit-note', 'estimate'],
 };

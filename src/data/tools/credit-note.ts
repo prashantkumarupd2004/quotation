@@ -33,6 +33,91 @@ export const creditNoteContent: ToolContent = {
   h1: 'Free GST Credit Note Generator',
   intro:
     'Issue a proper credit note against any invoice in minutes — reference the original invoice number and date, state the reason, and let the tool compute the tax reversal automatically. Download as PDF, share on WhatsApp, all free with no account.',
+  badge: {
+    label: 'Reduce Tax Liability',
+    colorClass: 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300 dark:border-rose-700',
+  },
+  theme: 'rose',
+  layout: {
+    hero: 'ledger',
+    howTo: 'band',
+    features: 'checklist',
+    useCases: 'cards',
+    example: 'paper',
+  },
+  order: [
+    'whatIs',
+    'howTo',
+    'example',
+    'custom',
+    'widget',
+    'features',
+    'sections',
+    'useCases',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Reduces what the customer owes you',
+    'Links to the original invoice and its date',
+    'Reverses the tax automatically',
+    'Issued under Section 34 of the CGST Act',
+  ],
+  widget: 'credit-vs-debit',
+  relatedBlogSlugs: [
+    'credit-note-debit-note-explained',
+    'gst-invoice-rules-guide',
+    'business-documentation-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'The Credit Note Deadline Calendar',
+      intro:
+        'Section 34 sets an outer limit for adjusting your GST liability through a credit note: the earlier of 30 November following the end of the financial year in which the supply was made, or the date you file that year\'s annual return. Miss it and you can still issue a commercial credit note — but the tax stays paid.',
+      columns: ['Invoice raised in', 'Financial year', 'Adjust the tax by'],
+      rows: [
+        ['April 2025 – March 2026', 'FY 2025–26', '30 November 2026, or the date GSTR-9 is filed — whichever is earlier'],
+        ['April 2026 – March 2027', 'FY 2026–27', '30 November 2027, or the date GSTR-9 is filed — whichever is earlier'],
+        ['April 2027 – March 2028', 'FY 2027–28', '30 November 2028, or the date GSTR-9 is filed — whichever is earlier'],
+      ],
+      note:
+        'Note the trap in the "whichever is earlier" wording: filing your annual return early closes the window early. A supply made in April 2025 has a nineteen-month runway on paper, but if you file GSTR-9 in August 2026 the door shuts then. Raise credit notes as the reason arises rather than saving them for a year-end clean-up.',
+    },
+    {
+      kind: 'checklist',
+      heading: 'Grounds on Which a Credit Note Is Validly Issued',
+      intro:
+        'Section 34(1) is specific about when a supplier may issue a credit note. If your situation is not on this list, what you need is probably a refund, a fresh invoice or a commercial adjustment — not a credit note reducing your tax.',
+      items: [
+        {
+          title: 'The taxable value was overstated',
+          text: 'The invoice charged more than was actually agreed — a keying error, an outdated rate, or a discount that was settled before supply but never applied.',
+        },
+        {
+          title: 'The tax charged was too high',
+          text: 'A wrong rate, or CGST and SGST charged where the place of supply meant IGST was due. The value stands; only the tax is corrected.',
+        },
+        {
+          title: 'Goods were returned by the recipient',
+          text: 'The most common ground. The credit note reverses the value and the tax for the returned quantity and should reference the return challan or receipt note.',
+        },
+        {
+          title: 'Goods or services were found deficient',
+          text: 'The customer keeps the supply but it did not meet the agreed specification, and a reduction has been negotiated instead of a return.',
+        },
+        {
+          title: 'A post-sale discount agreed at or before supply',
+          text: 'Volume rebates and turnover discounts qualify only where the agreement predates the supply and can be linked to the specific invoices. A discount invented after the fact does not reduce your tax liability.',
+        },
+        {
+          title: 'The supply was cancelled after invoicing',
+          text: 'An order withdrawn before delivery, or a service cancelled after the invoice went out, is reversed in full through a credit note rather than by deleting the original invoice.',
+        },
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a Credit Note Under GST?',
     paragraphs: [
@@ -58,7 +143,7 @@ export const creditNoteContent: ToolContent = {
       },
       {
         title: 'Download and share',
-        text: 'Pick one of 25+ templates, add your signature and stamp, then export the credit note as a PDF or PNG, print it, or send it to the customer over WhatsApp with a single click.',
+        text: 'Pick one of 25 templates, add your signature and stamp, then export the credit note as a PDF or PNG, print it, or send it to the customer over WhatsApp with a single click.',
       },
     ],
   },
@@ -186,5 +271,8 @@ export const creditNoteContent: ToolContent = {
       a: 'Yes. Upload a logo in the issuer section and a signature and company stamp near the bottom of the form — all three appear in the live preview and in the exported PDF or PNG across every template.',
     },
   ],
+  relatedHeading: 'Correcting, Billing and Recording: The Related Documents',
+  relatedNote:
+    'A credit note never stands alone — it always points back at an invoice, and often forward to a refund.',
   related: ['debit-note', 'invoice', 'gst-invoice', 'payment-receipt', 'quotation', 'delivery-challan'],
 };

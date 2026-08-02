@@ -1,4 +1,5 @@
 import { siteConfig } from './site';
+import { TEMPLATE_COUNT } from './templates';
 
 type Json = Record<string, unknown>;
 
@@ -23,12 +24,10 @@ export function organizationSchema(): Json {
     email: siteConfig.contactEmail,
     areaServed: { '@type': 'Country', name: 'India' },
     knowsLanguage: ['en-IN', 'hi-IN'],
-    sameAs: [
-      'https://twitter.com/quotationmaker',
-      'https://www.facebook.com/quotationmaker',
-      'https://www.linkedin.com/company/quotationmaker',
-      'https://www.instagram.com/quotationmaker',
-    ],
+    founder: { '@type': 'Person', name: siteConfig.operator.name },
+    // Only profiles that actually exist are declared. Adding placeholder social
+    // URLs here would be a false claim about the publisher's identity.
+    sameAs: siteConfig.operator.profiles.map((p) => p.url),
     contactPoint: {
       '@type': 'ContactPoint',
       email: siteConfig.contactEmail,
@@ -77,7 +76,7 @@ export function webAppSchema(): Json {
     description: siteConfig.description,
     featureList: [
       'GST quotation maker with automatic CGST, SGST and IGST calculation',
-      '15+ professional, print-ready quotation templates',
+      `${TEMPLATE_COUNT} professional, print-ready quotation templates`,
       'Instant PDF and PNG download',
       'Live preview while you edit',
       'Add company logo, signature, stamp and QR code',
@@ -87,13 +86,8 @@ export function webAppSchema(): Json {
       'No signup required — 100% free',
     ],
     publisher: { '@id': ORG_ID },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      ratingCount: '2184',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // No aggregateRating is declared. We do not collect user ratings, so
+    // publishing one would be fabricated review data.
   };
 }
 
@@ -122,19 +116,29 @@ export function faqSchema(faqs: { q: string; a: string }[]): Json {
   };
 }
 
+/**
+ * HowTo steps. Google retired HowTo rich results, but the markup still helps
+ * machine-readable understanding of the page — so we keep it and give each step
+ * a real name (the first clause of the instruction) instead of "Step N".
+ */
 export function howToSchema(name: string, steps: string[]): Json {
   return {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name,
-    totalTime: 'PT30S',
     step: steps.map((step, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
-      name: `Step ${i + 1}`,
+      name: stepName(step),
       text: step,
     })),
   };
+}
+
+/** First sentence/clause of an instruction, capped, used as the step name. */
+function stepName(step: string): string {
+  const first = step.split(/[.,;:]/)[0].trim();
+  return first.length > 4 && first.length <= 70 ? first : step.slice(0, 70).trim();
 }
 
 export function articleSchema(params: {
@@ -142,20 +146,30 @@ export function articleSchema(params: {
   description: string;
   path: string;
   date: string;
+  /** Last substantive edit, when it differs from publication. */
+  updated?: string;
+  /** Absolute or root-relative hero image path. */
+  image?: string;
 }): Json {
+  const image = params.image ?? siteConfig.ogImage;
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: params.title,
     description: params.description,
     datePublished: params.date,
-    dateModified: params.date,
-    author: { '@type': 'Organization', name: siteConfig.name },
-    publisher: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      logo: { '@type': 'ImageObject', url: `${siteConfig.url}/icon.svg` },
+    dateModified: params.updated ?? params.date,
+    image: image.startsWith('http') ? image : `${siteConfig.url}${image}`,
+    // Named human author — anonymous "Organization" authorship is a weak E-E-A-T
+    // signal and reviewers look for a real byline.
+    author: {
+      '@type': 'Person',
+      name: siteConfig.operator.name,
+      url: `${siteConfig.url}/about`,
     },
+    publisher: { '@id': ORG_ID },
+    inLanguage: siteConfig.language,
+    isAccessibleForFree: true,
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteConfig.url}${params.path}` },
   };
 }

@@ -42,7 +42,7 @@ export const blogPosts6: BlogPost[] = [
       },
       {
         heading: 'Step-by-step: creating an invoice online in under a minute',
-        body: 'Using a free browser-based tool like the QuotationMaker.in Invoice Maker, the process is a single form with a live preview. Enter your business details and upload your logo — this saves automatically, so you only do it once. Add the customer, then list what you are billing as line items; subtotal, tax and grand total calculate as you type.\n\nSet the due date, mark the payment status (Unpaid, Partially Paid or Paid), add your bank or UPI details in the payment instructions, pick one of the templates, and download the finished PDF. Because everything runs in the browser and saves locally, there is no signup wall and your billing data never leaves your device.',
+        body: 'Using a free browser-based tool like the QuotationMaker.in Invoice Maker, the process is a single form with a live preview. Enter your business details and upload your logo — this saves automatically, so you only do it once. Add the customer, then list what you are billing as line items; subtotal, tax and grand total calculate as you type.\n\nSet the due date, mark the payment status (Unpaid, Partially Paid or Paid), add your bank or UPI details in the payment instructions, pick one of the templates, and download the finished PDF. Because everything runs in the browser and saves locally, there is no signup wall and your billing data stays on your own device unless you deliberately create a share link.',
       },
       {
         heading: 'Invoice numbering: the rules and a simple system',

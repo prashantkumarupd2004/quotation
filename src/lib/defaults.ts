@@ -1,5 +1,6 @@
 import type { Quotation, LineItem } from '@/types/quotation';
 import type { BusinessDocument, DocumentTypeId } from '@/types/document';
+import type { Industry } from '@/data/industry-types';
 import { getDocumentType } from './document-types';
 import { generateQuotationNumber } from './calculations';
 import { uid } from './utils';
@@ -113,6 +114,49 @@ export function createSampleQuotation(): Quotation {
   };
 }
 
+/**
+ * A worked example quotation built from one industry's own demo firm, client and
+ * priced line items. Each industry landing page renders a different document —
+ * they previously all showed the same interior-design sample, which reads as
+ * duplicate content across 20 near-identical pages.
+ */
+export function createIndustryQuotation(industry: Industry): Quotation {
+  const base = createDefaultQuotation();
+  const { demo } = industry;
+  return {
+    ...base,
+    meta: { ...base.meta, templateId: industry.templateId, accentColor: industry.accent },
+    company: {
+      name: demo.company,
+      logo: '',
+      address: demo.address,
+      gstin: demo.gstin,
+      phone: demo.phone,
+      email: demo.email,
+      website: '',
+    },
+    client: {
+      name: demo.clientName,
+      company: demo.clientCompany,
+      address: demo.clientAddress,
+      gstin: '',
+      phone: '',
+      email: '',
+    },
+    items: industry.sampleItems.map((item, i) => ({
+      id: `${industry.slug}-${i}`,
+      description: item.description,
+      hsn: item.hsn ?? '',
+      quantity: item.qty,
+      unit: item.unit,
+      rate: item.rate,
+      taxRate: 18,
+    })),
+    notes: demo.note,
+    terms: demo.terms.map((t, i) => `${i + 1}. ${t}`).join('\n'),
+  };
+}
+
 /** Document number like INV-2026-0001 using the type's prefix. */
 export function generateDocumentNumber(docType: DocumentTypeId, seed = 1): string {
   const year = new Date().getFullYear();
@@ -126,12 +170,17 @@ export function generateDocumentNumber(docType: DocumentTypeId, seed = 1): strin
  */
 export function createDefaultDocument(docType: DocumentTypeId): BusinessDocument {
   const base = createDefaultQuotation();
-  if (docType === 'quotation') return { ...base, docType };
   const cfg = getDocumentType(docType);
+  if (docType === 'quotation') return { ...base, docType };
   return {
     ...base,
     docType,
-    meta: { ...base.meta, number: generateDocumentNumber(docType) },
+    meta: {
+      ...base.meta,
+      number: generateDocumentNumber(docType),
+      templateId: cfg.builder.paperTemplate,
+      accentColor: cfg.builder.paperAccent,
+    },
     totals: { ...base.totals, taxMode: cfg.defaultTaxMode },
     notes: cfg.defaultNotes,
     terms: cfg.defaultTerms,

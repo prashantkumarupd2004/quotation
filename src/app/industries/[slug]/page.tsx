@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { AlertTriangle, ArrowRight, Check, FileDown, Lightbulb, Sparkles, Star } from 'lucide-react';
 import { getIndustry, getRelatedIndustries, industries } from '@/data/industries';
 import { getTemplate } from '@/lib/templates';
+import { createIndustryQuotation } from '@/lib/defaults';
 import { PageHero } from '@/components/layout/page-hero';
 import { Reveal } from '@/components/ui/reveal';
 import { Faq } from '@/components/ui/faq';
@@ -41,6 +42,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   const template = getTemplate(industry.templateId);
   const related = getRelatedIndustries(industry.slug);
   const createHref = `/create?template=${industry.templateId}`;
+  const demoQuotation = createIndustryQuotation(industry);
+  const inr = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 });
+  const sampleTotal = industry.sampleItems.reduce((sum, item) => sum + item.qty * item.rate, 0);
 
   return (
     <>
@@ -125,15 +129,19 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           <section>
             <h2 className="font-display text-2xl font-bold">Common {industry.name.toLowerCase()} line items</h2>
             <p className="mt-2 text-muted-foreground">
-              Typical items and services you can add — with example HSN/SAC codes used in this trade.
+              A worked example for {industry.demo.clientCompany}, with the units, HSN/SAC codes and
+              indicative {new Date().getFullYear()} market rates used in this trade.
             </p>
             <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-              <table className="w-full min-w-[420px] text-sm">
+              <table className="w-full min-w-[560px] text-sm">
                 <thead>
                   <tr className="border-b border-border bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
                     <th className="px-4 py-3">Item / Service</th>
                     <th className="px-4 py-3">Unit</th>
                     <th className="px-4 py-3">HSN/SAC</th>
+                    <th className="px-4 py-3 text-right">Qty</th>
+                    <th className="px-4 py-3 text-right">Rate (₹)</th>
+                    <th className="px-4 py-3 text-right">Amount (₹)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -142,11 +150,26 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                       <td className="px-4 py-3 font-medium">{item.description}</td>
                       <td className="px-4 py-3 text-muted-foreground">{item.unit}</td>
                       <td className="px-4 py-3 text-muted-foreground">{item.hsn ?? '—'}</td>
+                      <td className="px-4 py-3 text-right text-muted-foreground">{inr.format(item.qty)}</td>
+                      <td className="px-4 py-3 text-right text-muted-foreground">{inr.format(item.rate)}</td>
+                      <td className="px-4 py-3 text-right font-medium">{inr.format(item.qty * item.rate)}</td>
                     </tr>
                   ))}
                 </tbody>
+                <tfoot>
+                  <tr className="border-t border-border bg-muted/30">
+                    <td className="px-4 py-3 font-semibold" colSpan={5}>
+                      Subtotal before GST
+                    </td>
+                    <td className="px-4 py-3 text-right font-bold">{inr.format(sampleTotal)}</td>
+                  </tr>
+                </tfoot>
               </table>
             </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Rates are indicative and vary by city, material grade and site conditions. Always quote
+              after your own measurement.
+            </p>
             <Link href={createHref} className="btn-primary mt-6">
               Start with these items <ArrowRight className="h-4 w-4" />
             </Link>
@@ -231,9 +254,14 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         {/* Sidebar */}
         <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
           <div className="glass-card p-5">
-            <h3 className="text-sm font-semibold text-muted-foreground">Recommended template</h3>
+            <h3 className="text-sm font-semibold text-muted-foreground">
+              {industry.name} quotation preview
+            </h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {industry.demo.company} → {industry.demo.clientCompany}
+            </p>
             <div className="mt-3">
-              <TemplateThumb template={template} />
+              <TemplateThumb template={template} quotation={demoQuotation} />
             </div>
             <Link href={createHref} className="btn-primary mt-4 w-full text-sm">
               Use {template.name} template

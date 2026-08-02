@@ -31,6 +31,102 @@ export const debitNoteContent: ToolContent = {
   h1: 'Free Debit Note Generator',
   intro:
     'Undercharged an invoice, or returning goods to a supplier? Raise a clean, numbered debit note that references the original invoice, states the reason, and calculates the differential tax — downloadable as a PDF in minutes.',
+  badge: {
+    label: 'Recover Amount',
+    colorClass: 'bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300 border border-orange-300 dark:border-orange-700',
+  },
+  theme: 'orange',
+  layout: {
+    hero: 'ledger-plus',
+    howTo: 'cards',
+    features: 'alternating',
+    useCases: 'accordion',
+    example: 'strip',
+  },
+  order: [
+    'whatIs',
+    'custom',
+    'howTo',
+    'widget',
+    'example',
+    'features',
+    'useCases',
+    'sections',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Increases what the customer owes you',
+    'Recovers undercharged value or tax',
+    'References the invoice being corrected',
+    'No time limit for issuing one',
+  ],
+  widget: 'debit-note-steps',
+  relatedBlogSlugs: [
+    'credit-note-debit-note-explained',
+    'gst-invoice-rules-guide',
+    'business-documentation-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'Credit Note or Debit Note? A Decision Table',
+      intro:
+        'The two documents are chosen by one question: does the correction move the amount payable up or down, and who is issuing it? Work down this table to the row that matches your situation.',
+      columns: ['What went wrong', 'Correct document', 'Issued by'],
+      rows: [
+        [
+          'The invoice charged less than agreed',
+          'Debit note',
+          'The supplier, raising the amount receivable.',
+        ],
+        [
+          'Tax was charged at too low a rate, or omitted',
+          'Debit note',
+          'The supplier, recovering the differential tax.',
+        ],
+        [
+          'A quantity was billed short of what was supplied',
+          'Debit note',
+          'The supplier, for the unbilled balance.',
+        ],
+        [
+          'Freight or an incidental charge was left off the invoice',
+          'Debit note',
+          'The supplier, provided the charge was part of the agreed supply.',
+        ],
+        [
+          'The invoice charged more than agreed',
+          'Credit note',
+          'The supplier, reducing the amount receivable.',
+        ],
+        [
+          'Goods were returned, or found deficient',
+          'Credit note',
+          'The supplier, reversing value and tax.',
+        ],
+        [
+          'The buyer wants to record a claim against the supplier',
+          'A commercial debit note',
+          'The buyer — but it has no GST effect. Only the supplier’s credit note adjusts the tax.',
+        ],
+      ],
+      note:
+        'A buyer’s debit note is a bookkeeping instrument, not a tax one. However strongly a buyer asserts a claim, the liability moves only when the supplier issues the corresponding credit note and reports it.',
+    },
+    {
+      kind: 'callout',
+      tone: 'info',
+      heading: 'GST Debit Note vs Commercial Debit Note',
+      paragraphs: [
+        'A GST debit note is issued under Section 34(3) by the supplier, against a specific earlier tax invoice, when the taxable value or the tax charged was too low. It is reported in GSTR-1, it increases the supplier’s output tax liability in the month it is issued, and it lets the recipient claim the additional input tax credit. It behaves, in effect, as a supplementary invoice.',
+        'A commercial debit note is anything else two businesses exchange to record a claim — a buyer debiting a supplier for damaged stock, for a late-delivery penalty, or for rework charges. It affects the ledgers between the parties and nothing more. It carries no GST, it is not reported, and it does not entitle anyone to credit.',
+        'The distinction that trips people up: unlike credit notes, GST debit notes carry no time limit for issue, because they increase rather than reduce the government\'s revenue. The recipient\'s ability to claim the extra credit, however, is bounded by the usual ITC deadline — 30 November following the financial year of the debit note, or the annual return filing date, whichever is earlier. Delay too long and the tax is payable by you but no longer creditable to them, which is a conversation worth avoiding.',
+        'Practically: number your debit notes in their own continuous series (DN-2026-0001 onwards), always print the original invoice number and date, and state the reason in a line the buyer\'s accounts team can act on without phoning you.',
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a Debit Note?',
     paragraphs: [
@@ -183,5 +279,8 @@ export const debitNoteContent: ToolContent = {
       a: 'Yes — unlimited debit notes, every template, PDF and PNG export, no watermark and no account. Your data stays in your browser’s local storage; nothing is uploaded unless you create a share link.',
     },
   ],
+  relatedHeading: 'Invoices, Corrections and the Orders Behind Them',
+  relatedNote:
+    'A debit note corrects an invoice upward — its mirror image, the credit note, does the opposite.',
   related: ['credit-note', 'invoice', 'gst-invoice', 'purchase-order', 'payment-receipt', 'quotation'],
 };

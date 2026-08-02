@@ -33,6 +33,107 @@ export const paymentReceiptContent: ToolContent = {
   h1: 'Free Payment Receipt Generator',
   intro:
     'Acknowledge every payment the professional way — a numbered receipt with the payment mode, transaction reference, amount received and any balance due, downloadable as a clean PDF in seconds. Free and no signup.',
+  badge: {
+    label: 'Payment Proof',
+    colorClass: 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300 border border-teal-300 dark:border-teal-700',
+  },
+  theme: 'teal',
+  layout: {
+    hero: 'receipt',
+    howTo: 'timeline',
+    features: 'alternating',
+    useCases: 'columns',
+    example: 'paper',
+  },
+  order: [
+    'whatIs',
+    'custom',
+    'howTo',
+    'features',
+    'widget',
+    'example',
+    'useCases',
+    'sections',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'UPI, NEFT, RTGS, cheque and cash modes',
+    'Records the UTR or transaction reference',
+    'Links to the invoice it settles',
+    'Shows the balance still outstanding',
+  ],
+  widget: 'payment-modes',
+  relatedBlogSlugs: [
+    'payment-terms-in-quotations',
+    'free-invoice-maker-online-guide',
+    'business-documentation-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'What to Record for Each Payment Mode',
+      intro:
+        'A receipt is only as useful as the reference it carries. Six months later, "paid by transfer" proves nothing — the reference below is what lets either side trace the payment in a bank statement.',
+      columns: ['Mode', 'Reference to record', 'When it is actually settled'],
+      rows: [
+        [
+          'UPI',
+          'The 12-digit UTR, plus the payer VPA. The app’s own transaction ID alone is not traceable by the bank.',
+          'Instantly, and irreversibly. There is no recall once credited.',
+        ],
+        [
+          'NEFT',
+          'The UTR from the remitter’s advice, and the remitting bank name.',
+          'In half-hourly batches. Same-day for transfers sent well before the cut-off.',
+        ],
+        [
+          'RTGS',
+          'The UTR. Used for ₹2 lakh and above, with no upper limit.',
+          'In near real time during banking hours, and final on credit.',
+        ],
+        [
+          'IMPS',
+          'The RRN or transaction reference, plus the sender’s mobile or account number.',
+          'Instantly, including outside banking hours and on holidays.',
+        ],
+        [
+          'Cheque',
+          'Cheque number, date, drawee bank and branch.',
+          'Only on realisation — typically one to three working days. Never before.',
+        ],
+        [
+          'Demand draft',
+          'DD number, issuing bank and branch, and the date of issue.',
+          'On presentation and credit. Safer than a cheque but still not instant.',
+        ],
+        [
+          'Card',
+          'The last four digits and the acquirer’s approval or RRN code. Never the full card number.',
+          'On authorisation, though settlement to your account follows in one to three days.',
+        ],
+        [
+          'Cash',
+          'Who handed it over, who received it, and a signature on your counterfoil.',
+          'Immediately. Note that Section 269ST bars receiving ₹2 lakh or more in cash from one person in a day or against a single transaction.',
+        ],
+      ],
+      note:
+        'Cross-reference the invoice number on every receipt. Where a customer has several bills open, a payment with no invoice reference gets applied to the wrong one, and the reconciliation to unpick that costs more than the receipt saved.',
+    },
+    {
+      kind: 'callout',
+      tone: 'info',
+      heading: 'Advance, Part Payment and Full Settlement Are Not the Same Receipt',
+      paragraphs: [
+        'An advance is money taken before you supply anything. Under GST an advance received against services creates a liability in the month you receive it, and the correct document is a receipt voucher carrying the rate, the amount and the place of supply — not an ordinary receipt. When you eventually supply, the advance is adjusted against the tax invoice. For goods, advances do not attract tax at the point of receipt.',
+        'A part payment is money against an invoice already issued. Nothing new happens for tax — the liability arose when you invoiced. What matters here is arithmetic: the receipt should show the invoice total, the amount now received, everything received earlier, and the balance still outstanding. Leave the balance off and you will be arguing about it later.',
+        'A full settlement closes the invoice. Say so explicitly — "received in full and final settlement of INV-2026-0042" — because a receipt that merely records an amount does not, by itself, establish that nothing further is owed. Where you have agreed to write off a small shortfall, record that too, or your ledger and the customer’s will disagree permanently.',
+        'One caution on cheques: date the receipt for realisation, not for handover, or mark it "subject to realisation". A receipt issued the moment a cheque is handed over is evidence of payment, and if that cheque bounces you have signed a document contradicting your own claim.',
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a Payment Receipt and When Should You Issue One?',
     paragraphs: [
@@ -185,5 +286,8 @@ export const paymentReceiptContent: ToolContent = {
       a: 'Yes on both counts. Unlimited receipts, all templates, PDF and PNG downloads, no watermark, no account. Your data is stored only in your browser’s local storage and never reaches our servers unless you explicitly create a share link.',
     },
   ],
+  relatedHeading: 'What Comes Before the Money Arrives',
+  relatedNote:
+    'A receipt closes a cycle that a quotation opened and an invoice billed.',
   related: ['invoice', 'quotation', 'gst-invoice', 'credit-note', 'estimate', 'proforma-invoice'],
 };

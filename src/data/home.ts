@@ -11,8 +11,8 @@ export const homeFeatures = [
   },
   {
     icon: 'LayoutTemplate',
-    title: '15+ Premium Templates',
-    description: 'Modern, corporate, minimal, construction, freelancer and more. Switch designs anytime without re-entering data.',
+    title: '25 Premium Templates',
+    description: 'Modern, corporate, minimal, construction, freelancer and more — 10 with fully bespoke layouts. Switch designs anytime without re-entering data.',
   },
   {
     icon: 'Download',
@@ -27,7 +27,7 @@ export const homeFeatures = [
   {
     icon: 'ShieldCheck',
     title: 'Private by Design',
-    description: 'Everything runs in your browser and autosaves locally. Your client data never touches a server. No signup, ever.',
+    description: 'The builder and PDF export run in your browser and autosave to your device. Nothing is uploaded unless you deliberately create a share link. No signup, ever.',
   },
   {
     icon: 'IndianRupee',
@@ -52,7 +52,7 @@ export const homeSteps = [
   },
   {
     title: 'Pick a template',
-    description: 'Choose from 15+ designs and set your brand colour. Watch the live preview change in real time.',
+    description: 'Choose from 25 designs and set your brand colour. Watch the live preview change in real time.',
   },
   {
     title: 'Download & send',
@@ -78,48 +78,48 @@ export const homeCategories = [
 export const homeBenefits = [
   'No signup, no watermark, no hidden charges — free forever',
   'Works fully offline once loaded, installable as an app (PWA)',
-  'Data autosaves to your device and never leaves your browser',
+  'Documents autosave to your device — nothing is uploaded unless you create a share link',
   'GST-ready format accepted by Indian businesses and clients',
   'Unlimited quotations, unlimited items, unlimited downloads',
   'Undo/redo, keyboard shortcuts and drag-to-reorder items',
 ];
 
-export const homeTestimonials = [
+/**
+ * This site does not collect user reviews, so it publishes none.
+ *
+ * The homepage previously carried six invented testimonials with full names,
+ * cities and five-star ratings, plus an `aggregateRating` in the structured data.
+ * That is fabricated review content and a Google policy violation, so it was
+ * removed. If real, attributable testimonials are ever collected — with the
+ * customer's permission — they can be added back here.
+ *
+ * What replaces it below is verifiable: statements about what the software does,
+ * which a visitor can check for themselves in the builder.
+ */
+export const homeCommitments = [
   {
-    name: 'Anita Sharma',
-    role: 'Interior Designer, Pune',
-    quote: 'I used to spend an hour formatting quotes in Word. Now I send a polished, branded PDF to clients in two minutes. Game changer.',
-    rating: 5,
+    icon: 'ShieldCheck',
+    title: 'Your documents stay on your device',
+    description:
+      'The builder runs in your browser and saves to your own device. We do not receive your client list, your prices or your logo — there is no account holding them, because there are no accounts.',
   },
   {
-    name: 'Vikram Nair',
-    role: 'Civil Contractor, Kochi',
-    quote: 'The GST breakup and amount-in-words are exactly what my clients expect. It looks more professional than software I paid for.',
-    rating: 5,
+    icon: 'BadgeIndianRupee',
+    title: 'Free because ads pay for it, not because you do',
+    description:
+      'There is no payment form anywhere on this site, no trial that converts and no watermark to buy off. Advertising covers the hosting so the tools can stay open to everyone.',
   },
   {
-    name: 'Priya Deshmukh',
-    role: 'Freelance Developer, Bengaluru',
-    quote: 'Being able to quote in both ₹ and $ for my international clients, with no signup, is perfect. I recommend it to every freelancer I know.',
-    rating: 5,
+    icon: 'Calculator',
+    title: 'Built for Indian tax reality',
+    description:
+      'Per-item GST at every slab, automatic CGST/SGST versus IGST depending on place of supply, HSN and SAC fields, round-off, and amount in words in the Indian numbering system.',
   },
   {
-    name: 'Rohit Agarwal',
-    role: 'Retail Distributor, Jaipur',
-    quote: 'Unlimited items, instant totals and a QR code for UPI payment. My wholesale quotes go out faster and get approved quicker.',
-    rating: 5,
-  },
-  {
-    name: 'Meera Iyer',
-    role: 'Event Manager, Chennai',
-    quote: 'The templates are genuinely beautiful. Clients think I hired a designer. It has directly helped me win bigger events.',
-    rating: 5,
-  },
-  {
-    name: 'Sandeep Singh',
-    role: 'Electrical Contractor, Ludhiana',
-    quote: 'Simple enough to use on my phone at a site visit and send the quote before I leave. Exactly what a small business needs.',
-    rating: 5,
+    icon: 'User',
+    title: 'One person you can actually reach',
+    description:
+      'The site is built and run by one developer in India, named on the About page. Email goes straight to him — not to a ticket queue.',
   },
 ];
 
@@ -138,7 +138,11 @@ export const homeFaqs = [
   },
   {
     q: 'Is my data safe?',
-    a: 'Your data never leaves your browser. There is no server storing your company or client details — everything is processed locally on your own device, which keeps it completely private.',
+    a: 'The documents you build stay in your browser on your own device — we do not receive them, and PDF export also happens locally. The one exception is if you choose to create a share link, which uploads a copy of that single document so your client can open it; the share dialog tells you before that happens, the copy is deleted automatically after 90 days, and you can delete it yourself at any time. Full detail is in our Privacy Policy.',
+  },
+  {
+    q: 'Who runs QuotationMaker.in?',
+    a: 'It is built and operated by Prashant Upadhyay, an independent developer in India. It is a solo project rather than a registered company, funded by advertising rather than by charging users. The About page has the details and email reaches him directly.',
   },
   {
     q: 'Can I add my logo, signature and stamp?',

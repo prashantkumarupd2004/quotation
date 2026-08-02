@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { MAX_SHARE_BYTES, isQuotationLike, saveShare } from '@/lib/share-store';
+import { MAX_SHARE_BYTES, RETENTION_DAYS, isQuotationLike, saveShare } from '@/lib/share-store';
 
 // Filesystem access requires the Node.js runtime (not Edge).
 export const runtime = 'nodejs';
@@ -31,10 +31,15 @@ export async function POST(request: Request) {
   }
 
   try {
-    const id = await saveShare(body);
-    return NextResponse.json({ id });
+    const { id, deleteKey, expiresAt } = await saveShare(body);
+    // deleteKey is returned once and kept only by the creator's browser — it is
+    // what lets them revoke the link before it expires.
+    return NextResponse.json({ id, deleteKey, expiresAt, retentionDays: RETENTION_DAYS });
   } catch (err) {
     console.error('Failed to save share', err);
-    return NextResponse.json({ error: 'Could not create the share link.' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'We could not create the share link just now. Please try again in a moment.' },
+      { status: 500 },
+    );
   }
 }

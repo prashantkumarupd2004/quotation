@@ -18,6 +18,7 @@ import {
   Undo2,
 } from 'lucide-react';
 import { useDocumentStore, useDocumentConfig } from '@/components/document/document-context';
+import { Icon } from '@/components/ui/icon';
 import { saveDoc, listSavedDocs } from '@/lib/document-library';
 import { downloadPdf, downloadPng, printNode } from '@/lib/export';
 import { getTemplate } from '@/lib/templates';
@@ -144,6 +145,25 @@ export function BuilderShell() {
 
   return (
     <div className="mx-auto max-w-[1600px] px-4 pb-16 pt-6 sm:px-6">
+      {/*
+        Editor header. Without this the ten builders were visually identical —
+        the only clue about which document you were editing was the field
+        labels. Naming the document and its number here makes each tool read as
+        its own editor rather than one generic form.
+      */}
+      <div className="no-print mb-4 flex flex-wrap items-center gap-3">
+        <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+          <Icon name={config.builder.formIcon} className="h-5 w-5" />
+        </span>
+        <div className="min-w-0">
+          <h2 className="font-display text-lg font-bold leading-tight">{config.docTitle} Editor</h2>
+          <p className="text-xs text-muted-foreground">{config.tagline}</p>
+        </div>
+        <span className="ml-auto hidden rounded-full bg-primary/10 px-3 py-1.5 font-display text-xs font-bold text-primary sm:inline">
+          {quotation.meta.number}
+        </span>
+      </div>
+
       {/* Toolbar */}
       <div className="no-print sticky top-16 z-30 mb-5 flex flex-wrap items-center gap-2 rounded-2xl border border-border/60 bg-card/80 p-2.5 shadow-sm backdrop-blur-xl">
         <div className="mr-auto hidden items-center gap-1.5 pl-2 text-xs font-medium text-muted-foreground sm:flex">
@@ -175,7 +195,7 @@ export function BuilderShell() {
         <ToolbarButton onClick={redo} disabled={!canRedo()} label="Redo" icon={Redo2} />
         <ToolbarButton
           onClick={() => {
-            if (confirm('Reset the quotation? This clears all entered data.')) reset();
+            if (confirm(`Reset the ${config.shortName.toLowerCase()}? This clears all entered data.`)) reset();
           }}
           label="Reset"
           icon={RotateCcw}
@@ -220,7 +240,7 @@ export function BuilderShell() {
         <div className={cn('min-w-0', mobileView === 'edit' && 'hidden lg:block')}>
           <div className="lg:sticky lg:top-32">
             <div className="no-print mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
-              <Eye className="h-4 w-4" /> Live Preview
+              <Eye className="h-4 w-4" /> {config.shortName} Preview
               <span className="ml-auto rounded-full bg-muted px-2.5 py-0.5 text-xs">
                 {getTemplate(quotation.meta.templateId).name}
               </span>

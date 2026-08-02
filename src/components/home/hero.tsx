@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Star, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap } from 'lucide-react';
 import { createSampleQuotation } from '@/lib/defaults';
+import { DOCUMENT_TYPE_LIST } from '@/lib/document-types';
 import { QuotationDocument } from '@/components/quotation/quotation-document';
 
 const fadeUp = {
@@ -62,8 +63,8 @@ export function Hero() {
             <Link href="/create" className="btn-primary text-base">
               <Zap className="h-4 w-4" /> Create Free Quotation
             </Link>
-            <Link href="/#tools" className="btn-secondary text-base">
-              Explore All 10 Tools <ArrowRight className="h-4 w-4" />
+            <Link href="/tools" className="btn-secondary text-base">
+              Explore All {DOCUMENT_TYPE_LIST.length} Tools <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
 
@@ -74,16 +75,13 @@ export function Hero() {
             animate="show"
             className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
           >
-            <span className="flex items-center gap-1.5">
-              <span className="flex">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                ))}
-              </span>
-              4.9/5 from 2,000+ businesses
-            </span>
+            {/*
+              These are checkable facts about the product. The previous badge read
+              "4.9/5 from 2,000+ businesses" — a rating that was never collected.
+            */}
             <span>✓ No signup</span>
             <span>✓ GST-ready</span>
+            <span>✓ No watermark</span>
             <span>✓ Free forever</span>
           </motion.div>
         </div>

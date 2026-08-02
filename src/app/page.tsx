@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Check, Star } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Hero } from '@/components/home/hero';
 import { Reveal } from '@/components/ui/reveal';
 import { Faq } from '@/components/ui/faq';
@@ -9,21 +9,22 @@ import { TemplateThumb } from '@/components/quotation/template-thumb';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
 import { faqSchema } from '@/lib/schema';
-import { templates } from '@/lib/templates';
+import { templates, TEMPLATE_COUNT } from '@/lib/templates';
 import { DOCUMENT_TYPE_LIST } from '@/lib/document-types';
+import { industries } from '@/data/industries';
 import {
   homeBenefits,
   homeCategories,
+  homeCommitments,
   homeFaqs,
   homeFeatures,
   homeSteps,
-  homeTestimonials,
 } from '@/data/home';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Free Online Quotation Maker & GST Quotation Generator',
   description:
-    'Create professional GST quotations online in 30 seconds — free. India\'s best quotation maker with 15+ templates, auto CGST/SGST/IGST calculation, live preview and instant PDF & PNG download. No signup.',
+    'Create a professional GST quotation online in under a minute — free. 25 templates, automatic CGST/SGST/IGST calculation, live preview and instant PDF & PNG download. No signup, no watermark.',
   path: '/',
   keywords: [
     'quotation maker',
@@ -35,16 +36,7 @@ export const metadata: Metadata = buildMetadata({
     'create quotation online',
     'quotation template',
     'estimate maker',
-    'proforma invoice maker',
-    'quote generator',
-    'quotation maker app',
-    'business document generator',
     'invoice maker free',
-    'gst bill maker online',
-    'free business documents online India',
-    'quotation and invoice maker online free',
-    'how to create business documents online free',
-    'billing and quotation software free no signup',
   ],
 });
 
@@ -76,14 +68,18 @@ export default function HomePage() {
       <JsonLd data={faqSchema(homeFaqs)} />
       <Hero />
 
-      {/* Trusted-by strip */}
+      {/*
+        Facts strip. Every figure here is countable from the codebase — the
+        previous version advertised "2,000+ businesses" and "50,000+ quotations
+        created", neither of which was measured or verifiable.
+      */}
       <section className="border-y border-border/60 bg-muted/30 py-8">
         <div className="container grid grid-cols-2 gap-6 text-center sm:grid-cols-4">
           {[
-            { value: '2,000+', label: 'Businesses' },
-            { value: '50,000+', label: 'Quotations created' },
-            { value: '15+', label: 'Premium templates' },
-            { value: '30 sec', label: 'Average time' },
+            { value: String(DOCUMENT_TYPE_LIST.length), label: 'Document tools' },
+            { value: String(TEMPLATE_COUNT), label: 'Templates' },
+            { value: String(industries.length), label: 'Industry guides' },
+            { value: '₹0', label: 'Cost, with no signup' },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="font-display text-3xl font-extrabold gradient-text">{stat.value}</div>
@@ -200,7 +196,7 @@ export default function HomePage() {
         </div>
         <div className="mt-10 text-center">
           <Link href="/industries" className="btn-secondary">
-            View all 20 industries <ArrowRight className="h-4 w-4" />
+            View all {industries.length} industries <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -209,7 +205,7 @@ export default function HomePage() {
       <section className="border-y border-border/60 bg-muted/30 py-20 sm:py-28">
         <div className="container">
           <SectionHeader
-            eyebrow="15+ premium templates"
+            eyebrow={`${TEMPLATE_COUNT} templates`}
             title="Designs that make you look established"
             description="Every template is print-ready and GST-compatible. Switch between them anytime without losing data."
           />
@@ -284,39 +280,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/*
+        Replaces the former testimonials section. We do not collect reviews, so
+        rather than invent them this states what the site commits to — each point
+        being something a visitor can verify for themselves.
+      */}
       <section className="border-y border-border/60 bg-muted/30 py-20 sm:py-28">
         <div className="container">
           <SectionHeader
-            eyebrow="Loved by businesses"
-            title="Trusted across India"
-            description="From contractors to freelancers, thousands of professionals quote with confidence."
+            eyebrow="How this site works"
+            title="No signup, no upsell, no surprises"
+            description="We don't publish testimonials or star ratings, because we don't collect them. Here is what we will tell you instead."
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {homeTestimonials.map((t, i) => (
-              <Reveal key={t.name} delay={(i % 3) * 0.05}>
-                <figure className="glass-card h-full p-6">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: t.rating }).map((_, s) => (
-                      <Star key={s} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                    ))}
+          <div className="grid gap-6 md:grid-cols-2">
+            {homeCommitments.map((c, i) => (
+              <Reveal key={c.title} delay={(i % 2) * 0.05}>
+                <div className="glass-card flex h-full gap-4 p-6">
+                  <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+                    <Icon name={c.icon} className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display font-bold">{c.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {c.description}
+                    </p>
                   </div>
-                  <blockquote className="mt-4 text-sm leading-relaxed text-foreground">
-                    “{t.quote}”
-                  </blockquote>
-                  <figcaption className="mt-5 flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-sm font-bold text-white">
-                      {t.name.charAt(0)}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold">{t.name}</span>
-                      <span className="block text-xs text-muted-foreground">{t.role}</span>
-                    </span>
-                  </figcaption>
-                </figure>
+                </div>
               </Reveal>
             ))}
           </div>
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            Read more about{' '}
+            <Link href="/about" className="font-medium text-primary hover:underline">
+              who operates this site
+            </Link>{' '}
+            or{' '}
+            <Link href="/privacy" className="font-medium text-primary hover:underline">
+              how your data is handled
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -339,8 +342,8 @@ export default function HomePage() {
               Send your next quotation in 30 seconds
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">
-              Join thousands of Indian businesses creating professional, GST-ready quotations for
-              free. No signup, no watermark, no limits.
+              Free to use, with no account to create, no watermark on your PDF and no limit on
+              how many documents you make.
             </p>
             <Link
               href="/create"

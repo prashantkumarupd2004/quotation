@@ -33,6 +33,96 @@ export const estimateContent: ToolContent = {
   h1: 'Free Online Estimate Maker',
   intro:
     'Give customers a quick, professional idea of what a job will cost — approximate rates, a completion timeline and a clear scope summary — then download the estimate as a PDF or share it on WhatsApp. Free, no signup, autosaved in your browser.',
+  badge: {
+    label: 'Quick Quote',
+    colorClass: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-300 dark:border-amber-700',
+  },
+  theme: 'amber',
+  layout: {
+    hero: 'note-card',
+    howTo: 'cards',
+    features: 'alternating',
+    useCases: 'accordion',
+    example: 'strip',
+  },
+  order: [
+    'whatIs',
+    'howTo',
+    'widget',
+    'example',
+    'custom',
+    'features',
+    'useCases',
+    'sections',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Non-binding cost and timeline ranges',
+    'Approximate rates with scope notes',
+    'Convert to a firm quotation in one click',
+    'Room to state what is excluded',
+  ],
+  widget: 'estimate-vs-quote',
+  relatedBlogSlugs: [
+    'quotation-vs-estimate',
+    'service-quotation-format-guide',
+    'freelancer-pricing-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'How Much Variance Should an Estimate Allow?',
+      intro:
+        'An estimate is only honest if it says how far the final figure might move. The tolerance depends on how much you can actually see before you start — these are the ranges tradespeople and service firms commonly work to.',
+      columns: ['Type of work', 'Reasonable variance', 'What drives the movement'],
+      rows: [
+        [
+          'Repair and diagnostic work',
+          '±25% or wider',
+          'The fault is not fully visible until the unit is opened. State the diagnostic fee separately and re-estimate once the cause is known.',
+        ],
+        [
+          'Renovation and interiors',
+          '±15–20%',
+          'Hidden damp, old wiring, uneven walls and client-driven changes to finishes after work begins.',
+        ],
+        [
+          'Civil and structural work',
+          '±10–15%',
+          'Soil conditions, material price movement over a long build, and quantities that firm up only after measurement.',
+        ],
+        [
+          'Design and creative projects',
+          '±20%',
+          'Revision rounds. Cap them explicitly — "three rounds included, further rounds at ₹X" — or the range is meaningless.',
+        ],
+        [
+          'Software and development',
+          '±20–30%',
+          'Requirements discovered mid-build, third-party integrations, and data migration that is always worse than it looks.',
+        ],
+        [
+          'Supply of standard goods',
+          '±5% or nil',
+          'Little should move. If you can price it this tightly, issue a quotation instead — the client will trust a firm number more.',
+        ],
+      ],
+      note:
+        'Print the tolerance on the estimate itself, not just in conversation. "Estimated ₹1,80,000, expected range ₹1,62,000–₹1,98,000" sets an expectation that a bare single number never does.',
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      heading: 'When an Estimate May Legitimately Change — and When It May Not',
+      paragraphs: [
+        'An estimate can move when new facts appear that neither side could reasonably have known: the wall was hollow, the gearbox was seized, the client\'s existing data turned out to be in three incompatible formats. It can also move when the client changes what they asked for. Both are fair, and both should be confirmed in writing before the extra work starts, not presented as a surprise on the final bill.',
+        'An estimate may not quietly move because you mispriced it, because your supplier raised rates you failed to check, or because the job took longer than you judged. Those are your commercial risks, and absorbing them is what separates a business a client returns to from one they do not. If your margin genuinely cannot survive the error, say so early and renegotiate openly — do not discover it at invoicing.',
+        'The practical safeguard is a variation note. The moment scope changes, send a one-line record of what changed, what it adds, and get a written yes — even a WhatsApp reply is enough. Disputes over final bills almost never turn on whether the extra work was needed; they turn on whether the client agreed to it before it happened.',
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is an Estimate and When Should You Send One?',
     paragraphs: [
@@ -78,7 +168,7 @@ export const estimateContent: ToolContent = {
         text: 'Estimated rates, quantities and tax compute as you type, with automatic CGST/SGST or IGST if you choose to show tax, and the total in words in Indian format.',
       },
       {
-        title: '25+ templates with your branding',
+        title: '25 templates with your branding',
         text: 'Upload your logo, signature and stamp and choose a layout that matches your business — a garage estimate and an interior-design estimate should not look the same.',
       },
       {
@@ -178,12 +268,15 @@ export const estimateContent: ToolContent = {
     },
     {
       q: 'Do I need to sign up or pay to use the estimate maker?',
-      a: 'No. Every feature — unlimited estimates, all 25+ templates, PDF and PNG downloads, WhatsApp sharing, logo and signature uploads — is free with no account. Your draft autosaves in your browser’s local storage and never leaves your device unless you share it.',
+      a: 'No. Every feature — unlimited estimates, all 25 templates, PDF and PNG downloads, WhatsApp sharing, logo and signature uploads — is free with no account. Your draft autosaves in your browser’s local storage and stays in your browser unless you choose to create a share link.',
     },
     {
       q: 'How long should an estimate stay valid?',
       a: 'Set the Valid Until date to match how fast your input costs move — 7 to 15 days is typical for repair and parts-based work, up to 30 days for labour-dominated services. A short validity protects you from material price swings and nudges the customer to decide quickly.',
     },
   ],
+  relatedHeading: 'What to Send Once the Estimate Is Accepted',
+  relatedNote:
+    'An estimate is the opening move — a firm quotation, then an invoice, follow once the scope settles.',
   related: ['quotation', 'invoice', 'proforma-invoice', 'purchase-order', 'payment-receipt', 'gst-invoice'],
 };

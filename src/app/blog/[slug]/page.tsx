@@ -27,8 +27,7 @@ export async function generateMetadata({
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
     keywords: post.keywords,
-  });
-}
+  });}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -51,6 +50,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             description: post.metaDescription,
             path: `/blog/${post.slug}`,
             date: post.date,
+            // Real hero art where the post has it, so the Article node carries an
+            // image rather than falling back to the generic social card.
+            image: post.heroImage,
           }),
           ...(post.faqs.length ? [faqSchema(post.faqs)] : []),
         ]}
@@ -138,7 +140,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="glass-card p-5">
             <h3 className="text-sm font-semibold">Free quotation maker</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              15+ templates, automatic GST, instant PDF. No signup.
+              25 templates, automatic GST, instant PDF. No signup.
             </p>
             <Link href="/create" className="btn-primary mt-4 w-full text-sm">
               Start now

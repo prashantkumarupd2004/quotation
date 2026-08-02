@@ -6,8 +6,8 @@ const columns: { title: string; links: readonly { title: string; href: string }[
   { title: 'Product', links: footerNav.product },
   { title: 'Free Tools', links: footerNav.tools },
   { title: 'Industries', links: footerNav.industries },
-  { title: 'Resources', links: footerNav.resources },
-  { title: 'Company', links: footerNav.company },
+  { title: 'Guides', links: footerNav.resources },
+  { title: 'Company & Legal', links: footerNav.company },
 ];
 
 export function Footer() {
@@ -24,8 +24,8 @@ export function Footer() {
               Quotation<span className="gradient-text">Maker</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              {siteConfig.tagline}. Create GST-ready quotations in 30 seconds and download a polished
-              PDF — completely free, no signup.
+              Free, GST-ready quotations, invoices and business documents that you build in your
+              browser and download as a clean PDF. No account, no watermark.
             </p>
             <a
               href={`mailto:${siteConfig.contactEmail}`}
@@ -33,6 +33,17 @@ export function Footer() {
             >
               <Mail className="h-4 w-4" /> {siteConfig.contactEmail}
             </a>
+
+            {/* Publisher identity — a reviewer should not have to hunt for who
+                runs the site, and it belongs on every page, not just About. */}
+            <p className="mt-5 max-w-xs text-xs leading-relaxed text-muted-foreground">
+              Built and operated by{' '}
+              <Link href="/about" className="font-medium text-foreground hover:text-primary">
+                {siteConfig.operator.name}
+              </Link>
+              , an independent developer in {siteConfig.operator.country}. Funded by advertising —
+              we never charge users.
+            </p>
           </div>
 
           {columns.map((col) => (
@@ -54,7 +65,19 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-sm text-muted-foreground sm:flex-row">
+        {/* Standing disclaimer — the site publishes tax-adjacent guidance, so the
+            "not professional advice" line should be visible sitewide. */}
+        <p className="mt-12 border-t border-border/60 pt-8 text-xs leading-relaxed text-muted-foreground">
+          QuotationMaker.in provides document formatting tools and general information for Indian
+          businesses. It is not tax, legal or accounting advice, and GST rates and rules change over
+          time — please verify figures with a qualified professional before relying on them. See our{' '}
+          <Link href="/disclaimer" className="text-primary hover:underline">
+            disclaimer
+          </Link>
+          .
+        </p>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
@@ -62,13 +85,13 @@ export function Footer() {
           <p className="flex items-center gap-1.5">
             Developed by{' '}
             <a
-              href="https://www.instagram.com/prashantkrupd"
+              href={siteConfig.operator.profiles[0].url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
             >
               <Instagram className="h-3.5 w-3.5" />
-              Prashant Upadhyay
+              {siteConfig.operator.name}
             </a>
           </p>
         </div>

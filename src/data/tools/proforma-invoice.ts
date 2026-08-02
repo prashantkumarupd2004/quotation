@@ -32,6 +32,92 @@ export const proformaInvoiceContent: ToolContent = {
   h1: 'Free Proforma Invoice Maker',
   intro:
     'Issue a proforma invoice in minutes — set your payment terms, delivery terms and validity period, preview it live, and export a clean PDF for advance collection, buyer approval or customs paperwork. Free, no account, data stays in your browser.',
+  badge: {
+    label: 'Pre-Sale Document',
+    colorClass: 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300 border border-violet-300 dark:border-violet-700',
+  },
+  theme: 'violet',
+  layout: {
+    hero: 'stamped',
+    howTo: 'timeline',
+    features: 'grid',
+    useCases: 'columns',
+    example: 'paper',
+  },
+  order: [
+    'whatIs',
+    'custom',
+    'howTo',
+    'widget',
+    'features',
+    'example',
+    'sections',
+    'useCases',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Releases advance payments and approvals',
+    'Carries delivery, validity and payment terms',
+    'Accepted for letters of credit and customs',
+    'Converts to a tax invoice without retyping',
+  ],
+  widget: 'proforma-vs-invoice',
+  relatedBlogSlugs: [
+    'invoice-vs-quotation',
+    'payment-terms-in-quotations',
+    'gst-invoice-rules-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'What a Proforma Must Carry, Depending on Why It Is Being Issued',
+      intro:
+        'A proforma invoice is asked for in three quite different situations, and each one expects different particulars. Sending a domestic-style proforma to a bank opening a letter of credit is the most common reason one gets rejected.',
+      columns: ['Purpose', 'Particulars that must appear', 'Who checks it'],
+      rows: [
+        [
+          'Releasing an advance payment',
+          'Full supplier and buyer details, itemised supply with rates, tax shown separately, the advance amount and percentage, bank account or UPI details, and a validity date.',
+          'The buyer’s accounts or finance team.',
+        ],
+        [
+          'Getting internal approval or a PO raised',
+          'A clear description matching the buyer’s requisition, unit rates, delivery timeline, payment terms, and your quotation reference if one exists.',
+          'The buyer’s procurement or approving manager.',
+        ],
+        [
+          'Opening a letter of credit',
+          'Exporter and importer details with IEC, country of origin and final destination, Incoterm with named place, port of loading and discharge, currency, gross and net weight, packing details, and HS codes.',
+          'The issuing and advising banks — they match it against the LC terms word for word.',
+        ],
+        [
+          'Customs and import clearance',
+          'HS classification per line, unit and total value in the invoice currency, country of origin, freight and insurance shown separately, and a declaration that the goods are as described.',
+          'Customs authorities at the destination port.',
+        ],
+        [
+          'Advance authorisation or import licence',
+          'Technical specifications, quantity in the licensed unit of measure, and the value expressed in the same currency as the licence.',
+          'The licensing authority.',
+        ],
+      ],
+      note:
+        'For export use, always mark the document clearly as "Proforma Invoice" in the title. Banks and customs treat an unlabelled document that looks like a commercial invoice as one, and a mismatch against the eventual commercial invoice causes discrepancies under the letter of credit.',
+    },
+    {
+      kind: 'callout',
+      tone: 'warn',
+      heading: 'Four Things a Proforma Invoice Cannot Do',
+      paragraphs: [
+        'It cannot support an input tax credit claim. A proforma is not a tax invoice under Rule 46, so your buyer cannot use it to claim ITC no matter how complete it looks. If a registered buyer needs credit, they need the tax invoice issued at the time of supply — the proforma only gets the process moving.',
+        'It does not create a GST liability for you. Because no supply has taken place, issuing a proforma does not put tax on your books and it is not reported in GSTR-1. That is precisely why it is safe to send one before you are ready to commit. Note the separate point that receiving an advance for services may create a liability of its own, which the proforma does not itself trigger.',
+        'It is not a demand for payment you can enforce. A proforma is an intention to supply, not a debt. Accounts teams will pay against one as a matter of practice when releasing an advance, but if a customer simply ignores it you have no claim — there is nothing to recover until you have supplied and invoiced.',
+        'It should not be booked as revenue. Neither side records a proforma in their sales or purchase ledgers. Booking it inflates your turnover against filings that will not match, and creates a reconciliation problem at year end that is tedious to unwind.',
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a Proforma Invoice?',
     paragraphs: [
@@ -57,7 +143,7 @@ export const proformaInvoiceContent: ToolContent = {
       },
       {
         title: 'Export and send for confirmation',
-        text: 'Pick one of 25+ templates, add your signature and stamp, then download the proforma as a PDF or PNG, or send it over WhatsApp. Once the buyer pays or confirms, convert it into a tax invoice in a couple of clicks.',
+        text: 'Pick one of 25 templates, add your signature and stamp, then download the proforma as a PDF or PNG, or send it over WhatsApp. Once the buyer pays or confirms, convert it into a tax invoice in a couple of clicks.',
       },
     ],
   },
@@ -183,8 +269,11 @@ export const proformaInvoiceContent: ToolContent = {
     },
     {
       q: 'Is this proforma invoice maker really free, and where is my data stored?',
-      a: 'Completely free — unlimited proformas, all 25+ templates, PDF and PNG downloads, no watermark and no signup. Everything you type autosaves to your own browser’s localStorage; nothing is uploaded unless you deliberately use the share link feature.',
+      a: 'Completely free — unlimited proformas, all 25 templates, PDF and PNG downloads, no watermark and no signup. Everything you type autosaves to your own browser’s localStorage; nothing is uploaded unless you deliberately use the share link feature.',
     },
   ],
+  relatedHeading: 'The Documents a Proforma Sits Between',
+  relatedNote:
+    'A proforma bridges the quotation and the tax invoice — here is what comes on either side of it.',
   related: ['invoice', 'quotation', 'gst-invoice', 'purchase-order', 'payment-receipt', 'estimate'],
 };

@@ -31,6 +31,122 @@ export const purchaseOrderContent: ToolContent = {
   h1: 'Free Purchase Order Generator',
   intro:
     'Raise a clear, professional purchase order to any vendor in minutes — item specifications, quantities, delivery location, expected date and payment terms, all on a numbered PO you can download as a PDF. Free, no signup.',
+  badge: {
+    label: 'B2B Procurement',
+    colorClass: 'bg-cyan-100 text-cyan-900 dark:bg-cyan-950 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-700',
+  },
+  theme: 'cyan',
+  layout: {
+    hero: 'flow',
+    howTo: 'band',
+    features: 'checklist',
+    useCases: 'cards',
+    example: 'strip',
+  },
+  order: [
+    'whatIs',
+    'widget',
+    'howTo',
+    'custom',
+    'example',
+    'features',
+    'sections',
+    'useCases',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Authorises the vendor before they supply',
+    'Ship-to location and expected delivery date',
+    'References the vendor quotation you agreed',
+    'Gives accounts a number to match against',
+  ],
+  widget: 'po-workflow',
+  relatedBlogSlugs: [
+    'purchase-order-vs-quotation',
+    'purchase-order-process-guide',
+    'business-documentation-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'A Purchase Approval Matrix You Can Actually Enforce',
+      intro:
+        'Purchasing control fails when every order needs the owner’s signature — people simply stop raising POs. Tiering approval by value keeps small purchases moving while the amounts that matter still get looked at. This is a workable starting structure for a small or mid-sized Indian business.',
+      columns: ['Order value', 'Who approves', 'What is expected before approval'],
+      rows: [
+        [
+          'Up to ₹25,000',
+          'Department head or site in-charge',
+          'A PO raised against a known vendor. No competing quotes needed — the administrative cost would exceed the saving.',
+        ],
+        [
+          '₹25,000 – ₹2,00,000',
+          'Purchase manager',
+          'At least two written quotations, or a rate contract already in force with the chosen vendor.',
+        ],
+        [
+          '₹2,00,000 – ₹10,00,000',
+          'Finance head, countersigned by the purchase manager',
+          'Three quotations with a written comparison, vendor GSTIN verified, and confirmation the spend sits within budget.',
+        ],
+        [
+          'Above ₹10,00,000',
+          'Director or partner',
+          'Formal comparative statement, negotiation record, credit and delivery terms agreed in writing, and a payment schedule tied to milestones.',
+        ],
+        [
+          'Any value, new vendor',
+          'One level above the normal threshold',
+          'Vendor onboarding complete: GSTIN checked on the portal, bank details verified independently of email, PAN on record.',
+        ],
+        [
+          'Any value, emergency purchase',
+          'Verbal approval, ratified within 48 hours',
+          'A PO raised retrospectively the same week with the reason for urgency recorded on it. Without this rule, "emergency" quietly becomes the default route.',
+        ],
+      ],
+      note:
+        'Verify a new vendor’s bank details by phoning a number you already hold, never one supplied in the same email as the invoice. Redirected-payment fraud targets exactly this gap, and a PO process is the natural place to close it.',
+    },
+    {
+      kind: 'checklist',
+      heading: 'Three-Way Matching: What to Check Before Releasing Payment',
+      intro:
+        'Three-way matching is the control that makes POs worth raising. Before any vendor invoice is paid, it is set against the purchase order and the goods receipt, and the three must agree. These are the checks in the order they are usually run.',
+      items: [
+        {
+          title: 'Does the invoice quote a valid, open PO number?',
+          text: 'No PO number, no payment. This single rule is what stops unauthorised purchases, because a vendor who cannot invoice without a PO will insist on getting one before they supply.',
+        },
+        {
+          title: 'Do the items match the PO line for line?',
+          text: 'Compare descriptions and specifications, not just totals. An extra line, a substituted grade or a different make is a change that needed approval before delivery, not after.',
+        },
+        {
+          title: 'Does the quantity billed match the quantity received?',
+          text: 'Set the invoice against the delivery challan or goods receipt note, not against the PO. Short deliveries billed in full are the most common overpayment in small businesses, and they are invisible unless someone checks receipt rather than order.',
+        },
+        {
+          title: 'Do the rates match the agreed rates?',
+          text: 'Any increase over the PO rate needs a written amendment. "Prices went up" arriving as an invoice line is not an amendment — it is a renegotiation the buyer never agreed to.',
+        },
+        {
+          title: 'Is the tax charged correctly?',
+          text: 'Check the GSTIN is valid and active, that the CGST/SGST or IGST split matches the place of supply, and that the HSN codes are consistent with what was ordered. A defective invoice puts your input tax credit at risk.',
+        },
+        {
+          title: 'Have deductions and retentions been applied?',
+          text: 'TDS where applicable, agreed retention amounts, penalties for late delivery and any credit notes outstanding from earlier consignments should be netted off before the payment is released.',
+        },
+        {
+          title: 'File the three documents together',
+          text: 'PO, receipt and invoice stored as one bundle answers almost every question an auditor or assessing officer can raise about a purchase — from ITC eligibility to expense substantiation — without a search.',
+        },
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a Purchase Order?',
     paragraphs: [
@@ -183,5 +299,8 @@ export const purchaseOrderContent: ToolContent = {
       a: 'Completely. No signup, no watermark, no PO limit and no locked templates. The tool runs in your browser and your purchasing data stays on your device — nothing is uploaded to our servers.',
     },
   ],
+  relatedHeading: 'The Rest of the Procurement Paper Trail',
+  relatedNote:
+    'A PO is one link in the chain — the quotation precedes it, the challan and invoice close it out.',
   related: ['quotation', 'invoice', 'delivery-challan', 'proforma-invoice', 'gst-invoice', 'debit-note'],
 };

@@ -38,6 +38,25 @@ export interface DocumentTypeConfig {
   showCategoryPicker: boolean;
   /** Lucide icon name used on tool cards (see components/ui/icon). */
   icon: string;
+  /**
+   * Builder appearance for this type. The HSL triples override --primary and
+   * --ring on the builder wrapper, which re-tints every .btn-primary,
+   * .field-input focus ring and section chip inside it without touching those
+   * component classes. paperTemplate/paperAccent set what the live preview
+   * looks like before the user picks anything.
+   */
+  builder: {
+    /** HSL components only, e.g. '217 91% 50%' — consumed inside hsl(). */
+    primaryHsl: string;
+    /** Darker/second stop for the gradient buttons. */
+    secondaryHsl: string;
+    /** Default paper design id from lib/templates. */
+    paperTemplate: string;
+    /** Default accent colour printed on the document. */
+    paperAccent: string;
+    /** Icon shown on the form's own section headers. */
+    formIcon: string;
+  };
 }
 
 const GOODS_LABELS: ItemLabels = { description: 'Description', code: 'HSN/SAC', rate: 'Rate' };
@@ -66,6 +85,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. This quotation is valid until the expiry date mentioned above.\n2. 50% advance payment is required to confirm the order.\n3. Prices are subject to change without prior notice after expiry.\n4. Delivery timeline will be confirmed upon order confirmation.',
     showCategoryPicker: true,
     icon: 'FileText',
+    builder: {
+      primaryHsl: '243 75% 59%',
+      secondaryHsl: '262 83% 58%',
+      paperTemplate: 'modern',
+      paperAccent: '#4f46e5',
+      formIcon: 'FileText',
+    },
   },
 
   invoice: {
@@ -92,6 +118,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. Payment is due by the due date mentioned above.\n2. Interest may be charged on overdue amounts.\n3. Please quote the invoice number with your payment.\n4. Goods once sold will not be taken back unless agreed in writing.',
     showCategoryPicker: false,
     icon: 'Receipt',
+    builder: {
+      primaryHsl: '217 91% 50%',
+      secondaryHsl: '224 76% 45%',
+      paperTemplate: 'invoice',
+      paperAccent: '#1d4ed8',
+      formIcon: 'Receipt',
+    },
   },
 
   'gst-invoice': {
@@ -119,6 +152,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. Payment is due by the due date mentioned above.\n2. GST is charged as per prevailing rates; ITC subject to GST law.\n3. Subject to local jurisdiction.\n4. Certified that the particulars given above are true and correct.',
     showCategoryPicker: false,
     icon: 'BadgePercent',
+    builder: {
+      primaryHsl: '160 84% 33%',
+      secondaryHsl: '173 80% 32%',
+      paperTemplate: 'wholesale',
+      paperAccent: '#166534',
+      formIcon: 'BadgePercent',
+    },
   },
 
   estimate: {
@@ -145,6 +185,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. This estimate is valid until the date mentioned above.\n2. Final cost may vary ±10% based on actual work and materials.\n3. Any additional work will be estimated and approved separately.\n4. Work begins after written approval of this estimate.',
     showCategoryPicker: false,
     icon: 'Calculator',
+    builder: {
+      primaryHsl: '32 95% 44%',
+      secondaryHsl: '25 95% 45%',
+      paperTemplate: 'elegant',
+      paperAccent: '#b45309',
+      formIcon: 'Calculator',
+    },
   },
 
   'proforma-invoice': {
@@ -172,6 +219,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. This proforma invoice is valid until the date mentioned above.\n2. A tax invoice will be issued upon confirmation / payment.\n3. Prices are firm for the validity period only.\n4. Delivery timeline counts from receipt of advance payment.',
     showCategoryPicker: false,
     icon: 'FileCheck',
+    builder: {
+      primaryHsl: '263 70% 50%',
+      secondaryHsl: '271 81% 56%',
+      paperTemplate: 'agency',
+      paperAccent: '#7c3aed',
+      formIcon: 'FileCheck',
+    },
   },
 
   'purchase-order': {
@@ -199,6 +253,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. Please quote the PO number on all invoices, challans and correspondence.\n2. Goods must match the specifications and quantities stated above.\n3. Delivery must be completed by the expected delivery date.\n4. The buyer reserves the right to reject goods that do not meet specifications.',
     showCategoryPicker: false,
     icon: 'ShoppingCart',
+    builder: {
+      primaryHsl: '192 91% 36%',
+      secondaryHsl: '201 96% 32%',
+      paperTemplate: 'corporate',
+      paperAccent: '#0e7490',
+      formIcon: 'ShoppingCart',
+    },
   },
 
   'delivery-challan': {
@@ -229,6 +290,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. Goods listed above are dispatched as per the details mentioned.\n2. Please verify quantity and condition at the time of delivery.\n3. Any discrepancy must be reported within 24 hours of receipt.\n4. This challan is not an invoice; a tax invoice will follow where applicable.',
     showCategoryPicker: false,
     icon: 'Truck',
+    builder: {
+      primaryHsl: '239 84% 60%',
+      secondaryHsl: '243 75% 55%',
+      paperTemplate: 'elegant-blue',
+      paperAccent: '#4338ca',
+      formIcon: 'Truck',
+    },
   },
 
   'payment-receipt': {
@@ -257,6 +325,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. This receipt confirms payment received as detailed above.\n2. Cheque payments are subject to realisation.\n3. Please retain this receipt for your records.',
     showCategoryPicker: false,
     icon: 'HandCoins',
+    builder: {
+      primaryHsl: '175 84% 32%',
+      secondaryHsl: '180 84% 30%',
+      paperTemplate: 'invoice-style',
+      paperAccent: '#0f766e',
+      formIcon: 'HandCoins',
+    },
   },
 
   'credit-note': {
@@ -284,6 +359,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. This credit note is issued against the original invoice referenced above.\n2. The credited amount will be adjusted against future invoices or refunded as agreed.\n3. GST adjustments are as per Section 34 of the CGST Act.',
     showCategoryPicker: false,
     icon: 'RotateCcw',
+    builder: {
+      primaryHsl: '347 77% 50%',
+      secondaryHsl: '336 80% 48%',
+      paperTemplate: 'interior',
+      paperAccent: '#9f1239',
+      formIcon: 'RotateCcw',
+    },
   },
 
   'debit-note': {
@@ -311,6 +393,13 @@ export const DOCUMENT_TYPES: Record<DocumentTypeId, DocumentTypeConfig> = {
       '1. This debit note is issued against the invoice referenced above.\n2. The debited amount is payable along with the original invoice balance.\n3. GST adjustments are as per Section 34 of the CGST Act.',
     showCategoryPicker: false,
     icon: 'RotateCw',
+    builder: {
+      primaryHsl: '21 90% 48%',
+      secondaryHsl: '17 88% 45%',
+      paperTemplate: 'retail',
+      paperAccent: '#c2410c',
+      formIcon: 'RotateCw',
+    },
   },
 };
 

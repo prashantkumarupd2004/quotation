@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import {
   Building2,
   ClipboardList,
-  FileText,
   IndianRupee,
   Layers,
   Layout,
@@ -14,6 +13,7 @@ import {
   User,
 } from 'lucide-react';
 import { useDocumentStore, useDocumentConfig } from '@/components/document/document-context';
+import { Icon } from '@/components/ui/icon';
 import { currencies } from '@/lib/currency';
 import { taxModeLabels } from '@/lib/calculations';
 import { CATEGORY_LIST, getCategory, type CategoryField } from '@/lib/categories';
@@ -25,12 +25,15 @@ import { TemplatePicker } from './template-picker';
 import { ImageUpload } from './image-upload';
 
 function Section({
-  icon: Icon,
+  icon: IconCmp,
+  iconName,
   title,
   description,
   children,
 }: {
-  icon: React.ComponentType<{ className?: string }>;
+  icon?: React.ComponentType<{ className?: string }>;
+  /** Registry icon name — used where the icon should follow the document type. */
+  iconName?: string;
   title: string;
   description?: string;
   children: React.ReactNode;
@@ -39,7 +42,11 @@ function Section({
     <section className="glass-card p-5 sm:p-6">
       <div className="mb-4 flex items-center gap-3">
         <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary/10 text-primary">
-          <Icon className="h-5 w-5" />
+          {iconName ? (
+            <Icon name={iconName} className="h-5 w-5" />
+          ) : IconCmp ? (
+            <IconCmp className="h-5 w-5" />
+          ) : null}
         </span>
         <div>
           <h2 className="font-display text-base font-bold">{title}</h2>
@@ -234,7 +241,7 @@ export function BuilderForm() {
         </Section>
       ) : null}
 
-      <Section icon={FileText} title={`${config.shortName} Details`}>
+      <Section iconName={config.builder.formIcon} title={`${config.shortName} Details`}>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Field label={config.numberLabel}>
             <input className="field-input" value={q.meta.number} onChange={(e) => setMeta({ number: e.target.value })} />

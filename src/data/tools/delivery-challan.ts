@@ -34,6 +34,118 @@ export const deliveryChallanContent: ToolContent = {
   h1: 'Free Online Delivery Challan Generator',
   intro:
     'Prepare a complete delivery challan in your browser — consignor, consignee, goods list, vehicle number, transporter and LR number — and download a print-ready PDF for the driver in seconds. Free, no signup, and everything stays on your device.',
+  badge: {
+    label: 'Logistics & Transport',
+    colorClass: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700',
+  },
+  theme: 'indigo',
+  layout: {
+    hero: 'manifest',
+    howTo: 'cards',
+    features: 'grid',
+    useCases: 'accordion',
+    example: 'table',
+  },
+  order: [
+    'whatIs',
+    'howTo',
+    'custom',
+    'widget',
+    'features',
+    'example',
+    'sections',
+    'useCases',
+    'faq',
+    'blogs',
+    'related',
+  ],
+  orientationPoints: [
+    'Rule 55 compliant dispatch document',
+    'Transporter, vehicle and LR number fields',
+    'Original, Duplicate and Triplicate copies',
+    'For job work, branch transfers and approvals',
+  ],
+  widget: 'challan-checklist',
+  relatedBlogSlugs: [
+    'delivery-challan-complete-guide',
+    'gst-invoice-rules-guide',
+    'business-documentation-guide',
+  ],
+  customBlocks: [
+    {
+      kind: 'table',
+      heading: 'When Does a Consignment Need an E-Way Bill?',
+      intro:
+        'A delivery challan covers the goods; an e-way bill covers their movement. Whether you need one depends on the consignment value, the distance and the reason for the movement. These are the thresholds in general force.',
+      columns: ['Movement', 'E-way bill needed?', 'Notes'],
+      rows: [
+        [
+          'Inter-state, consignment value above ₹50,000',
+          'Yes',
+          'Generate before the goods move. Part A holds the consignment details, Part B the vehicle number.',
+        ],
+        [
+          'Intra-state, consignment value above ₹50,000',
+          'Usually yes',
+          'States set their own intra-state threshold and some raised it to ₹1 lakh or higher. Check your own state’s notification rather than assuming.',
+        ],
+        [
+          'Inter-state job work, any value',
+          'Yes',
+          'Value is irrelevant here. The principal or the job worker must raise it even for a small consignment sent for processing.',
+        ],
+        [
+          'Handicraft goods moved inter-state by an unregistered person',
+          'Yes',
+          'Another case where the ₹50,000 threshold does not apply.',
+        ],
+        [
+          'Distance under 50 km within the same state',
+          'Part A only',
+          'Where the movement is between consignor and transporter, or transporter and consignee, Part B (vehicle details) may be left out.',
+        ],
+        [
+          'Non-motorised transport',
+          'No',
+          'Goods moved by handcart or similar are outside the requirement, as are certain exempt goods and movements from port to inland container depot for customs clearance.',
+        ],
+      ],
+      note:
+        'Validity runs by distance — broadly one day per 200 km for regular cargo, with longer allowances for over-dimensional consignments. If the vehicle breaks down or the goods are transhipped, update Part B before the movement continues; an expired or mismatched e-way bill is what detention proceedings are built on.',
+    },
+    {
+      kind: 'checklist',
+      heading: 'What Must Physically Travel With the Goods',
+      intro:
+        'A driver stopped at a check post cannot produce what was left on someone’s desk. This is what should be in the vehicle before it leaves your premises.',
+      items: [
+        {
+          title: 'The delivery challan, in triplicate',
+          text: 'Marked Original for Consignee, Duplicate for Transporter and Triplicate for Consigner. The duplicate stays with the driver, the original is handed over on delivery, and the triplicate returns to you as the dispatch record.',
+        },
+        {
+          title: 'The e-way bill number, where one is required',
+          text: 'The EBN can be carried on paper, mapped to an RFID device, or shown from a phone. A number the driver cannot produce at all is treated as no e-way bill.',
+        },
+        {
+          title: 'The tax invoice, if the movement is a supply',
+          text: 'Where the goods are being sold rather than merely moved, the invoice travels too. The challan alone is not sufficient documentation for a taxable supply in transit.',
+        },
+        {
+          title: 'A declaration of the reason for transportation',
+          text: 'Job work, branch transfer, goods on approval, exhibition, line sales or repair and return. This is the field that explains why goods worth several lakhs are moving with no invoice attached.',
+        },
+        {
+          title: 'Vehicle number matching the e-way bill Part B',
+          text: 'If the load is transhipped to a different vehicle mid-route, Part B must be updated before the new vehicle moves. A vehicle number that does not match the bill is the single most common cause of detention.',
+        },
+        {
+          title: 'Transporter ID or LR number',
+          text: 'Where a third-party transporter carries the consignment, their GSTIN or enrolment ID and the lorry receipt number tie the physical movement to the paperwork.',
+        },
+      ],
+    },
+  ],
   whatIs: {
     heading: 'What Is a Delivery Challan Under GST?',
     paragraphs: [
@@ -83,7 +195,7 @@ export const deliveryChallanContent: ToolContent = {
         text: 'Because a challan is not a demand for payment, this tool opens in no-tax mode showing quantities and approximate values only — exactly how a dispatch document should look.',
       },
       {
-        title: '25+ templates with logo, stamp and signature',
+        title: '25 templates with logo, stamp and signature',
         text: 'Pick a layout that matches your letterhead, upload your logo, authorised signature and company stamp, and export an A4-perfect PDF or PNG every time.',
       },
       {
@@ -148,7 +260,7 @@ export const deliveryChallanContent: ToolContent = {
     {
       heading: 'Free Forever, and Private by Design',
       paragraphs: [
-        'Every part of this delivery challan generator is free — unlimited challans, all 25+ templates, PDF and PNG downloads, WhatsApp sharing and QR codes, with no watermark and no account. There is nothing to install and nothing to subscribe to; open the page at the dispatch desk and start typing.',
+        'Every part of this delivery challan generator is free — unlimited challans, all 25 templates, PDF and PNG downloads, WhatsApp sharing and QR codes, with no watermark and no account. There is nothing to install and nothing to subscribe to; open the page at the dispatch desk and start typing.',
         'Your dispatch data — customer addresses, goods, values, vehicle numbers — is saved only in your own browser via localStorage. It is never uploaded to our servers, so commercially sensitive movement information stays inside your business. Duplicating yesterday’s challan for today’s repeat dispatch to the same job worker takes seconds: your last challan loads automatically, and you just change the number, date and quantities.',
       ],
     },
@@ -187,5 +299,8 @@ export const deliveryChallanContent: ToolContent = {
       a: 'Completely free — no signup, no limits, no watermark. Challans autosave in your browser’s local storage on your own device and are never uploaded, unless you explicitly use the share link feature for a specific document.',
     },
   ],
+  relatedHeading: 'Documents That Travel Alongside a Challan',
+  relatedNote:
+    'A challan moves the goods; these are the documents that order them and bill for them.',
   related: ['gst-invoice', 'invoice', 'purchase-order', 'quotation', 'payment-receipt', 'credit-note'],
 };
