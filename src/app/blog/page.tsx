@@ -6,27 +6,47 @@ import { PageHero } from '@/components/layout/page-hero';
 import { Reveal } from '@/components/ui/reveal';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
-import { breadcrumbSchema } from '@/lib/schema';
+import { blogSchema, breadcrumbSchema } from '@/lib/schema';
 import { formatDate } from '@/lib/format';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Blog — Quotation & Business Guides for Indian Businesses',
+  title: 'Business Guides — Quotations, GST, Invoicing & Payments in India',
   description:
-    'Practical guides on writing quotations, GST, pricing, proposals and small-business documentation. Learn how to quote better and win more clients.',
+    'Practical, India-focused guides on writing quotations, GST invoice rules, pricing your services, recovering late payments and keeping business records. Written for small businesses and freelancers.',
   path: '/blog',
-  keywords: ['quotation blog', 'how to write a quotation', 'gst guide', 'freelancer pricing', 'business documentation'],
+  keywords: [
+    'quotation guide India',
+    'gst invoice rules',
+    'how to write a quotation',
+    'small business documentation',
+    'late payment recovery MSME',
+    'service pricing guide',
+  ],
 });
 
 export default function BlogPage() {
   const [featured, ...rest] = blogPosts;
 
+  // Group by category so a 40-post archive reads as a structured library rather
+  // than an undifferentiated grid. Order follows first appearance, which keeps
+  // the newest categories near the top without a hand-maintained list.
+  const byCategory = rest.reduce<Map<string, typeof rest>>((acc, post) => {
+    const bucket = acc.get(post.category);
+    if (bucket) bucket.push(post);
+    else acc.set(post.category, [post]);
+    return acc;
+  }, new Map());
+
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+          ]),
+          blogSchema(blogPosts),
+        ]}
       />
       <PageHero
         eyebrow="Blog"
@@ -73,30 +93,38 @@ export default function BlogPage() {
           </Link>
         </Reveal>
 
-        {/* Grid */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((post, i) => (
-            <Reveal key={post.slug} delay={(i % 3) * 0.05}>
-              <Link href={`/blog/${post.slug}`} className="glass-card group flex h-full flex-col p-6">
-                <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                  {post.category}
-                </span>
-                <h2 className="mt-3 font-display text-lg font-bold group-hover:text-primary">
-                  {post.title}
-                </h2>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
-                <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5" /> {formatDate(post.date)}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" /> {post.readingTime} min
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        {/* Grid, grouped by topic */}
+        {[...byCategory.entries()].map(([category, posts]) => (
+          <section key={category} className="mt-14">
+            <h2 className="font-display text-xl font-bold">{category}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {posts.length} guide{posts.length === 1 ? '' : 's'}
+            </p>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post, i) => (
+                <Reveal key={post.slug} delay={(i % 3) * 0.05}>
+                  <Link href={`/blog/${post.slug}`} className="glass-card group flex h-full flex-col p-6">
+                    <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                      {post.category}
+                    </span>
+                    <h3 className="mt-3 font-display text-lg font-bold group-hover:text-primary">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                    <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="h-3.5 w-3.5" /> {formatDate(post.date)}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="h-3.5 w-3.5" /> {post.readingTime} min
+                      </span>
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </section>
+        ))}
       </section>
     </>
   );

@@ -55,12 +55,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: `${base}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
-    changeFrequency: 'monthly',
-    priority: 0.65,
-  }));
+  /*
+   * Recent posts get a higher priority and a weekly crawl hint — a brand-new
+   * guide buried at 0.65 alongside a year-old one gives Google no reason to
+   * revisit. Anything published in the last 60 days counts as recent.
+   */
+  const RECENT_WINDOW_MS = 60 * 24 * 60 * 60 * 1000;
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((p) => {
+    const published = new Date(p.date);
+    const isRecent = now.getTime() - published.getTime() < RECENT_WINDOW_MS;
+    return {
+      url: `${base}/blog/${p.slug}`,
+      lastModified: published,
+      changeFrequency: isRecent ? 'weekly' : 'monthly',
+      priority: isRecent ? 0.8 : 0.65,
+    };
+  });
 
   return [...staticEntries, ...toolEntries, ...industryEntries, ...blogEntries];
 }

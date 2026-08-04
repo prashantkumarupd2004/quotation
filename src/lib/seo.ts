@@ -8,6 +8,13 @@ interface SeoParams {
   keywords?: string[];
   ogImage?: string;
   noIndex?: boolean;
+  /**
+   * Set on editorial pages so the OG type is `article` rather than `website`.
+   * Facebook, LinkedIn and X all surface the byline and date from these, and
+   * Google uses them as a corroborating freshness signal alongside the Article
+   * JSON-LD.
+   */
+  article?: { publishedTime: string; modifiedTime?: string; section?: string; tags?: readonly string[] };
 }
 
 /** Build a fully-formed Next.js Metadata object with OG + Twitter + canonical. */
@@ -18,6 +25,7 @@ export function buildMetadata({
   keywords,
   ogImage,
   noIndex = false,
+  article,
 }: SeoParams = {}): Metadata {
   const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} — ${siteConfig.tagline}`;
   const desc = description ?? siteConfig.description;
@@ -60,7 +68,16 @@ export function buildMetadata({
           },
         },
     openGraph: {
-      type: 'website',
+      ...(article
+        ? {
+            type: 'article' as const,
+            publishedTime: article.publishedTime,
+            modifiedTime: article.modifiedTime ?? article.publishedTime,
+            authors: [siteConfig.operator.name],
+            ...(article.section ? { section: article.section } : {}),
+            ...(article.tags?.length ? { tags: [...article.tags] } : {}),
+          }
+        : { type: 'website' as const }),
       locale: siteConfig.locale,
       url,
       title: fullTitle,

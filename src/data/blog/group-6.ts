@@ -181,7 +181,7 @@ export const blogPosts6: BlogPost[] = [
     ],
     date: '2026-07-18',
     readingTime: 8,
-    category: 'Procurement',
+    category: 'Business Documentation',
     excerpt:
       'Businesses that buy on the phone overpay and under-document. A simple PO process — order, deliver, match, pay — fixes both. Here is how to run it.',
     intro:

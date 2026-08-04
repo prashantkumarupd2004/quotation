@@ -16,7 +16,7 @@ export const blogPosts2: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 8,
-    category: 'Freelancing',
+    category: 'Pricing',
     excerpt:
       'A practical, India-specific framework for freelancers to price their work fairly, quote clients professionally, and avoid the classic underpricing trap.',
     intro:
@@ -92,7 +92,7 @@ export const blogPosts2: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 9,
-    category: 'Marketing',
+    category: 'Sales & Negotiation',
     excerpt:
       'A complete structure for writing digital marketing proposals that Indian clients actually approve, with pricing models and GST-compliant quoting tips.',
     intro:
@@ -171,7 +171,7 @@ export const blogPosts2: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 7,
-    category: 'Business Documents',
+    category: 'Business Documentation',
     excerpt:
       'A clear, practical breakdown of quotations, proforma invoices, and tax invoices - what each one legally means and when Indian businesses should use them.',
     intro:
@@ -257,7 +257,7 @@ export const blogPosts2: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 8,
-    category: 'Business Documents',
+    category: 'Business Documentation',
     excerpt:
       'A complete, practical checklist of the business documents every Indian small business and freelancer actually needs, and how to keep them organized.',
     intro:
@@ -343,7 +343,7 @@ export const blogPosts2: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 8,
-    category: 'Sales',
+    category: 'Sales & Negotiation',
     excerpt:
       'Practical, India-specific sales tactics for small businesses to send better quotations, follow up effectively, and close more deals without discounting blindly.',
     intro:

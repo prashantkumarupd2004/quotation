@@ -117,6 +117,33 @@ export function faqSchema(faqs: { q: string; a: string }[]): Json {
 }
 
 /**
+ * Blog node for the /blog index. Declaring the collection — rather than leaving
+ * Google to infer it from a grid of links — is what lets the individual Article
+ * nodes on each post be read as part of one publication.
+ */
+export function blogSchema(posts: { title: string; slug: string; date: string; excerpt: string }[]): Json {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': `${siteConfig.url}/blog#blog`,
+    name: `${siteConfig.name} Guides`,
+    description:
+      'Practical guides on quotations, GST, invoicing, payments and business documentation for Indian small businesses.',
+    url: `${siteConfig.url}/blog`,
+    inLanguage: siteConfig.language,
+    publisher: { '@id': ORG_ID },
+    blogPost: posts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.title,
+      description: p.excerpt,
+      datePublished: p.date,
+      url: `${siteConfig.url}/blog/${p.slug}`,
+      author: { '@type': 'Person', name: siteConfig.operator.name, url: `${siteConfig.url}/about` },
+    })),
+  };
+}
+
+/**
  * HowTo steps. Google retired HowTo rich results, but the markup still helps
  * machine-readable understanding of the page — so we keep it and give each step
  * a real name (the first clause of the instruction) instead of "Step N".
@@ -150,6 +177,12 @@ export function articleSchema(params: {
   updated?: string;
   /** Absolute or root-relative hero image path. */
   image?: string;
+  /** Category the article sits under, e.g. 'GST & Tax'. */
+  section?: string;
+  /** Target keywords, emitted as the Article `keywords` property. */
+  keywords?: readonly string[];
+  /** Approximate word count — a genuine depth signal for long-form guides. */
+  wordCount?: number;
 }): Json {
   const image = params.image ?? siteConfig.ogImage;
   return {
@@ -160,6 +193,9 @@ export function articleSchema(params: {
     datePublished: params.date,
     dateModified: params.updated ?? params.date,
     image: image.startsWith('http') ? image : `${siteConfig.url}${image}`,
+    ...(params.section ? { articleSection: params.section } : {}),
+    ...(params.keywords?.length ? { keywords: params.keywords.join(', ') } : {}),
+    ...(params.wordCount ? { wordCount: params.wordCount } : {}),
     // Named human author — anonymous "Organization" authorship is a weak E-E-A-T
     // signal and reviewers look for a real byline.
     author: {

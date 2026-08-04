@@ -179,7 +179,7 @@ export const blogPosts1: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 9,
-    category: 'GST & Taxation',
+    category: 'GST & Tax',
     excerpt:
       'Everything Indian businesses need to know about applying GST correctly on quotations, from CGST/SGST/IGST to HSN and SAC codes.',
     intro:
@@ -339,7 +339,7 @@ export const blogPosts1: BlogPost[] = [
     ],
     date: '2026-07-06',
     readingTime: 9,
-    category: 'Industry Templates',
+    category: 'Industry Guides',
     excerpt:
       'Real-world construction quotation examples covering material breakdown, labor charges, GST, and milestone payment terms for Indian contractors.',
     intro:

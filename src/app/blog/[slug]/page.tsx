@@ -9,6 +9,17 @@ import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
 import { articleSchema, breadcrumbSchema, faqSchema } from '@/lib/schema';
 import { formatDate } from '@/lib/format';
+import type { BlogPost } from '@/data/blog-types';
+
+/** Rough word count over the body copy — feeds Article.wordCount. */
+function wordCount(post: BlogPost): number {
+  const text = [
+    post.intro,
+    ...post.sections.flatMap((s) => [s.heading, s.body, ...(s.bullets ?? [])]),
+    ...post.faqs.flatMap((f) => [f.q, f.a]),
+  ].join(' ');
+  return text.split(/\s+/).filter(Boolean).length;
+}
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -27,6 +38,7 @@ export async function generateMetadata({
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
     keywords: post.keywords,
+    article: { publishedTime: post.date, section: post.category, tags: post.keywords },
   });}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -53,6 +65,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             // Real hero art where the post has it, so the Article node carries an
             // image rather than falling back to the generic social card.
             image: post.heroImage,
+            section: post.category,
+            keywords: post.keywords,
+            wordCount: wordCount(post),
           }),
           ...(post.faqs.length ? [faqSchema(post.faqs)] : []),
         ]}
