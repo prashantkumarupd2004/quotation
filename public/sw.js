@@ -1,5 +1,5 @@
 /* QuotationMaker.in service worker — offline-first shell caching. */
-const CACHE = 'qm-cache-v1';
+const CACHE = 'qm-cache-v2';
 const PRECACHE = ['/', '/create', '/templates', '/offline'];
 
 self.addEventListener('install', (event) => {
@@ -27,11 +27,25 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(request, copy)).catch(() => undefined);
+          // Only persist successful responses. Caching a 404/500 here would pin
+          // an error page into the cache for good — CACHE has a fixed name, so
+          // nothing would ever evict it.
+          if (response && response.ok && response.type === 'basic') {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, copy)).catch(() => undefined);
+          }
           return response;
         })
-        .catch(() => caches.match(request).then((cached) => cached || caches.match('/offline') || caches.match('/')))
+        .catch(async () => {
+          // `caches.match` returns a Promise, which is always truthy — these
+          // fallbacks have to be awaited individually rather than chained with `||`.
+          return (
+            (await caches.match(request)) ||
+            (await caches.match('/offline')) ||
+            (await caches.match('/')) ||
+            Response.error()
+          );
+        })
     );
     return;
   }

@@ -7,7 +7,7 @@ import { PageHero } from '@/components/layout/page-hero';
 import { Reveal } from '@/components/ui/reveal';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
-import { breadcrumbSchema } from '@/lib/schema';
+import { breadcrumbSchema, collectionSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
   title: '25+ Free Quotation Templates — Modern, Corporate, Premium, GST',
@@ -24,10 +24,22 @@ export default function TemplatesPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Templates', path: '/templates' },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Templates', path: '/templates' },
+          ]),
+          collectionSchema({
+            name: 'Free Quotation Templates',
+            description:
+              'Print-ready, GST-compatible quotation templates in modern, corporate, creative and minimal styles, including bespoke premium layouts.',
+            path: '/templates',
+            items: orderedTemplates.map((t) => ({
+              name: `${t.name} Quotation Template`,
+              path: `/create?template=${t.id}`,
+            })),
+          }),
+        ]}
       />
       <PageHero
         eyebrow="25+ Premium Designs"

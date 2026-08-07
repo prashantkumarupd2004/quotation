@@ -7,7 +7,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { Icon } from '@/components/ui/icon';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
-import { breadcrumbSchema } from '@/lib/schema';
+import { breadcrumbSchema, collectionSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Industry Quotation Makers — 20+ Trades & Services',
@@ -21,10 +21,19 @@ export default function IndustriesPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Industries', path: '/industries' },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Industries', path: '/industries' },
+          ]),
+          collectionSchema({
+            name: 'Industry Quotation Makers',
+            description:
+              'Tailored quotation makers for construction, interior design, freelancers, IT, photography, transport and more — each with its own format, sample line items and HSN/SAC codes.',
+            path: '/industries',
+            items: industries.map((i) => ({ name: i.h1, path: `/industries/${i.slug}` })),
+          }),
+        ]}
       />
       <PageHero
         eyebrow="20+ Industries"

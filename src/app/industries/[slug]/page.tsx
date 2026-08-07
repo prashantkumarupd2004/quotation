@@ -13,6 +13,7 @@ import { TemplateThumb } from '@/components/quotation/template-thumb';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
 import { breadcrumbSchema, faqSchema, howToSchema } from '@/lib/schema';
+import { postsForIndustry } from '@/lib/internal-links';
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
@@ -41,6 +42,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
 
   const template = getTemplate(industry.templateId);
   const related = getRelatedIndustries(industry.slug);
+  // Guides matched to this trade. Without these the industry cluster only ever
+  // links to itself and never passes authority into the editorial content.
+  const guides = postsForIndustry(industry.slug);
   const createHref = `/create?template=${industry.templateId}`;
   const demoQuotation = createIndustryQuotation(industry);
   const inr = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 });
@@ -283,6 +287,24 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
               ))}
             </ul>
           </div>
+
+          {guides.length ? (
+            <div className="glass-card p-5">
+              <h3 className="text-sm font-semibold">Guides for {industry.name.toLowerCase()}</h3>
+              <ul className="mt-3 space-y-2.5">
+                {guides.map((g) => (
+                  <li key={g.slug}>
+                    <Link
+                      href={`/blog/${g.slug}`}
+                      className="block text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {g.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </aside>
       </div>
 

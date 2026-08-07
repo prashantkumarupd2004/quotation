@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
-import { blogPosts, getPostBySlug, getRelatedPosts } from '@/data/blog';
+import { blogPosts, getPostBySlug } from '@/data/blog';
 import { PageHero } from '@/components/layout/page-hero';
 import { Faq } from '@/components/ui/faq';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
 import { articleSchema, breadcrumbSchema, faqSchema } from '@/lib/schema';
+import { relatedPosts, toolForPost } from '@/lib/internal-links';
 import { formatDate } from '@/lib/format';
 import type { BlogPost } from '@/data/blog-types';
 
@@ -46,7 +47,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const related = getRelatedPosts(post.slug);
+  // Balanced graph rather than the raw editorial list — see lib/internal-links.
+  const related = relatedPosts(post.slug);
+  const tool = toolForPost(post.slug);
 
   return (
     <>
@@ -124,14 +127,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </section>
           ) : null}
 
-          {/* Inline CTA */}
+          {/* Inline CTA — points at the generator this post is actually about,
+              rather than sending every reader to the quotation builder. */}
           <div className="mt-12 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 p-8 text-center">
-            <h2 className="font-display text-2xl font-bold">Ready to create your quotation?</h2>
+            <h2 className="font-display text-2xl font-bold">Ready to create your {tool.label.replace(/ (Maker|Generator)$/, '').toLowerCase()}?</h2>
             <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
-              Put this into practice — build a professional, GST-ready quotation for free in under a minute.
+              Put this into practice — build a professional, GST-ready document for free in under a minute.
             </p>
-            <Link href="/create" className="btn-primary mt-5">
-              Create Free Quotation <ArrowRight className="h-4 w-4" />
+            <Link href={tool.path} className="btn-primary mt-5">
+              Open the {tool.label} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </article>
@@ -144,9 +148,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <li key={r.slug}>
                   <Link href={`/blog/${r.slug}`} className="group block">
                     <span className="text-sm font-medium group-hover:text-primary">{r.title}</span>
-                    <span className="mt-0.5 block text-xs text-muted-foreground">
-                      {r.readingTime} min read
-                    </span>
                   </Link>
                 </li>
               ))}

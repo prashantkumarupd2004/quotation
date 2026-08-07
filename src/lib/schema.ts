@@ -168,6 +168,42 @@ function stepName(step: string): string {
   return first.length > 4 && first.length <= 70 ? first : step.slice(0, 70).trim();
 }
 
+/**
+ * A hub page that exists to enumerate other pages (/tools, /templates,
+ * /industries). Declaring the CollectionPage + its ItemList is what lets Google
+ * read the grid as one ordered set rather than a wall of links, and it is the
+ * prerequisite for carousel treatment.
+ */
+export function collectionSchema(params: {
+  name: string;
+  description: string;
+  path: string;
+  items: { name: string; path: string }[];
+}): Json {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${siteConfig.url}${params.path}#collection`,
+    name: params.name,
+    description: params.description,
+    url: `${siteConfig.url}${params.path}`,
+    inLanguage: siteConfig.language,
+    isPartOf: { '@id': WEBSITE_ID },
+    publisher: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: params.items.length,
+      itemListOrder: 'https://schema.org/ItemListUnordered',
+      itemListElement: params.items.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        url: `${siteConfig.url}${item.path}`,
+      })),
+    },
+  };
+}
+
 export function articleSchema(params: {
   title: string;
   description: string;

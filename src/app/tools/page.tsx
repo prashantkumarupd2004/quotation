@@ -7,7 +7,7 @@ import { Icon } from '@/components/ui/icon';
 import { Faq } from '@/components/ui/faq';
 import { JsonLd } from '@/components/json-ld';
 import { buildMetadata } from '@/lib/seo';
-import { breadcrumbSchema, faqSchema } from '@/lib/schema';
+import { breadcrumbSchema, collectionSchema, faqSchema } from '@/lib/schema';
 import { DOCUMENT_TYPE_LIST } from '@/lib/document-types';
 
 export const metadata: Metadata = buildMetadata({
@@ -94,6 +94,13 @@ export default function ToolsPage() {
             { name: 'Home', path: '/' },
             { name: 'Tools', path: '/tools' },
           ]),
+          collectionSchema({
+            name: 'Free Business Document Generators',
+            description:
+              'Every document generator on QuotationMaker.in — quotation, invoice, GST invoice, estimate, proforma invoice, purchase order, delivery challan, payment receipt, credit note and debit note.',
+            path: '/tools',
+            items: DOCUMENT_TYPE_LIST.map((t) => ({ name: t.label, path: t.path })),
+          }),
           faqSchema(faqs),
         ]}
       />
