@@ -53,10 +53,12 @@ export const gstInvoiceContent: ToolContent = {
     'custom',
     'widget',
     'howTo',
+    'proTips',
     'example',
     'features',
     'sections',
     'useCases',
+    'mistakes',
     'faq',
     'blogs',
     'related',
@@ -317,4 +319,78 @@ export const gstInvoiceContent: ToolContent = {
   relatedNote:
     'A tax invoice is one of several documents the GST rules prescribe — corrections, movement and advances each have their own.',
   related: ['invoice', 'quotation', 'credit-note', 'debit-note', 'delivery-challan', 'proforma-invoice'],
+
+  proTips: {
+    heading: 'GST Invoice Compliance Tips Every Indian Business Owner Should Know',
+    items: [
+      {
+        icon: '📍',
+        title: 'Determine place of supply before choosing CGST/SGST or IGST',
+        text: 'For goods, place of supply is typically where delivery happens. For services, it is the registered address of the recipient. Get this wrong and you apply the wrong tax type — which means your buyer cannot claim the input tax credit they are owed, and you may have a liability in the correct state.',
+      },
+      {
+        icon: '📊',
+        title: 'Use the correct HSN code for every goods line item',
+        text: 'Businesses with turnover above ₹5 crore must print 6-digit HSN codes; those between ₹1.5 and ₹5 crore need 4 digits; below ₹1.5 crore it is optional but recommended. Wrong codes attract notices and can invalidate the input tax credit for your buyer.',
+      },
+      {
+        icon: '🧴',
+        title: 'Record the GSTIN of every GST-registered buyer',
+        text: 'A B2B supply without the buyer\'s GSTIN is treated as B2C in GSTR-1, which means the buyer loses their ITC entitlement. Always ask for the GSTIN before issuing, and verify it on the GST portal — one typo can make the credit unclaimable.',
+      },
+      {
+        icon: '📦',
+        title: 'Generate an e-way bill for goods movements above ₹50,000',
+        text: 'Goods worth over ₹50,000 in a single consignment moving between states (and for most intra-state moves in most states) require a 12-digit e-way bill number generated on the GSTN portal. Print this number on the invoice and keep it with the vehicle throughout transit.',
+      },
+      {
+        icon: '⏰',
+        title: 'Issue the invoice within the GST time-of-supply deadline',
+        text: 'For goods, the tax invoice must be issued at or before dispatch. For services, it must be raised within 30 days of the supply date (45 days for banking and insurance). Issuing late is a GST compliance violation and can trigger interest liability.',
+      },
+      {
+        icon: '🔄',
+        title: 'Know when to issue a revised invoice instead of a credit note',
+        text: 'If you need to correct a B2B invoice raised before the recipient filed their GSTR-3B, a revised invoice is appropriate. After filing, use a credit note instead. The distinction matters for how the correction appears in GSTR-1 and whether the recipient can adjust their ITC in the same period.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: '6 GST Invoice Errors That Trigger Notices and ITC Denials',
+    intro:
+      'GST compliance is not forgiving of small mistakes. Each of these errors has real consequences — either a direct financial loss for your buyer or a notice from the GST department for you.',
+    items: [
+      {
+        mistake: 'Wrong place of supply',
+        impact: 'Tax paid to the wrong state — buyer cannot claim ITC and you have a liability.',
+        fix: 'Determine supply type (intra/inter-state) based on actual delivery or recipient location.',
+      },
+      {
+        mistake: 'Missing buyer GSTIN on B2B',
+        impact: 'Invoice treated as B2C in GSTR-1; buyer loses their input tax credit entirely.',
+        fix: 'Always collect and verify the buyer\'s GSTIN on the GST portal before issuing.',
+      },
+      {
+        mistake: 'Incorrect HSN/SAC code',
+        impact: 'GST department can question the rate applied and raise a demand notice.',
+        fix: 'Look up the correct 6-digit code in the HSN master list or confirm with your CA.',
+      },
+      {
+        mistake: 'Invoice issued after the time-of-supply deadline',
+        impact: 'Late issuance attracts interest and is a GST compliance violation.',
+        fix: 'For goods: invoice at dispatch. For services: within 30 days of supply date.',
+      },
+      {
+        mistake: 'No sequential invoice number',
+        impact: 'GST audit cannot reconcile the series; GSTR-1 may be queried.',
+        fix: 'Use a single sequential series for the financial year — no gaps, no duplicates.',
+      },
+      {
+        mistake: 'Mixing CGST+SGST and IGST on the same invoice',
+        impact: 'Legally invalid — one supply can only attract one type of GST.',
+        fix: 'Choose intra-state (CGST+SGST) or inter-state (IGST) for each invoice based on place of supply.',
+      },
+    ],
+  },
 };

@@ -49,10 +49,12 @@ export const paymentReceiptContent: ToolContent = {
     'whatIs',
     'custom',
     'howTo',
+    'proTips',
     'features',
     'widget',
     'example',
     'useCases',
+    'mistakes',
     'sections',
     'faq',
     'blogs',
@@ -290,4 +292,78 @@ export const paymentReceiptContent: ToolContent = {
   relatedNote:
     'A receipt closes a cycle that a quotation opened and an invoice billed.',
   related: ['invoice', 'quotation', 'gst-invoice', 'credit-note', 'estimate', 'proforma-invoice'],
+
+  proTips: {
+    heading: 'Payment Receipt Best Practices That Protect Both Parties',
+    items: [
+      {
+        icon: '💳',
+        title: 'Always record the exact payment mode and transaction reference',
+        text: 'A receipt that says "Cash received" is legally sufficient but weak. One that says "UPI credit — UTR 4471 8820 3311 — GPay" is traceable in a bank statement. For NEFT/RTGS, use the bank\'s transaction reference. This single field has resolved thousands of “I already paid” disputes without involving anyone else.',
+      },
+      {
+        icon: '🏠',
+        title: 'Issue a receipt for rent within 3 days of receiving payment',
+        text: 'Tenants who are salaried employees need a rent receipt to claim HRA exemption from their employer. Issue it promptly after each monthly payment. Include the flat number, address, period (April 2026), amount and the landlord\'s PAN if the annual rent exceeds ₹1 lakh — the employer requires PAN for rent above this threshold.',
+      },
+      {
+        icon: '🔗',
+        title: 'Always reference the invoice or contract number on the receipt',
+        text: 'A receipt without a reference to the underlying invoice is an island. It tells you money moved but not why. Noting INV-2026-0042 and the original amount on the receipt allows both parties to reconcile outstanding balances at a glance and gives the receipt legal context in any dispute.',
+      },
+      {
+        icon: '💬',
+        title: 'Print the outstanding balance after a part payment',
+        text: 'If a customer pays 50% and will pay the rest on delivery, print both the received amount and the remaining balance due on the receipt. The customer knows exactly what they owe without calculating; you have a paper trail for the follow-up collection.',
+      },
+      {
+        icon: '🏷️',
+        title: 'Number receipts sequentially just like invoices',
+        text: 'REC-2026-001, REC-2026-002, and so on. Random or unnumbered receipts make it impossible to confirm whether every payment received has been acknowledged. A sequential series also makes monthly reconciliation — matching receipts to bank credits — a straightforward exercise.',
+      },
+      {
+        icon: '⏰',
+        title: 'Issue an advance receipt immediately, before work starts',
+        text: 'When you collect an advance payment, issue the receipt that day — before any work begins. It sets the professional tone, gives the client documentary proof of their payment, and removes any ambiguity about whether the advance was received at all, which is the most common misunderstanding at project close.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: 'Payment Receipt Mistakes That Create Accounting and Legal Problems',
+    intro:
+      'These errors are common across freelancers, service providers, landlords and small retailers. Each one creates a dispute risk that a properly written receipt would have eliminated.',
+    items: [
+      {
+        mistake: 'No transaction reference number',
+        impact: 'Cannot trace the payment in a bank statement; dispute is impossible to resolve quickly.',
+        fix: 'Record the UTR (NEFT/RTGS), transaction ID (UPI), or cheque number on every receipt.',
+      },
+      {
+        mistake: 'No reference to the original invoice',
+        impact: 'Receipt is unconnected to the billing; both parties must manually reconcile.',
+        fix: 'Add the invoice number, invoice date and the original billed amount to every receipt.',
+      },
+      {
+        mistake: 'Issuing a receipt before payment clears',
+        impact: 'Cheque bounces or UPI fails after receipt is issued — documentation is wrong.',
+        fix: 'Issue receipts only after the credit appears in your bank account or UPI notification.',
+      },
+      {
+        mistake: 'No receipt number',
+        impact: 'Cannot track how many payments were acknowledged or identify gaps.',
+        fix: 'Use a sequential receipt series — REC-2026-001 — and never reuse a number.',
+      },
+      {
+        mistake: 'Amount in figures only, no amount in words',
+        impact: 'Figure can be contested; amount in words is the legally binding version.',
+        fix: 'Always print “Rupees Forty-Five Thousand Only” alongside the ₹45,000 figure.',
+      },
+      {
+        mistake: 'No signatory or company stamp',
+        impact: 'Unsigned receipt has limited legal standing in a payment dispute.',
+        fix: 'Add your authorised signature image or company stamp before downloading the PDF.',
+      },
+    ],
+  },
 };

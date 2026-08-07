@@ -48,12 +48,14 @@ export const creditNoteContent: ToolContent = {
   order: [
     'whatIs',
     'howTo',
+    'proTips',
     'example',
     'custom',
     'widget',
     'features',
-    'sections',
     'useCases',
+    'mistakes',
+    'sections',
     'faq',
     'blogs',
     'related',
@@ -275,4 +277,78 @@ export const creditNoteContent: ToolContent = {
   relatedNote:
     'A credit note never stands alone — it always points back at an invoice, and often forward to a refund.',
   related: ['debit-note', 'invoice', 'gst-invoice', 'payment-receipt', 'quotation', 'delivery-challan'],
+
+  proTips: {
+    heading: 'How to Issue Credit Notes That Satisfy GST, Your Buyer and Your Accountant',
+    items: [
+      {
+        icon: '⏰',
+        title: 'Issue before the GST annual return deadline — not whenever convenient',
+        text: 'Under GST, a credit note for a tax invoice issued in 2025–26 must be reported before you file your September 2026 GSTR-1 or your annual return — whichever comes first. Miss this window and you lose the right to reduce your GST liability for that supply under Section 34(2). The credit note can still be raised for commercial purposes, but the GST adjustment is gone.',
+      },
+      {
+        icon: '🔗',
+        title: 'Always reference the original invoice number and date',
+        text: 'A credit note without a clear reference to the invoice it adjusts is almost useless. Your buyer\'s accounts team cannot identify which outstanding amount to reduce. Your GSTR-1 filing will flag a mismatch. And your own records become impossible to reconcile at year-end. Make the original invoice number the most visible field after the credit note number.',
+      },
+      {
+        icon: '📍',
+        title: 'Record the reason for the credit note — it affects ITC on the other side',
+        text: 'When you issue a credit note, the buyer must reverse the input tax credit they claimed on the original invoice, up to the tax component of the credit. The reason matters: a return of defective goods creates a different paper trail than a price correction or a post-supply discount. An explicit reason on the note helps both parties file correctly.',
+      },
+      {
+        icon: '✅',
+        title: 'Get written acknowledgement from the buyer before reducing tax',
+        text: 'Section 34 requires that the recipient confirms the credit note before the supplier can reduce their tax liability. In practice, email confirmation is sufficient. Issue the credit note, send it to the buyer, get their confirmation that they have reversed the ITC, then reduce the liability in your return.',
+      },
+      {
+        icon: '💰',
+        title: 'For post-supply discounts, check if the discount was agreed in advance',
+        text: 'A discount that was agreed in the original supply contract and linked to a specific invoice can be passed on via credit note with a proportional ITC reversal for the buyer. Ad-hoc discounts given after supply — without being part of the original agreement — are treated as separate supplies and cannot be adjusted via credit note without complications.',
+      },
+      {
+        icon: '📝',
+        title: 'Keep a running register of all open credit notes',
+        text: 'Each open credit note represents a pending cash or account credit to a buyer. Maintain a simple register showing the credit note number, original invoice, buyer, amount and whether it has been adjusted against a future invoice or refunded in cash. This prevents credit notes from falling through the cracks at financial year-end.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: 'Credit Note Mistakes That Cause ITC Loss and GST Filing Errors',
+    intro:
+      'These errors are particularly common in businesses that issue many invoices per month and handle returns, discounts and corrections. The GST consequences are real and time-limited.',
+    items: [
+      {
+        mistake: 'Issuing after the Section 34 deadline',
+        impact: 'Cannot reduce GST liability; you pay tax on a supply that was reversed.',
+        fix: 'Issue credit notes for FY2025-26 before filing the September 2026 GSTR-1.',
+      },
+      {
+        mistake: 'No reference to original invoice',
+        impact: 'Buyer cannot reverse ITC; your GSTR-1 shows a mismatch.',
+        fix: 'Print the original invoice number and date prominently on every credit note.',
+      },
+      {
+        mistake: 'Wrong GST amount on credit note',
+        impact: 'Buyer reverses incorrect ITC; both parties’ returns are out of balance.',
+        fix: 'Calculate tax at the same rate as the original invoice; do not use rounded figures.',
+      },
+      {
+        mistake: 'Issuing for a discount without prior agreement',
+        impact: 'Ad-hoc discounts cannot be adjusted via credit note without ITC complications.',
+        fix: 'Agree discounts in the original supply contract or as a pre-supply arrangement.',
+      },
+      {
+        mistake: 'Not recording the reason for issue',
+        impact: 'Auditor cannot verify the credit is legitimate; ITC reversal basis is unclear.',
+        fix: 'State the reason (return, price correction, discount, excess billing) clearly on the note.',
+      },
+      {
+        mistake: 'Reducing output tax without buyer acknowledgement',
+        impact: 'Section 34 violation; tax department can disallow the liability reduction.',
+        fix: 'Get the buyer\'s written confirmation of ITC reversal before reducing output tax in return.',
+      },
+    ],
+  },
 };

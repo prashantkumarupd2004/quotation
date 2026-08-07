@@ -47,10 +47,12 @@ export const debitNoteContent: ToolContent = {
     'whatIs',
     'custom',
     'howTo',
+    'proTips',
     'widget',
     'example',
     'features',
     'useCases',
+    'mistakes',
     'sections',
     'faq',
     'blogs',
@@ -283,4 +285,78 @@ export const debitNoteContent: ToolContent = {
   relatedNote:
     'A debit note corrects an invoice upward — its mirror image, the credit note, does the opposite.',
   related: ['credit-note', 'invoice', 'gst-invoice', 'purchase-order', 'payment-receipt', 'quotation'],
+
+  proTips: {
+    heading: 'Debit Note Best Practices: Handling Undercharges Without Payment Disputes',
+    items: [
+      {
+        icon: '⬆️',
+        title: 'Issue the debit note as soon as the undercharge is discovered',
+        text: 'Unlike credit notes, debit notes under GST have no upper time limit for issuance — but delay creates practical problems. The buyer\'s accounts are already closed for that period; a debit note arriving months later disrupts their payment planning and increases the chance of a dispute. Raise it promptly — ideally in the same month as discovery.',
+      },
+      {
+        icon: '💰',
+        title: 'Charge additional GST at the same rate as the original invoice',
+        text: 'The differential tax on a debit note must use the same rate structure as the original supply. If the original was 18% with CGST+SGST split, the debit note carries the same split. Applying IGST when the original was CGST+SGST (or vice versa) creates a mismatch in the buyer\'s GSTR-2B and triggers a reconciliation problem.',
+      },
+      {
+        icon: '🔄',
+        title: 'Understand when to issue a debit note versus a fresh invoice',
+        text: 'A debit note is appropriate when the original invoice was for the correct goods/services but at an incorrect (lower) rate. If the additional charge is for a wholly different supply — extra work added to a project, additional goods ordered separately — a fresh invoice is more appropriate than a debit note. The distinction affects GSTR-1 reporting and the buyer\'s ITC flow.',
+      },
+      {
+        icon: '📝',
+        title: 'Reference the debit note in your covering communication',
+        text: 'A debit note often surprises the buyer. Send it with a brief explanation: the original invoice number, what was undercharged, the reason (rate error, additional quantity, price revision), and when payment is expected. A debit note without context triggers a dispute; one with a clear explanation is usually settled in the same payment cycle.',
+      },
+      {
+        icon: '🔢',
+        title: 'Use a separate number series for debit notes',
+        text: 'GST law requires debit notes to carry a consecutive number in a financial-year series, up to 16 characters. Use a dedicated prefix — DN-2026-001 — and never share this series with your invoice numbers. Mixed series confuse both your bookkeeping and GSTR-1 reporting, where debit notes are a separate section.',
+      },
+      {
+        icon: '🤝',
+        title: 'Get buyer acknowledgement before claiming additional tax',
+        text: 'While there is no explicit GST provision requiring buyer consent for a debit note (unlike credit notes), best practice is to get the buyer to acknowledge the debit note in writing before you pay the differential tax in your return. Their ITC on the debit note’s tax component runs from the date the debit note appears in GSTR-2B, so early issuance benefits them too.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: 'Debit Note Mistakes That Cause Payment Disputes and GSTR Filing Errors',
+    intro:
+      'Debit notes are the least common adjustment document in Indian business and, as a result, are the most often mishandled. These errors create payment disputes, GST mismatches and audit problems.',
+    items: [
+      {
+        mistake: 'Raising a debit note for a different supply',
+        impact: 'Additional work or goods should be a fresh invoice, not a debit note.',
+        fix: 'Issue a debit note only to correct undercharging on an existing invoice, not new supplies.',
+      },
+      {
+        mistake: 'Wrong GST type (IGST vs CGST+SGST)',
+        impact: 'Buyer\'s GSTR-2B shows incorrect credit; reconciliation fails.',
+        fix: 'Match the GST type (intra/inter-state) exactly to the original invoice.',
+      },
+      {
+        mistake: 'No reference to original invoice',
+        impact: 'Buyer cannot locate what was undercharged; disputes and delays follow.',
+        fix: 'Print the original invoice number and date as the primary reference on the debit note.',
+      },
+      {
+        mistake: 'Issuing without explanation to the buyer',
+        impact: 'Buyer receives an unexpected demand and disputes without context.',
+        fix: 'Send the debit note with a covering message explaining the undercharge reason.',
+      },
+      {
+        mistake: 'Using invoice number series for debit notes',
+        impact: 'GSTR-1 requires debit notes in a separate section with their own series.',
+        fix: 'Maintain a dedicated DN-YYYY-NNN series for debit notes throughout the year.',
+      },
+      {
+        mistake: 'Delay in reporting in GSTR-1',
+        impact: 'Buyer cannot claim ITC on the debit note’s tax until it appears in their GSTR-2B.',
+        fix: 'Report the debit note in the GSTR-1 for the month it is issued, not later.',
+      },
+    ],
+  },
 };

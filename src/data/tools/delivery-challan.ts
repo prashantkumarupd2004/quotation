@@ -51,10 +51,12 @@ export const deliveryChallanContent: ToolContent = {
     'howTo',
     'custom',
     'widget',
+    'proTips',
     'features',
     'example',
-    'sections',
     'useCases',
+    'mistakes',
+    'sections',
     'faq',
     'blogs',
     'related',
@@ -303,4 +305,78 @@ export const deliveryChallanContent: ToolContent = {
   relatedNote:
     'A challan moves the goods; these are the documents that order them and bill for them.',
   related: ['gst-invoice', 'invoice', 'purchase-order', 'quotation', 'payment-receipt', 'credit-note'],
+
+  proTips: {
+    heading: 'Delivery Challan Best Practices for Safe Goods Movement',
+    items: [
+      {
+        icon: '🚚',
+        title: 'Carry three copies of the challan: consignor, transporter, consignee',
+        text: 'GST rules require a delivery challan in triplicate — one for the supplier, one for the consignee, and one for the transporter. The transporter copy stays in the vehicle for the entire journey. During a road check, this is the document that decides whether goods are released or detained. A driver without a copy of the challan faces a goods seizure under GST rule 55A.',
+      },
+      {
+        icon: '📋',
+        title: 'Match quantities exactly between PO, challan and invoice',
+        text: 'A common warehouse error is loading 48 units against a PO for 50 and printing the challan for 50. The discrepancy shows up when the consignee inspects the delivery, by which point the truck has left. Count the physical goods, then print the challan. Short shipments and the credit notes they trigger are entirely preventable.',
+      },
+      {
+        icon: '🗒️',
+        title: 'List HSN codes on every supply challan, even below the e-way bill threshold',
+        text: 'HSN codes on a delivery challan are not mandatory for movements below the e-way bill threshold, but including them prevents questions at the consignee end about what exactly is being delivered, and makes conversion to a tax invoice seamless. It also helps if the goods are checked at a state border and a local inspector asks for a description.',
+      },
+      {
+        icon: '📦',
+        title: 'For goods sent on approval, state the return date on the challan',
+        text: 'When goods are sent for approval, trial or exhibition, a delivery challan is the correct document — not an invoice. Include a line saying "Goods sent on approval — return by [date] if not purchased" and mark the challan as non-taxable. Without this, a tax officer can treat the movement as a taxable supply and raise a demand.',
+      },
+      {
+        icon: '🎨',
+        title: 'Photograph the goods condition before dispatch',
+        text: 'For fragile, high-value or customised goods, photograph the packed shipment before it leaves. If the consignee claims goods arrived damaged, you have timestamped evidence of their condition at dispatch — which determines whether the damage occurred in transit (transporter’s liability) or at the destination after acceptance.',
+      },
+      {
+        icon: '✍️',
+        title: 'Get the consignee’s signature and stamp on delivery',
+        text: 'The received copy of the challan, signed and stamped by the consignee on delivery, is your proof of successful delivery. It is what you present if the buyer later claims they never received the goods, and it is what triggers the right to raise a final invoice for milestone-billed contracts.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: 'Delivery Challan Mistakes That Cause GST Problems and Disputes',
+    intro:
+      'Goods movement under GST is heavily document-dependent. These errors at the challan stage have downstream consequences — some legal, some operational, some financial.',
+    items: [
+      {
+        mistake: 'Moving goods above ₹50,000 without e-way bill',
+        impact: 'Goods can be seized and a penalty of ₹10,000 or 100% of tax due (whichever is higher) can be levied.',
+        fix: 'Generate the e-way bill before dispatch and record the 12-digit number on the challan.',
+      },
+      {
+        mistake: 'No challan number or sequential series',
+        impact: 'Cannot cross-reference the challan in the final invoice; audit trail is broken.',
+        fix: 'Use a sequential DC series — DC-2026-001 — and reference it on the corresponding invoice.',
+      },
+      {
+        mistake: 'Quantity on challan differs from physical goods loaded',
+        impact: 'Short delivery disputes; consignee raises a debit note for the shortage.',
+        fix: 'Count actual goods loaded, then print the challan — never print first and count later.',
+      },
+      {
+        mistake: 'No transporter details',
+        impact: 'Vehicle check without transporter name and LR number triggers scrutiny.',
+        fix: 'Record vehicle number, transporter name and LR/GR number on every challan.',
+      },
+      {
+        mistake: 'Using a challan as a tax invoice',
+        impact: 'Consignee claims ITC on a document that is not a valid tax invoice.',
+        fix: 'Issue a delivery challan for movement and a separate tax invoice for billing.',
+      },
+      {
+        mistake: 'No consignee signature on received copy',
+        impact: 'No proof of delivery if buyer disputes receipt of goods.',
+        fix: 'Require a dated signature and stamp on the consignee copy before the vehicle leaves.',
+      },
+    ],
+  },
 };

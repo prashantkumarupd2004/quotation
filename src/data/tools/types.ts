@@ -57,6 +57,8 @@ export type SectionKey =
   | 'example'
   | 'sections'
   | 'custom'
+  | 'proTips'
+  | 'mistakes'
   | 'faq'
   | 'blogs'
   | 'related';
@@ -162,4 +164,23 @@ export interface ToolContent {
   relatedNote: string;
   /** Slugs of related tools to interlink (paths come from the registry). */
   related: DocumentTypeId[];
+
+  /**
+   * Expert tips unique to this document type — rendered as coloured icon cards.
+   * Each tip has an emoji icon, short title, and a practical paragraph.
+   */
+  proTips?: {
+    heading: string;
+    items: { icon: string; title: string; text: string }[];
+  };
+
+  /**
+   * Common mistakes table unique to this document type — mistake / why it hurts / the fix.
+   * Displayed as a 3-column striped table.
+   */
+  mistakes?: {
+    heading: string;
+    intro: string;
+    items: { mistake: string; impact: string; fix: string }[];
+  };
 }

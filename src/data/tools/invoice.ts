@@ -52,9 +52,11 @@ export const invoiceContent: ToolContent = {
     'whatIs',
     'howTo',
     'custom',
+    'proTips',
     'features',
     'example',
     'useCases',
+    'mistakes',
     'sections',
     'faq',
     'blogs',
@@ -308,4 +310,83 @@ export const invoiceContent: ToolContent = {
   relatedNote:
     'An invoice rarely travels alone — it follows a quotation and is usually closed by a receipt.',
   related: ['quotation', 'gst-invoice', 'proforma-invoice', 'payment-receipt', 'credit-note', 'estimate'],
+
+  proTips: {
+    heading: 'Invoice Best Practices That Get You Paid Faster',
+    items: [
+      {
+        icon: '🔢',
+        title: 'Never skip or reuse an invoice number',
+        text: 'Sequential numbering (INV-2026-001, INV-2026-002…) is the first thing auditors and accounts teams look for. A gap raises a red flag; a duplicate number causes reconciliation chaos. Set up a series at the start of each financial year and do not break it.',
+      },
+      {
+        icon: '📅',
+        title: 'Write the due date as a specific calendar date',
+        text: '"Net 30" printed on an invoice has to be calculated by someone — and often is not. "Due 7 September 2026" enters a payment calendar directly. This single change reduces late payments significantly for freelancers and small business owners.',
+      },
+      {
+        icon: '🏦',
+        title: 'Print your payment details on every invoice',
+        text: 'Your bank account, IFSC code, UPI handle and a scannable UPI QR code should be on every invoice. A client who can pay the moment they read the invoice pays faster than one who must send a follow-up email to ask where to transfer.',
+      },
+      {
+        icon: '💬',
+        title: 'Add a short, clear description for every line item',
+        text: '"Consulting — August 2026" is a line item that gets approved. "Work" is a line item that triggers a query. Accounts teams at mid-size and large companies routinely block invoices that do not match the purchase order description character for character.',
+      },
+      {
+        icon: '⚠️',
+        title: 'State your late payment terms explicitly',
+        text: 'Indian MSMEs registered under the MSMED Act can charge compound interest on payments held beyond 45 days. State your overdue interest rate (1.5–2% per month is standard) in the terms section of every invoice — it changes behaviour before the due date arrives.',
+      },
+      {
+        icon: '📋',
+        title: 'Keep a copy of every invoice you send',
+        text: 'Our tool autosaves your last invoice in your browser, but download a PDF copy for your own records too. Disputes, audits and loan applications all require dated, numbered invoice copies — having them immediately available instead of rebuilding from memory is a business-critical habit.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: '7 Invoice Mistakes That Delay Payment for Indian Businesses',
+    intro:
+      'These errors appear in thousands of invoices every month. Each one adds days or weeks to your payment cycle — and some create legal or compliance problems that outlast the invoice itself.',
+    items: [
+      {
+        mistake: 'No invoice number',
+        impact: 'Client accounts team cannot log or process it without a reference number.',
+        fix: 'Use a sequential series — INV-2026-001 — and print it prominently at the top.',
+      },
+      {
+        mistake: 'Vague line items',
+        impact: '"Professional services" triggers clarification requests that delay approval.',
+        fix: 'Match the description exactly to what the client\'s PO says, down to the wording.',
+      },
+      {
+        mistake: 'Missing GSTIN',
+        impact: 'B2B client cannot claim input tax credit; invoice will be rejected.',
+        fix: 'Add your GSTIN and your client\'s GSTIN on every B2B invoice above ₹50,000.',
+      },
+      {
+        mistake: 'Wrong GST rate',
+        impact: 'Undercharge loses you revenue; overcharge creates a refund dispute.',
+        fix: 'Verify the HSN/SAC code and slab for each item — consult your CA when unsure.',
+      },
+      {
+        mistake: 'No due date',
+        impact: 'Payment is delayed indefinitely because no deadline was established.',
+        fix: 'Print a specific calendar date — never "Net 30" which must be calculated.',
+      },
+      {
+        mistake: 'No payment instructions',
+        impact: 'Client must email you to ask where to send money — adding a delay.',
+        fix: 'Include bank account + IFSC, UPI ID, and a QR code on every invoice.',
+      },
+      {
+        mistake: 'Sending a PDF with no follow-up',
+        impact: 'Invoice sits unread in a busy inbox past the due date.',
+        fix: 'Send a WhatsApp or email reminder 3 days before and 1 day after the due date.',
+      },
+    ],
+  },
 };

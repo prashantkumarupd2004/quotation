@@ -48,11 +48,13 @@ export const proformaInvoiceContent: ToolContent = {
     'whatIs',
     'custom',
     'howTo',
+    'proTips',
     'widget',
     'features',
     'example',
-    'sections',
     'useCases',
+    'mistakes',
+    'sections',
     'faq',
     'blogs',
     'related',
@@ -276,4 +278,78 @@ export const proformaInvoiceContent: ToolContent = {
   relatedNote:
     'A proforma bridges the quotation and the tax invoice — here is what comes on either side of it.',
   related: ['invoice', 'quotation', 'gst-invoice', 'purchase-order', 'payment-receipt', 'estimate'],
+
+  proTips: {
+    heading: 'How to Use Proforma Invoices Strategically in Your Sales Process',
+    items: [
+      {
+        icon: '🏦',
+        title: 'Trigger advance payment with a proforma, not a quotation',
+        text: 'Many buyers — especially in import-export — require a proforma invoice to process an advance payment internally. A quotation does not carry enough documentary weight to release funds from a corporate accounts team or initiate a bank transfer. Send the proforma as soon as the order is verbally confirmed and before work starts.',
+      },
+      {
+        icon: '📦',
+        title: 'For export orders, use the proforma as a shipping instruction document',
+        text: 'Export proformas should include the HS code, country of origin, Incoterms (CIF, FOB, EXW), estimated shipping weight and volume, and the consignee’s address exactly as it must appear on the Bill of Lading. The freight forwarder will use this to book space and prepare shipping documents — errors here cascade into customs delays.',
+      },
+      {
+        icon: '⏰',
+        title: 'Match validity tightly to your stock or supplier lead time',
+        text: 'A proforma that stays valid for 30 days when you are quoting a raw material that moves daily exposes you to significant price risk. Match the validity period to how long you can actually hold the quoted price — which is often 7 days for commodity-linked goods and 15–30 days for manufactured items.',
+      },
+      {
+        icon: '✅',
+        title: 'Get written acceptance from the buyer before issuing a tax invoice',
+        text: 'A proforma is not a contract by itself. Get the buyer to respond in writing (email is sufficient) with a clear acceptance of the proforma number, date and amount. That acceptance is your authorisation to proceed. It also locks in the version of the proforma they agreed to, preventing later claims about a different price or specification.',
+      },
+      {
+        icon: '🔄',
+        title: 'Never modify a proforma that has been paid against',
+        text: 'Once a customer has transferred funds referencing a specific proforma number, that document is locked. If the scope changes, issue a fresh proforma with a new number and letter the change clearly. Modifying the original proforma after payment creates a documentation mismatch that will complicate your accounts and potentially your GST records.',
+      },
+      {
+        icon: '🔖',
+        title: 'Add the estimated delivery or completion date to every proforma',
+        text: 'A proforma that commits a buyer to advance payment but gives no delivery commitment is a one-sided document. State a realistic estimated completion or shipping date — even if approximate — and a brief note on what triggers the final invoice. This sets expectations and reduces the most common post-payment dispute.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: 'Proforma Invoice Mistakes That Create Export, Payment and GST Problems',
+    intro:
+      'These errors are particularly common in SME export businesses and project-based service companies. Some create immediate payment problems; others surface during GST filing or customer audits.',
+    items: [
+      {
+        mistake: 'Using the proforma as a tax invoice',
+        impact: 'Buyer incorrectly claims input tax credit on a document that is not a valid tax invoice.',
+        fix: 'Print “This is not a tax invoice” prominently — issue a proper GST invoice after supply.',
+      },
+      {
+        mistake: 'No proforma number or date',
+        impact: 'Buyer cannot reference the document in their PO or payment narration.',
+        fix: 'Use a sequential series — PI-2026-001 — and print the date of issue clearly.',
+      },
+      {
+        mistake: 'Rates not matching the final invoice',
+        impact: 'Buyer disputes the final invoice claiming a different rate was agreed.',
+        fix: 'Lock rates in the proforma and reference the proforma number on the final invoice.',
+      },
+      {
+        mistake: 'No validity period',
+        impact: 'Buyer presents a months-old proforma expecting current pricing.',
+        fix: 'Add “Valid until [specific date]” and honour that date strictly.',
+      },
+      {
+        mistake: 'Missing Incoterms on export proforma',
+        impact: 'Freight terms are ambiguous; buyer and freight forwarder assume different responsibilities.',
+        fix: 'State the Incoterm (FOB Mumbai, CIF Dubai) and the port of origin explicitly.',
+      },
+      {
+        mistake: 'No advance payment instructions',
+        impact: 'Buyer cannot initiate payment without a separate email asking for bank details.',
+        fix: 'Include bank account + SWIFT/IFSC and your UPI handle on the proforma itself.',
+      },
+    ],
+  },
 };

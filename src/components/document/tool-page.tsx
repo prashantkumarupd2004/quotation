@@ -19,6 +19,8 @@ import {
   FeaturesSection,
   GuidanceSections,
   HowToSection,
+  MistakesSection,
+  ProTipsSection,
   SectionHeading,
   UseCasesSection,
   WhatIsSection,
@@ -65,6 +67,10 @@ export function ToolPage({ content }: { content: ToolContent }) {
             ))}
           </div>
         ) : null;
+      case 'proTips':
+        return <ProTipsSection content={content} theme={theme} />;
+      case 'mistakes':
+        return <MistakesSection content={content} theme={theme} />;
       case 'faq':
         return (
           <section>

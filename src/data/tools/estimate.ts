@@ -49,10 +49,12 @@ export const estimateContent: ToolContent = {
     'whatIs',
     'howTo',
     'widget',
+    'proTips',
     'example',
     'custom',
     'features',
     'useCases',
+    'mistakes',
     'sections',
     'faq',
     'blogs',
@@ -279,4 +281,78 @@ export const estimateContent: ToolContent = {
   relatedNote:
     'An estimate is the opening move — a firm quotation, then an invoice, follow once the scope settles.',
   related: ['quotation', 'invoice', 'proforma-invoice', 'purchase-order', 'payment-receipt', 'gst-invoice'],
+
+  proTips: {
+    heading: 'How to Write Estimates That Win Jobs Without Underselling Yourself',
+    items: [
+      {
+        icon: '🔮',
+        title: 'Add a 10–15% contingency buffer for materials-heavy jobs',
+        text: 'Material prices move with commodity markets. A construction estimate for steel, cement or timber that does not carry a 10–15% buffer can turn profitable work into a loss if prices spike between estimate and purchase. State the buffer as a separate line item so the client understands it is not padding — it is market-price protection for both of you.',
+      },
+      {
+        icon: '🏭',
+        title: 'Conduct a site visit before estimating on-site work',
+        text: 'Estimates written from photos or WhatsApp descriptions regularly undercount labour by 30–40%. Access difficulties, existing damage, non-standard fittings and site conditions that do not appear in a photo add hours to a job. A 20-minute site visit produces an estimate that is defensible; a remote estimate is a guess that you are bound by.',
+      },
+      {
+        icon: '📝',
+        title: 'List exclusions as carefully as inclusions',
+        text: 'Every estimate should have an explicit "This estimate does not include" section. Material disposal, surface preparation, electrical or plumbing work behind walls, travel beyond a certain distance — if you have not written it in, the client assumes it is included. Exclusions prevent scope creep arguments before they start.',
+      },
+      {
+        icon: '🔁',
+        title: 'Version-control your revised estimates',
+        text: 'When a client asks for a revision, do not overwrite the original. Create a new version (EST-2026-011-R2) with a new validity date and a brief note on what changed. Keeping the version history protects you if the client later claims they accepted the earlier, lower version — and it shows a professional process.',
+      },
+      {
+        icon: '📞',
+        title: 'Follow up personally within 48 hours of sending',
+        text: 'An estimate sent and never followed up converts at roughly half the rate of one backed by a quick call or message. Ask if the client has questions, confirm they received the PDF, and offer a brief site or video call to walk through the scope. The conversion rate improvement far outweighs the 5-minute investment.',
+      },
+      {
+        icon: '🏷️',
+        title: 'Price your labour to a day rate, not a job rate',
+        text: 'Quoting a fixed price for labour on uncertain jobs (repair work, renovation, bespoke fabrication) creates a perverse incentive to rush. Price by the day or half-day with a minimum, and estimate the number of days based on a site visit. Your bill accurately reflects the work done and you are not penalised for complexity.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: 'Common Estimation Mistakes That Cost Contractors and Freelancers',
+    intro:
+      'These errors appear in estimates across construction, repair, IT and creative work. Most of them do not cause problems immediately — they surface during delivery when it is too late to renegotiate.',
+    items: [
+      {
+        mistake: 'Estimating from photos or descriptions alone',
+        impact: 'Access issues, hidden damage or non-standard fittings add unquoted hours.',
+        fix: 'Always conduct a site visit or detailed brief call before estimating physical work.',
+      },
+      {
+        mistake: 'No exclusions section',
+        impact: 'Client assumes everything is included; scope expands beyond the estimate.',
+        fix: 'List what is explicitly not covered, including disposal, prep work and travel.',
+      },
+      {
+        mistake: 'Estimate identical to final quotation',
+        impact: 'Client treats the estimate as a firm price commitment before scope is clear.',
+        fix: 'Add “This is an estimate — actual cost may vary based on site conditions” prominently.',
+      },
+      {
+        mistake: 'No validity period',
+        impact: 'Client returns months later expecting the same price despite rising costs.',
+        fix: 'Set a 7–15 day validity for materials-heavy jobs; up to 30 days for service work.',
+      },
+      {
+        mistake: 'No materials breakdown',
+        impact: 'Client does not know what they are buying; disputes follow delivery.',
+        fix: 'List every significant material by type, grade and quantity — not just total cost.',
+      },
+      {
+        mistake: 'Overwriting the original estimate on revision',
+        impact: 'No record of what was agreed at each stage; client reverts to original price.',
+        fix: 'Save each revision as a new numbered version and send only the latest to the client.',
+      },
+    ],
+  },
 };

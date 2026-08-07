@@ -44,14 +44,16 @@ export const purchaseOrderContent: ToolContent = {
     example: 'strip',
   },
   order: [
-    'whatIs',
     'widget',
+    'whatIs',
     'howTo',
     'custom',
+    'proTips',
     'example',
     'features',
     'sections',
     'useCases',
+    'mistakes',
     'faq',
     'blogs',
     'related',
@@ -303,4 +305,78 @@ export const purchaseOrderContent: ToolContent = {
   relatedNote:
     'A PO is one link in the chain — the quotation precedes it, the challan and invoice close it out.',
   related: ['quotation', 'invoice', 'delivery-challan', 'proforma-invoice', 'gst-invoice', 'debit-note'],
+
+  proTips: {
+    heading: 'Procurement Best Practices That Protect Your Business',
+    items: [
+      {
+        icon: '🔍',
+        title: 'Always match PO → Delivery Challan → Invoice before paying',
+        text: 'Three-way matching — comparing the purchase order, the delivery challan and the vendor\'s invoice before releasing payment — is the single most effective fraud and error prevention control in any purchase cycle. The quantities, rates, HSN codes and GST amounts on all three documents should agree. Discrepancies must be resolved before payment, not after.',
+      },
+      {
+        icon: '📅',
+        title: 'Set a firm delivery date, not just "as soon as possible"',
+        text: 'A PO without a delivery date is an invitation to indefinite delay. State the expected delivery date clearly, and include a clause on what happens if the vendor misses it — whether that is a credit, a revised price or cancellation. Vendors who commit to a date on paper take the deadline more seriously.',
+      },
+      {
+        icon: '🤝',
+        title: 'Negotiate payment terms before the PO, not after',
+        text: 'Once a PO is accepted, the terms are locked. Negotiate credit period, advance percentage and discount for early payment before you raise the PO. Large buyers routinely demand Net 45 or Net 60; small suppliers should counter with Net 15 plus a 2% discount for payment within 7 days.',
+      },
+      {
+        icon: '⚖️',
+        title: 'Never place a verbal order for anything above ₹5,000',
+        text: 'Verbal orders lead to quantity disputes, price disputes and responsibility gaps. A PO — even a WhatsApp-shared PDF — creates a written record that both sides can refer to. The threshold should be much lower for capital goods or recurring supplies where even small discrepancies compound.',
+      },
+      {
+        icon: '📄',
+        title: 'Quote the original quotation number in every PO',
+        text: 'Reference the vendor\'s quotation number in the PO remarks section. This links the two documents for audit purposes, prevents the vendor from claiming they were using a different price list, and makes reconciliation straightforward when multiple quotations were received.',
+      },
+      {
+        icon: '🔒',
+        title: 'Add a quality and rejection clause to every goods PO',
+        text: 'State what quality standard goods must meet (IS specification, brand, model number), how defective goods will be handled (return at vendor\'s cost, replacement within X days, credit note) and who bears freight on returns. Without this, a rejected delivery becomes a legal argument rather than a simple transaction.',
+      },
+    ],
+  },
+
+  mistakes: {
+    heading: '6 Purchase Order Mistakes That Create Procurement Problems',
+    intro:
+      'These errors are common across Indian SMEs and startups. Each one creates a different kind of downstream problem — from overpayment to audit findings to supply chain disruption.',
+    items: [
+      {
+        mistake: 'No PO number system',
+        impact: 'Cannot track which orders are open, fulfilled or partially delivered.',
+        fix: 'Use a sequential series PO-2026-001 and reference it on the challan and invoice.',
+      },
+      {
+        mistake: 'Accepting a verbal quotation',
+        impact: 'Price disputes arise when the vendor invoices at a different rate.',
+        fix: 'Always take a written quotation and reference the quotation number in the PO.',
+      },
+      {
+        mistake: 'No delivery date',
+        impact: 'Vendor treats the order as low priority; delivery slips without consequence.',
+        fix: 'State a specific delivery date and the consequences of missing it.',
+      },
+      {
+        mistake: 'No payment terms',
+        impact: 'Vendor assumes Net 0; buyer assumes Net 30 — both are surprised.',
+        fix: 'Specify advance %, credit period and due date calculation method in the PO itself.',
+      },
+      {
+        mistake: 'Single-vendor sourcing for critical items',
+        impact: 'Any supply disruption halts production with no alternative.',
+        fix: 'Develop at least two approved vendors for any item where a stock-out is costly.',
+      },
+      {
+        mistake: 'Paying before three-way match',
+        impact: 'Paying for goods not received, or at wrong quantities or rates.',
+        fix: 'Match PO, delivery challan and invoice quantities and amounts before authorising payment.',
+      },
+    ],
+  },
 };

@@ -364,3 +364,65 @@ export function GuidanceSections({ content, theme }: SectionProps) {
     </>
   );
 }
+
+/* ── proTips — unique icon cards per tool ─────────────────────────────────── */
+export function ProTipsSection({ content, theme }: SectionProps) {
+  if (!content.proTips) return null;
+  const { heading, items } = content.proTips;
+  return (
+    <section>
+      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {items.map((tip, i) => (
+          <div
+            key={i}
+            className={cn(
+              'flex gap-4 rounded-2xl border p-5 transition-colors',
+              theme.border,
+              theme.softBg,
+              theme.cardHover,
+            )}
+          >
+            <span className="text-2xl flex-shrink-0 mt-0.5" aria-hidden>{tip.icon}</span>
+            <div>
+              <h3 className={cn('font-semibold', theme.text)}>{tip.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{tip.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ── mistakes — 3-col cause/fix table unique to each tool ────────────────── */
+export function MistakesSection({ content, theme }: SectionProps) {
+  if (!content.mistakes) return null;
+  const { heading, intro, items } = content.mistakes;
+  return (
+    <section>
+      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
+      <div className={cn('mt-6 overflow-x-auto overflow-hidden rounded-2xl border', theme.border)}>
+        <table className="w-full min-w-[34rem] text-sm">
+          <thead>
+            <tr className={theme.tableHeader}>
+              <th scope="col" className="px-5 py-3 text-left font-semibold w-[30%]">Mistake</th>
+              <th scope="col" className="px-5 py-3 text-left font-semibold w-[35%]">Why it hurts</th>
+              <th scope="col" className="px-5 py-3 text-left font-semibold w-[35%]">The fix</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border">
+            {items.map((row, i) => (
+              <tr key={i} className={i % 2 === 1 ? 'bg-muted/30' : 'bg-card'}>
+                <td className="px-5 py-3 align-top font-medium">{row.mistake}</td>
+                <td className="px-5 py-3 align-top text-muted-foreground">{row.impact}</td>
+                <td className={cn('px-5 py-3 align-top font-medium', theme.text)}>{row.fix}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
