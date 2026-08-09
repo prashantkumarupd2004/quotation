@@ -46,6 +46,7 @@ export type HowToVariant = 'timeline' | 'cards' | 'band';
 export type FeaturesVariant = 'grid' | 'checklist' | 'alternating';
 export type UseCasesVariant = 'cards' | 'accordion' | 'columns';
 export type ExampleVariant = 'table' | 'paper' | 'strip';
+export type IndustriesVariant = 'tiles' | 'rows' | 'ledger';
 
 /** Renderable blocks, listed in `order` to control the page's section sequence. */
 export type SectionKey =
@@ -54,12 +55,14 @@ export type SectionKey =
   | 'howTo'
   | 'features'
   | 'useCases'
+  | 'industries'
   | 'example'
   | 'sections'
   | 'custom'
   | 'proTips'
   | 'mistakes'
   | 'faq'
+  | 'references'
   | 'blogs'
   | 'related';
 
@@ -102,6 +105,10 @@ export interface ToolContent {
     title: string;
     description: string;
     keywords: string[];
+    /** ISO date the guide first published — feeds Article schema. */
+    published?: string;
+    /** ISO date of the last substantive content revision. */
+    updated?: string;
   };
   /** Unique H1 shown above the builder. */
   h1: string;
@@ -118,6 +125,8 @@ export interface ToolContent {
     features: FeaturesVariant;
     useCases: UseCasesVariant;
     example: ExampleVariant;
+    /** Defaults to 'tiles' when omitted. */
+    industries?: IndustriesVariant;
   };
   /** Section render sequence. Omitting a key omits the section entirely. */
   order: SectionKey[];
@@ -158,6 +167,37 @@ export interface ToolContent {
   sections: { heading: string; paragraphs: string[] }[];
   /** Unique FAQs (emitted as FAQ schema). */
   faqs: { q: string; a: string }[];
+
+  /**
+   * Sector-by-sector guidance. Where `useCases` describes buyer situations,
+   * this describes how one named trade actually issues the document — the
+   * field it cannot omit, the rhythm it bills on, the dispute it prevents.
+   */
+  industries?: {
+    heading: string;
+    intro: string;
+    items: {
+      /** Sector name, e.g. 'Construction & Civil Contracting'. */
+      name: string;
+      /** Lucide icon key, resolved through @/components/ui/icon. */
+      icon: string;
+      /** How this sector uses the document, in practice. */
+      text: string;
+      /** The one detail this sector must get right. */
+      detail: string;
+    }[];
+  };
+
+  /**
+   * Outbound citations to primary sources — statute, tax portals, regulators.
+   * Only authoritative domains: an E-E-A-T signal is worth nothing if it
+   * points at another blog.
+   */
+  references?: {
+    heading: string;
+    intro: string;
+    items: { label: string; url: string; note: string }[];
+  };
   /** Heading above the internal-link grid. Unique per tool. */
   relatedHeading: string;
   /** Sentence closing the internal-link grid. Unique per tool. */

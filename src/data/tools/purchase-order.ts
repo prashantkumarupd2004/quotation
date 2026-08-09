@@ -6,6 +6,8 @@ export const purchaseOrderContent: ToolContent = {
     title: 'Free Purchase Order Generator — Create PO Online & Download PDF',
     description:
       'Generate professional purchase orders online — free. Add vendor details, item specifications, delivery location and payment terms, then download a print-ready PO PDF. No signup required.',
+    published: '2026-02-18',
+    updated: '2026-08-07',
     keywords: [
       'purchase order generator',
       'free purchase order maker',
@@ -53,8 +55,10 @@ export const purchaseOrderContent: ToolContent = {
     'features',
     'sections',
     'useCases',
+    'industries',
     'mistakes',
     'faq',
+    'references',
     'blogs',
     'related',
   ],
@@ -75,7 +79,7 @@ export const purchaseOrderContent: ToolContent = {
       kind: 'table',
       heading: 'A Purchase Approval Matrix You Can Actually Enforce',
       intro:
-        'Purchasing control fails when every order needs the owner’s signature — people simply stop raising POs. Tiering approval by value keeps small purchases moving while the amounts that matter still get looked at. This is a workable starting structure for a small or mid-sized Indian business.',
+        'Purchasing control fails when every order needs the owner\'s signature — people simply stop raising POs. Tiering approval by value keeps small purchases moving while the amounts that matter still get looked at. This is a workable starting structure for a small or mid-sized Indian business.',
       columns: ['Order value', 'Who approves', 'What is expected before approval'],
       rows: [
         [
@@ -110,7 +114,7 @@ export const purchaseOrderContent: ToolContent = {
         ],
       ],
       note:
-        'Verify a new vendor’s bank details by phoning a number you already hold, never one supplied in the same email as the invoice. Redirected-payment fraud targets exactly this gap, and a PO process is the natural place to close it.',
+        'Verify a new vendor\'s bank details by phoning a number you already hold, never one supplied in the same email as the invoice. Redirected-payment fraud targets exactly this gap, and a PO process is the natural place to close it.',
     },
     {
       kind: 'checklist',
@@ -170,7 +174,7 @@ export const purchaseOrderContent: ToolContent = {
       },
       {
         title: 'Add delivery and payment terms',
-        text: 'Set the PO date and expected delivery date, enter the ship-to delivery location, reference the vendor’s quotation number if you negotiated from one, and state your payment terms (for example, 30 days from delivery).',
+        text: 'Set the PO date and expected delivery date, enter the ship-to delivery location, reference the vendor\'s quotation number if you negotiated from one, and state your payment terms (for example, 30 days from delivery).',
       },
       {
         title: 'Download and send to the vendor',
@@ -191,7 +195,7 @@ export const purchaseOrderContent: ToolContent = {
       },
       {
         title: 'Vendor quotation reference',
-        text: 'Link the PO to the vendor’s quotation number so the agreed pricing trail is unbroken from quote to order to invoice.',
+        text: 'Link the PO to the vendor\'s quotation number so the agreed pricing trail is unbroken from quote to order to invoice.',
       },
       {
         title: 'GST-aware amounts',
@@ -199,7 +203,7 @@ export const purchaseOrderContent: ToolContent = {
       },
       {
         title: 'Signature, stamp and terms',
-        text: 'Upload the purchase manager’s signature and company seal, and print standard ordering terms — specification compliance, delivery deadline and rejection rights — on every PO.',
+        text: 'Upload the purchase manager\'s signature and company seal, and print standard ordering terms — specification compliance, delivery deadline and rejection rights — on every PO.',
       },
       {
         title: 'Autosaved, reusable orders',
@@ -226,7 +230,7 @@ export const purchaseOrderContent: ToolContent = {
       },
       {
         title: 'Manufacturers ordering components',
-        text: 'Recurring component orders reference the rate contract or the vendor’s quotation, letting stores match every inward challan to an open PO.',
+        text: 'Recurring component orders reference the rate contract or the vendor\'s quotation, letting stores match every inward challan to an open PO.',
       },
     ],
   },
@@ -242,7 +246,7 @@ export const purchaseOrderContent: ToolContent = {
       { label: 'PO Total — delivery within 3 weeks', value: '₹2,05,320.00' },
     ],
     outro:
-      'The PO carries number PO-2026-0018, references the vendor’s quotation QT-2026-0087, names the new outlet’s address as the delivery location, and states payment terms of 50% advance and 50% on installation. The vendor’s invoice must quote this PO number to be processed.',
+      'The PO carries number PO-2026-0018, references the vendor\'s quotation QT-2026-0087, names the new outlet\'s address as the delivery location, and states payment terms of 50% advance and 50% on installation. The vendor\'s invoice must quote this PO number to be processed.',
   },
   sections: [
     {
@@ -256,13 +260,13 @@ export const purchaseOrderContent: ToolContent = {
       heading: 'Is a Purchase Order Legally Binding?',
       paragraphs: [
         'A purchase order becomes binding once the vendor accepts it — by written confirmation, by signing and returning a copy, or in practice by acting on it (dispatching the goods). Until acceptance, it is an offer the vendor can decline or negotiate. This is why a well-drafted PO states its own terms: specification compliance, the delivery deadline, the right to reject non-conforming goods, and the payment schedule.',
-        'Keep acceptance evidence with the PO. If a dispute arises about price or quantity, the accepted PO — not a phone call anyone remembers differently — is what settles it. Our generator prints a terms block on every PO and leaves space for the vendor’s acknowledgment signature.',
+        'Keep acceptance evidence with the PO. If a dispute arises about price or quantity, the accepted PO — not a phone call anyone remembers differently — is what settles it. Our generator prints a terms block on every PO and leaves space for the vendor\'s acknowledgment signature.',
       ],
     },
     {
       heading: 'PO Numbering and Record-Keeping Best Practices',
       paragraphs: [
-        'Run one continuous PO series per financial year (PO-2026-0001 onwards) and never skip or reuse numbers — gaps in a purchase series invite audit questions. If you operate multiple branches, prefix the series per site (BLR-PO-2026-0001) so each location’s spending can be tracked independently.',
+        'Run one continuous PO series per financial year (PO-2026-0001 onwards) and never skip or reuse numbers — gaps in a purchase series invite audit questions. If you operate multiple branches, prefix the series per site (BLR-PO-2026-0001) so each location\'s spending can be tracked independently.',
         'File each PO with its acceptance, the delivery challan and the final invoice as one bundle. At year end this bundle answers every question your accountant or an assessing officer might ask about a purchase, from ITC claims to expense substantiation. Because this tool exports clean PDFs, a simple dated folder structure is all the filing system you need.',
       ],
     },
@@ -270,7 +274,7 @@ export const purchaseOrderContent: ToolContent = {
   faqs: [
     {
       q: 'Who issues a purchase order — the buyer or the seller?',
-      a: 'The buyer. A purchase order is the buyer’s written authorisation to a vendor to supply goods or services at agreed prices. The seller responds by accepting the PO and later invoicing against it. If you are the seller looking to bill a customer, use the Invoice Maker instead.',
+      a: 'The buyer. A purchase order is the buyer\'s written authorisation to a vendor to supply goods or services at agreed prices. The seller responds by accepting the PO and later invoicing against it. If you are the seller looking to bill a customer, use the Invoice Maker instead.',
     },
     {
       q: 'Is a purchase order the same as a work order?',
@@ -285,7 +289,7 @@ export const purchaseOrderContent: ToolContent = {
       a: 'A unique PO number and date, buyer and vendor names and addresses, a precise description of each item with quantity, unit and agreed rate, the delivery location, the expected delivery date, payment terms, taxes, the total value and an authorised signature. Every one of these has a dedicated field in the generator.',
     },
     {
-      q: 'Can I reference the vendor’s quotation on the PO?',
+      q: 'Can I reference the vendor\'s quotation on the PO?',
       a: 'Yes — the Order Details section has a Vendor Quotation Ref. field. Referencing the quotation number ties the agreed pricing to the order, so the vendor cannot later invoice at a different rate without an obvious discrepancy.',
     },
     {
@@ -299,6 +303,54 @@ export const purchaseOrderContent: ToolContent = {
     {
       q: 'Is this purchase order generator really free?',
       a: 'Completely. No signup, no watermark, no PO limit and no locked templates. The tool runs in your browser and your purchasing data stays on your device — nothing is uploaded to our servers.',
+    },
+    {
+      q: 'Does a purchase order create a legally binding contract?',
+      a: 'Yes, once the supplier accepts it — either by written confirmation, by issuing a proforma invoice against it, or by beginning to fulfil the order. The PO specifies the goods or services, quantities, agreed price, delivery terms and payment terms. Acceptance creates a contract governed by the Indian Contract Act, 1872. A verbal acceptance is also binding in principle, but a written or email confirmation is far easier to enforce.',
+    },
+    {
+      q: 'What is the difference between a purchase order and a purchase requisition?',
+      a: 'A purchase requisition is an internal document raised by a department asking the procurement team to buy something — it is a request, not an authorisation to spend. A purchase order is the external authorisation issued to the supplier once the requisition is approved and the supplier is selected. Only the PO creates a commitment with an outside party; the requisition circulates inside the organisation for budget and approval checks.',
+    },
+    {
+      q: 'Can I amend a purchase order after the supplier has accepted it?',
+      a: 'Yes, but only with the supplier\'s agreement. Issue a PO amendment document referencing the original PO number and specifying exactly what has changed — quantity, price, delivery date or specification. Without a formal amendment, the supplier is entitled to supply and invoice per the original PO terms. For significant changes, a fresh PO that cancels and supersedes the original is cleaner than a chain of amendments.',
+    },
+    {
+      q: 'What should a purchase order include to be enforceable?',
+      a: 'At minimum: a unique PO number, issue date, your company name and address, the supplier\'s name and address, a detailed description of the goods or services, quantity and unit, agreed price per unit, total value, GST breakdown, delivery address and expected date, payment terms, and any specific terms such as quality standards or inspection rights. Missing the price or delivery terms makes the PO commercially ambiguous and difficult to enforce.',
+    },
+    {
+      q: 'Is a verbal purchase order valid in India?',
+      a: 'Legally, a verbal order can be binding, but it is almost impossible to enforce. Without a written record, disputes over price, quantity, specification or delivery date have no documentary resolution. Most businesses that have experienced a verbal-order dispute once move to requiring written POs for all purchases. For any transaction above a few thousand rupees, a written PO is essential.',
+    },
+    {
+      q: 'What is a blanket purchase order and when should I use it?',
+      a: 'A blanket PO authorises a supplier to deliver up to a specified total value over a defined period — say, \'5 lakh worth of packaging materials over six months — without requiring a new PO for each delivery. It is useful for consumables and materials you order repeatedly from the same supplier, as it reduces paperwork while preserving the price and terms agreed at the start of the period.',
+    },
+    {
+      q: 'How does a purchase order interact with GST compliance?',
+      a: 'The PO number must appear on the supplier\'s tax invoice so your accounts team can perform three-way matching (PO, goods receipt note, invoice) before processing payment. If the PO specifies the GST rate or HSN code, the supplier must honour that on the invoice. A mismatch between the agreed PO price and the invoiced price creates ITC reconciliation issues because input credit is allowed only on invoiced value.',
+    },
+    {
+      q: 'Can I use a purchase order to pay an advance to a supplier?',
+      a: 'A PO authorises supply but does not by itself release an advance. To pay an advance, you would issue the PO with advance payment terms (e.g. "30% advance on PO acceptance") and then process the payment against the PO. The supplier should issue a proforma invoice or an advance receipt against which your accounts team books the advance. The GST on the advance, if applicable, must be paid by the supplier when the advance is received.',
+    },
+    {
+      q: 'What happens if the supplier delivers more or less than the PO quantity?',
+      a: 'Accept only up to the PO quantity and return the excess, or raise a PO amendment if the additional quantity is needed. For shortfalls, issue a debit note for the undelivered quantity if you have prepaid, or simply withhold that portion of payment. A goods receipt note (GRN) should record the actual quantity received — this is your evidence for both payment and dispute purposes.',
+    },
+    {
+      q: 'Does a purchase order need to be signed?',
+      a: 'Not legally, but a signed PO is far more enforceable than an unsigned one. In practice, most corporate buyers send POs via email from an authorised purchasing officer, and the email itself constitutes evidence of issuance. For high-value orders with long-term supply implications, physical or digital signatures — or at least email confirmation from an authorised person — are recommended.',
+    },
+    {
+      q: 'How long should purchase orders be retained?',
+      a: 'Retain POs for at least six years from the financial year end — consistent with the GST and income tax record-keeping requirements. For capital asset purchases, retain POs for as long as the asset is on your books plus the six-year audit period. POs for government or PSU contracts should be retained longer, as these are subject to CAG audit at any time.',
+    },
+    {
+      q: 'What is a three-way match in purchase order processing?',
+      a: 'Three-way matching is the standard accounts-payable control: the PO (what you authorised), the goods receipt note (what was actually delivered), and the supplier invoice (what you are being asked to pay) are compared. Payment is released only when all three agree on quantity, price and tax. This prevents overpayment, duplicate payment and payment for undelivered goods — it is mandatory for most corporate, government and audited-company payable processes.',
     },
   ],
   relatedHeading: 'The Rest of the Procurement Paper Trail',
@@ -377,6 +429,84 @@ export const purchaseOrderContent: ToolContent = {
         impact: 'Paying for goods not received, or at wrong quantities or rates.',
         fix: 'Match PO, delivery challan and invoice quantities and amounts before authorising payment.',
       },
+    ],
+  },
+  industries: {
+    heading: 'Purchase Orders Across Industries — What Each Sector Prioritises',
+    intro: 'Every industry raises POs, but the fields that matter most — material specs, delivery windows, warranty terms — differ sharply by sector.',
+    items: [
+      {
+        name: 'Construction & Civil Contracting',
+        icon: 'HardHat',
+        text: 'Construction POs specify material grade and standard (e.g. "TMT steel Fe500 as per IS:1786"), delivery to site address, and stacking instructions. Materials arriving without a matching PO are refused by the site engineer to prevent unbudgeted spend.',
+        detail: 'Include the IS/BIS standard reference for every material in a construction PO — substandard substitutes are a persistent problem in the supply chain, and a specification in the PO gives you legal grounds to reject them.',
+      },
+      {
+        name: 'Manufacturing & Industrial',
+        icon: 'Factory',
+        text: 'Manufacturers raise POs for raw materials, components and packaging, often with lead time, batch size and quality inspection clauses. High-volume manufacturers run material requirements planning (MRP) that auto-generates POs when stock levels fall below reorder points.',
+        detail: 'Specify the inspection acceptance criteria in your manufacturing POs — quantity, dimensions, material test certificate requirements — so the goods receipt process can reject non-conforming batches without a separate dispute process.',
+      },
+      {
+        name: 'IT & Technology Procurement',
+        icon: 'Laptop',
+        text: 'IT departments issue POs for hardware, software licences and cloud services. Software POs specify the licence type, number of seats, contract duration and the vendor\'s obligation to provide support updates during the licence period.',
+        detail: 'Include the software version or SKU number on IT POs — vendors sometimes substitute a similar but different-tier product, and without a specific SKU in the PO you have no contractual basis to insist on the correct version.',
+      },
+      {
+        name: 'Retail & Wholesale Buying',
+        icon: 'Store',
+        text: 'Retailers issue POs for stock replenishment, seasonal buys and promotional campaigns. The PO specifies SKU, colour, size, pack configuration and the shelf-ready packaging requirement if the product goes direct to the shelf.',
+        detail: 'Retail POs must state the compliance requirement for MRP labelling and import markings — products arriving without compliant labels cannot be placed on shelves and the cost of relabelling falls on the vendor unless the PO specifies otherwise.',
+      },
+      {
+        name: 'Medical & Healthcare Procurement',
+        icon: 'Stethoscope',
+        text: 'Hospital procurement teams raise POs for pharmaceuticals, disposables and equipment through a committee-approved vendor list. Every PO references the hospital\'s approved formulary or equipment register, with batch and expiry requirements for consumables.',
+        detail: 'Medical POs for regulated devices and drugs must reference the CDSCO registration number of the product — supplies arriving without a valid registration document will be quarantined and cannot be used until compliance is confirmed.',
+      },
+      {
+        name: 'Automobile & Automotive',
+        icon: 'Car',
+        text: 'Auto dealerships and service centres raise POs for OEM spare parts with part numbers from the manufacturer\'s catalogue. Fleet companies raise annual or quarterly blanket POs for parts and consumables at negotiated rates.',
+        detail: 'Specify OEM part numbers and reject clauses for aftermarket substitutes in automotive POs — workshop liability for damage caused by non-genuine parts is legally separate from the PO dispute, but having the specification in the PO prevents the substitution in the first place.',
+      },
+      {
+        name: 'Interior Design & Furnishing',
+        icon: 'Sofa',
+        text: 'Interior designers raise POs on behalf of clients for furniture, fittings and imported tiles with brand, model number, finish and lead time from the manufacturer or importer. The PO protects the quoted delivery date for the overall project timeline.',
+        detail: 'Add a damage-on-delivery clause to furniture and fixture POs — specify that the vendor bears responsibility for transit damage until the item is installed and accepted, not just until it arrives at the site.',
+      },
+      {
+        name: 'Education & Institutions',
+        icon: 'GraduationCap',
+        text: 'Schools and universities raise POs for stationery, textbooks, lab equipment and digital subscriptions through a sanctioned budget. Government-aided institutions must follow GeM (Government e-Marketplace) procurement rules for eligible categories.',
+        detail: 'Educational institution POs should quote the committee resolution or governing body approval reference that sanctions the purchase — this is required for audit purposes and the payment cannot be processed without it in most institutions.',
+      },
+      {
+        name: 'Hospitality & Food Service',
+        icon: 'UtensilsCrossed',
+        text: 'Hotels and restaurants raise daily or weekly POs for perishable inventory (produce, dairy, proteins) and monthly POs for packaged F&B and cleaning supplies. The PO specifies delivery slot, temperature requirement for chilled items and the supplier\'s return policy for rejected produce.',
+        detail: 'Hospitality perishable POs must specify the quality grade and rejection criteria clearly — a PO that says "Grade A vegetables" without defining what Grade A means gives no legal grounds to reject substandard produce at the receiving dock.',
+      },
+      {
+        name: 'Freelance & Agency Subcontracting',
+        icon: 'User',
+        text: 'Agencies subcontracting work to freelancers or partner studios issue service POs that specify deliverables, deadline, format and payment terms. The PO protects the agency against scope creep and gives the freelancer clarity on exactly what is commissioned.',
+        detail: 'Service POs for freelancers should specify the intellectual property ownership clause — without it, the freelancer retains rights to their work by default under the Copyright Act and the agency cannot use it commercially.',
+      },
+    ],
+  },
+
+  references: {
+    heading: 'Procurement and Contract Law References',
+    intro: 'Purchase orders sit at the heart of procurement governance — these primary sources define the rules.',
+    items: [
+      { label: 'Indian Contract Act, 1872 — Offer, Acceptance and Consideration', url: 'https://legislative.gov.in', note: 'Governs when a PO becomes a binding contract and what constitutes valid acceptance by the supplier — foundational for understanding PO enforceability.' },
+      { label: 'CGST Act — Input Tax Credit on Purchases', url: 'https://cbic-gst.gov.in', note: 'Section 16 of the CGST Act conditions ITC claims on matching the PO, goods receipt and supplier invoice — the legal basis for three-way matching in accounts payable.' },
+      { label: 'MSMED Act, 2006 — Payment Terms for MSME Suppliers', url: 'https://msme.gov.in', note: 'Limits the maximum credit period buyers can impose on MSME suppliers and imposes compound interest on payments held beyond 45 days after acceptance.' },
+      { label: 'GeM Portal — Government Procurement Policy', url: 'https://gem.gov.in', note: 'Government e-Marketplace rules for procurement by central government entities; relevant for businesses supplying to public sector buyers who raise GeM POs.' },
+      { label: 'Companies Act, 2013 — Internal Controls over Procurement', url: 'https://mca.gov.in', note: 'Section 134 and ICFR guidelines require listed companies to maintain adequate internal controls over financial reporting, including PO-based procurement authorisation.' },
     ],
   },
 };

@@ -6,6 +6,8 @@ export const invoiceContent: ToolContent = {
     title: 'Free Invoice Maker — Create & Download Invoice PDF Online',
     description:
       'Make professional invoices online in under a minute — free. Add your logo, line items, taxes and due date, track paid/unpaid status, and download a print-ready PDF. No signup needed.',
+    published: '2026-02-18',
+    updated: '2026-08-07',
     keywords: [
       'invoice maker',
       'free invoice maker',
@@ -56,9 +58,11 @@ export const invoiceContent: ToolContent = {
     'features',
     'example',
     'useCases',
+    'industries',
     'mistakes',
     'sections',
     'faq',
+    'references',
     'blogs',
     'related',
   ],
@@ -120,7 +124,7 @@ export const invoiceContent: ToolContent = {
       kind: 'checklist',
       heading: 'A Follow-Up Sequence for Overdue Invoices',
       intro:
-        'Most late payments are not refusals — the invoice simply stopped moving inside the customer’s process. A predictable, unemotional sequence recovers the majority of them without damaging the relationship.',
+        'Most late payments are not refusals — the invoice simply stopped moving inside the customer\'s process. A predictable, unemotional sequence recovers the majority of them without damaging the relationship.',
       items: [
         {
           title: '3 days before the due date — remind, do not chase',
@@ -154,7 +158,7 @@ export const invoiceContent: ToolContent = {
     paragraphs: [
       'An invoice is a commercial document a seller issues to a buyer after goods are delivered or services are completed. It records what was sold, in what quantity, at what price, the taxes applied, and — critically — when payment is due. Unlike a quotation, which is an offer, an invoice is a formal demand for payment and forms the basis of your accounts receivable.',
       'For small businesses and freelancers in India, a clean invoice does double duty: it gets you paid faster and keeps your books audit-ready. Banks ask for invoices when you apply for working-capital loans, clients need them to release payments through their accounts teams, and your accountant needs them at tax time. A vague WhatsApp message asking for money simply does not carry the same weight as a numbered invoice with clear line items and payment terms.',
-      'A complete invoice includes a unique sequential invoice number, the issue date and due date, your business details (with GSTIN if registered), the customer’s billing details, itemised charges with quantities and rates, applicable taxes, the grand total, and your payment instructions. Our invoice maker structures all of this for you so nothing gets missed.',
+      'A complete invoice includes a unique sequential invoice number, the issue date and due date, your business details (with GSTIN if registered), the customer\'s billing details, itemised charges with quantities and rates, applicable taxes, the grand total, and your payment instructions. Our invoice maker structures all of this for you so nothing gets missed.',
     ],
   },
   howTo: {
@@ -226,7 +230,7 @@ export const invoiceContent: ToolContent = {
       },
       {
         title: 'Service providers with monthly billing cycles',
-        text: 'Agencies, maintenance contractors and tuition providers raise recurring monthly invoices, duplicating last month’s invoice and updating the number and dates in seconds.',
+        text: 'Agencies, maintenance contractors and tuition providers raise recurring monthly invoices, duplicating last month\'s invoice and updating the number and dates in seconds.',
       },
       {
         title: 'Small manufacturers supplying to businesses',
@@ -246,7 +250,7 @@ export const invoiceContent: ToolContent = {
       { label: 'Grand Total (due in 15 days)', value: '₹67,260.00' },
     ],
     outro:
-      'The invoice carries number INV-2026-0042, an issue date, a due date 15 days out, the designer’s bank details in the payment instructions, and status "Unpaid". When the client pays, the designer duplicates the invoice, flips the status to Paid, and sends it back as a confirmation copy.',
+      'The invoice carries number INV-2026-0042, an issue date, a due date 15 days out, the designer\'s bank details in the payment instructions, and status "Unpaid". When the client pays, the designer duplicates the invoice, flips the status to Paid, and sends it back as a confirmation copy.',
   },
   sections: [
     {
@@ -259,9 +263,9 @@ export const invoiceContent: ToolContent = {
     {
       heading: 'Best Practices for Getting Invoices Paid on Time',
       paragraphs: [
-        'Number your invoices sequentially and never reuse a number — gaps and duplicates are the first thing an auditor or a customer’s accounts team will question. Keep one series per financial year (for example INV-2026-0001 onwards) so reconciliation stays simple.',
-        'Always state an explicit due date rather than "payment on receipt". Invoices with a concrete date — even a generous one — are paid measurably faster because they enter the customer’s payment calendar. Pair the due date with visible payment instructions: bank account, IFSC and UPI ID printed on the invoice removes every excuse for delay.',
-        'Finally, send the invoice the same day you deliver. The longer the gap between delivery and billing, the lower the invoice falls in the customer’s priority list. With this tool an invoice takes under a minute, so there is no reason to batch them up for the weekend.',
+        'Number your invoices sequentially and never reuse a number — gaps and duplicates are the first thing an auditor or a customer\'s accounts team will question. Keep one series per financial year (for example INV-2026-0001 onwards) so reconciliation stays simple.',
+        'Always state an explicit due date rather than "payment on receipt". Invoices with a concrete date — even a generous one — are paid measurably faster because they enter the customer\'s payment calendar. Pair the due date with visible payment instructions: bank account, IFSC and UPI ID printed on the invoice removes every excuse for delay.',
+        'Finally, send the invoice the same day you deliver. The longer the gap between delivery and billing, the lower the invoice falls in the customer\'s priority list. With this tool an invoice takes under a minute, so there is no reason to batch them up for the weekend.',
       ],
     },
     {
@@ -299,11 +303,59 @@ export const invoiceContent: ToolContent = {
     },
     {
       q: 'Is my billing data stored on your servers?',
-      a: 'No. The invoice is saved in your browser’s local storage on your own device. Nothing is uploaded unless you explicitly use the share feature, which stores only that single shared document to generate a link.',
+      a: 'No. The invoice is saved in your browser\'s local storage on your own device. Nothing is uploaded unless you explicitly use the share feature, which stores only that single shared document to generate a link.',
     },
     {
-      q: 'Can I reuse last month’s invoice for a recurring client?',
+      q: 'Can I reuse last month\'s invoice for a recurring client?',
       a: 'Yes. Your last invoice loads automatically when you return. Update the invoice number and dates, adjust any line items, and download — a recurring monthly invoice takes well under a minute.',
+    },
+    {
+      q: 'Can I invoice a client in USD, EUR or another foreign currency?',
+      a: 'Yes. The currency selector supports USD, EUR, GBP, AED and other currencies. The amount-in-words line updates accordingly. GST-registered exporters should note that export invoices are zero-rated — mark the supply as export, include the LUT reference or IGST details, and mention the shipping bill number in the terms.',
+    },
+    {
+      q: 'I sent an invoice with a wrong amount — how do I correct it?',
+      a: 'If the client has not yet processed the invoice, cancel it in your records and reissue a corrected version with the same number plus a suffix (e.g. INV-2026-0042-R1), sending a short note explaining the change. If the invoice was already GST-filed or partially paid, issue a credit note for an overcharge or a debit note for an undercharge — never reuse or reissue the original number.',
+    },
+    {
+      q: 'What fields are legally mandatory on a GST tax invoice in India?',
+      a: 'Rule 46 of the CGST Rules requires: a consecutive serial number up to 16 characters, issue date, your GSTIN and business address, the buyer\'s name, address and GSTIN for B2B transactions, HSN or SAC code, item description with quantity and unit, taxable value, applicable tax rate and amount split as CGST and SGST or IGST, the total invoice value, and a reverse-charge indicator. For inter-state B2C invoices above \'2.5 lakh, the buyer\'s state and state code are also required.',
+    },
+    {
+      q: 'Can I add a late payment interest clause on my invoice?',
+      a: 'Yes, and it is worth doing. A printed clause such as "Interest at 1.5 % per month applies to amounts outstanding beyond the due date" is legally enforceable when your engagement terms have been accepted. MSME-registered businesses have additional protection under the MSMED Act: buyers must settle within 45 days of acceptance, after which compound interest at three times the RBI bank rate accrues automatically regardless of what the invoice says.',
+    },
+    {
+      q: 'How long must I keep invoice copies for tax purposes?',
+      a: 'The Income Tax Act requires businesses to maintain records, including invoices, for at least six years from the end of the relevant assessment year — effectively eight years from the invoice date. GST-registered businesses should retain invoice records for at least six years from the date of filing the annual return for that year. Keep copies of disputed invoices until the matter is fully resolved, regardless of age.',
+    },
+    {
+      q: 'What is the difference between a tax invoice and a bill of supply?',
+      a: 'A tax invoice is issued when a GST-registered business supplies taxable goods or services — it collects GST from the buyer and entitles the buyer to claim input credit. A bill of supply is issued instead when the supply is GST-exempt (such as fresh produce or certain healthcare services) or when the supplier is under the composition scheme and is not permitted to charge tax. The bill of supply confirms the transaction but carries no tax column.',
+    },
+    {
+      q: 'Can I print a UPI QR code directly on the invoice?',
+      a: 'Yes. Add your UPI ID in the payment instructions field and it appears on every invoice you generate. For a scannable QR image, generate one from your UPI app, save it as a PNG, and upload it to the stamp or signature area. Clients can then scan and pay the moment they receive the invoice — this alone reduces the average payment delay for freelancers and small shops by several days.',
+    },
+    {
+      q: 'My goods ship in three instalments — should I raise one invoice or three?',
+      a: 'Under GST, you may raise one consolidated invoice after all deliveries or a separate invoice per delivery. Separate invoices per delivery are cleaner in practice because each shipment has its own acceptance record and any dispute is isolated to that consignment. For construction and manufacturing projects with milestone billing, one invoice per milestone is the industry standard.',
+    },
+    {
+      q: 'What is e-invoicing and when does it become mandatory for my business?',
+      a: 'E-invoicing requires eligible businesses to upload invoice data to the government Invoice Registration Portal before sending it to the customer. The portal returns an IRN and QR code that must appear on the invoice. As of 2024, the mandate applies to businesses with annual aggregate turnover above \'5 crore. Below that threshold e-invoicing is optional. Businesses above the threshold must generate invoices through IRP-integrated software — a PDF alone is not compliant.',
+    },
+    {
+      q: 'Can a freelancer issue an invoice without a GST registration number?',
+      a: 'Yes. If your total annual service turnover is below \'20 lakh (\'10 lakh in special category states), GST registration is not mandatory and you can issue a plain invoice without GST fields. However, many corporate clients require a GSTIN on invoices to claim input credit — if your client base is largely corporate, voluntary registration even below the threshold is often commercially sensible.',
+    },
+    {
+      q: 'How do I handle a partial payment — issue a new invoice or update the original?',
+      a: 'Mark the original invoice as Partially Paid, record the amount received and the date in the notes, and keep the original invoice number unchanged. Do not create a second invoice for the balance. When the remaining amount is paid, update the status to Paid and issue a payment receipt referencing the invoice number. For clients with several outstanding invoices, a monthly statement of account is often more efficient than chasing each individually.',
+    },
+    {
+      q: 'Is a handwritten invoice legally valid in India?',
+      a: 'Yes — Indian law does not require invoices to be typed or digitally generated. A handwritten invoice is valid provided it contains the seller\'s and buyer\'s details, item descriptions, amounts, applicable tax details, and a date. In practice, handwritten invoices are difficult to store and audit, carry higher risk of disputes over readability, and are rejected by most corporate accounts teams. For any regular business, a printed or digital invoice is strongly preferable.',
     },
   ],
   relatedHeading: 'Documents That Come Before and After an Invoice',
@@ -387,6 +439,85 @@ export const invoiceContent: ToolContent = {
         impact: 'Invoice sits unread in a busy inbox past the due date.',
         fix: 'Send a WhatsApp or email reminder 3 days before and 1 day after the due date.',
       },
+    ],
+  },
+  industries: {
+    heading: 'How Different Industries Use Invoices Every Day',
+    intro: 'Invoicing is universal, but the details that matter — HSN codes, milestone structure, credit terms — vary sharply by sector.',
+    items: [
+      {
+        name: 'Construction & Civil Contracting',
+        icon: 'HardHat',
+        text: 'Contractors invoice against project milestones — foundation, structure, finishing — rather than on a calendar date. Each invoice references the work completion certificate or measurement book entry that the client\'s site engineer signs off.',
+        detail: 'Print a detailed scope narrative on every invoice: vague line items like "civil work" are routinely queried by corporate client accounts teams and delay payment by two to four weeks.',
+      },
+      {
+        name: 'IT Services & Software',
+        icon: 'Laptop',
+        text: 'IT agencies and SaaS providers raise recurring monthly retainers and one-off project invoices. They attach timesheets or sprint delivery notes as supporting PDFs so the client\'s procurement team can match the invoice to the approved SOW.',
+        detail: 'Reference the purchase order number on every invoice — most IT buyers have a PO-based accounts payable process and invoices without a PO reference sit unprocessed for weeks.',
+      },
+      {
+        name: 'Retail & Trading',
+        icon: 'Store',
+        text: 'Retailers and wholesale traders issue itemised sales invoices for every transaction, with HSN codes, quantities and per-unit rates. High-volume shops often batch invoices by customer at the end of each day.',
+        detail: 'B2B retail invoices above \'50,000 must carry the buyer\'s GSTIN to allow input tax credit — missing this is the single most common reason for invoice rejection in trade.',
+      },
+      {
+        name: 'Medical & Healthcare',
+        icon: 'Stethoscope',
+        text: 'Clinics, diagnostic labs and hospitals invoice for consultation fees, diagnostic packages and procedure charges under SAC code 999311. Pharmaceutical distributors use HSN codes for each drug and maintain strict batch-number references on invoices for recall traceability.',
+        detail: 'Healthcare invoices must distinguish taxable and exempt items clearly — many medical services are exempt from GST, and bundling them with taxable items on a single line creates compliance risk.',
+      },
+      {
+        name: 'Interior Design & Furnishing',
+        icon: 'Sofa',
+        text: 'Interior designers bill a mix of professional fees (service) and material supply (goods) on the same invoice. They typically invoice in three tranches: design approval, procurement, and project handover, each with its own supporting document.',
+        detail: 'Itemise materials and labour charges as separate line items with different GST rates — materials typically attract 18 %, while pure design services attract 18 % SAC 998311, but mixing them without separation causes ITC disputes.',
+      },
+      {
+        name: 'Manufacturing & Industrial',
+        icon: 'Factory',
+        text: 'Manufacturers supply goods to distributors, wholesalers and other factories. Their invoices carry HSN codes, quantity in units (pieces, kg, litres), and GST calculated on the assessable value inclusive of freight when freight is bundled.',
+        detail: 'For inter-state B2B supplies above \'50,000, attach the e-way bill number to the invoice before the goods leave the factory — transporting without one risks the consignment being detained at a check post.',
+      },
+      {
+        name: 'Freelancing & Consulting',
+        icon: 'User',
+        text: 'Freelancers issue invoices per project or per deliverable with a due date and their UPI ID for instant payment. Independent consultants add a retainer invoice on the first of each month for ongoing engagements, keeping one clean numbering series per client.',
+        detail: 'Always print payment terms as a specific calendar date (e.g. "Due 25 August 2026") rather than "Net 30" — freelancers who switch to date-based invoicing consistently report faster payments from domestic clients.',
+      },
+      {
+        name: 'Education & Ed-Tech',
+        icon: 'GraduationCap',
+        text: 'Schools, coaching institutes and ed-tech platforms invoice for term fees, course enrolments and examination charges. Corporate training providers issue invoices with SAC code 999294 and attach the training schedule as a supporting document.',
+        detail: 'Educational services provided by recognised institutions are exempt from GST — do not charge or show tax on fee invoices, as doing so creates a GST liability that is difficult to reverse.',
+      },
+      {
+        name: 'Hospitality & Hotels',
+        icon: 'UtensilsCrossed',
+        text: 'Hotels and restaurants issue folios and tax invoices for room charges, F&B, and banquet services under SAC 996311. Corporate clients require a proper GST invoice with the company\'s GSTIN to claim ITC on accommodation expenses above \'7,500 per night.',
+        detail: 'Split room tariffs and F&B clearly on hotel invoices — the GST rate differs (12 % for accommodation, 5 % for restaurant service without ITC), and a single combined line creates reconciliation problems for your GST return.',
+      },
+      {
+        name: 'Automobile & Automotive',
+        icon: 'Car',
+        text: 'Dealerships invoice for vehicle sales, accessories, and AMC packages with HSN codes at the correct GST rate (28 % for most vehicles). Service centres raise invoices distinguishing labour charges from parts, since labour and parts attract different tax treatment.',
+        detail: 'Vehicle sale invoices must show the chassis number and engine number — their absence makes the invoice invalid for registration and hypothecation purposes at the RTO.',
+      },
+    ],
+  },
+
+  references: {
+    heading: 'Key Regulations Behind Every Invoice in India',
+    intro: 'These primary sources govern what must appear on a compliant invoice — bookmark them rather than relying on secondhand summaries.',
+    items: [
+      { label: 'CGST Act, 2017 — Section 31: Tax Invoice', url: 'https://cbic-gst.gov.in', note: 'Lays down the statutory obligation for every GST-registered supplier to issue a tax invoice and specifies time limits for doing so.' },
+      { label: 'CGST Rules, 2017 — Rule 46: Mandatory Invoice Fields', url: 'https://cbic-gst.gov.in', note: 'Defines the complete list of fields a valid GST tax invoice must carry, including serial number format, HSN/SAC codes and GSTIN requirements.' },
+      { label: 'GST Taxpayer Portal — Filing & Compliance Reference', url: 'https://www.gst.gov.in', note: 'Official government portal for GSTIN verification, GSTR-1 filing, and access to all GST circulars and notifications.' },
+      { label: 'Income Tax Act — Section 44AA: Maintenance of Accounts', url: 'https://incometaxindia.gov.in', note: 'Specifies which businesses must maintain books of account, the prescribed period for retention, and the format requirements.' },
+      { label: 'MSMED Act, 2006 — Payment Protection Provisions', url: 'https://msme.gov.in', note: 'Mandates that buyers pay MSME suppliers within 45 days of delivery and imposes compound interest at three times the bank rate on delayed payments.' },
+      { label: 'Reserve Bank of India — Payment System Regulations', url: 'https://rbi.org.in', note: 'Governs UPI, NEFT, RTGS and other payment modes; relevant when printing payment instructions and bank details on commercial invoices.' },
     ],
   },
 };

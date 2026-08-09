@@ -6,6 +6,8 @@ export const gstInvoiceContent: ToolContent = {
     title: 'Free GST Invoice Maker — CGST, SGST & IGST Tax Invoice Generator',
     description:
       'Generate GST-compliant tax invoices online for free. Automatic CGST/SGST/IGST split, HSN/SAC codes, place of supply, reverse charge and e-way bill fields. Download PDF instantly, no signup.',
+    published: '2026-02-18',
+    updated: '2026-08-07',
     keywords: [
       'gst invoice maker',
       'gst bill generator',
@@ -58,8 +60,10 @@ export const gstInvoiceContent: ToolContent = {
     'features',
     'sections',
     'useCases',
+    'industries',
     'mistakes',
     'faq',
+    'references',
     'blogs',
     'related',
   ],
@@ -116,7 +120,7 @@ export const gstInvoiceContent: ToolContent = {
       kind: 'checklist',
       heading: 'Rule 46 Checklist: Particulars a Tax Invoice Must Carry',
       intro:
-        'Rule 46 of the CGST Rules lists what a tax invoice must contain. If any of these is missing, your buyer’s input tax credit can be questioned — which is why registered buyers send defective invoices back rather than paying against them.',
+        'Rule 46 of the CGST Rules lists what a tax invoice must contain. If any of these is missing, your buyer\'s input tax credit can be questioned — which is why registered buyers send defective invoices back rather than paying against them.',
       items: [
         {
           title: 'Supplier name, address and GSTIN',
@@ -164,8 +168,8 @@ export const gstInvoiceContent: ToolContent = {
   whatIs: {
     heading: 'What Is a GST Tax Invoice?',
     paragraphs: [
-      'A GST tax invoice is the statutory document a registered supplier must issue when supplying taxable goods or services in India. It is more than a bill: for a B2B buyer it is the evidence on which input tax credit (ITC) is claimed, and for the tax department it is the record against which your GSTR-1 filings are matched. If the invoice is defective, the buyer’s credit can be questioned — which is why registered businesses insist on a properly drawn tax invoice rather than an ordinary bill.',
-      'Rule 46 of the CGST Rules prescribes what a tax invoice must contain: the supplier’s name, address and GSTIN; a consecutive serial number (up to 16 characters, unique for the financial year); the date of issue; the recipient’s name, address and GSTIN for registered buyers; the HSN or SAC code of each item; description, quantity and taxable value; the rate and amount of tax shown separately as CGST, SGST/UTGST or IGST; the place of supply with the state name for inter-state sales; whether tax is payable on reverse charge; and the signature or digital signature of the supplier.',
+      'A GST tax invoice is the statutory document a registered supplier must issue when supplying taxable goods or services in India. It is more than a bill: for a B2B buyer it is the evidence on which input tax credit (ITC) is claimed, and for the tax department it is the record against which your GSTR-1 filings are matched. If the invoice is defective, the buyer\'s credit can be questioned — which is why registered businesses insist on a properly drawn tax invoice rather than an ordinary bill.',
+      'Rule 46 of the CGST Rules prescribes what a tax invoice must contain: the supplier\'s name, address and GSTIN; a consecutive serial number (up to 16 characters, unique for the financial year); the date of issue; the recipient\'s name, address and GSTIN for registered buyers; the HSN or SAC code of each item; description, quantity and taxable value; the rate and amount of tax shown separately as CGST, SGST/UTGST or IGST; the place of supply with the state name for inter-state sales; whether tax is payable on reverse charge; and the signature or digital signature of the supplier.',
       'The tax split depends on where the supply goes. When supplier and place of supply are in the same state, the levy is intra-state and splits equally into CGST and SGST (an 18% rate becomes 9% + 9%). When they are in different states, the whole levy is charged as IGST. Charging the wrong pair is a common and painful error — the tax paid under the wrong head cannot simply be adjusted, so this tool lets you switch the mode with one dropdown and recomputes every line automatically.',
     ],
   },
@@ -174,7 +178,7 @@ export const gstInvoiceContent: ToolContent = {
     steps: [
       {
         title: 'Enter supplier and recipient details with GSTINs',
-        text: 'Fill in your registered business name, address and 15-digit GSTIN under Supplier, and the buyer’s details under Recipient. For a B2B sale, add the buyer’s GSTIN so they can claim input tax credit; for B2C retail sales the buyer’s GSTIN is simply left blank.',
+        text: 'Fill in your registered business name, address and 15-digit GSTIN under Supplier, and the buyer\'s details under Recipient. For a B2B sale, add the buyer\'s GSTIN so they can claim input tax credit; for B2C retail sales the buyer\'s GSTIN is simply left blank.',
       },
       {
         title: 'Set place of supply, reverse charge and e-way bill',
@@ -199,7 +203,7 @@ export const gstInvoiceContent: ToolContent = {
       },
       {
         title: 'HSN/SAC code column on every line',
-        text: 'Each item row carries an HSN/SAC field so your invoice meets the digit requirements notified for your turnover slab and your buyer’s GSTR-2B reflects the right codes.',
+        text: 'Each item row carries an HSN/SAC field so your invoice meets the digit requirements notified for your turnover slab and your buyer\'s GSTR-2B reflects the right codes.',
       },
       {
         title: 'Place of supply, reverse charge and e-way bill fields',
@@ -207,11 +211,11 @@ export const gstInvoiceContent: ToolContent = {
       },
       {
         title: 'B2B and B2C ready',
-        text: 'Add the recipient’s GSTIN for registered buyers who need input credit, or leave it blank for consumer sales. The same editor handles both without switching tools.',
+        text: 'Add the recipient\'s GSTIN for registered buyers who need input credit, or leave it blank for consumer sales. The same editor handles both without switching tools.',
       },
       {
         title: 'Nothing leaves your device',
-        text: 'Invoices autosave to your browser’s localStorage as you type. There is no account, no cloud upload and no watermark — your tax data stays with you.',
+        text: 'Invoices autosave to your browser\'s localStorage as you type. There is no account, no cloud upload and no watermark — your tax data stays with you.',
       },
       {
         title: 'Professional output in one click',
@@ -226,7 +230,7 @@ export const gstInvoiceContent: ToolContent = {
     items: [
       {
         title: 'Wholesalers and distributors selling B2B',
-        text: 'Traders supplying to registered retailers issue invoices with HSN codes and the buyer’s GSTIN so the retailer’s input credit flows through GSTR-2B without mismatch notices.',
+        text: 'Traders supplying to registered retailers issue invoices with HSN codes and the buyer\'s GSTIN so the retailer\'s input credit flows through GSTR-2B without mismatch notices.',
       },
       {
         title: 'Service firms billing across state lines',
@@ -245,7 +249,7 @@ export const gstInvoiceContent: ToolContent = {
   example: {
     heading: 'GST Invoice Example: Inter-State Electronics Sale with IGST',
     intro:
-      'An electronics wholesaler in Mumbai, Maharashtra sells 20 Bluetooth speakers to a registered retailer in Ahmedabad, Gujarat. Because the place of supply (Gujarat, code 24) differs from the supplier’s state, the entire 18% GST is charged as IGST:',
+      'An electronics wholesaler in Mumbai, Maharashtra sells 20 Bluetooth speakers to a registered retailer in Ahmedabad, Gujarat. Because the place of supply (Gujarat, code 24) differs from the supplier\'s state, the entire 18% GST is charged as IGST:',
     rows: [
       { label: 'Bluetooth speakers, HSN 8518 (20 units @ ₹2,500)', value: '₹50,000.00' },
       { label: 'Freight & packing', value: '₹1,500.00' },
@@ -254,29 +258,29 @@ export const gstInvoiceContent: ToolContent = {
       { label: 'Invoice total (Rupees Sixty Thousand Seven Hundred Seventy only)', value: '₹60,770.00' },
     ],
     outro:
-      'The invoice shows number GST-2026-0117, both parties’ GSTINs, place of supply "Gujarat (24)", reverse charge "No" and the e-way bill number for the consignment. Had the buyer been in Maharashtra instead, the same ₹9,270 would have printed as CGST ₹4,635 + SGST ₹4,635 — the tool handles the switch with one click.',
+      'The invoice shows number GST-2026-0117, both parties\' GSTINs, place of supply "Gujarat (24)", reverse charge "No" and the e-way bill number for the consignment. Had the buyer been in Maharashtra instead, the same ₹9,270 would have printed as CGST ₹4,635 + SGST ₹4,635 — the tool handles the switch with one click.',
   },
   sections: [
     {
       heading: 'HSN and SAC Codes: How Many Digits Do You Need?',
       paragraphs: [
         'HSN (Harmonised System of Nomenclature) codes classify goods and SAC (Services Accounting Code) numbers classify services on GST invoices. The number of digits you must print depends on your aggregate turnover in the previous financial year: businesses with turnover up to ₹5 crore must show at least 4-digit HSN codes on B2B invoices (optional on B2C), while those above ₹5 crore must show 6-digit codes on all invoices. Exporters and importers use the full 8-digit codes.',
-        'Getting the code right matters beyond the invoice itself — HSN-wise summaries are reported in GSTR-1, and a mismatch between your code and your buyer’s expectation can trigger reconciliation queries. If you are unsure of a code, check the GST portal’s HSN search or your product’s customs tariff heading, then keep it consistent across quotations, invoices, credit notes and delivery challans.',
+        'Getting the code right matters beyond the invoice itself — HSN-wise summaries are reported in GSTR-1, and a mismatch between your code and your buyer\'s expectation can trigger reconciliation queries. If you are unsure of a code, check the GST portal\'s HSN search or your product\'s customs tariff heading, then keep it consistent across quotations, invoices, credit notes and delivery challans.',
       ],
     },
     {
       heading: 'Input Tax Credit, Reverse Charge and Why B2B Invoices Are Scrutinised',
       paragraphs: [
-        'Input tax credit is the mechanism that stops tax cascading: a registered buyer deducts the GST paid on purchases from the GST collected on sales. But credit is only available when the supplier issues a valid tax invoice, reports it in GSTR-1 and pays the tax — the invoice then appears in the buyer’s GSTR-2B. A missing GSTIN, wrong place of supply or absent HSN code can hold up a buyer’s credit, which is why B2B customers scrutinise your invoices far more closely than consumers do.',
+        'Input tax credit is the mechanism that stops tax cascading: a registered buyer deducts the GST paid on purchases from the GST collected on sales. But credit is only available when the supplier issues a valid tax invoice, reports it in GSTR-1 and pays the tax — the invoice then appears in the buyer\'s GSTR-2B. A missing GSTIN, wrong place of supply or absent HSN code can hold up a buyer\'s credit, which is why B2B customers scrutinise your invoices far more closely than consumers do.',
         'Reverse charge flips the normal flow: for notified goods and services (and certain purchases from unregistered persons), the recipient pays the tax directly instead of the supplier collecting it. Rule 46 requires every tax invoice to state whether tax is payable on reverse charge, even when the answer is No — the dedicated Yes/No field in this tool prints that declaration on every invoice.',
-        'Also note the e-invoicing mandate: businesses whose aggregate turnover has exceeded ₹5 crore in any year since 2017-18 must report B2B invoices to the government’s Invoice Registration Portal and print the resulting IRN and QR code. If you fall under that threshold, this tool covers your invoicing fully; above it, you can still draft and share invoices here but must additionally register them on the IRP.',
+        'Also note the e-invoicing mandate: businesses whose aggregate turnover has exceeded ₹5 crore in any year since 2017-18 must report B2B invoices to the government\'s Invoice Registration Portal and print the resulting IRN and QR code. If you fall under that threshold, this tool covers your invoicing fully; above it, you can still draft and share invoices here but must additionally register them on the IRP.',
       ],
     },
     {
       heading: 'GST Invoice Timelines, Copies and Common Mistakes',
       paragraphs: [
         'Timing is prescribed: for goods, the tax invoice must be issued before or at the time of removal or delivery; for services, within 30 days of supply (45 days for banks and NBFCs). Goods invoices are prepared in triplicate — original for recipient, duplicate for transporter, triplicate for supplier — while service invoices need only original and duplicate.',
-        'The mistakes we see most often: charging CGST+SGST on an inter-state sale (or IGST intra-state), skipping the place of supply on service invoices, breaking the invoice number sequence mid-year, and omitting the buyer’s GSTIN on a B2B sale. Each of these can surface later as an ITC dispute or a GSTR-1 amendment. Because this tool structures every Rule 46 field and computes the tax split from your chosen mode, the format errors are designed out — you only need to enter accurate facts.',
+        'The mistakes we see most often: charging CGST+SGST on an inter-state sale (or IGST intra-state), skipping the place of supply on service invoices, breaking the invoice number sequence mid-year, and omitting the buyer\'s GSTIN on a B2B sale. Each of these can surface later as an ITC dispute or a GSTR-1 amendment. Because this tool structures every Rule 46 field and computes the tax split from your chosen mode, the format errors are designed out — you only need to enter accurate facts.',
         'If a sale is later returned or the value changes, do not edit or reissue the invoice; issue a credit note or debit note referencing the original invoice number, as Section 34 of the CGST Act requires. Our credit note and debit note generators share this same editor.',
       ],
     },
@@ -284,7 +288,7 @@ export const gstInvoiceContent: ToolContent = {
   faqs: [
     {
       q: 'What must a GST invoice contain to be valid?',
-      a: 'Under Rule 46 of the CGST Rules: supplier name, address and GSTIN; a unique consecutive invoice number (max 16 characters) and date; recipient details with GSTIN for registered buyers; HSN/SAC codes; description, quantity and taxable value; tax rate and amount shown separately as CGST/SGST or IGST; place of supply for inter-state sales; a reverse charge declaration; and the supplier’s signature. This tool has a field for each of these.',
+      a: 'Under Rule 46 of the CGST Rules: supplier name, address and GSTIN; a unique consecutive invoice number (max 16 characters) and date; recipient details with GSTIN for registered buyers; HSN/SAC codes; description, quantity and taxable value; tax rate and amount shown separately as CGST/SGST or IGST; place of supply for inter-state sales; a reverse charge declaration; and the supplier\'s signature. This tool has a field for each of these.',
     },
     {
       q: 'When do I charge CGST+SGST and when do I charge IGST?',
@@ -312,7 +316,55 @@ export const gstInvoiceContent: ToolContent = {
     },
     {
       q: 'Is this GST invoice generator really free, and where is my data stored?',
-      a: 'Completely free — unlimited invoices, all 25 templates, PDF and PNG downloads, no watermark and no signup. Your invoices autosave in your browser’s local storage on your own device; nothing is uploaded unless you deliberately create a WhatsApp share link for a specific document.',
+      a: 'Completely free — unlimited invoices, all 25 templates, PDF and PNG downloads, no watermark and no signup. Your invoices autosave in your browser\'s local storage on your own device; nothing is uploaded unless you deliberately create a WhatsApp share link for a specific document.',
+    },
+    {
+      q: 'What is GSTR-1 and how do GST invoices feed into it?',
+      a: 'GSTR-1 is the monthly or quarterly return in which a GST-registered supplier reports all outward supplies — every sales invoice, credit note and debit note issued during the period. Each invoice\'s GSTIN, taxable value, GST amount, place of supply and invoice number are uploaded, where they become visible to your buyer in GSTR-2B as their input credit entitlement. Errors in GSTR-1 therefore directly affect your customer\'s ITC claim.',
+    },
+    {
+      q: 'At what turnover does e-invoicing become mandatory under GST?',
+      a: 'As of August 2023, e-invoicing is mandatory for businesses with aggregate annual turnover above \'5 crore in any financial year from 2017-18 onwards. Below that threshold it remains optional. The IRN and QR code generated by the Invoice Registration Portal must appear on every B2B invoice, credit note and debit note raised by eligible businesses — a plain PDF without an IRN is not GST-compliant for that segment.',
+    },
+    {
+      q: 'What changes on a GST invoice when billing a business (B2B) versus an individual (B2C)?',
+      a: 'A B2B invoice must carry the buyer\'s GSTIN and state code so the recipient can claim input credit. A B2C invoice does not need the buyer\'s GSTIN. For inter-state B2C supplies above \'2.5 lakh, the buyer\'s state and state code are required. E-invoicing and GSTR-1 reporting also differ: B2B invoices are reported individually by GSTIN, while B2C supplies above \'2.5 lakh are reported POS-wise and smaller B2C supplies are reported as a consolidated monthly figure.',
+    },
+    {
+      q: 'What happens if I apply the wrong GST rate on an invoice?',
+      a: 'An undercharge means you collected less GST than you owe to the government — you must pay the shortfall from your own pocket, plus interest at 18 % per annum from the due date. An overcharge means you collected more GST than required — the buyer has paid excess tax they cannot claim as credit, creating a dispute. In both cases, issue a credit note (for overcharge) or a debit note (for undercharge) and amend the return in the period the correction is made.',
+    },
+    {
+      q: 'Can I issue a GST invoice for goods or services that are exempt from GST?',
+      a: 'No. When you supply exempt goods or services, you issue a Bill of Supply, not a tax invoice. A Bill of Supply confirms the transaction but carries no GST, no tax column and no ITC entitlement for the recipient. If your business supplies both taxable and exempt items, you will need to raise both document types depending on the nature of each supply.',
+    },
+    {
+      q: 'What is the reverse charge mechanism and when does it apply?',
+      a: 'Under reverse charge, the recipient — not the supplier — is liable to pay GST to the government. It applies in specific cases defined in the CGST Act: when an unregistered person sells to a registered business (Section 9(4)), for services listed in Schedule II (such as legal services from advocates, GTA services, and services from a director to a company), and when importing services from abroad. On a GST invoice where reverse charge applies, the field "Reverse Charge Applicable: Yes" is mandatory.',
+    },
+    {
+      q: 'How do I determine whether to charge CGST plus SGST or IGST on an invoice?',
+      a: 'The rule is simple: if the supplier and recipient are in the same state, charge CGST and SGST in equal halves. If they are in different states — or if the supply involves an SEZ, export, or a foreign recipient — charge IGST at the full rate. For services, "place of supply" determines which state\'s GST applies: it is generally the recipient\'s location for B2B services and the supplier\'s location for B2C services, with specific exceptions for transport, accommodation and event services.',
+    },
+    {
+      q: 'What is an IRN and how does it appear on an e-invoice?',
+      a: 'An IRN (Invoice Reference Number) is a unique 64-character hash generated by the Invoice Registration Portal when you submit invoice data for e-invoicing. Once generated, the IRN and a signed QR code are embedded in your invoice before it is sent to the customer. The QR code encodes key invoice fields that can be independently verified by scanning — its presence is what makes the invoice valid under the e-invoice scheme.',
+    },
+    {
+      q: 'Can I issue a GST invoice without recording my customer\'s GSTIN?',
+      a: 'For B2C supplies to unregistered buyers you do not need their GSTIN — the buyer\'s name and address are sufficient. However, if the buyer is a registered GST business and you issue the invoice without their GSTIN, they cannot see or claim the input tax credit in GSTR-2B. For any B2B transaction the buyer\'s GSTIN must be on the invoice.',
+    },
+    {
+      q: 'What is the time limit for issuing a GST invoice for services?',
+      a: 'For services, a GST invoice must be issued within 30 days of the date of supply — except for banking, financial and insurance services, for which the limit is 45 days. For goods, the invoice must be issued at or before delivery (or at the time of removal of goods if movement is involved). Missing the time limit does not make the tax liability disappear — you remain liable for GST from the date of supply, with potential interest.',
+    },
+    {
+      q: 'What is the difference between a composite supply and a mixed supply on a GST invoice?',
+      a: 'A composite supply is a bundle of goods or services where one element is the principal supply and the others are naturally ancillary — for example, a laptop sold with a carrying bag and charger. The whole bundle is taxed at the rate applicable to the principal supply (the laptop). A mixed supply is a combination where none of the elements is naturally ancillary to any other, sold as a package at a single price. The tax rate for a mixed supply is the highest rate among the individual elements. The distinction affects how you code the supply on the invoice and which GST rate applies.',
+    },
+    {
+      q: 'How do I correct a GST invoice I already reported in GSTR-1?',
+      a: 'You cannot modify an invoice that has already been filed in GSTR-1. Instead, issue a credit note (if you overcharged) or a debit note (if you undercharged), reference the original invoice number, and report the credit note or debit note in the GSTR-1 for the period in which it is issued. The net effect will flow into your customer\'s GSTR-2B in that period. The original invoice entry in GSTR-1 remains as filed.',
     },
   ],
   relatedHeading: 'Other GST Documents You May Need to Issue',
@@ -391,6 +443,84 @@ export const gstInvoiceContent: ToolContent = {
         impact: 'Legally invalid — one supply can only attract one type of GST.',
         fix: 'Choose intra-state (CGST+SGST) or inter-state (IGST) for each invoice based on place of supply.',
       },
+    ],
+  },
+  industries: {
+    heading: 'How Each Industry Uses GST Invoices in Practice',
+    intro: 'Compliant GST invoicing means different things sector by sector — HSN codes, e-invoice thresholds, place of supply rules and ITC structures all vary.',
+    items: [
+      {
+        name: 'Manufacturing & Industrial Supply',
+        icon: 'Factory',
+        text: 'Manufacturers issue tax invoices with four-digit HSN codes (six-digit if turnover exceeds \'5 crore), quantity in standard units, and IGST for inter-state dispatches. Every inter-state B2B invoice above \'50,000 triggers an e-way bill that must accompany the consignment.',
+        detail: 'Verify HSN codes for every product at the start of each financial year — a reclassification by CBIC can shift an item to a different rate bracket, and using the old rate creates both underpayment and input credit mismatches downstream.',
+      },
+      {
+        name: 'IT Services & SaaS',
+        icon: 'Laptop',
+        text: 'IT companies charge 18 % GST on software services under SAC 998314 and cloud hosting under SAC 998316. For export clients, invoices are zero-rated with LUT references; for domestic B2B clients, GSTIN and place of supply are both required.',
+        detail: 'Explicitly state the place of supply on every IT service invoice — for B2B, it is the recipient\'s registered state, and for B2C it is your own state; getting this wrong leads to IGST vs CGST+SGST mismatches in GSTR-1.',
+      },
+      {
+        name: 'Retail & Wholesale Distribution',
+        icon: 'Store',
+        text: 'Retailers and distributors manage large volumes of B2C invoices (usually simplified) and B2B invoices that carry buyer GSTINs. High-volume distributors use e-invoicing above the \'5 crore threshold and batch their GSTR-1 uploads daily.',
+        detail: 'For B2C invoices above \'2.5 lakh in inter-state supply, the buyer\'s state and state code must appear — absence of these fields creates issues during GSTR-1 reconciliation and annual return filing.',
+      },
+      {
+        name: 'Construction Contracting',
+        icon: 'HardHat',
+        text: 'Construction contracts attract 18 % GST on the full contract value (12 % for affordable housing projects). Contractors issue progress invoices tied to RA bills certified by the client\'s engineer, with retention money tracked separately.',
+        detail: 'Construction invoices should list the project address as the place of supply — not the contractor\'s head office address — since the supply of construction services is linked to the immovable property location.',
+      },
+      {
+        name: 'Medical Equipment Suppliers',
+        icon: 'Stethoscope',
+        text: 'Medical device suppliers must apply the correct GST rate per HSN code — rates range from zero (certain lifesaving devices) to 12 % or 18 % for general medical equipment. Each invoice references the device\'s registration under CDSCO for regulated items.',
+        detail: 'Never club taxable and zero-rated medical items on a single invoice line — they must appear as separate line items with their own HSN codes and tax rates to allow accurate ITC reconciliation by hospital buyers.',
+      },
+      {
+        name: 'Automobile Dealers',
+        icon: 'Car',
+        text: 'Vehicle dealers issue GST invoices carrying 28 % GST plus applicable cess (1–22 % depending on engine size and vehicle type). The invoice must include the vehicle identification number, chassis number and engine number for registration.',
+        detail: 'Dealer discount or exchange bonus must be reflected as a line-item deduction on the invoice, not a post-invoice cash payment — only invoiced discounts are permissible for ITC adjustment under GST.',
+      },
+      {
+        name: 'Hospitality & Tourism',
+        icon: 'UtensilsCrossed',
+        text: 'Hotels with room tariff above \'7,500 per night attract 18 % GST; below that the rate is 12 %. Restaurant services without ITC are 5 %. Tour operators apply 5 % GST on the full package value or 18 % on the gross margin, depending on the scheme chosen.',
+        detail: 'Corporate hotel invoices must show the company\'s GSTIN and a clear breakup of room charges and F&B separately — without this, the corporate client cannot claim the ITC they are entitled to on accommodation.',
+      },
+      {
+        name: 'Education & Ed-Tech',
+        icon: 'GraduationCap',
+        text: 'GST-exempt educational services issued by recognised institutions use a Bill of Supply, not a tax invoice. However, ed-tech platforms offering online training to working professionals typically attract 18 % GST under SAC 999294.',
+        detail: 'If your institution offers both exempt courses and taxable events or publications, maintain separate invoice series for taxable and exempt supplies — commingling them in a single series creates GST reconciliation errors at year-end.',
+      },
+      {
+        name: 'Interior Design Studios',
+        icon: 'Sofa',
+        text: 'Design studios billing for both design consultancy (service) and material procurement (goods supply) raise composite invoices with two distinct sections: a service portion under SAC 998312 at 18 % and a goods portion with the relevant HSN code and rate.',
+        detail: 'List every material with its HSN code and GST rate on the same invoice — clients\' finance teams routinely audit mixed invoices and reject any where goods and services rates are pooled into a single tax line.',
+      },
+      {
+        name: 'Freelance Professionals',
+        icon: 'User',
+        text: 'Freelancers registered under GST issue 18 % GST invoices for professional services under SAC 998316 (digital) or SAC 9983 (general professional). Exporters of services can supply under a Letter of Undertaking, keeping the invoice zero-rated.',
+        detail: 'Include your GSTIN and the SAC code on every invoice — many of the larger corporate clients run automated three-way matching (invoice, PO, service confirmation) and will reject invoices missing these fields without raising a query.',
+      },
+    ],
+  },
+
+  references: {
+    heading: 'Official Sources for GST Invoice Compliance',
+    intro: 'Always verify GST invoice rules directly from government portals — rates and thresholds change through notifications published here.',
+    items: [
+      { label: 'CBIC GST Portal — Notifications and Circulars', url: 'https://cbic-gst.gov.in', note: 'Central Board of Indirect Taxes and Customs: all GST notifications, circulars, and the official text of CGST Rules including Rule 46 on invoice fields.' },
+      { label: 'NIC E-Invoice Portal (IRP)', url: 'https://einvoice1.gst.gov.in', note: 'Official Invoice Registration Portal where eligible businesses generate IRNs and QR codes for e-invoice compliance.' },
+      { label: 'GST Taxpayer Portal', url: 'https://www.gst.gov.in', note: 'Official portal for GSTIN registration, GSTR-1 filing, input credit reconciliation, and e-way bill integration.' },
+      { label: 'CBIC — CGST Act, 2017', url: 'https://cbic.gov.in', note: 'Full text of the Central Goods and Services Tax Act, including Section 31 on invoice issuance obligations and Section 34 on credit and debit notes.' },
+      { label: 'MSMED Act — Buyer Payment Obligations', url: 'https://msme.gov.in', note: 'Section 15 of the MSMED Act sets the 45-day payment deadline for buyers purchasing from registered MSMEs, with compound interest for late payment.' },
     ],
   },
 };

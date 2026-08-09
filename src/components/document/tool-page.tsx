@@ -9,7 +9,7 @@ import { Faq } from '@/components/ui/faq';
 import { Icon } from '@/components/ui/icon';
 import { Reveal } from '@/components/ui/reveal';
 import { DocumentBuilder } from '@/components/document/document-builder';
-import { breadcrumbSchema, faqSchema, howToSchema } from '@/lib/schema';
+import { breadcrumbSchema, faqSchema, howToSchema, articleSchema } from '@/lib/schema';
 import { ToolPageWidget } from '@/components/document/tool-page-widget';
 import { ToolBlogCards } from '@/components/document/tool-blog-cards';
 import { ToolHero } from '@/components/document/tool-hero';
@@ -19,13 +19,74 @@ import {
   FeaturesSection,
   GuidanceSections,
   HowToSection,
+  IndustriesSection,
   MistakesSection,
   ProTipsSection,
+  ReferencesSection,
   SectionHeading,
   UseCasesSection,
   WhatIsSection,
 } from '@/components/document/tool-sections';
 import { cn } from '@/lib/utils';
+
+/**
+ * Approximate prose length of a tool guide, for the Article `wordCount`.
+ * Walks only the editorial fields — class strings, slugs and keyword lists are
+ * not prose and would inflate the number into a false depth claim.
+ */
+function countWords(content: ToolContent): number {
+  const prose: (string | undefined)[] = [
+    content.h1,
+    content.intro,
+    ...(content.orientationPoints ?? []),
+    content.whatIs.heading,
+    ...content.whatIs.paragraphs,
+    content.howTo.heading,
+    ...content.howTo.steps.flatMap((s) => [s.title, s.text]),
+    content.features.heading,
+    ...content.features.items.flatMap((f) => [f.title, f.text]),
+    content.useCases.heading,
+    content.useCases.intro,
+    ...content.useCases.items.flatMap((u) => [u.title, u.text]),
+    content.example.heading,
+    content.example.intro,
+    ...content.example.rows.flatMap((r) => [r.label, r.value]),
+    content.example.outro,
+    ...content.sections.flatMap((s) => [s.heading, ...s.paragraphs]),
+    ...content.faqs.flatMap((f) => [f.q, f.a]),
+    content.relatedHeading,
+    content.relatedNote,
+    ...(content.proTips ? [content.proTips.heading, ...content.proTips.items.flatMap((t) => [t.title, t.text])] : []),
+    ...(content.mistakes
+      ? [
+          content.mistakes.heading,
+          content.mistakes.intro,
+          ...content.mistakes.items.flatMap((m) => [m.mistake, m.impact, m.fix]),
+        ]
+      : []),
+    ...(content.industries
+      ? [
+          content.industries.heading,
+          content.industries.intro,
+          ...content.industries.items.flatMap((i) => [i.name, i.text, i.detail]),
+        ]
+      : []),
+    ...(content.references
+      ? [content.references.heading, content.references.intro, ...content.references.items.map((r) => r.note)]
+      : []),
+    ...(content.customBlocks ?? []).flatMap((b) => {
+      if (b.kind === 'table') return [b.heading, b.intro, ...b.rows.flat(), b.note];
+      if (b.kind === 'checklist') return [b.heading, b.intro, ...b.items.flatMap((i) => [i.title, i.text])];
+      return [b.heading, ...b.paragraphs];
+    }),
+  ];
+
+  return prose
+    .filter(Boolean)
+    .join(' ')
+    .split(/\s+/)
+    .filter((w) => /[a-zA-Z]/.test(w)).length;
+}
 
 /**
  * Server-rendered tool landing page. The hero, the section order and every
@@ -55,6 +116,10 @@ export function ToolPage({ content }: { content: ToolContent }) {
         return <FeaturesSection content={content} theme={theme} />;
       case 'useCases':
         return <UseCasesSection content={content} theme={theme} />;
+      case 'industries':
+        return <IndustriesSection content={content} theme={theme} />;
+      case 'references':
+        return <ReferencesSection content={content} theme={theme} />;
       case 'example':
         return <ExampleSection content={content} theme={theme} />;
       case 'sections':
@@ -134,6 +199,20 @@ export function ToolPage({ content }: { content: ToolContent }) {
           breadcrumbSchema(crumbs),
           howToSchema(content.howTo.heading, content.howTo.steps.map((s) => s.text)),
           faqSchema(content.faqs),
+          ...(content.seo.published
+            ? [
+                articleSchema({
+                  title: content.h1,
+                  description: content.seo.description,
+                  path: config.path,
+                  date: content.seo.published,
+                  updated: content.seo.updated,
+                  section: 'Business Documents',
+                  keywords: content.seo.keywords,
+                  wordCount: countWords(content),
+                }),
+              ]
+            : []),
         ]}
       />
 

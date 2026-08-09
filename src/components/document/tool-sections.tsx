@@ -1,6 +1,7 @@
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, ExternalLink } from 'lucide-react';
 import type { ToolContent } from '@/data/tools/types';
 import type { ToolTheme } from '@/data/tools/themes';
+import { Icon } from '@/components/ui/icon';
 import { cn } from '@/lib/utils';
 
 /**
@@ -362,6 +363,115 @@ export function GuidanceSections({ content, theme }: SectionProps) {
         </section>
       ))}
     </>
+  );
+}
+
+/* ── industries — sector-by-sector guidance, three shapes ────────────────── */
+export function IndustriesSection({ content, theme }: SectionProps) {
+  if (!content.industries) return null;
+  const { heading, intro, items } = content.industries;
+  const variant = content.layout.industries ?? 'tiles';
+
+  if (variant === 'rows') {
+    return (
+      <section>
+        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
+        <div className={cn('mt-6 divide-y overflow-hidden rounded-2xl border', theme.border)}>
+          {items.map((ind, i) => (
+            <div key={i} className="flex flex-col gap-3 p-5 sm:flex-row sm:gap-5">
+              <span
+                className={cn('grid h-10 w-10 flex-shrink-0 place-items-center rounded-xl', theme.iconChip)}
+                aria-hidden
+              >
+                <Icon name={ind.icon} className="h-5 w-5" />
+              </span>
+              <div className="sm:flex-1">
+                <h3 className="font-semibold">{ind.name}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
+                <p className={cn('mt-2 text-sm font-medium', theme.text)}>{ind.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === 'ledger') {
+    return (
+      <section>
+        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
+        <div className="mt-6 space-y-5">
+          {items.map((ind, i) => (
+            <div key={i} className={cn('border-l-2 pl-5', theme.border)}>
+              <h3 className="flex items-center gap-2 font-display font-bold">
+                <Icon name={ind.icon} className={cn('h-4 w-4 flex-shrink-0', theme.marker)} />
+                {ind.name}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
+              <p className={cn('mt-2 rounded-lg px-3 py-2 text-sm', theme.softBg)}>{ind.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section>
+      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {items.map((ind, i) => (
+          <div
+            key={i}
+            className={cn('rounded-2xl border bg-card p-5 transition-colors', theme.border, theme.cardHover)}
+          >
+            <span
+              className={cn('grid h-9 w-9 place-items-center rounded-xl', theme.iconChip)}
+              aria-hidden
+            >
+              <Icon name={ind.icon} className="h-4 w-4" />
+            </span>
+            <h3 className="mt-3 font-semibold">{ind.name}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
+            <p className={cn('mt-3 border-t pt-3 text-sm font-medium', theme.border, theme.text)}>
+              {ind.detail}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ── references — outbound citations to primary sources ──────────────────── */
+export function ReferencesSection({ content, theme }: SectionProps) {
+  if (!content.references) return null;
+  const { heading, intro, items } = content.references;
+  return (
+    <section>
+      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
+      <ul className="mt-6 space-y-3">
+        {items.map((ref, i) => (
+          <li key={i} className={cn('rounded-xl border p-4', theme.border)}>
+            <a
+              href={ref.url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className={cn('inline-flex items-center gap-1.5 font-semibold hover:underline', theme.text)}
+            >
+              {ref.label}
+              <ExternalLink className="h-3.5 w-3.5 flex-shrink-0" aria-hidden />
+            </a>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{ref.note}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

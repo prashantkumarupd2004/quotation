@@ -6,6 +6,8 @@ export const estimateContent: ToolContent = {
     title: 'Free Estimate Maker — Create Cost Estimates Online & Download PDF',
     description:
       'Prepare professional cost estimates in your browser for free. Add approximate rates, delivery timelines and scope notes, keep it non-binding, and download a clean PDF or share on WhatsApp. No signup.',
+    published: '2026-02-18',
+    updated: '2026-08-07',
     keywords: [
       'estimate maker',
       'free estimate generator',
@@ -54,9 +56,11 @@ export const estimateContent: ToolContent = {
     'custom',
     'features',
     'useCases',
+    'industries',
     'mistakes',
     'sections',
     'faq',
+    'references',
     'blogs',
     'related',
   ],
@@ -130,7 +134,7 @@ export const estimateContent: ToolContent = {
     paragraphs: [
       'An estimate is an informed approximation of what a job will cost and how long it will take, prepared before the full scope is known. A mechanic cannot promise a firm price until the engine is opened; a contractor cannot fix a rate until the site is measured. The estimate bridges that gap: it gives the customer a realistic number to decide with, while leaving room for the figure to move once the real work is visible.',
       'That makes it deliberately different from its cousins. A quotation is a firm offer at fixed prices, usually valid for a stated period — accept it and those prices bind you. An invoice is a demand for payment after the work is done. An estimate sits earliest in the chain and carries the least commitment: it says "expect roughly this much", typically with language such as "final cost may vary ±10% based on actual work and materials". Sending a firm quotation when you actually mean an estimate is how service businesses end up absorbing surprise costs.',
-      'A useful estimate still needs structure: an estimate number and date, a validity date, the customer’s details, line items with approximate rates, an expected delivery or completion window, a scope summary describing exactly what is covered, and terms stating that additional work will be approved separately. This tool provides dedicated fields for each, so your estimate looks as professional as your final invoice will.',
+      'A useful estimate still needs structure: an estimate number and date, a validity date, the customer\'s details, line items with approximate rates, an expected delivery or completion window, a scope summary describing exactly what is covered, and terms stating that additional work will be approved separately. This tool provides dedicated fields for each, so your estimate looks as professional as your final invoice will.',
     ],
   },
   howTo: {
@@ -138,7 +142,7 @@ export const estimateContent: ToolContent = {
     steps: [
       {
         title: 'Fill in your business and the customer',
-        text: 'Enter your details under Estimated By — name, address, phone and logo — and the customer’s details under Estimate For. Set the estimate date and a Valid Until date so the customer knows the numbers have a shelf life.',
+        text: 'Enter your details under Estimated By — name, address, phone and logo — and the customer\'s details under Estimate For. Set the estimate date and a Valid Until date so the customer knows the numbers have a shelf life.',
       },
       {
         title: 'List the work with approximate rates',
@@ -175,11 +179,11 @@ export const estimateContent: ToolContent = {
       },
       {
         title: 'One-tap WhatsApp sharing',
-        text: 'Most estimates are approved in a chat, not a boardroom. Share a link or PNG on WhatsApp and get the customer’s go-ahead the same day.',
+        text: 'Most estimates are approved in a chat, not a boardroom. Share a link or PNG on WhatsApp and get the customer\'s go-ahead the same day.',
       },
       {
         title: 'Free, private, autosaved',
-        text: 'No signup and no server upload — your draft autosaves to your browser’s localStorage, so you can start an estimate at the counter and finish it after closing.',
+        text: 'No signup and no server upload — your draft autosaves to your browser\'s localStorage, so you can start an estimate at the counter and finish it after closing.',
       },
     ],
   },
@@ -190,7 +194,7 @@ export const estimateContent: ToolContent = {
     items: [
       {
         title: 'Vehicle service centres and repair shops',
-        text: 'Garages estimate parts and labour after a first inspection, get the owner’s approval on WhatsApp, and revise only if teardown reveals more damage.',
+        text: 'Garages estimate parts and labour after a first inspection, get the owner\'s approval on WhatsApp, and revise only if teardown reveals more damage.',
       },
       {
         title: 'Contractors and interior renovators',
@@ -224,14 +228,14 @@ export const estimateContent: ToolContent = {
     {
       heading: 'Estimate vs Quotation vs Invoice: Picking the Right Document',
       paragraphs: [
-        'Think of the three as stages of certainty. The estimate comes first, when you can only approximate — it signals "roughly this much, subject to what we find". The quotation follows once scope is nailed down: fixed prices, a validity period, and an expectation that acceptance forms an agreement. The invoice arrives last, after delivery, as the actual demand for payment that enters both parties’ books.',
+        'Think of the three as stages of certainty. The estimate comes first, when you can only approximate — it signals "roughly this much, subject to what we find". The quotation follows once scope is nailed down: fixed prices, a validity period, and an expectation that acceptance forms an agreement. The invoice arrives last, after delivery, as the actual demand for payment that enters both parties\' books.',
         'Choosing wrongly costs money in both directions. Quote firm prices on an unopened engine and you eat the overrun; send only vague estimates when a corporate buyer needs a formal quotation for their purchase approval and you lose the order to someone who sent one. A practical workflow for service businesses: estimate at first contact, quotation once you have inspected or measured, invoice on completion — and this platform lets you create all three in the same editor.',
       ],
     },
     {
       heading: 'How to Keep an Estimate Non-Binding',
       paragraphs: [
-        'The document’s power comes from its flexibility, so protect it in writing. Title it ESTIMATE (this tool prints that heading automatically), state a validity date, and include variation language — "final cost may vary ±10% based on actual work and materials" is the widely used standard and ships in the default terms here. Mark uncertain line items explicitly, the way the example above flags the clutch plate as conditional on teardown.',
+        'The document\'s power comes from its flexibility, so protect it in writing. Title it ESTIMATE (this tool prints that heading automatically), state a validity date, and include variation language — "final cost may vary ±10% based on actual work and materials" is the widely used standard and ships in the default terms here. Mark uncertain line items explicitly, the way the example above flags the clutch plate as conditional on teardown.',
         'Two more habits close the loop. First, require written approval before starting: a WhatsApp reply saying "approved, go ahead" against the shared estimate is timestamped evidence of consent. Second, never absorb surprises silently — if the job exceeds the estimated band, stop, send a revised estimate or a supplementary one for the extra work, and wait for a fresh approval. Customers forgive a revised number explained early far more readily than a shock on the final bill.',
       ],
     },
@@ -270,11 +274,59 @@ export const estimateContent: ToolContent = {
     },
     {
       q: 'Do I need to sign up or pay to use the estimate maker?',
-      a: 'No. Every feature — unlimited estimates, all 25 templates, PDF and PNG downloads, WhatsApp sharing, logo and signature uploads — is free with no account. Your draft autosaves in your browser’s local storage and stays in your browser unless you choose to create a share link.',
+      a: 'No. Every feature — unlimited estimates, all 25 templates, PDF and PNG downloads, WhatsApp sharing, logo and signature uploads — is free with no account. Your draft autosaves in your browser\'s local storage and stays in your browser unless you choose to create a share link.',
     },
     {
       q: 'How long should an estimate stay valid?',
       a: 'Set the Valid Until date to match how fast your input costs move — 7 to 15 days is typical for repair and parts-based work, up to 30 days for labour-dominated services. A short validity protects you from material price swings and nudges the customer to decide quickly.',
+    },
+    {
+      q: 'What is the standard validity period for an estimate?',
+      a: 'There is no legal minimum or maximum — the validity period is whatever you state on the document, typically 15 to 30 days for most trades. Set a validity that reflects how long your material costs, labour rates and subcontractor quotes are genuinely stable. For renovation and construction work where material prices fluctuate, 7 to 14 days is more realistic than 30.',
+    },
+    {
+      q: 'Can a client use my estimate as a work order or PO?',
+      a: 'Only if both parties agree in writing. An estimate is a preliminary cost indication, not a contract. If a client wants to use your estimate as an authorisation to proceed, add a signature line at the bottom and have them sign and return it. Ideally, convert the accepted estimate into a formal quotation or agree on a proper purchase order — a signed estimate without specific payment terms is rarely enforceable.',
+    },
+    {
+      q: 'What is the difference between an estimate and a quote?',
+      a: 'An estimate is an approximate cost indication — you are communicating a range or a best-guess figure, subject to change when the full scope is confirmed. A quotation is a firm, binding price offer for a defined scope of work. When you issue a quotation the client can accept it and hold you to the price; when you issue an estimate you are signalling that the final cost may be higher or lower. Use an estimate when scope or site conditions are still uncertain, and a quotation once they are confirmed.',
+    },
+    {
+      q: 'Should I include contingency costs in my estimate?',
+      a: 'Yes, and you should show it as a separate line item rather than hiding it in your rates. A 5-10% contingency on construction or renovation estimates is standard and well understood by clients. Labelling it transparently prevents disputes: the client sees you have accounted for unknowns, and if those unknowns do not materialise, you can reduce the final invoice accordingly.',
+    },
+    {
+      q: 'Can I convert an estimate into a formal quotation or invoice?',
+      a: 'Yes. Once the scope is confirmed, use the data from your estimate to build a proper quotation with firm prices, payment terms and a validity date. After work is complete, the invoice simply reflects what was agreed in the quotation. Keeping the same line items and descriptions across all three documents — estimate, quotation, invoice — makes reconciliation straightforward for both your records and the client\'s accounts team.',
+    },
+    {
+      q: 'How detailed should line items be in an estimate?',
+      a: 'As detailed as needed to avoid scope disputes later. Vague estimates like "painting work: \'80,000" lead to arguments about whether two coats or three were included, whether surface preparation is in scope, and whether touch-ups are covered. Break the estimate into materials, labour and any subcontracted work separately. The client may not need this detail upfront, but it protects you during execution.',
+    },
+    {
+      q: 'Does an estimate carry any legal weight in a payment dispute?',
+      a: 'A signed estimate carries significantly more weight than an unsigned one. If the client has signed your estimate and you have completed the work described, a court or tribunal will generally treat the estimated amount as the agreed price. However, if your final invoice significantly exceeds the estimate without prior written approval from the client, recovering the excess can be difficult regardless of actual costs.',
+    },
+    {
+      q: 'How do I handle a client who keeps revising scope after I\'ve submitted an estimate?',
+      a: 'Issue a revised estimate for each material change in scope and get written acknowledgement — an email confirmation or a countersigned document. Never simply absorb scope additions in the assumption that the client will adjust the final payment. Each revision should reference the previous estimate number and clearly state what has changed and why the cost has moved.',
+    },
+    {
+      q: 'Should an estimate include GST?',
+      a: 'If you are GST-registered, show GST as a separate line item on the estimate so the client sees the tax-inclusive total. This avoids the common problem of a client approving a \'1,00,000 estimate and then objecting to the \'1,18,000 invoice. If you are not registered for GST and your supply is below the exemption threshold, state "GST not applicable" so the client does not assume they can claim input credit.',
+    },
+    {
+      q: 'What should I do when actual costs exceed my estimate by more than 10%?',
+      a: 'Communicate before the work is done, not after. The moment you identify that costs are tracking above your estimate — whether because of material price changes, unforeseen site conditions, or additional scope — send the client a revised estimate in writing and get their sign-off before continuing. Presenting a final invoice well above the accepted estimate without prior notice is the most common cause of payment refusals in construction and renovation.',
+    },
+    {
+      q: 'Can I send an estimate by WhatsApp and have it be valid?',
+      a: 'A WhatsApp estimate is not invalid, but it creates practical problems: it is easily missed in a busy chat, there is no formal acceptance mechanism, and the formatting is lost. A PDF estimate sent via WhatsApp is fine — the attachment preserves the document. What matters legally is that the client received the estimate, understood the scope and costs, and acknowledged it in some form before work began.',
+    },
+    {
+      q: 'Is it necessary to include a breakdown of profit margin in an estimate?',
+      a: 'No, and you should not. Your estimate shows the client what they will pay — your internal cost structure, margin and overhead are confidential. The breakdown the client needs is scope-level (what work is included), not P&L-level (what it costs you). Professional estimates show labour, materials and other costs by work package, not by cost category.',
     },
   ],
   relatedHeading: 'What to Send Once the Estimate Is Accepted',
@@ -353,6 +405,84 @@ export const estimateContent: ToolContent = {
         impact: 'No record of what was agreed at each stage; client reverts to original price.',
         fix: 'Save each revision as a new numbered version and send only the latest to the client.',
       },
+    ],
+  },
+  industries: {
+    heading: 'Industry-by-Industry: When and How Estimates Are Used',
+    intro: 'Estimates are the first document exchanged in most project-based industries — each sector has its own conventions for what to include and how binding the figure is.',
+    items: [
+      {
+        name: 'Construction & Civil Work',
+        icon: 'HardHat',
+        text: 'Civil contractors issue preliminary estimates after a site visit, listing quantities for excavation, concrete, steel, brick and finishing as separate line items. A 5-10% contingency is standard because ground conditions and material costs can shift between estimate and execution.',
+        detail: 'Break your construction estimate by work package (civil, structural, MEP, finishing) rather than as a lump sum — clients and project managers need to track each package against budget separately.',
+      },
+      {
+        name: 'Interior Design & Renovation',
+        icon: 'Sofa',
+        text: 'Interior designers prepare room-by-room estimates separating furniture, modular work, electrical, civil and loose furnishing. The estimate is typically presented alongside mood boards so the client can correlate cost to design intent.',
+        detail: 'Specify the grade or brand of materials in the estimate (e.g. "Italian marble at \'350/sq ft" vs "Indian marble at \'150/sq ft") — an estimate without material specifications leads to scope disputes during procurement.',
+      },
+      {
+        name: 'Automobile & Vehicle Repair',
+        icon: 'Car',
+        text: 'Service centres provide repair estimates with itemised parts (with part numbers) and labour separately. Insurance assessors require a detailed estimate before approving claims, making accuracy in parts pricing and labour hours critical.',
+        detail: 'Always get the owner\'s written approval before starting repair work that exceeds the estimate — most consumer protection regulations require this, and proceeding without it makes the excess charges legally unrecoverable.',
+      },
+      {
+        name: 'IT Services & Custom Development',
+        icon: 'Laptop',
+        text: 'IT agencies issue ballpark estimates early in the sales cycle, then refine them into formal proposals once scope is confirmed. Estimates for software development typically show effort in person-days or sprints, with a separate line for ongoing support.',
+        detail: 'State your assumptions explicitly in every IT estimate — number of screens, third-party APIs included, revision rounds covered — because scope ambiguity in software projects is the primary cause of billing disputes.',
+      },
+      {
+        name: 'Retail & Product Supply',
+        icon: 'Store',
+        text: 'Retailers and product suppliers use estimates when a customer enquires about custom orders, bulk purchases or non-standard configurations. The estimate locks the price for the validity period, after which it is subject to revision based on import or raw material costs.',
+        detail: 'Include minimum order quantities and lead times in retail estimates — without them, a customer may accept a price estimate weeks later expecting immediate delivery at the quoted rate.',
+      },
+      {
+        name: 'Manufacturing & Fabrication',
+        icon: 'Factory',
+        text: 'Job-work manufacturers provide material plus processing estimates for custom fabricated items, breaking out raw material, machining time and finishing separately. Estimates for made-to-order production are conditional on raw material availability and current commodity prices.',
+        detail: 'State the raw material price benchmark date in your estimate — if steel or copper prices rise more than 5% between estimate and order, most fabricators have a right to revise, but only if the estimate explicitly says so.',
+      },
+      {
+        name: 'Medical & Healthcare',
+        icon: 'Stethoscope',
+        text: 'Hospitals and clinics provide treatment cost estimates for elective procedures, listing consultation, procedure, consumables and room charges separately. Insurance pre-authorisation requires a detailed estimate before admission.',
+        detail: 'Break every medical estimate into admitted and non-admitted costs — consumables used during a procedure are often covered differently by insurance compared to room charges, and bundling them creates claim settlement delays.',
+      },
+      {
+        name: 'Education & Training',
+        icon: 'GraduationCap',
+        text: 'Coaching institutes and corporate training providers issue course fee estimates covering tuition, study materials, examination fees and optional extras. Group training proposals break down per-participant and bulk rates.',
+        detail: 'Specify what is and is not included in your education estimate — GST applicability, examination registration fees, and LMS access costs are commonly disputed when left unspecified.',
+      },
+      {
+        name: 'Freelancing & Creative Services',
+        icon: 'User',
+        text: 'Freelancers in design, content, photography and video send estimates before project kickoff to ensure budget alignment. Creative estimates typically distinguish concept development, production and revision rounds.',
+        detail: 'Cap the number of revision rounds explicitly in every creative estimate — "unlimited revisions" language is unprofessional and routinely exploited; state a number (two rounds is industry standard) and specify the cost of additional rounds.',
+      },
+      {
+        name: 'Hospitality & Events',
+        icon: 'UtensilsCrossed',
+        text: 'Event managers and caterers issue per-head or lump-sum estimates that break food, decor, staffing, AV and venue rental into separate lines. Estimates for large events typically require a 50% advance before work commences.',
+        detail: 'Include a cancellation policy in your hospitality estimate — if the event is cancelled after you have committed bookings or purchased materials, an undisclosed cancellation policy means you cannot recover those costs.',
+      },
+    ],
+  },
+
+  references: {
+    heading: 'Business and Legal References for Estimates',
+    intro: 'Estimates operate at the intersection of commercial practice and contract law — these references provide the authoritative context.',
+    items: [
+      { label: 'Indian Contract Act, 1872 — Offer and Acceptance', url: 'https://legislative.gov.in', note: 'Governs when a preliminary estimate becomes a binding offer and what constitutes valid acceptance, which determines enforceability in payment disputes.' },
+      { label: 'Consumer Protection Act, 2019 — Unfair Trade Practices', url: 'https://consumeraffairs.nic.in', note: 'Prohibits significant deviation from a quoted or estimated price without prior consent; relevant for consumer-facing trades like automobile repair and home renovation.' },
+      { label: 'CGST Act — Section 31: Time of Supply for Estimates', url: 'https://cbic-gst.gov.in', note: 'Clarifies that an estimate alone does not create a GST liability — the tax point arises at the time of actual supply or advance payment, not at estimate issuance.' },
+      { label: 'MSMED Act, 2006 — Dispute Resolution Mechanism', url: 'https://msme.gov.in', note: 'Provides a structured conciliation and arbitration process for MSMEs to resolve billing disputes, including those arising from scope and estimate disagreements.' },
+      { label: 'BIS Standards for Construction Estimates', url: 'https://bis.gov.in', note: 'Bureau of Indian Standards specifications for measurement of works, which form the basis for preparing and verifying construction and civil estimates.' },
     ],
   },
 };
