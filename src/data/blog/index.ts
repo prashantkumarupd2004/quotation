@@ -7,6 +7,9 @@ import { blogPosts5 } from './group-5';
 import { blogPosts6 } from './group-6';
 import { blogPosts7 } from './group-7';
 import { blogPosts8 } from './group-8';
+import { blogPosts9 } from './group-9';
+import { blogPosts10 } from './group-10';
+import { blogPosts11 } from './group-11';
 
 export const blogPosts: BlogPost[] = [
   ...blogPosts1,
@@ -17,6 +20,9 @@ export const blogPosts: BlogPost[] = [
   ...blogPosts6,
   ...blogPosts7,
   ...blogPosts8,
+  ...blogPosts9,
+  ...blogPosts10,
+  ...blogPosts11,
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

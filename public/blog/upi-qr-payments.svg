@@ -1,0 +1,27 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="38" font-weight="800" fill="#f1f5f9">UPI &amp; QR Payments for Business</text>
+  <text x="40" y="200" font-size="22" fill="#94a3b8">How to Accept Digital Payments and Show Them on Invoices</text>
+  <rect x="40" y="240" width="500" height="320" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="290" y="285" text-anchor="middle" font-size="15" font-weight="700" fill="#f1f5f9">UPI ID Options for Business</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(60,305)">
+    <text y="0" fill="#4ade80">businessname@upi (custom handle)</text>
+    <text y="35">account@bankname (bank-linked)</text>
+    <text y="70">GST_GSTIN@axisb (some banks)</text>
+    <text y="115" fill="#818cf8" font-weight="600">QR Code on Invoice:</text>
+    <text y="145">Pre-fill amount = fewer errors</text>
+    <text y="175">Instant reconciliation via UTR</text>
+    <text y="205">Works offline via SMS confirm</text>
+  </g>
+  <rect x="560" y="240" width="600" height="320" rx="20" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="860" y="285" text-anchor="middle" font-size="15" font-weight="700" fill="#818cf8">Payment Confirmation Checklist</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(580,305)">
+    <text y="0" fill="#4ade80">✓ Note UTR / transaction reference</text>
+    <text y="35" fill="#4ade80">✓ Match against invoice number</text>
+    <text y="70" fill="#4ade80">✓ Issue payment receipt immediately</text>
+    <text y="105" fill="#4ade80">✓ Update outstanding invoice status</text>
+    <text y="140" fill="#f87171">✗ Do not rely on screenshot alone</text>
+    <text y="175" fill="#f87171">✗ Do not mix UPI and cash in same ledger</text>
+    <text y="215" fill="#fbbf24">⚠ GST applies to fee — not to UPI payment itself</text>
+  </g>
+</svg>

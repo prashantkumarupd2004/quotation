@@ -45,6 +45,9 @@ export const proformaInvoiceContent: ToolContent = {
     features: 'grid',
     useCases: 'columns',
     example: 'paper',
+    whatIs: 'callout',
+    headingStyle: 'pill',
+    headingMarker: 'PI',
   },
   order: [
     'whatIs',

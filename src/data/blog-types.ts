@@ -15,6 +15,10 @@ export interface BlogPost {
   keywords: string[];
   /** ISO date string, e.g. '2026-01-15'. */
   date: string;
+  /** ISO date of last substantial revision. Shown as "Updated" when present. */
+  updatedDate?: string;
+  /** Author display name shown on the post page. */
+  author: string;
   /** Reading time in minutes. */
   readingTime: number;
   category: string;
@@ -30,4 +34,6 @@ export interface BlogPost {
   faqs: { q: string; a: string }[];
   /** Slugs of related posts. */
   relatedSlugs: string[];
+  /** Authoritative external sources cited in this article. */
+  references?: { label: string; url: string }[];
 }

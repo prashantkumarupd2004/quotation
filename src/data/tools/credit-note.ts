@@ -46,6 +46,9 @@ export const creditNoteContent: ToolContent = {
     features: 'checklist',
     useCases: 'cards',
     example: 'paper',
+    whatIs: 'callout',
+    headingStyle: 'pill',
+    headingMarker: 'CN',
   },
   order: [
     'whatIs',

@@ -1,0 +1,21 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">Construction Quotation</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">Examples, Format and GST for Contractors</text>
+  <rect x="40" y="240" width="1120" height="330" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="600" y="285" text-anchor="middle" font-size="15" font-weight="700" fill="#f1f5f9">Sample Construction Quotation Structure</text>
+  <g font-size="12" fill="#64748b" transform="translate(60,310)">
+    <text font-weight="700" fill="#94a3b8">Work Item</text><text x="500" font-weight="700" fill="#94a3b8">Unit</text><text x="620" font-weight="700" fill="#94a3b8">Qty</text><text x="750" font-weight="700" fill="#94a3b8">Rate</text><text x="1060" text-anchor="end" font-weight="700" fill="#94a3b8">Amount</text>
+    <text y="30" fill="#94a3b8">Excavation &amp; Earth Work</text><text y="30" x="500">cu.m</text><text y="30" x="620">120</text><text y="30" x="750">₹350</text><text y="30" x="1060" text-anchor="end">₹42,000</text>
+    <text y="58" fill="#94a3b8">RCC Foundation (M20)</text><text y="58" x="500">cu.m</text><text y="58" x="620">45</text><text y="58" x="750">₹5,200</text><text y="58" x="1060" text-anchor="end">₹2,34,000</text>
+    <text y="86" fill="#94a3b8">Brick Masonry Work</text><text y="86" x="500">sq.m</text><text y="86" x="620">280</text><text y="86" x="750">₹850</text><text y="86" x="1060" text-anchor="end">₹2,38,000</text>
+    <text y="114" fill="#94a3b8">Plastering (internal)</text><text y="114" x="500">sq.m</text><text y="114" x="620">520</text><text y="114" x="750">₹180</text><text y="114" x="1060" text-anchor="end">₹93,600</text>
+    <text y="142" fill="#94a3b8">Floor Tiling (vitrified)</text><text y="142" x="500">sq.m</text><text y="142" x="620">180</text><text y="142" x="750">₹650</text><text y="142" x="1060" text-anchor="end">₹1,17,000</text>
+  </g>
+  <line x1="60" y1="480" x2="1140" y2="480" stroke="#334155" stroke-width="1"/>
+  <g font-size="12" transform="translate(700,502)">
+    <text fill="#64748b">Subtotal (Materials + Labour)</text><text x="430" text-anchor="end" fill="#94a3b8">₹7,24,600</text>
+    <text y="25" fill="#64748b">GST @ 18% (Works Contract)</text><text y="25" x="430" text-anchor="end" fill="#94a3b8">₹1,30,428</text>
+    <text y="50" font-weight="700" fill="#f1f5f9">Total Contract Value</text><text y="50" x="430" text-anchor="end" font-weight="700" fill="#22c55e">₹8,55,028</text>
+  </g>
+</svg>

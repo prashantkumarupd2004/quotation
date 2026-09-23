@@ -1,0 +1,31 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="#6366f1" stroke-width="0.5"/></pattern></defs>
+  <rect width="1200" height="630" fill="url(#g)" opacity="0.07"/>
+  <text x="40" y="140" font-size="42" font-weight="800" fill="#f1f5f9">How to Write a Professional Quotation</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">Structure, Sections and the Exact Wording That Gets You Paid</text>
+  <rect x="40" y="240" width="570" height="340" rx="20" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="325" y="285" text-anchor="middle" font-size="16" font-weight="700" fill="#f1f5f9">Anatomy of a Professional Quotation</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(60,305)">
+    <text y="0" fill="#818cf8" font-weight="600">Header</text><text y="0" x="180">Your name, GSTIN, logo, contact</text>
+    <text y="40" fill="#818cf8" font-weight="600">Client Details</text><text y="40" x="180">Name, address, GSTIN if B2B</text>
+    <text y="80" fill="#818cf8" font-weight="600">Quotation No.</text><text y="80" x="180">Unique reference, date, validity</text>
+    <text y="120" fill="#818cf8" font-weight="600">Line Items</text><text y="120" x="180">Description, qty, rate, amount</text>
+    <text y="160" fill="#818cf8" font-weight="600">GST</text><text y="160" x="180">CGST + SGST or IGST, rate shown</text>
+    <text y="200" fill="#818cf8" font-weight="600">Total</text><text y="200" x="180">In words + in figures</text>
+    <text y="240" fill="#818cf8" font-weight="600">Terms</text><text y="240" x="180">Payment, delivery, validity, warranty</text>
+  </g>
+  <rect x="640" y="60" width="520" height="510" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="900" y="115" text-anchor="middle" font-size="16" font-weight="700" fill="#f1f5f9">Common Mistakes to Avoid</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(660,145)">
+    <text y="0" fill="#f87171">✗ No quotation number (can't track follow-ups)</text>
+    <text y="40" fill="#f87171">✗ No validity date (quote can be accepted months later)</text>
+    <text y="80" fill="#f87171">✗ GST not shown separately (creates disputes)</text>
+    <text y="120" fill="#f87171">✗ No payment terms (leads to late payments)</text>
+    <text y="160" fill="#f87171">✗ Vague scope (scope creep without recourse)</text>
+    <text y="210" fill="#4ade80">✓ Always state: "Quote valid for 30 days"</text>
+    <text y="250" fill="#4ade80">✓ List exclusions explicitly in scope</text>
+    <text y="290" fill="#4ade80">✓ Send as PDF — never editable format</text>
+    <text y="330" fill="#4ade80">✓ Follow up within 3 business days</text>
+  </g>
+</svg>

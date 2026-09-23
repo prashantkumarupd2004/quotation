@@ -14,9 +14,12 @@ export const blogPosts1: BlogPost[] = [
       'business quotation India',
       'quotation template',
     ],
-    date: '2026-07-06',
+    date: '2026-01-08',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Quotation Basics',
+    heroImage: '/blog/professional-quotation.svg',
+    heroAlt: 'Anatomy of a professional quotation showing all required sections and common mistakes to avoid',
     excerpt:
       'A practical, step-by-step guide to writing a quotation that looks professional, wins trust and gets approved faster.',
     intro:
@@ -85,6 +88,10 @@ export const blogPosts1: BlogPost[] = [
         a: 'Yes, most quotation tools including QuotationMaker.in let you convert an accepted quotation into an invoice in one click, carrying over line items, GST and customer details automatically.',
       },
     ],
+    references: [
+      { label: 'GST Portal — GST Invoice Rules', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Central Tax Notifications', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['quotation-format-in-india', 'quotation-vs-estimate', 'gst-in-quotations'],
   },
 
@@ -100,9 +107,12 @@ export const blogPosts1: BlogPost[] = [
       'estimate vs quote India',
       'price estimate business',
     ],
-    date: '2026-07-06',
+    date: '2026-01-15',
+    author: 'Prashant Upadhyay',
     readingTime: 7,
     category: 'Quotation Basics',
+    heroImage: '/blog/quotation-vs-estimate.svg',
+    heroAlt: 'Side-by-side comparison of quotation vs estimate showing key legal and practical differences',
     excerpt:
       'Quotations and estimates look similar but carry very different commitments — here is how to tell them apart and use each correctly.',
     intro:
@@ -161,6 +171,10 @@ export const blogPosts1: BlogPost[] = [
         a: 'Always title it explicitly as "Quotation" or "Estimate" at the top, and mention validity or "subject to inspection" conditions so the client knows exactly what they are looking at.',
       },
     ],
+    references: [
+      { label: 'MSME India — Procurement Policy', url: 'https://msme.gov.in' },
+      { label: 'CBIC — Supply of Goods and Services', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'best-construction-quotation-examples', 'invoice-vs-quotation'],
   },
 
@@ -177,11 +191,15 @@ export const blogPosts1: BlogPost[] = [
       'SAC code services',
       'GST calculation business',
     ],
-    date: '2026-07-06',
+    date: '2026-01-22',
+    updatedDate: '2026-09-01',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'GST & Tax',
+    heroImage: '/blog/gst-in-quotations.svg',
+    heroAlt: 'CGST, SGST and IGST applied to a sample quotation with place of supply logic explained',
     excerpt:
-      'Everything Indian businesses need to know about applying GST correctly on quotations, from CGST/SGST/IGST to HSN and SAC codes.',
+      'A clear explanation of how to apply CGST, SGST and IGST on quotations, from CGST/SGST/IGST to HSN and SAC codes.',
     intro:
       'Getting GST wrong on a quotation is one of the most common reasons Indian businesses lose credibility with B2B clients or end up under-quoting their own margins. Here is a practical breakdown of CGST, SGST, IGST, and how to apply them correctly on any quotation.',
     sections: [
@@ -242,6 +260,11 @@ export const blogPosts1: BlogPost[] = [
         a: 'Export of goods and services is generally treated as zero-rated under GST, subject to conditions like LUT (Letter of Undertaking) filing; consult a tax professional to confirm eligibility for your specific case.',
       },
     ],
+    references: [
+      { label: 'GST Portal — Official GST India', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — GST Tax Rates', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Council', url: 'https://gstcouncil.gov.in' },
+    ],
     relatedSlugs: ['quotation-format-in-india', 'how-to-write-a-professional-quotation', 'invoice-vs-quotation'],
   },
 
@@ -257,9 +280,12 @@ export const blogPosts1: BlogPost[] = [
       'business quotation sample',
       'Indian quotation template',
     ],
-    date: '2026-07-06',
+    date: '2026-01-29',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Quotation Basics',
+    heroImage: '/blog/quotation-format-india.svg',
+    heroAlt: 'Standard Indian quotation format with GST, HSN codes, CGST SGST split and totals',
     excerpt:
       'The complete standard quotation format used by Indian businesses, with field-by-field breakdown and industry-specific examples.',
     intro:
@@ -322,6 +348,10 @@ export const blogPosts1: BlogPost[] = [
         a: 'It is better to append a version suffix like QUO-2026-045-R1 for a revised quotation, so both parties can clearly track which version was last agreed upon.',
       },
     ],
+    references: [
+      { label: 'GST Portal — E-Invoice System', url: 'https://www.gst.gov.in' },
+      { label: 'MCA — Ministry of Corporate Affairs', url: 'https://www.mca.gov.in' },
+    ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'gst-in-quotations', 'business-documentation-guide'],
   },
 
@@ -337,9 +367,12 @@ export const blogPosts1: BlogPost[] = [
       'construction quotation template India',
       'BOQ format',
     ],
-    date: '2026-07-06',
+    date: '2026-02-05',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'Industry Guides',
+    heroImage: '/blog/construction-quotation.svg',
+    heroAlt: 'Construction quotation sample with line items for excavation, RCC, masonry, plastering and GST at 18%',
     excerpt:
       'Real-world construction quotation examples covering material breakdown, labor charges, GST, and milestone payment terms for Indian contractors.',
     intro:
@@ -405,6 +438,10 @@ export const blogPosts1: BlogPost[] = [
         q: 'Should I quote per square foot or with a full itemized breakdown?',
         a: 'Per-square-foot quoting is common for large builds but should always be accompanied by a specification annexure describing exact material grades and brands, otherwise it becomes a common source of disputes at project handover.',
       },
+    ],
+    references: [
+      { label: 'CPWD — Standard Schedule of Rates', url: 'https://www.cpwd.gov.in' },
+      { label: 'CBIC — GST on Construction Works', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['quotation-vs-estimate', 'quotation-format-in-india', 'how-to-write-a-professional-quotation'],
   },

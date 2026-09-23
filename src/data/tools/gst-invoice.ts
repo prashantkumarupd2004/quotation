@@ -49,6 +49,9 @@ export const gstInvoiceContent: ToolContent = {
     features: 'checklist',
     useCases: 'columns',
     example: 'table',
+    whatIs: 'callout',
+    headingStyle: 'pill',
+    headingMarker: 'GST',
   },
   order: [
     'whatIs',

@@ -1,5 +1,6 @@
-import { ArrowRight, Check, ExternalLink } from 'lucide-react';
+import { ArrowRight, Check, ExternalLink, FileText } from 'lucide-react';
 import type { ToolContent } from '@/data/tools/types';
+import type { HeadingStyle } from '@/data/tools/types';
 import type { ToolTheme } from '@/data/tools/themes';
 import { Icon } from '@/components/ui/icon';
 import { cn } from '@/lib/utils';
@@ -15,23 +16,159 @@ interface SectionProps {
   theme: ToolTheme;
 }
 
-export function SectionHeading({ children, theme }: { children: React.ReactNode; theme: ToolTheme }) {
+/**
+ * SectionHeading — three structural styles so each tool's page has a distinct
+ * heading identity rather than the same ▍ prefix appearing nine times.
+ *
+ * bar   (default) — colored left border accent + symbol prefix (Invoice, Receipt, Challan)
+ * pill            — small rounded chip before the text (GST, Proforma, Credit Note)
+ * plain           — clean underline accent, no prefix (PO, Estimate, Debit Note)
+ */
+export function SectionHeading({
+  children,
+  theme,
+  style,
+  marker,
+}: {
+  children: React.ReactNode;
+  theme: ToolTheme;
+  style?: HeadingStyle;
+  marker?: string;
+}) {
+  if (style === 'pill') {
+    return (
+      <h2 className="font-display text-2xl font-bold">
+        <span
+          className={cn(
+            'mb-3 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest',
+            theme.chip,
+          )}
+          aria-hidden
+        >
+          {marker ?? '✦'}
+        </span>
+        <span className="block mt-1">{children}</span>
+      </h2>
+    );
+  }
+
+  if (style === 'plain') {
+    return (
+      <h2 className={cn('font-display text-2xl font-bold border-b-2 pb-2', theme.border)}>
+        {children}
+      </h2>
+    );
+  }
+
+  // default: 'bar'
   return (
     <h2 className="font-display text-2xl font-bold">
       <span className={cn('mr-2 hidden select-none sm:inline', theme.text)} aria-hidden>
-        ▍
+        {marker ?? '▍'}
       </span>
       {children}
     </h2>
   );
 }
 
+/** Internal helper: reads layout config and forwards heading style + marker to SectionHeading */
+function Heading({ content, theme, children }: SectionProps & { children: React.ReactNode }) {
+  return (
+    <SectionHeading
+      theme={theme}
+      style={content.layout.headingStyle}
+      marker={content.layout.headingMarker}
+    >
+      {children}
+    </SectionHeading>
+  );
+}
+
 /* ── whatIs ──────────────────────────────────────────────────────────────── */
+/**
+ * Three structural treatments for the "What is a …" section:
+ *
+ * sidebar  — Lead paragraph inside a colored icon card beside the heading,
+ *            remaining paras as normal prose. Feels like a magazine sidebar.
+ *            Used by: Invoice, Receipt, Delivery Challan
+ *
+ * callout  — Full-width accent-tinted blockquote for the lead, plus a 2-column
+ *            grid for remaining paragraphs. Feels authoritative / reference-like.
+ *            Used by: GST Invoice, Proforma, Credit Note
+ *
+ * prose    — Plain formal paragraphs only, no decorative chrome.
+ *            Used by: Purchase Order, Estimate, Debit Note
+ */
 export function WhatIsSection({ content, theme }: SectionProps) {
+  const variant = content.layout.whatIs ?? 'prose';
   const [lead, ...rest] = content.whatIs.paragraphs;
+
+  if (variant === 'sidebar') {
+    return (
+      <section>
+        <Heading content={content} theme={theme}>{content.whatIs.heading}</Heading>
+        <div className="mt-6 grid gap-6 sm:grid-cols-[1fr_2fr]">
+          {/* Sidebar accent card */}
+          <div
+            className={cn(
+              'flex flex-col gap-3 rounded-2xl border p-5',
+              theme.border,
+              theme.softBg,
+            )}
+          >
+            <span
+              className={cn('grid h-10 w-10 place-items-center rounded-xl', theme.iconChip)}
+              aria-hidden
+            >
+              <FileText className="h-5 w-5" />
+            </span>
+            <p className="text-sm font-semibold leading-relaxed">{lead}</p>
+          </div>
+          {/* Main prose */}
+          <div className="space-y-4">
+            {rest.map((p, i) => (
+              <p key={i} className="leading-relaxed text-muted-foreground">
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === 'callout') {
+    return (
+      <section>
+        <Heading content={content} theme={theme}>{content.whatIs.heading}</Heading>
+        {/* Full-width accent blockquote */}
+        <blockquote
+          className={cn(
+            'mt-6 rounded-2xl border-l-4 px-6 py-5 text-lg leading-relaxed',
+            theme.border,
+            theme.softBg,
+          )}
+        >
+          {lead}
+        </blockquote>
+        {/* 2-column grid for remaining paragraphs */}
+        {rest.length > 0 && (
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {rest.map((p, i) => (
+              <p key={i} className="leading-relaxed text-muted-foreground">
+                {p}
+              </p>
+            ))}
+          </div>
+        )}
+      </section>
+    );
+  }
+
+  // prose (default) — formal plain layout
   return (
     <section>
-      <SectionHeading theme={theme}>{content.whatIs.heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{content.whatIs.heading}</Heading>
       <p className={cn('mt-4 border-l-2 pl-4 text-lg leading-relaxed', theme.border)}>{lead}</p>
       {rest.map((p, i) => (
         <p key={i} className="mt-4 leading-relaxed text-muted-foreground">
@@ -49,7 +186,7 @@ export function HowToSection({ content, theme }: SectionProps) {
   if (content.layout.howTo === 'cards') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {steps.map((s, i) => (
             <div key={i} className={cn('rounded-2xl border p-5', theme.border, theme.softBg)}>
@@ -68,7 +205,7 @@ export function HowToSection({ content, theme }: SectionProps) {
   if (content.layout.howTo === 'band') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <div className={cn('mt-6 divide-y overflow-hidden rounded-2xl border', theme.border)}>
           {steps.map((s, i) => (
             <div key={i} className="flex flex-col gap-1 p-5 sm:flex-row sm:gap-6">
@@ -93,7 +230,7 @@ export function HowToSection({ content, theme }: SectionProps) {
 
   return (
     <section>
-      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{heading}</Heading>
       <ol className="mt-6 space-y-5">
         {steps.map((s, i) => (
           <li key={i} className="relative flex gap-4 pb-1">
@@ -129,7 +266,7 @@ export function FeaturesSection({ content, theme }: SectionProps) {
   if (content.layout.features === 'checklist') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <ul className={cn('mt-6 divide-y overflow-hidden rounded-2xl border', theme.border)}>
           {items.map((f, i) => (
             <li key={i} className="flex gap-3 p-4 sm:p-5">
@@ -148,7 +285,7 @@ export function FeaturesSection({ content, theme }: SectionProps) {
   if (content.layout.features === 'alternating') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <div className="mt-6 space-y-3">
           {items.map((f, i) => (
             <div
@@ -170,7 +307,7 @@ export function FeaturesSection({ content, theme }: SectionProps) {
 
   return (
     <section>
-      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{heading}</Heading>
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((f, i) => (
           <div
@@ -196,7 +333,7 @@ export function UseCasesSection({ content, theme }: SectionProps) {
   if (content.layout.useCases === 'accordion') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
         <div className="mt-6 space-y-2">
           {items.map((u, i) => (
@@ -222,7 +359,7 @@ export function UseCasesSection({ content, theme }: SectionProps) {
   if (content.layout.useCases === 'columns') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
         <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
           {items.map((u, i) => (
@@ -238,7 +375,7 @@ export function UseCasesSection({ content, theme }: SectionProps) {
 
   return (
     <section>
-      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{heading}</Heading>
       <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
       <div className="mt-6 space-y-4">
         {items.map((u, i) => (
@@ -263,7 +400,7 @@ export function ExampleSection({ content, theme }: SectionProps) {
   if (content.layout.example === 'paper') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
         <div className={cn('mt-6 rounded-2xl border bg-card p-6 shadow-sm sm:p-8', theme.border)}>
           <dl className="space-y-3">
@@ -291,7 +428,7 @@ export function ExampleSection({ content, theme }: SectionProps) {
   if (content.layout.example === 'strip') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
         <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {rows.map((r, i) => (
@@ -348,18 +485,41 @@ export function ExampleSection({ content, theme }: SectionProps) {
   );
 }
 
-/* ── long-form guidance sections ─────────────────────────────────────────── */
+/**
+ * Long-form guidance sections with alternating visual rhythm:
+ * - Even-indexed sections use standard prose.
+ * - Odd-indexed sections get a pull-quote accent on the first paragraph,
+ *   giving the page visual breathing room and breaking the wall-of-text pattern
+ *   that signals low-value content to crawlers.
+ */
 export function GuidanceSections({ content, theme }: SectionProps) {
   return (
     <>
       {content.sections.map((sec, i) => (
         <section key={i} className={i > 0 ? 'mt-16' : undefined}>
-          <SectionHeading theme={theme}>{sec.heading}</SectionHeading>
-          {sec.paragraphs.map((p, j) => (
-            <p key={j} className="mt-4 leading-relaxed text-muted-foreground">
-              {p}
-            </p>
-          ))}
+          <Heading content={content} theme={theme}>{sec.heading}</Heading>
+          {sec.paragraphs.map((p, j) => {
+            // Pull-quote treatment: first paragraph of odd sections
+            if (i % 2 === 1 && j === 0) {
+              return (
+                <p
+                  key={j}
+                  className={cn(
+                    'mt-4 rounded-r-2xl border-l-4 py-3 pl-5 pr-4 text-[1.05rem] font-medium leading-relaxed',
+                    theme.border,
+                    theme.softBg,
+                  )}
+                >
+                  {p}
+                </p>
+              );
+            }
+            return (
+              <p key={j} className="mt-4 leading-relaxed text-muted-foreground">
+                {p}
+              </p>
+            );
+          })}
         </section>
       ))}
     </>
@@ -375,7 +535,7 @@ export function IndustriesSection({ content, theme }: SectionProps) {
   if (variant === 'rows') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
         <div className={cn('mt-6 divide-y overflow-hidden rounded-2xl border', theme.border)}>
           {items.map((ind, i) => (
@@ -401,7 +561,7 @@ export function IndustriesSection({ content, theme }: SectionProps) {
   if (variant === 'ledger') {
     return (
       <section>
-        <SectionHeading theme={theme}>{heading}</SectionHeading>
+        <Heading content={content} theme={theme}>{heading}</Heading>
         <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
         <div className="mt-6 space-y-5">
           {items.map((ind, i) => (
@@ -453,7 +613,7 @@ export function ReferencesSection({ content, theme }: SectionProps) {
   const { heading, intro, items } = content.references;
   return (
     <section>
-      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{heading}</Heading>
       <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
       <ul className="mt-6 space-y-3">
         {items.map((ref, i) => (
@@ -481,7 +641,7 @@ export function ProTipsSection({ content, theme }: SectionProps) {
   const { heading, items } = content.proTips;
   return (
     <section>
-      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{heading}</Heading>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {items.map((tip, i) => (
           <div
@@ -511,7 +671,7 @@ export function MistakesSection({ content, theme }: SectionProps) {
   const { heading, intro, items } = content.mistakes;
   return (
     <section>
-      <SectionHeading theme={theme}>{heading}</SectionHeading>
+      <Heading content={content} theme={theme}>{heading}</Heading>
       <p className="mt-4 leading-relaxed text-muted-foreground">{intro}</p>
       <div className={cn('mt-6 overflow-x-auto overflow-hidden rounded-2xl border', theme.border)}>
         <table className="w-full min-w-[34rem] text-sm">

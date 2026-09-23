@@ -1,0 +1,49 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">Invoice vs Quotation</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">When to Send Which Document in the Sales Process</text>
+  <g transform="translate(40,245)">
+    <text font-size="13" fill="#64748b">SALES PROCESS</text>
+    <line x1="0" y1="25" x2="1100" y2="25" stroke="#334155" stroke-width="2"/>
+    <g transform="translate(0,0)">
+      <circle cx="100" cy="25" r="20" fill="#6366f1" opacity="0.3" stroke="#6366f1" stroke-width="2"/>
+      <text x="100" y="30" text-anchor="middle" font-size="12" fill="#818cf8" font-weight="700">Q</text>
+      <text x="100" y="65" text-anchor="middle" font-size="11" fill="#818cf8" font-weight="600">Quotation</text>
+      <text x="100" y="82" text-anchor="middle" font-size="10" fill="#64748b">Price offer</text>
+      <text x="100" y="98" text-anchor="middle" font-size="10" fill="#64748b">No GST liability yet</text>
+    </g>
+    <g transform="translate(300,0)">
+      <circle cx="100" cy="25" r="20" fill="#22c55e" opacity="0.3" stroke="#22c55e" stroke-width="2"/>
+      <text x="100" y="30" text-anchor="middle" font-size="12" fill="#4ade80" font-weight="700">✓</text>
+      <text x="100" y="65" text-anchor="middle" font-size="11" fill="#4ade80" font-weight="600">Accepted</text>
+      <text x="100" y="82" text-anchor="middle" font-size="10" fill="#64748b">Contract formed</text>
+      <text x="100" y="98" text-anchor="middle" font-size="10" fill="#64748b">Work begins</text>
+    </g>
+    <g transform="translate(600,0)">
+      <circle cx="100" cy="25" r="20" fill="#f59e0b" opacity="0.3" stroke="#f59e0b" stroke-width="2"/>
+      <text x="100" y="30" text-anchor="middle" font-size="12" fill="#fbbf24" font-weight="700">I</text>
+      <text x="100" y="65" text-anchor="middle" font-size="11" fill="#fbbf24" font-weight="600">Tax Invoice</text>
+      <text x="100" y="82" text-anchor="middle" font-size="10" fill="#64748b">GST liability created</text>
+      <text x="100" y="98" text-anchor="middle" font-size="10" fill="#64748b">ITC available to buyer</text>
+    </g>
+    <g transform="translate(900,0)">
+      <circle cx="100" cy="25" r="20" fill="#ec4899" opacity="0.3" stroke="#ec4899" stroke-width="2"/>
+      <text x="100" y="30" text-anchor="middle" font-size="12" fill="#f472b6" font-weight="700">R</text>
+      <text x="100" y="65" text-anchor="middle" font-size="11" fill="#f472b6" font-weight="600">Receipt</text>
+      <text x="100" y="82" text-anchor="middle" font-size="10" fill="#64748b">Payment confirmed</text>
+      <text x="100" y="98" text-anchor="middle" font-size="10" fill="#64748b">Record in books</text>
+    </g>
+  </g>
+  <rect x="40" y="400" width="510" height="180" rx="16" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="295" y="440" text-anchor="middle" font-size="15" font-weight="700" fill="#818cf8">Quotation</text>
+  <g font-size="12" fill="#94a3b8" transform="translate(60,460)">
+    <text y="0">Sent BEFORE work begins</text><text y="25">No GST liability triggered</text>
+    <text y="50">Can be revised or withdrawn</text><text y="75">Not a tax document</text>
+  </g>
+  <rect x="570" y="400" width="590" height="180" rx="16" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="865" y="440" text-anchor="middle" font-size="15" font-weight="700" fill="#fbbf24">Tax Invoice</text>
+  <g font-size="12" fill="#94a3b8" transform="translate(590,460)">
+    <text y="0">Sent AFTER supply</text><text y="25">Creates GST output tax liability</text>
+    <text y="50">Cannot be edited (use credit/debit note)</text><text y="75">Mandatory for ITC claim</text>
+  </g>
+</svg>

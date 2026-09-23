@@ -74,6 +74,14 @@ export interface Industry {
   faqs: IndustryFaq[]; // 6-8
   /** Realistic sample line items for this trade (4-6). */
   sampleItems: IndustrySampleItem[];
+  /**
+   * Optional deep-dive editorial sections unique to this industry.
+   * Each section renders as an H2 + multi-paragraph body (split on \n\n).
+   * Use for industry-specific analysis, regulations, case studies, or market
+   * context that cannot be templated — this is the primary differentiation
+   * signal between the 20 industry pages.
+   */
+  deepDive?: { heading: string; body: string }[];
   /** The demo firm and client used in this page's preview quotation. */
   demo: IndustryParty;
   /** Slugs of 3-4 related industries for internal linking. */

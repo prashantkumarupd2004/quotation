@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import {
   ArrowRight,
   CheckCircle2,
+  Dumbbell,
   FileText,
   Sparkles,
   Star,

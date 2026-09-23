@@ -7,7 +7,8 @@ export const blogPosts5: BlogPost[] = [
     seoTitle: 'Service Quotation Format & Examples India 2026 | Step-by-Step Guide',
     metaDescription: 'Learn how to write a clear, professional quotation for service-based businesses. Discover formats, scope of work templates, and pricing tips for Indian freelancers & agencies.',
     keywords: ['service quotation format', 'service quote template India', 'how to write service quotation', 'service quotation sample', 'freelance service quote'],
-    date: '2026-07-15',
+    date: '2026-05-28',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Quotation Basics',
     heroImage: '/blog/service-quotation-mistakes.svg',
@@ -47,6 +48,10 @@ export const blogPosts5: BlogPost[] = [
       { q: 'How do I quote if the client\'s requirements are unclear?', a: 'If the scope is vague, do not offer a fixed price. Instead, quote a paid "Discovery or Strategy Phase" (e.g., Rs 5,000 to Rs 10,000) to research and document their requirements. Once that phase is complete, you can provide an accurate, fixed-price quotation for the main project.' },
       { q: 'Should I offer discounts on my service rates?', a: 'If a client asks for a discount, do not just cut your price. Instead, adjust the scope. For instance, say: "I can reduce the cost from Rs 20,000 to Rs 16,000 by removing the stationery design from this package." This maintains the value of your services while respecting their budget constraints.' }
     ],
+    references: [
+      { label: 'GST Portal — Services Under GST', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — SAC Code Reference', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'payment-terms-in-quotations', 'quotation-negotiation-tips']
   },
   {
@@ -55,7 +60,8 @@ export const blogPosts5: BlogPost[] = [
     seoTitle: 'Quotation Terms and Conditions Checklist India 2026 | Safe Business T&Cs',
     metaDescription: 'Protect your business from delayed payments and scope creep. Here is the ultimate checklist of terms and conditions to include in your business quotations in India.',
     keywords: ['quotation terms and conditions', 'quote T&C checklist India', 'quotation payment terms', 'business quote terms clauses', 'legal terms in quotation'],
-    date: '2026-07-15',
+    date: '2026-06-04',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Quotation Basics',
     heroImage: '/blog/terms-conditions.svg',
@@ -99,6 +105,10 @@ export const blogPosts5: BlogPost[] = [
       { q: 'What is the legal validity of a quotation in India?', a: 'Under the Indian Contract Act, 1872, a quotation is an "invitation to treat" or an offer. Once the client accepts the quotation (either in writing, via email, by signing it, or by issuing a purchase order), it becomes a legally binding contract.' },
       { q: 'How do I handle cancellation or termination terms?', a: 'Add a cancellation clause: "Either party may terminate this agreement with 7 days\' written notice. In the event of cancellation, the client will be billed for all work completed up to the termination date, and any advance payment is non-refundable."' }
     ],
+    references: [
+      { label: 'MCA — Contract Enforcement', url: 'https://www.mca.gov.in' },
+      { label: 'CBIC — Tax Liability on Supply', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['payment-terms-in-quotations', 'quotation-validity-period-guide', 'common-quotation-mistakes']
   },
   {
@@ -107,7 +117,8 @@ export const blogPosts5: BlogPost[] = [
     seoTitle: 'Interior Design Quotation Format India 2026 | Quote Template & Guide',
     metaDescription: 'A comprehensive guide on creating winning interior design quotations in India. Learn about cost-breakdowns (per sq ft, lump-sum), design fees, material specifications, and client approvals.',
     keywords: ['interior design quotation format', 'interior designer quote template', 'interior design pricing India', 'interior work quotation format', 'home renovation quote'],
-    date: '2026-07-15',
+    date: '2026-06-11',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'Industry Guides',
     heroImage: '/blog/pricing-strategy.svg',
@@ -147,6 +158,10 @@ export const blogPosts5: BlogPost[] = [
       { q: 'Should material specifications be mentioned in the quotation?', a: 'Yes, absolutely. You must state the brand, thickness, and type of plywood, laminates, veneer, and hardware. If you do not specify these, the client may assume you will use premium brands, and disputes will arise when you source standard materials.' },
       { q: 'How do I charge for supervision and site visits?', a: 'If you are doing design-only consulting, your quotation should specify the number of included site visits (e.g., "10 site visits during execution"). Any additional visits should be priced per visit (e.g., "Rs 2,000 per extra site visit").' }
     ],
+    references: [
+      { label: 'CBIC — GST on Interior Work', url: 'https://www.cbic.gov.in' },
+      { label: 'CPWD — Schedule of Rates', url: 'https://www.cpwd.gov.in' },
+    ],
     relatedSlugs: ['best-construction-quotation-examples', 'payment-terms-in-quotations', 'gst-in-quotations']
   },
   {
@@ -155,7 +170,8 @@ export const blogPosts5: BlogPost[] = [
     seoTitle: 'How to Revise a Quotation 2026 | Managing Quote Revisions India',
     metaDescription: 'Learn the professional way to handle client requests for quotation revisions. Discover how to version your quotes, explain price changes, and communicate adjustments clearly.',
     keywords: ['revised quotation format', 'how to revise a quote', 'quotation revision email', 'quote version control', 'client price negotiation India'],
-    date: '2026-07-15',
+    date: '2026-06-18',
+    author: 'Prashant Upadhyay',
     readingTime: 7,
     category: 'Sales & Negotiation',
     heroImage: '/blog/revise-quotation.svg',
@@ -195,6 +211,10 @@ export const blogPosts5: BlogPost[] = [
       { q: 'How many times should I revise a quotation before walking away?', a: 'A good rule of thumb is a maximum of three revisions (R3). If a client is still negotiating and asking for major changes after three rounds, it usually indicates they are either not serious, do not have a budget, or will be extremely difficult to work with during the execution phase.' },
       { q: 'What if the client references an older version by mistake?', a: 'Always confirm the revision suffix in writing before starting work: "We are proceeding with work as per our agreed revised quotation Ref: QTN-2026-045-R2 dated July 10. Please reply to this email to confirm." This simple step prevents legal disputes over which version\'s scope applies.' }
     ],
+    references: [
+      { label: 'GST Portal — Revised Invoice Rules', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Amendment to Supply', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['quotation-negotiation-tips', 'how-to-send-quotation-by-email', 'common-quotation-mistakes']
   },
   {
@@ -203,7 +223,8 @@ export const blogPosts5: BlogPost[] = [
     seoTitle: 'Catering Quotation Format India 2026 | Food & Event Quotation Guide',
     metaDescription: 'Create winning catering quotations for weddings, corporate events, and parties in India. Learn pricing per plate, menu presentation, and essential event terms.',
     keywords: ['catering quotation format', 'catering quote template India', 'food catering quotation sample', 'wedding catering quotation', 'pricing catering per plate'],
-    date: '2026-07-15',
+    date: '2026-06-25',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Industry Guides',
     heroImage: '/blog/catering-quotation.svg',
@@ -242,6 +263,10 @@ export const blogPosts5: BlogPost[] = [
       { q: 'What is \'Min Pax\' in a catering quotation?', a: '\'Min Pax\' stands for Minimum Passenger (Guest) count. It is the minimum number of guests the client guarantees to pay for, regardless of how many guests actually attend the event. This ensures the caterer covers their base costs for labor and sourcing.' },
       { q: 'How do I handle food waste and leftover food?', a: 'Include a clear leftover policy in your quotation: "For hygiene and safety reasons, any leftover food remaining at the buffet table at the end of the event duration cannot be packed or taken away by the client. However, un-served food in the kitchen can be packed if the client provides clean containers."' },
       { q: 'How much advance is standard for catering in India?', a: 'Caterers typically charge a 50% advance booking deposit to secure the date and purchase raw materials, 40% on the day before the event, and the remaining 10% immediately upon completion of the event before the team leaves the venue.' }
+    ],
+    references: [
+      { label: 'FSSAI — Food Business Licensing', url: 'https://www.fssai.gov.in' },
+      { label: 'CBIC — GST on Catering Services', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'payment-terms-in-quotations', 'common-quotation-mistakes']
   }

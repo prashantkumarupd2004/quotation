@@ -1,0 +1,33 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">Quotation Format in India</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">Standard Format with GST, HSN Codes and Terms</text>
+  <rect x="40" y="240" width="1120" height="340" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="60" y="260" width="1080" height="50" rx="8" fill="#6366f1" opacity="0.15"/>
+  <text x="600" y="293" text-anchor="middle" font-size="15" font-weight="700" fill="#818cf8">QUOTATION — QuotationMaker.in Format</text>
+  <line x1="60" y1="318" x2="1140" y2="318" stroke="#334155" stroke-width="1"/>
+  <g font-size="11" fill="#475569" transform="translate(70,340)">
+    <text>FROM: Your Business Name · GSTIN: 27XXXXX · Mobile: 98XXXXXXXX</text>
+    <text x="700">TO: Client Name · Client GSTIN (if GST registered)</text>
+  </g>
+  <line x1="60" y1="366" x2="1140" y2="366" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  <g font-size="11" fill="#64748b" transform="translate(70,385)">
+    <text font-weight="700" fill="#94a3b8">Description</text>
+    <text x="550" font-weight="700" fill="#94a3b8">HSN/SAC</text>
+    <text x="700" font-weight="700" fill="#94a3b8">Qty</text>
+    <text x="800" font-weight="700" fill="#94a3b8">Rate</text>
+    <text x="1000" text-anchor="end" font-weight="700" fill="#94a3b8">Amount</text>
+  </g>
+  <g font-size="11" fill="#64748b" transform="translate(70,415)">
+    <text fill="#94a3b8">Website Design &amp; Development</text><text x="550">9983</text><text x="700">1</text><text x="800">₹35,000</text><text x="1000" text-anchor="end">₹35,000</text>
+    <text y="30" fill="#94a3b8">Logo Design</text><text y="30" x="550">9983</text><text y="30" x="700">1</text><text y="30" x="800">₹8,000</text><text y="30" x="1000" text-anchor="end">₹8,000</text>
+  </g>
+  <line x1="60" y1="470" x2="1140" y2="470" stroke="#334155" stroke-width="1"/>
+  <g font-size="11" fill="#64748b" transform="translate(700,490)">
+    <text>Subtotal</text><text x="295" text-anchor="end">₹43,000</text>
+    <text y="20">CGST @ 9%</text><text y="20" x="295" text-anchor="end">₹3,870</text>
+    <text y="40">SGST @ 9%</text><text y="40" x="295" text-anchor="end">₹3,870</text>
+  </g>
+  <line x1="700" y1="545" x2="1140" y2="545" stroke="#334155" stroke-width="1"/>
+  <text x="710" y="563" font-size="12" font-weight="700" fill="#f1f5f9">Total</text><text x="1130" y="563" text-anchor="end" font-size="12" font-weight="700" fill="#22c55e">₹50,740</text>
+</svg>

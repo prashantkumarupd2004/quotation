@@ -44,6 +44,8 @@ export const purchaseOrderContent: ToolContent = {
     features: 'checklist',
     useCases: 'cards',
     example: 'strip',
+    whatIs: 'prose',
+    headingStyle: 'plain',
   },
   order: [
     'widget',

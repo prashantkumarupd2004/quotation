@@ -46,6 +46,8 @@ export const estimateContent: ToolContent = {
     features: 'alternating',
     useCases: 'accordion',
     example: 'strip',
+    whatIs: 'prose',
+    headingStyle: 'plain',
   },
   order: [
     'whatIs',

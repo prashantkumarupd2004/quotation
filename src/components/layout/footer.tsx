@@ -38,7 +38,7 @@ export function Footer() {
                 runs the site, and it belongs on every page, not just About. */}
             <p className="mt-5 max-w-xs text-xs leading-relaxed text-muted-foreground">
               Built and operated by{' '}
-              <Link href="/about" className="font-medium text-foreground hover:text-primary">
+              <Link href="/author/prashant-upadhyay" className="font-medium text-foreground hover:text-primary">
                 {siteConfig.operator.name}
               </Link>
               , an independent developer in {siteConfig.operator.country}. Funded by advertising —

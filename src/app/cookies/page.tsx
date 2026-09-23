@@ -62,10 +62,19 @@ export default function CookiePolicyPage() {
             ],
           },
           {
-            heading: 'Advertising cookies',
+            heading: 'Advertising cookies (Google AdSense)',
             paragraphs: [
-              'This site is intended to display advertising through Google AdSense. Where advertising is active, Google and its partner networks may set cookies or use similar identifiers to serve advertisements, to limit how often you see the same advertisement, and to measure whether advertisements are effective.',
-              'These may include personalised advertising based on your previous visits to this and other websites. We do not receive, control or store the data those cookies collect — that relationship is between you and the advertising network, under Google’s own advertising policies.',
+              'This site displays advertising through Google AdSense. When advertising is active, Google and its partner networks set cookies and use device identifiers to:',
+            ],
+            bullets: [
+              'Serve advertisements relevant to your interests based on previous visits to this and other websites.',
+              'Limit how often you see the same advertisement.',
+              'Measure whether advertisements were seen and whether they led to any action.',
+              'Report aggregate statistics to advertisers (no personally identifying information is included in reports we receive).',
+            ],
+            paragraphs2: [
+              'We do not receive, control or store the data those cookies collect. That relationship is between you and Google under their advertising policies.',
+              'Key opt-out options: Google Ads Settings at adssettings.google.com, the NAI opt-out at optout.networkadvertising.org, or the DAA opt-out at optout.aboutads.info.',
             ],
           },
           {
@@ -74,10 +83,11 @@ export default function CookiePolicyPage() {
               'You are in full control of all of this, and nothing on this site is gated behind accepting cookies.',
             ],
             bullets: [
-              'Clear this site’s data: in your browser settings, find site settings or storage for quotationmaker.in and clear it. Note that this also deletes your saved documents, which we cannot restore because we never had a copy.',
+              'Clear this site\'s data: in your browser settings, find site settings or storage for quotationmaker.in and clear it. Note that this also deletes your saved documents, which we cannot restore because we never had a copy.',
               'Block third-party cookies: available in the privacy settings of every major browser.',
-              'Opt out of personalised advertising: Google Ads Settings, or aboutads.info for participating networks.',
-              'Block analytics: any standard content blocker, or your browser’s built-in tracking protection.',
+              'Opt out of personalised advertising: visit adssettings.google.com (Google), or optout.aboutads.info (DAA / industry-wide opt-out).',
+              'Block analytics only: any standard content blocker, uBlock Origin, or your browser\'s built-in tracking protection.',
+              'Cookie consent banner: use the Accept / Decline banner that appears on your first visit to control optional cookies without changing browser settings.',
               'Use private or incognito mode: everything described here is discarded when you close the window.',
             ],
           },

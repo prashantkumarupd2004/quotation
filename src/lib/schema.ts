@@ -138,7 +138,7 @@ export function blogSchema(posts: { title: string; slug: string; date: string; e
       description: p.excerpt,
       datePublished: p.date,
       url: `${siteConfig.url}/blog/${p.slug}`,
-      author: { '@type': 'Person', name: siteConfig.operator.name, url: `${siteConfig.url}/about` },
+      author: { '@type': 'Person', name: siteConfig.operator.name, url: `${siteConfig.url}/author/prashant-upadhyay` },
     })),
   };
 }
@@ -237,7 +237,7 @@ export function articleSchema(params: {
     author: {
       '@type': 'Person',
       name: siteConfig.operator.name,
-      url: `${siteConfig.url}/about`,
+      url: `${siteConfig.url}/author/prashant-upadhyay`,
     },
     publisher: { '@id': ORG_ID },
     inLanguage: siteConfig.language,

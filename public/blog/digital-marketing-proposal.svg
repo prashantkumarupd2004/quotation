@@ -1,0 +1,15 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">Digital Marketing Proposal</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">Structure &amp; Retainer vs Project Pricing</text>
+  <rect x="40" y="240" width="1120" height="330" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="600" y="282" text-anchor="middle" font-size="15" font-weight="700" fill="#f1f5f9">Proposal Structure — 6 Must-Have Sections</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(60,305)">
+    <text y="0" fill="#818cf8" font-weight="600">1. Executive Summary</text><text y="0" x="350">What you will do, for whom, and the expected outcome</text>
+    <text y="40" fill="#818cf8" font-weight="600">2. Situation Analysis</text><text y="40" x="350">Client's current digital presence &amp; benchmark</text>
+    <text y="80" fill="#818cf8" font-weight="600">3. Scope of Work</text><text y="80" x="350">Exact deliverables, tools, platforms, reporting frequency</text>
+    <text y="120" fill="#818cf8" font-weight="600">4. Pricing</text><text y="120" x="350">Monthly retainer or project fee, with GST shown separately</text>
+    <text y="160" fill="#818cf8" font-weight="600">5. Timeline</text><text y="160" x="350">Onboarding, first results milestone, review cadence</text>
+    <text y="200" fill="#818cf8" font-weight="600">6. Terms</text><text y="200" x="350">Notice period, IP ownership, reporting access, payment due</text>
+  </g>
+</svg>

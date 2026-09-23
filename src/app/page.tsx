@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Check, Star } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Hero } from '@/components/home/hero';
 import { Reveal } from '@/components/ui/reveal';
 import { Faq } from '@/components/ui/faq';
@@ -22,7 +22,7 @@ import {
   homeFaqs,
   homeFeatures,
   homeSteps,
-  homeTestimonials,
+  homeUserHighlights,
   homeWhyUs,
 } from '@/data/home';
 
@@ -126,23 +126,18 @@ export default function HomePage() {
       {/* ── 1. HERO ─────────────────────────────────────────────────────── */}
       <Hero />
 
-      {/* ── 2. TRUSTED STATISTICS STRIP ─────────────────────────────────── */}
+      {/* ── 2. TOOL CAPABILITY STRIP ──────────────────────────────────────── */}
       <section
-        id="stats"
+        id="highlights"
         className="border-y border-border/60 bg-gradient-to-r from-blue-600 via-violet-600 to-blue-700 py-10"
       >
         <div className="container">
-          <div className="grid grid-cols-2 gap-6 text-center text-white sm:grid-cols-4">
-            {[
-              { value: '50,000+', label: 'Documents Created', sub: 'Since July 2026' },
-              { value: '12,000+', label: 'Active Users', sub: 'Monthly average' },
-              { value: '8,500+', label: 'Businesses Served', sub: 'Across India' },
-              { value: String(TEMPLATE_COUNT) + '+', label: 'Free Templates', sub: 'Ready to use' },
-            ].map((stat) => (
-              <div key={stat.label} className="space-y-1">
-                <div className="font-display text-3xl font-extrabold sm:text-4xl">{stat.value}</div>
-                <div className="text-sm font-semibold text-white/90">{stat.label}</div>
-                <div className="text-xs text-white/60">{stat.sub}</div>
+          <div className="grid grid-cols-2 gap-6 text-center text-white sm:grid-cols-3 lg:grid-cols-6">
+            {homeUserHighlights.map((h) => (
+              <div key={h.label} className="space-y-1">
+                <div className="font-display text-2xl font-extrabold sm:text-3xl">{h.stat}</div>
+                <div className="text-sm font-semibold text-white/90">{h.label}</div>
+                <div className="text-xs text-white/60 leading-snug">{h.detail}</div>
               </div>
             ))}
           </div>
@@ -415,42 +410,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 9. TESTIMONIALS ──────────────────────────────────────────────── */}
-      <section id="testimonials" className="container py-20 sm:py-28">
+      {/* ── 9. WHY QUOTATIONMAKER — FEATURE GRID ─────────────────────────── */}
+      {/* Testimonials section removed: real user reviews will be added once
+          collected from actual users. Placeholder personas were misleading. */}
+      <section id="why-free" className="container py-20 sm:py-28">
         <SectionHeader
-          eyebrow="What users say"
-          title="Trusted by Thousands of Indian Businesses"
-          description="From solo freelancers to growing contractors — here is how QuotationMaker.in is helping Indian professionals win more business."
+          eyebrow="How it works"
+          title="Built for Indian Businesses, Not for Billing You"
+          description="QuotationMaker.in is a solo-built, ad-supported tool designed so every small business in India can send a professional GST document without paying for software."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {homeTestimonials.map((t, i) => (
-            <Reveal key={t.name} delay={(i % 3) * 0.06}>
-              <div className="glass-card flex h-full flex-col gap-4 p-6 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/8">
-                {/* Stars */}
-                <div className="flex gap-1">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <blockquote className="flex-1 text-sm leading-relaxed text-foreground">
-                  &ldquo;{t.text}&rdquo;
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center gap-3 border-t border-border/60 pt-4">
-                  <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-sm font-bold text-white">
-                    {t.avatar}
-                  </span>
-                  <div>
-                    <div className="text-sm font-semibold">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {t.role} · {t.city}
-                    </div>
-                  </div>
-                </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: '🏗️',
+              title: '10 Document Types',
+              body: 'Quotation, invoice, GST invoice, estimate, proforma invoice, purchase order, delivery challan, payment receipt, credit note and debit note — all in one builder.',
+            },
+            {
+              icon: '🎨',
+              title: '25 Free Templates',
+              body: 'Modern, corporate, minimal and industry-specific designs. Switch templates at any time — your data carries across without re-entering anything.',
+            },
+            {
+              icon: '🧮',
+              title: 'Automatic GST Maths',
+              body: 'Per-item GST at every slab. CGST + SGST for same-state supply, IGST for inter-state — calculated live as you type, with HSN/SAC fields built in.',
+            },
+            {
+              icon: '📱',
+              title: 'Works on Any Device',
+              body: 'Fully responsive on phone, tablet and desktop. Install as a PWA and use offline after the first load — ideal for contractors working on-site.',
+            },
+            {
+              icon: '🔒',
+              title: 'Your Data Stays with You',
+              body: 'Documents are saved in your browser on your own device. Nothing is uploaded to a server unless you explicitly create a share link.',
+            },
+            {
+              icon: '₹',
+              title: 'Free — No Subscription',
+              body: 'No trial period, no watermark, no paywall. Funded by advertising so the tools stay open to every business, including a one-person operation.',
+            },
+          ].map((card, i) => (
+            <Reveal key={card.title} delay={(i % 3) * 0.06}>
+              <div className="glass-card flex h-full flex-col gap-3 p-6 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/8">
+                <span className="text-3xl">{card.icon}</span>
+                <h3 className="font-display text-lg font-bold">{card.title}</h3>
+                <p className="flex-1 text-sm leading-relaxed text-muted-foreground">{card.body}</p>
               </div>
             </Reveal>
           ))}
@@ -507,7 +514,7 @@ export default function HomePage() {
                   </p>
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>{formatDate(post.date)}</span>
-                    <span>{post.readingTime} min read</span>
+                    <span>{post.author ?? ''} · {post.readingTime} min read</span>
                   </div>
                 </div>
               </Link>
@@ -581,7 +588,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
               Free forever. No account, no watermark, no limit on how many documents you create.
-              Join thousands of Indian businesses already using QuotationMaker.in.
+              Built for Indian freelancers, contractors and MSMEs — GST-correct documents in under 60 seconds.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

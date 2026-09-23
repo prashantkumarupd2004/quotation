@@ -9,8 +9,18 @@ import { organizationSchema, webAppSchema, websiteSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { CookieConsent } from '@/components/cookie-consent';
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID ?? 'G-R49PCT53VW';
+
+/**
+ * Google AdSense publisher ID.
+ * Set NEXT_PUBLIC_ADSENSE_PUB_ID=ca-pub-XXXXXXXXXXXXXXXX in your .env.production
+ * once Google AdSense approves your site and assigns you a publisher ID.
+ * Leave empty (the default) before approval — adding an unapproved ID causes
+ * AdSense to show a policy warning on your site.
+ */
+const adsensePubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID ?? '';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -61,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </ThemeProvider>
+        <CookieConsent />
         <script
           dangerouslySetInnerHTML={{
             __html: `if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})})}`,
@@ -68,6 +79,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </body>
       {process.env.NODE_ENV === 'production' && gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+      {/* AdSense: activates automatically once NEXT_PUBLIC_ADSENSE_PUB_ID is set post-approval */}
+      {process.env.NODE_ENV === 'production' && adsensePubId ? (
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsensePubId}`}
+          crossOrigin="anonymous"
+        />
+      ) : null}
     </html>
   );
 }

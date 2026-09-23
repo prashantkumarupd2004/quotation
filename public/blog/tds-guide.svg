@@ -1,0 +1,54 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="#6366f1" stroke-width="0.5"/></pattern></defs>
+  <rect width="1200" height="630" fill="url(#g)" opacity="0.07"/>
+  <rect x="40" y="40" width="140" height="36" rx="18" fill="#6366f1" opacity="0.2"/>
+  <text x="110" y="63" text-anchor="middle" font-size="13" font-weight="700" fill="#818cf8" letter-spacing="1">TDS GUIDE</text>
+  <text x="40" y="145" font-size="42" font-weight="800" fill="#f1f5f9" letter-spacing="-1">TDS on Business Payments</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">Which Sections Apply, Rates &amp; Invoice Treatment</text>
+  <!-- Section cards -->
+  <g transform="translate(40, 240)">
+    <rect width="265" height="100" rx="14" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="132" y="35" text-anchor="middle" font-size="13" fill="#818cf8" font-weight="700">Sec 194C · Contractors</text>
+    <text x="132" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#f1f5f9">1% / 2%</text>
+    <text x="132" y="82" text-anchor="middle" font-size="11" fill="#64748b">Individual: 1% · Others: 2%</text>
+    <rect x="280" width="265" height="100" rx="14" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="412" y="35" text-anchor="middle" font-size="13" fill="#a78bfa" font-weight="700">Sec 194J · Professionals</text>
+    <text x="412" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#f1f5f9">10%</text>
+    <text x="412" y="82" text-anchor="middle" font-size="11" fill="#64748b">₹30,000 threshold per year</text>
+    <rect x="0" y="120" width="265" height="100" rx="14" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="132" y="155" text-anchor="middle" font-size="13" fill="#67e8f9" font-weight="700">Sec 194Q · Purchases</text>
+    <text x="132" y="182" text-anchor="middle" font-size="22" font-weight="800" fill="#f1f5f9">0.1%</text>
+    <text x="132" y="202" text-anchor="middle" font-size="11" fill="#64748b">Buyer turnover &gt; ₹10 Cr</text>
+    <rect x="280" y="120" width="265" height="100" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="412" y="155" text-anchor="middle" font-size="13" fill="#fbbf24" font-weight="700">Sec 194-IB · Rent</text>
+    <text x="412" y="182" text-anchor="middle" font-size="22" font-weight="800" fill="#f1f5f9">5%</text>
+    <text x="412" y="202" text-anchor="middle" font-size="11" fill="#64748b">Rent &gt; ₹50,000/month</text>
+  </g>
+  <!-- Invoice note card -->
+  <rect x="640" y="60" width="520" height="530" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="900" y="115" text-anchor="middle" font-size="18" font-weight="700" fill="#f1f5f9">TDS on Your Invoice</text>
+  <rect x="660" y="135" width="480" height="200" rx="12" fill="#0f172a"/>
+  <text x="680" y="168" font-size="13" fill="#94a3b8">Service Fee (Professional)</text>
+  <text x="1120" y="168" text-anchor="end" font-size="13" fill="#f1f5f9">₹1,00,000</text>
+  <line x1="670" y1="178" x2="1130" y2="178" stroke="#1e293b" stroke-width="1"/>
+  <text x="680" y="205" font-size="13" fill="#94a3b8">GST @ 18%</text>
+  <text x="1120" y="205" text-anchor="end" font-size="13" fill="#f1f5f9">₹18,000</text>
+  <line x1="670" y1="215" x2="1130" y2="215" stroke="#1e293b" stroke-width="1"/>
+  <text x="680" y="242" font-size="14" font-weight="700" fill="#f1f5f9">Invoice Total</text>
+  <text x="1120" y="242" text-anchor="end" font-size="14" font-weight="700" fill="#f1f5f9">₹1,18,000</text>
+  <line x1="670" y1="252" x2="1130" y2="252" stroke="#334155" stroke-width="1"/>
+  <text x="680" y="279" font-size="13" fill="#f87171">Less: TDS (Sec 194J @ 10%)</text>
+  <text x="1120" y="279" text-anchor="end" font-size="13" fill="#f87171">-₹10,000</text>
+  <text x="680" y="307" font-size="12" fill="#64748b">(TDS on service fee only, not on GST)</text>
+  <line x1="670" y1="318" x2="1130" y2="318" stroke="#334155" stroke-width="1"/>
+  <text x="680" y="345" font-size="15" font-weight="700" fill="#22c55e">Net Payment to You</text>
+  <text x="1120" y="345" text-anchor="end" font-size="15" font-weight="700" fill="#22c55e">₹1,08,000</text>
+  <rect x="660" y="370" width="480" height="50" rx="10" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="900" y="401" text-anchor="middle" font-size="13" fill="#4ade80">Claim the ₹10,000 TDS credit in your ITR via Form 26AS</text>
+  <!-- Footer -->
+  <rect x="660" y="450" width="480" height="120" rx="12" fill="#0f172a"/>
+  <text x="900" y="485" text-anchor="middle" font-size="13" fill="#64748b">Deductor must issue Form 16A within 15 days</text>
+  <text x="900" y="510" text-anchor="middle" font-size="13" fill="#64748b">of due date for filing TDS return (Form 26Q)</text>
+  <text x="900" y="548" text-anchor="middle" font-size="11" fill="#475569">Last verified: September 2026 · Rates per Finance Act 2026</text>
+</svg>

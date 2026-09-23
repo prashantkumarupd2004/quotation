@@ -1,0 +1,19 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">How to Price Your Services</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">Cost-Plus, Value-Based and Market Pricing for Freelancers</text>
+  <rect x="40" y="240" width="510" height="320" rx="20" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="295" y="285" text-anchor="middle" font-size="16" font-weight="700" fill="#4ade80">Cost-Plus Method</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(60,305)">
+    <text y="0">Monthly Expenses: ₹30,000</text><text y="35">Target Savings: ₹10,000</text>
+    <text y="70">Available Hours: 120 hrs</text><text y="105">Minimum Rate: ₹333/hr</text>
+    <text y="140">Add 40% profit: ₹466/hr</text><text y="175">Round up: ₹500/hr</text>
+  </g>
+  <rect x="570" y="240" width="590" height="320" rx="20" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="865" y="285" text-anchor="middle" font-size="16" font-weight="700" fill="#818cf8">Value-Based Method</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(590,305)">
+    <text y="0">Client saves ₹5L/year with your SEO</text><text y="35">Price as % of value: 10-20%</text>
+    <text y="70">Quote: ₹50,000-₹1,00,000</text><text y="105">Not ₹500/hr × 40 hrs = ₹20,000</text>
+    <text y="140">Anchor to outcome, not hours</text><text y="175">Requires confidence to present</text>
+  </g>
+</svg>

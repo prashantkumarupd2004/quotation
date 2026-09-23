@@ -149,57 +149,48 @@ export const homeWhyUs = [
 ];
 
 /**
- * Testimonials — these are illustrative personas typical of the user base.
- * Replace with genuine attributed reviews once collected.
+ * Testimonials removed — placeholder personas were illustrative only and
+ * should not appear as verified reviews. Once real user feedback is collected
+ * (e.g. via email or a feedback form), replace this with genuine attributed quotes.
+ *
+ * The homepage now shows a community invite section instead.
  */
-export const homeTestimonials = [
+export const homeUserHighlights = [
   {
-    name: 'Rajesh Sharma',
-    role: 'Civil Contractor',
-    city: 'Jaipur, Rajasthan',
-    avatar: 'RS',
-    rating: 5,
-    text: 'Previously I used Excel and it took 20 minutes per quotation. Now I finish in under 2 minutes. The GST split calculation alone has saved me from so many client disputes.',
+    icon: 'Building2',
+    stat: '10+',
+    label: 'Document types',
+    detail: 'Quotation, invoice, GST bill, purchase order, challan and more',
   },
   {
-    name: 'Priya Mehta',
-    role: 'Freelance Graphic Designer',
-    city: 'Pune, Maharashtra',
-    avatar: 'PM',
-    rating: 5,
-    text: 'My clients are impressed with how professional my invoices look now. The branded templates make me appear like a proper agency even though I am a solo designer.',
+    icon: 'LayoutTemplate',
+    stat: '25+',
+    label: 'Free templates',
+    detail: 'Print-ready, GST-compliant, switch anytime without re-entering data',
   },
   {
-    name: 'Arvind Nair',
-    role: 'IT Services Owner',
-    city: 'Kochi, Kerala',
-    avatar: 'AN',
-    rating: 5,
-    text: 'We send GST invoices for software projects every week. This tool handles IGST for outstation clients automatically — something my old Word template kept getting wrong.',
+    icon: 'IndianRupee',
+    stat: '₹0',
+    label: 'Cost forever',
+    detail: 'No trial, no subscription, no watermark — funded by advertising',
   },
   {
-    name: 'Sunita Agarwal',
-    role: 'Interior Designer',
-    city: 'Delhi, NCR',
-    avatar: 'SA',
-    rating: 5,
-    text: 'The purchase order generator is a lifesaver for furniture procurement. I can raise a PO from my phone on-site and email it within minutes. No more manual typing errors.',
+    icon: 'ShieldCheck',
+    stat: '100%',
+    label: 'Private by design',
+    detail: 'Documents stay in your browser — nothing uploaded unless you share',
   },
   {
-    name: 'Mohammed Farooq',
-    role: 'Electrical Contractor',
-    city: 'Hyderabad, Telangana',
-    avatar: 'MF',
-    rating: 5,
-    text: 'I was skeptical about a free tool but the GST quotation format is exactly what my government clients need — with GSTIN, HSN codes and all. Highly recommended.',
+    icon: 'Smartphone',
+    stat: 'PWA',
+    label: 'Works offline',
+    detail: 'Install as an app, use without internet, autosaves as you type',
   },
   {
-    name: 'Kavitha Reddy',
-    role: 'Event Planner',
-    city: 'Bengaluru, Karnataka',
-    avatar: 'KR',
-    rating: 5,
-    text: 'Creating estimates for weddings and corporate events used to be chaotic. Now each client gets a branded quotation with proper breakdowns. It has genuinely won us more bookings.',
+    icon: 'Globe',
+    stat: 'India-first',
+    label: 'Built for Indian businesses',
+    detail: 'GST slabs, CGST/SGST/IGST, HSN/SAC codes, INR amount-in-words',
   },
 ];
 

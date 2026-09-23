@@ -46,6 +46,9 @@ export const paymentReceiptContent: ToolContent = {
     features: 'alternating',
     useCases: 'columns',
     example: 'paper',
+    whatIs: 'sidebar',
+    headingStyle: 'bar',
+    headingMarker: '✓',
   },
   order: [
     'whatIs',

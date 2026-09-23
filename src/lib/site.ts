@@ -58,8 +58,15 @@ export const siteConfig = {
    * Must stay in sync with the retention period stated in the Privacy Policy.
    */
   shareRetentionDays: 90,
-  // Paste the token from Google Search Console → Settings → Ownership verification
-  // (HTML tag method). Leaving it empty simply omits the meta tag.
+  /**
+   * Google Search Console ownership verification token.
+   * HOW TO GET THIS:
+   *  1. Go to https://search.google.com/search-console
+   *  2. Add property → quotationmaker.in → choose "HTML tag" method
+   *  3. Copy ONLY the content="..." value (not the full <meta> tag)
+   *  4. Paste it below and redeploy.
+   * Leaving it empty omits the meta tag harmlessly.
+   */
   googleSiteVerification: '',
 } as const;
 
@@ -85,7 +92,11 @@ export const mainNav: readonly NavItem[] = [
       { title: 'GST Invoice Maker', href: '/gst-invoice-maker' },
       { title: 'Estimate Maker', href: '/estimate-maker' },
       { title: 'Proforma Invoice', href: '/proforma-invoice-maker' },
+      { title: 'Purchase Order', href: '/purchase-order-generator' },
+      { title: 'Delivery Challan', href: '/delivery-challan-generator' },
       { title: 'Payment Receipt', href: '/payment-receipt-generator' },
+      { title: 'Credit Note', href: '/credit-note-generator' },
+      { title: 'Debit Note', href: '/debit-note-generator' },
     ],
   },
   { title: 'Templates', href: '/templates' },
@@ -155,6 +166,7 @@ export const footerNav = {
   ],
   company: [
     { title: 'About', href: '/about' },
+    { title: 'Author', href: '/author/prashant-upadhyay' },
     { title: 'Contact', href: '/contact' },
     { title: 'Privacy Policy', href: '/privacy' },
     { title: 'Terms of Service', href: '/terms' },

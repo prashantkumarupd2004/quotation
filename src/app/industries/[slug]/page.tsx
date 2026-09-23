@@ -94,6 +94,20 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             ))}
           </section>
 
+          {/* Deep-dive editorial sections — unique per industry, not templated */}
+          {industry.deepDive?.map((section, i) => (
+            <section key={i}>
+              <h2 className="font-display text-2xl font-bold">{section.heading}</h2>
+              <div className="mt-4 space-y-4">
+                {section.body.split('\n\n').map((p, j) => (
+                  <p key={j} className="leading-relaxed text-muted-foreground">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ))}
+
           {/* Benefits */}
           <section>
             <h2 className="font-display text-2xl font-bold">

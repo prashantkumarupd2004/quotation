@@ -1,0 +1,27 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">Freelancer Pricing Guide</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">How to Set Your Rates as an Indian Freelancer</text>
+  <rect x="40" y="240" width="510" height="320" rx="20" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="295" y="282" text-anchor="middle" font-size="15" font-weight="700" fill="#4ade80">Minimum Viable Rate Formula</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(60,305)">
+    <text y="0">Monthly fixed costs</text><text x="430" y="0" text-anchor="end">₹20,000</text>
+    <text y="35">+ Monthly savings goal</text><text x="430" y="35" text-anchor="end">₹10,000</text>
+    <text y="70">+ Tax provision (30%)</text><text x="430" y="70" text-anchor="end">₹9,000</text>
+    <text y="105">= Total monthly need</text><text x="430" y="105" text-anchor="end">₹39,000</text>
+    <line x1="0" y1="120" x2="440" y2="120" stroke="#334155" stroke-width="1"/>
+    <text y="145">÷ Billable hours/month</text><text x="430" y="145" text-anchor="end">80 hrs</text>
+    <text y="180" font-weight="700" fill="#4ade80">Minimum rate</text><text x="430" y="180" text-anchor="end" font-weight="700" fill="#4ade80">₹488/hr</text>
+    <text y="215" fill="#64748b">Round up, add market premium → ₹600-800/hr</text>
+  </g>
+  <rect x="570" y="240" width="590" height="320" rx="20" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="865" y="282" text-anchor="middle" font-size="15" font-weight="700" fill="#818cf8">GST Registration Threshold</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(590,305)">
+    <text y="0">Services turnover &gt; ₹20 lakh → must register</text>
+    <text y="35">Some NE states: threshold ₹10 lakh</text>
+    <text y="70">If registered: charge 18% GST on services</text>
+    <text y="110" fill="#fbbf24">⚠ Under threshold: still mention "GST Not Applicable"</text>
+    <text y="150">Add SAC 998313 (software dev) or correct SAC</text>
+    <text y="185">on invoice even if not charging tax</text>
+  </g>
+</svg>

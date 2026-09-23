@@ -1,0 +1,19 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">Credit Note vs Debit Note</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">When to Issue Each Under GST and What They Mean</text>
+  <rect x="40" y="240" width="510" height="320" rx="20" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="295" y="285" text-anchor="middle" font-size="16" font-weight="700" fill="#4ade80">CREDIT NOTE (Supplier issues)</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(60,310)">
+    <text y="0">Goods returned by buyer</text><text y="35">Invoice was over-billed</text>
+    <text y="70">Post-sale discount granted</text><text y="105">Reduces supplier GST liability</text>
+    <text y="140">Buyer must reverse ITC already claimed</text>
+  </g>
+  <rect x="570" y="240" width="590" height="320" rx="20" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="865" y="285" text-anchor="middle" font-size="16" font-weight="700" fill="#fbbf24">DEBIT NOTE (Supplier issues)</text>
+  <g font-size="13" fill="#94a3b8" transform="translate(590,310)">
+    <text y="0">Goods short-delivered, re-billed</text><text y="35">Invoice was under-billed</text>
+    <text y="70">Increases invoice value &amp; GST liability</text><text y="105">Buyer gets additional ITC to claim</text>
+    <text y="140">Must be declared in GSTR-1 in same month</text>
+  </g>
+</svg>

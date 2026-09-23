@@ -5,6 +5,8 @@ export interface LegalSection {
   paragraphs: string[];
   /** Optional bullet list rendered after the paragraphs. */
   bullets?: string[];
+  /** Optional second paragraph block rendered after the bullet list. */
+  paragraphs2?: string[];
 }
 
 /** Stable anchor id derived from the heading, used by the contents list. */
@@ -71,6 +73,13 @@ export function LegalDoc({
                   </li>
                 ))}
               </ul>
+            ) : null}
+            {s.paragraphs2?.length ? (
+              s.paragraphs2.map((p, i) => (
+                <p key={i} className="mt-3 leading-relaxed text-muted-foreground">
+                  {p}
+                </p>
+              ))
             ) : null}
           </section>
         ))}

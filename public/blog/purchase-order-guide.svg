@@ -1,0 +1,43 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="#6366f1" stroke-width="0.5"/></pattern></defs>
+  <rect width="1200" height="630" fill="url(#g)" opacity="0.07"/>
+  <rect x="40" y="40" width="200" height="36" rx="18" fill="#6366f1" opacity="0.2"/>
+  <text x="140" y="63" text-anchor="middle" font-size="13" font-weight="700" fill="#818cf8" letter-spacing="1">PURCHASE ORDER</text>
+  <text x="40" y="145" font-size="42" font-weight="800" fill="#f1f5f9" letter-spacing="-1">Purchase Order Process</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">From Request to Delivery — The Complete Workflow</text>
+  <!-- Flow diagram -->
+  <g transform="translate(40, 250)">
+    <rect width="140" height="60" rx="12" fill="#6366f1" opacity="0.2" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="70" y="38" text-anchor="middle" font-size="13" fill="#818cf8" font-weight="600">PR Raised</text>
+    <text x="170" y="35" font-size="24" fill="#334155">→</text>
+    <rect x="196" width="140" height="60" rx="12" fill="#8b5cf6" opacity="0.2" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="266" y="38" text-anchor="middle" font-size="13" fill="#a78bfa" font-weight="600">PO Created</text>
+    <text x="366" y="35" font-size="24" fill="#334155">→</text>
+    <rect x="392" width="140" height="60" rx="12" fill="#06b6d4" opacity="0.2" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="462" y="38" text-anchor="middle" font-size="13" fill="#67e8f9" font-weight="600">Sent to Vendor</text>
+    <text x="562" y="35" font-size="24" fill="#334155">→</text>
+    <rect x="0" y="120" width="140" height="60" rx="12" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="70" y="158" text-anchor="middle" font-size="13" fill="#4ade80" font-weight="600">Goods Received</text>
+    <text x="140" y="157" font-size="24" fill="#334155" transform="rotate(180 163 157)">→</text>
+    <rect x="196" y="120" width="140" height="60" rx="12" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="266" y="158" text-anchor="middle" font-size="13" fill="#fbbf24" font-weight="600">Invoice Matched</text>
+    <text x="366" y="157" font-size="24" fill="#334155">→</text>
+    <rect x="392" y="120" width="140" height="60" rx="12" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="1.5"/>
+    <text x="462" y="158" text-anchor="middle" font-size="13" fill="#f472b6" font-weight="600">Payment Released</text>
+  </g>
+  <!-- Right panel -->
+  <rect x="700" y="60" width="460" height="520" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="930" y="115" text-anchor="middle" font-size="17" font-weight="700" fill="#f1f5f9">Key PO Fields</text>
+  <g font-size="13" fill="#64748b" transform="translate(720,140)">
+    <text y="0">PO Number (unique, sequential)</text>
+    <text y="35">Supplier GSTIN &amp; address</text>
+    <text y="70">Item description + HSN code</text>
+    <text y="105">Quantity, unit and agreed rate</text>
+    <text y="140">Delivery date &amp; address</text>
+    <text y="175">Payment terms (Net 30, etc.)</text>
+    <text y="210">Authorised signatory</text>
+    <text y="245">Terms: warranty, rejection clause</text>
+    <text y="280">GST applicable (CGST/SGST/IGST)</text>
+  </g>
+</svg>

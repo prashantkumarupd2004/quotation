@@ -1,0 +1,61 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Background pattern -->
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.08"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#6366f1" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <!-- Header label -->
+  <rect x="40" y="40" width="220" height="36" rx="18" fill="#6366f1" opacity="0.2"/>
+  <text x="150" y="63" text-anchor="middle" font-size="13" font-weight="700" fill="#818cf8" letter-spacing="1">GST &amp; TAX GUIDE</text>
+  <!-- Title -->
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9" letter-spacing="-1">GST Invoice Rules 2026</text>
+  <text x="40" y="195" font-size="28" fill="#94a3b8">Mandatory Fields, HSN Codes &amp; ITC Compliance</text>
+  <!-- Invoice mockup card -->
+  <rect x="640" y="50" width="520" height="530" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="660" y="70" width="480" height="60" rx="8" fill="#6366f1" opacity="0.15"/>
+  <text x="900" y="108" text-anchor="middle" font-size="18" font-weight="700" fill="#818cf8">TAX INVOICE</text>
+  <!-- Fields -->
+  <g fill="#64748b" font-size="12">
+    <text x="670" y="160">GSTIN of Supplier</text>
+    <text x="670" y="195">Name &amp; Address</text>
+    <text x="670" y="230">Invoice Number &amp; Date</text>
+    <text x="670" y="265">Place of Supply</text>
+    <text x="670" y="300">HSN / SAC Code</text>
+    <text x="670" y="335">Taxable Value</text>
+    <text x="670" y="370">CGST Rate &amp; Amount</text>
+    <text x="670" y="405">SGST / IGST Rate &amp; Amount</text>
+    <text x="670" y="440">Total Tax Amount</text>
+    <text x="670" y="475">Total Invoice Value</text>
+  </g>
+  <!-- Check marks for mandatory fields -->
+  <g fill="#22c55e" font-size="14" font-weight="700">
+    <text x="1090" y="160">✓</text>
+    <text x="1090" y="195">✓</text>
+    <text x="1090" y="230">✓</text>
+    <text x="1090" y="265">✓</text>
+    <text x="1090" y="300">✓</text>
+    <text x="1090" y="335">✓</text>
+    <text x="1090" y="370">✓</text>
+    <text x="1090" y="405">✓</text>
+    <text x="1090" y="440">✓</text>
+    <text x="1090" y="475">✓</text>
+  </g>
+  <!-- Dividers -->
+  <line x1="660" y1="310" x2="1140" y2="310" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- Tags row -->
+  <g transform="translate(40, 280)">
+    <rect width="100" height="32" rx="16" fill="#6366f1" opacity="0.25"/>
+    <text x="50" y="21" text-anchor="middle" font-size="13" fill="#818cf8" font-weight="600">CGST</text>
+    <rect x="116" width="100" height="32" rx="16" fill="#8b5cf6" opacity="0.25"/>
+    <text x="166" y="21" text-anchor="middle" font-size="13" fill="#a78bfa" font-weight="600">SGST</text>
+    <rect x="232" width="100" height="32" rx="16" fill="#06b6d4" opacity="0.25"/>
+    <text x="282" y="21" text-anchor="middle" font-size="13" fill="#67e8f9" font-weight="600">IGST</text>
+  </g>
+  <!-- Footer stat -->
+  <rect x="40" y="510" width="560" height="80" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="545" font-size="13" fill="#64748b">Rule 46 of CGST Rules — Last verified September 2026</text>
+  <text x="60" y="572" font-size="15" fill="#94a3b8">Missing any field can block your buyer's Input Tax Credit claim.</text>
+</svg>

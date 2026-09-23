@@ -22,6 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/blog', priority: 0.8, freq: 'weekly' },
     { path: '/features', priority: 0.7, freq: 'monthly' },
     { path: '/about', priority: 0.6, freq: 'monthly' },
+    // Dedicated author expertise page — an explicit E-E-A-T signal for AdSense reviewers.
+    { path: '/author/prashant-upadhyay', priority: 0.6, freq: 'monthly' },
     { path: '/contact', priority: 0.5, freq: 'yearly' },
     { path: '/pricing', priority: 0.5, freq: 'monthly' },
     // Trust pages. Low priority, but they must be crawlable and indexable —
@@ -63,10 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const RECENT_WINDOW_MS = 60 * 24 * 60 * 60 * 1000;
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((p) => {
     const published = new Date(p.date);
-    const isRecent = now.getTime() - published.getTime() < RECENT_WINDOW_MS;
+    // Use updatedDate when available so Google knows regulatory content is current.
+    const lastMod = p.updatedDate ? new Date(p.updatedDate) : published;
+    const isRecent = now.getTime() - lastMod.getTime() < RECENT_WINDOW_MS;
     return {
       url: `${base}/blog/${p.slug}`,
-      lastModified: published,
+      lastModified: lastMod,
       changeFrequency: isRecent ? 'weekly' : 'monthly',
       priority: isRecent ? 0.8 : 0.65,
     };

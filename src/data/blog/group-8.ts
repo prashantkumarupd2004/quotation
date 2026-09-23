@@ -22,9 +22,13 @@ export const blogPosts8: BlogPost[] = [
       'tds credit form 26as',
       'tds for freelancers India',
     ],
-    date: '2026-07-28',
+    date: '2026-09-05',
+    updatedDate: '2026-09-10',
+    author: 'Prashant Upadhyay',
     readingTime: 10,
     category: 'GST & Tax',
+    heroImage: '/blog/tds-guide.svg',
+    heroAlt: 'TDS rates table for 194C, 194J, 194Q with worked invoice example showing net payment after TDS',
     excerpt:
       'Your client paid ₹90,000 against a ₹1,00,000 invoice and called it TDS. Here is what that means, whether they were right, and how you get the money back.',
     intro:
@@ -84,6 +88,10 @@ export const blogPosts8: BlogPost[] = [
         a: 'The credit is pre-populated from Form 26AS and the Annual Information Statement into your income tax return. Verify each entry against your own records before filing, and claim the credit in the year in which the corresponding income is offered to tax.',
       },
     ],
+    references: [
+      { label: 'Income Tax India — TDS Rates', url: 'https://www.incometax.gov.in' },
+      { label: 'CBIC — TDS Under GST', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['freelancer-pricing-guide', 'record-keeping-for-small-business', 'payment-receipt-format-guide'],
   },
 
@@ -103,9 +111,12 @@ export const blogPosts8: BlogPost[] = [
       'small business accounting records',
       'audit document checklist India',
     ],
-    date: '2026-07-26',
+    date: '2026-09-08',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'Business Documentation',
+    heroImage: '/blog/record-keeping.svg',
+    heroAlt: 'Business document retention periods table showing GST 72 months, income tax 6 years',
     excerpt:
       'Nobody thinks about record keeping until a notice arrives asking for an invoice from three years ago. A simple system, set up once, makes that a five-minute task instead of a week.',
     intro:
@@ -166,6 +177,10 @@ export const blogPosts8: BlogPost[] = [
         a: 'Electronic records are admissible under the Indian Evidence Act subject to the certification requirements, and courts have accepted WhatsApp communication in commercial matters. It is far better than nothing, but a signed quotation or a confirmed email carries more weight and is easier to produce cleanly.',
       },
     ],
+    references: [
+      { label: 'MCA — Books of Account Rules', url: 'https://www.mca.gov.in' },
+      { label: 'Income Tax India — Record Retention', url: 'https://www.incometax.gov.in' },
+    ],
     relatedSlugs: ['business-documentation-guide', 'gst-invoice-rules-guide', 'tds-on-payments-guide'],
   },
 
@@ -185,9 +200,12 @@ export const blogPosts8: BlogPost[] = [
       'how to raise prices with clients',
       'profit margin small business',
     ],
-    date: '2026-07-26',
+    date: '2026-09-10',
+    author: 'Prashant Upadhyay',
     readingTime: 11,
     category: 'Pricing',
+    heroImage: '/blog/service-pricing.svg',
+    heroAlt: 'Cost-plus vs value-based pricing methods side by side for Indian freelancers',
     excerpt:
       'Most small businesses price by looking at what competitors charge and shaving 10%. That is not a strategy — it is a slow way to work hard for nothing.',
     intro:
@@ -247,6 +265,10 @@ export const blogPosts8: BlogPost[] = [
         a: 'Recalculate your cost per billable hour annually, and review rates for new clients at the same time. Existing-client increases every twelve to eighteen months keep pace with cost inflation without any single increase feeling dramatic.',
       },
     ],
+    references: [
+      { label: 'MSME — Market Intelligence Cell', url: 'https://msme.gov.in' },
+      { label: 'GST Portal — GST for Service Providers', url: 'https://www.gst.gov.in' },
+    ],
     relatedSlugs: ['freelancer-pricing-guide', 'quotation-negotiation-tips', 'how-to-win-more-deals-with-quotations'],
   },
 
@@ -266,9 +288,12 @@ export const blogPosts8: BlogPost[] = [
       'sales process documentation',
       'how to convert quotation to invoice',
     ],
-    date: '2026-07-24',
+    date: '2026-09-12',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'Business Documentation',
+    heroImage: '/blog/quotation-to-cash.svg',
+    heroAlt: 'Quotation-to-cash workflow showing 6 steps from quote to payment receipt',
     excerpt:
       'A signed quotation is not revenue. Between yes and money there are five documents, and every one you skip is a place the deal can leak.',
     intro:
@@ -331,6 +356,10 @@ export const blogPosts8: BlogPost[] = [
         a: 'Give each type its own prefixed series within the financial year — QT-, PO-, PI-, DC-, INV-, REC-, CN-, DN- — and never mix them. A document tool that maintains each series automatically removes the risk of duplicates and gaps, which are the two things auditors question first.',
       },
     ],
+    references: [
+      { label: 'GST Portal — Invoice to Payment', url: 'https://www.gst.gov.in' },
+      { label: 'RBI — Payment Settlement Systems', url: 'https://www.rbi.org.in' },
+    ],
     relatedSlugs: ['business-documentation-guide', 'purchase-order-process-guide', 'how-to-recover-late-payments'],
   },
 
@@ -350,9 +379,12 @@ export const blogPosts8: BlogPost[] = [
       'business upi account',
       'digital payment for small business India',
     ],
-    date: '2026-07-24',
+    date: '2026-09-15',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Payments',
+    heroImage: '/blog/upi-qr-payments.svg',
+    heroAlt: 'UPI business payment setup showing QR code on invoice and payment confirmation checklist',
     excerpt:
       'A UPI QR code printed on your invoice removes every step between the customer reading your bill and the money reaching your account. Most businesses still make people ask for bank details.',
     intro:
@@ -410,6 +442,10 @@ export const blogPosts8: BlogPost[] = [
         q: 'Are UPI receipts taxable differently from cash?',
         a: 'No. Income is income regardless of how it is received. The difference is visibility — digital receipts leave a complete trail, which makes accurate reporting easier and inaccurate reporting far riskier. There is also no ₹2 lakh single-transaction restriction as there is for cash under Section 269ST.',
       },
+    ],
+    references: [
+      { label: 'NPCI — UPI Product Overview', url: 'https://www.npci.org.in/what-we-do/upi/product-overview' },
+      { label: 'RBI — Digital Payments Framework', url: 'https://www.rbi.org.in' },
     ],
     relatedSlugs: ['payment-receipt-format-guide', 'how-to-recover-late-payments', 'payment-terms-in-quotations'],
   },

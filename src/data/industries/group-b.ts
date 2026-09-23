@@ -399,6 +399,34 @@ Because most freelancers juggle multiple clients and projects simultaneously, ha
       'Review your rates every 6-12 months as your skills and demand grow — many freelancers under-price for years out of habit.',
       'Keep every sent quotation on file; it becomes useful both for tax records and for resolving scope disputes later.',
     ],
+    deepDive: [
+      {
+        heading: 'GST for Indian freelancers: when to register, what to charge, and how to show it on quotations',
+        body: `Freelancers in India are not automatically required to register for GST. The threshold is ₹20 lakh in annual service turnover in most states (₹10 lakh in certain north-eastern states). If your earnings from freelancing exceed this in a financial year, registration is mandatory. Below the threshold, registration is optional — but voluntary registration can actually benefit freelancers who work primarily with GST-registered businesses, since those clients can claim Input Tax Credit on the GST you charge them, which makes your services more attractive at the same quoted fee.
+
+When you are GST-registered, the correct rate for most creative and digital services — content writing, design, development, consulting, marketing — is 18%, applied under the reverse-charge mechanism only when the client is an unregistered dealer outside India (for export of services). For domestic clients, you issue a standard tax invoice with CGST 9% + SGST 9% for clients in your state, or IGST 18% for clients in another state. The SAC code depends on your service: 998311 for management consulting, 998313 for IT design and development, 998399 for other marketing and business services, and 998372 for video and audio editing.
+
+On your quotation, GST must be shown as a separate line item below the service fee, not rolled into the rate. A quotation that shows "Social media management: ₹23,600" as a single number is less trusted by finance teams than one that shows "₹20,000 + GST 18% (₹3,600) = ₹23,600." The breakdown confirms you are compliant and makes invoice matching easier for the client's accounts payable department. Unregistered freelancers should include a note on the quotation: "GST not applicable — annual turnover below ₹20 lakh threshold."`,
+      },
+      {
+        heading: 'How to price your freelance services: moving from time to value',
+        body: `Most Indian freelancers start by pricing hourly because it feels fair and easy to explain. The problem with hourly billing is that it punishes efficiency — as you get faster and better at your work, you earn less per project for the same output quality. It also focuses the client's attention on time spent rather than on results delivered.
+
+The cost-plus method is the right starting point for every freelancer who has never properly calculated their minimum rate. Add up all your monthly fixed costs: internet, software subscriptions, phone, a share of rent if you work from home, health insurance, professional development. Add what you want to save each month. Add a 30% provision for income tax and GST. Divide the total by the realistic number of billable hours in that month — usually 80 to 100 hours, not 160, once you subtract client calls, proposals, admin, and learning time. The result is your minimum viable hourly rate. Below that number, you are paying to work.
+
+Value-based pricing is the approach that frees you from the time trap. Instead of calculating what your time costs, you estimate the value the client gains from your work. A content writer who produces articles that generate 10,000 qualified visitors per month for an e-commerce brand is delivering measurable commercial value — pricing at ₹2/word is underpricing by a wide margin. Value-based fees require more confidence and a deeper understanding of the client's business, but they are the reason some freelancers bill ₹3-5 lakh per month while doing the same type of work as someone billing ₹30,000. On your quotation, anchor to the deliverable and its outcome, not to your hours — "Brand identity system including logo, colour palette, typography, and usage guide: ₹45,000" is a value statement. "20 hours × ₹2,250/hr: ₹45,000" is a commodity rate.`,
+      },
+      {
+        heading: 'Protecting yourself with scope: what your freelance quotation must make explicit',
+        body: `The most common source of freelance disputes in India is not payment — it is scope. The client thought the quotation included unlimited revisions. The freelancer assumed it covered only two rounds. The client believed the website fee included content writing. The freelancer included only design. These are not dishonest disagreements; they are the natural consequence of a quotation that described the deliverable without defining its boundaries.
+
+Every freelance quotation should have an explicit scope section that lists what is included and, equally important, what is not included. For a website project: "This quotation covers design and development of up to 5 pages as specified in the brief. Content writing, images (unless specifically listed), domain registration, hosting, and ongoing maintenance are not included." For content writing: "Eight articles of 1,000–1,200 words each in English, on topics provided by the client. Two rounds of revisions per article are included. A third or subsequent revision round is billed at ₹500 per article."
+
+The quotation should also define what triggers a revision — "Revision means changes to the approved concept. A request to change the concept after approval is a new project." This single line, when written into a quotation, eliminates an entire category of scope creep that otherwise erodes margin invisibly across the project.
+
+State your intellectual property terms. In India, copyright in commissioned creative work is a nuanced area — the Commissioner for Intellectual Property has consistently held that the author retains copyright unless an explicit written assignment is made. Your quotation should state clearly: "Copyright transfers to the client on full receipt of the quoted fee. Prior to payment, all work remains the property of [Your Name]." This clause alone protects you against a client who has received the work but delays final payment indefinitely.`,
+      },
+    ],
     downloadGuide: `Download your freelance quotation as a clean, professional PDF with your branding, clear deliverables, pricing model, and payment terms. Send it straight to the client over email or WhatsApp right after your discovery call, while your pitch is still fresh in their mind.`,
     faqs: [
       {

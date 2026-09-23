@@ -95,6 +95,38 @@ QuotationMaker.in gives Indian civil contractors and builders a ready constructi
       'Maintain a template of standard rates but always customise for site-specific access and soil conditions.',
       'Follow up with a written work order once the client accepts the quotation to formalise the agreement.',
     ],
+    deepDive: [
+      {
+        heading: 'How construction pricing works in India: per sq.ft, BOQ, and turnkey',
+        body: `The three most common pricing structures for construction projects in India are the per square foot rate, the Bill of Quantities (BOQ), and the turnkey lump sum. Each works for a different client type and project scale, and picking the wrong one causes disputes even when both parties acted in good faith.
+
+The per square foot rate is the most common choice for residential construction in Indian cities. A contractor quotes ₹1,800–₹2,400/sq.ft for a G+1 house in Pune depending on material specification, and the client can immediately compare it against market rates they've heard from neighbours. The challenge is that "per sq.ft" means wildly different things to different clients — some assume it includes flooring, false ceiling, and painting; others expect just the civil structure. Every per sq.ft quotation must have a clearly written inclusions and exclusions list, or you will spend more time arguing at the finishing stage than you spent building the structure.
+
+The BOQ or item-rate format lists each work item separately — excavation, PCC, RCC, brickwork, plastering, waterproofing — with its unit, quantity, and rate. This is the standard for commercial construction, institutional buildings, and any government or PSU tender in India, where engineers cross-verify measurements item by item at each running bill. BOQ quotations take longer to prepare but are almost dispute-free at billing time, because quantities are jointly re-measured before payment is released.
+
+The turnkey lump sum model is preferred by clients who do not want to manage the process at all — they pay one agreed price for a complete, move-in-ready building. Contractors take on material risk, labour management, and coordination entirely. The quotation must spell out quality specifications (tile brand, paint brand, fitting grades) precisely, because "turnkey" invites future disagreement about what "complete" meant. Escalation clauses protecting the contractor against material price increases are essential on any turnkey quote with a timeline beyond four months.`,
+      },
+      {
+        heading: 'GST on construction and works contracts: what Indian contractors must know',
+        body: `Construction services fall under the GST category of "works contracts," defined as a contract that involves both supply of goods (materials) and supply of services (labour and expertise) resulting in the creation of immovable property. The standard GST rate for works contracts on commercial and industrial buildings is 18%. Residential construction for a developer's project attracts 12% (with input tax credit). Affordable housing projects under specific central and state government schemes attract a concessional 1% or 5% rate without input tax credit.
+
+The key compliance requirement for contractors is issuing a tax invoice — not just a challan or receipt — for each running bill and stage payment. The invoice must carry your GSTIN, the client's GSTIN if they are a registered business, the SAC code 9954, the place of supply (the state where the project site is located), and a sequential invoice number. For inter-state projects — where a contractor from Maharashtra does work on a site in Telangana — IGST applies at the applicable rate.
+
+Input tax credit (ITC) on construction is restricted. A registered contractor can claim ITC on cement, steel, and other goods purchased for a project, but the buyer (if the end-use is a commercial building for the buyer's own use) typically cannot claim ITC on the construction service. This asymmetry matters when pricing B2B projects: the buyer knows they cannot recover the GST, so the full rate lands on their cost — relevant when comparing your GST-inclusive quote against a competitor who is unregistered.
+
+The composition scheme is available to contractors with annual turnover below ₹1.5 crore, but those enrolled cannot collect GST from clients, cannot claim ITC, and must pay a 6% composition levy on turnover. For most growth-oriented contractors, remaining in the regular GST regime and investing in proper invoicing is the better long-term position.`,
+      },
+      {
+        heading: 'Cash flow management: why stage-wise billing saves construction businesses',
+        body: `Cash flow is the number one operational problem for Indian civil contractors and builders. A project may run for 18 months; material payments are immediate, but client payments arrive in arrears. Without a structured milestone billing schedule embedded in the quotation, contractors routinely fund construction from personal savings or overdraft facilities while the client holds significant unbilled value.
+
+The standard milestone structure for residential construction in India divides the project into five payment stages: advance on order confirmation (10–20%), plinth completion (15–20%), slab casting (20–25%), brickwork and plastering completion (20%), and possession with final snag clearance (15%). The exact percentages are negotiable, but the principle is that the contractor should never be more than one stage ahead in work without a corresponding payment having been received.
+
+Embedding this schedule in your quotation — not just in a verbal agreement — does two things. First, it gives the client a clear expectation and prevents the "we'll pay when it looks more complete" delay. Second, when a payment is delayed, you have a written basis for stopping work or invoking interest under the MSMED Act if you are a registered micro or small enterprise. Contractors registered on the Udyam portal and billing clients who are larger enterprises have legal recourse under Section 15 of the MSMED Act, which mandates payment within 45 days of the agreed date.
+
+Working capital facilities from banks and NBFCs for construction projects are typically tied to invoice and work-order documentation. A properly formatted quotation that has been signed and accepted — followed by GST-compliant running bill invoices — is the paper trail that makes a working capital loan application straightforward. Contractors who operate without written quotations routinely struggle to access this financing even when they have a strong order book.`,
+      },
+    ],
     downloadGuide: `Once your construction quotation is ready, download it as a clean PDF with your logo, GST details, and item-wise sq.ft breakup. Share it instantly over WhatsApp or email so clients can review and approve it from their phone, and keep a copy for your own project records and future reference during billing stages.`,
     faqs: [
       {

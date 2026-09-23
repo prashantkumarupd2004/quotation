@@ -252,6 +252,36 @@ QuotationMaker.in gives web developers and agencies a fast way to build this kin
       'Always include your GSTIN and PAN on the quotation for B2B clients so it can move seamlessly into an invoice later.',
       'Re-quote a project if the scope changes mid-development rather than absorbing extra work silently — this is a leading cause of freelancer burnout.',
     ],
+    deepDive: [
+      {
+        heading: 'How to structure a web development project quote: phases, milestones, and what to charge for each',
+        body: `A web development project quotation that lists only a single total price — "5-page website: ₹45,000" — creates three problems at once. The client cannot evaluate whether the price is reasonable without understanding what they are paying for. The developer has no contractual protection if the scope expands. And the payment schedule becomes a negotiation from scratch after the quote is accepted.
+
+The professional approach is to break the project into phases, each with its own deliverable, timeline, and payment trigger. A standard web project for an Indian SME client typically runs in four phases: Discovery and Information Architecture (understanding goals, sitemap, tech stack, hosting); Design (wireframes, UI mockups in Figma, design approval round); Development (building on the agreed CMS or framework, integration of content, forms, and tools); and Deployment and Handover (go-live on production server, browser testing, basic SEO setup, client training).
+
+Pricing each phase separately does something important: it allows the client to approve and pay for each stage before you proceed, which means your unbilled exposure is always limited to one phase of work. It also creates natural checkpoints where scope changes can be assessed and re-quoted rather than absorbed silently. The payment structure that works well for Indian web developers is 30% on order confirmation (covers your discovery time and protects you if the client goes quiet), 40% on design approval, and the remaining 30% on go-live. For e-commerce projects with higher complexity and integration risk, a 40–30–30 split is common.`,
+      },
+      {
+        heading: 'Maintenance and hosting: the recurring revenue opportunity in web development quotations',
+        body: `One-time project fees create unpredictable income for web developers and agencies. The businesses that become financially stable in this industry are usually those that convert a significant portion of revenue to recurring contracts — and a properly structured web development quotation is the right moment to introduce this conversation.
+
+Every website delivered to an Indian business client has ongoing requirements: hosting renewal, domain renewal, security updates (especially critical for WordPress, WooCommerce, and other CMS-based sites), backup management, and eventually content updates and feature additions. If your initial quotation does not mention these, the client defaults to assuming you will handle them as part of the project fee, or they disappear to a cheaper hosting reseller who gives them no support.
+
+The recommended approach is to include a maintenance section in your quotation as an optional or recommended line item: "Annual maintenance plan — includes hosting on managed VPS, security monitoring, monthly updates, and up to 2 hours of content changes per month: ₹18,000/year." This is priced as a separate, optional add-on so it does not inflate the project comparison cost, but it is introduced at the moment the client is most engaged and has the clearest understanding of why they need it.
+
+GST on annual maintenance contracts is 18% on the service portion. If you bundle hosting (a technically imported service from a data centre) with your maintenance fee and bill as a single service, the full amount is taxable at 18% in your hands. This is actually simpler from a compliance standpoint than itemising hosting separately and treating it as a pass-through.`,
+      },
+      {
+        heading: 'Writing a web development scope that prevents scope creep',
+        body: `Scope creep is the single biggest margin killer for Indian web developers and agencies. A project quoted at ₹60,000 that ends up taking twice the estimated time because of undefined requirements, added features, and unlimited revisions is a project that earned ₹30,000 in effective rate terms. The defence against scope creep is not a stronger personality — it is a more precise quotation.
+
+The scope section of a web development quotation must specify the number of pages, the number of page templates, the CMS or framework, the integrations included (payment gateway, CRM, email marketing), and the number of revision rounds for design. It must also explicitly state what is excluded. Common exclusions to name on every web quotation: content writing and copywriting, photography and video (unless the client provides them), logo or brand creation (unless listed separately), SEO keyword research and content strategy, third-party plugin or theme licence fees, and post-handover changes beyond the agreed defect liability period.
+
+Define what counts as a revision versus what counts as a new requirement. "Revision" means changing the placement, colour, or copy of an existing element. "Adding a new section, page, or feature that was not in the brief" is additional scope and is quoted separately. Include this definition in the quotation itself, under Terms and Conditions. When a client later asks to add a WhatsApp chat widget, a booking calendar, or a members-only section that was not discussed in the brief, you have a written baseline to reference rather than a memory dispute.
+
+One additional protection: specify the handover format. "On project completion and receipt of final payment, the following will be transferred to the client: website files and database, login credentials for the CMS, domain registrar access, and hosting control panel access." Clients who do not know what to expect at handover sometimes delay final payment while negotiating access that should have been standard. Listing it upfront removes the ambiguity.`,
+      },
+    ],
     downloadGuide: `Download your web development quotation as a client-ready PDF, or share a live link that updates automatically if you revise pricing before approval. Each quotation includes itemised project phases, GST calculation, and your payment milestone schedule, giving clients everything their finance or procurement team needs to sign off quickly.`,
     faqs: [
       {

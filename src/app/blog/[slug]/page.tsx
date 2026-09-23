@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, ExternalLink, RefreshCw, User } from 'lucide-react';
 import { blogPosts, getPostBySlug } from '@/data/blog';
 import { PageHero } from '@/components/layout/page-hero';
 import { Faq } from '@/components/ui/faq';
@@ -85,19 +86,61 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           { name: post.category, path: `/blog/${post.slug}` },
         ]}
       >
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+          <Link
+            href="/author/prashant-upadhyay"
+            className="flex items-center gap-1.5 font-medium text-foreground hover:text-primary transition-colors"
+          >
+            <User className="h-4 w-4" /> {post.author}
+          </Link>
           <span className="flex items-center gap-1.5">
             <Calendar className="h-4 w-4" /> {formatDate(post.date)}
           </span>
+          {post.updatedDate ? (
+            <span className="flex items-center gap-1.5 text-xs">
+              <RefreshCw className="h-3.5 w-3.5" /> Updated {formatDate(post.updatedDate)}
+            </span>
+          ) : null}
           <span className="flex items-center gap-1.5">
             <Clock className="h-4 w-4" /> {post.readingTime} min read
           </span>
         </div>
       </PageHero>
 
+      {/* Hero image — rendered from the post's heroImage field */}
+      {post.heroImage && (
+        <div className="container max-w-4xl pt-8">
+          <div className="overflow-hidden rounded-2xl border border-border">
+            <Image
+              src={post.heroImage}
+              alt={post.heroAlt ?? `Illustration for: ${post.title}`}
+              width={1200}
+              height={630}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
+        </div>
+      )}
+
       <div className="container grid grid-cols-1 gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article className="min-w-0">
           <p className="text-xl leading-relaxed text-muted-foreground">{post.intro}</p>
+
+          {/* "Last Verified" callout — shown on regulatory/GST posts that have an updatedDate */}
+          {post.updatedDate && post.category === 'GST & Tax' && (
+            <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4">
+              <RefreshCw className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+              <div className="text-sm leading-relaxed">
+                <span className="font-semibold text-foreground">Last verified {formatDate(post.updatedDate)}.</span>{' '}
+                <span className="text-muted-foreground">
+                  GST rules, rates and thresholds change. This article reflects the position as of the date above.
+                  If you spot something outdated, please{' '}
+                  <a href="/contact" className="font-medium text-primary hover:underline">let us know</a>.
+                </span>
+              </div>
+            </div>
+          )}
 
           {post.sections.map((section, i) => (
             <section key={i} className="mt-10">
@@ -124,6 +167,28 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <section className="mt-14">
               <h2 className="mb-6 font-display text-2xl font-bold">Frequently asked questions</h2>
               <Faq items={post.faqs} />
+            </section>
+          ) : null}
+
+          {/* Sources / references — boosts E-E-A-T by citing authoritative external sites */}
+          {post.references && post.references.length > 0 ? (
+            <section className="mt-12 rounded-2xl border border-border bg-muted/30 p-6">
+              <h2 className="font-display text-lg font-bold">Sources</h2>
+              <ul className="mt-4 space-y-2">
+                {post.references.map((ref) => (
+                  <li key={ref.url}>
+                    <a
+                      href={ref.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5 flex-shrink-0" />
+                      {ref.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </section>
           ) : null}
 

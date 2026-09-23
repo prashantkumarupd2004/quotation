@@ -21,9 +21,12 @@ export const blogPosts6: BlogPost[] = [
       'invoice numbering rules India',
       'invoice for small business',
     ],
-    date: '2026-07-18',
+    date: '2026-07-02',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'Invoicing',
+    heroImage: '/blog/free-invoice-guide.svg',
+    heroAlt: 'Invoice maker showing paid, unpaid and partial payment status badges with a sample invoice PDF',
     excerpt:
       'From the mandatory fields to numbering rules and payment terms that actually get you paid — everything you need to raise your first professional invoice online, free.',
     intro:
@@ -79,6 +82,10 @@ export const blogPosts6: BlogPost[] = [
         a: 'Never delete or reuse the number. For an overcharge, issue a credit note referencing the invoice; for an undercharge, a debit note. For minor non-financial errors, reissue the invoice with the same number clearly marked as a revised copy, and keep both versions on file.',
       },
     ],
+    references: [
+      { label: 'GST Portal — E-Invoice System', url: 'https://einvoice1.gst.gov.in' },
+      { label: 'CBIC — Tax Invoice Rules', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['invoice-vs-quotation', 'gst-invoice-rules-guide', 'payment-terms-in-quotations'],
   },
 
@@ -98,9 +105,13 @@ export const blogPosts6: BlogPost[] = [
       'gst invoice maker free',
       'tax invoice format India',
     ],
-    date: '2026-07-18',
+    date: '2026-07-09',
+    updatedDate: '2026-09-01',
+    author: 'Prashant Upadhyay',
     readingTime: 10,
     category: 'GST & Tax',
+    heroImage: '/blog/gst-invoice-rules.svg',
+    heroAlt: 'GST tax invoice mandatory fields checklist with CGST, SGST and IGST labels',
     excerpt:
       'A GST invoice with missing fields can cost your buyer their input tax credit. Here is the complete checklist of what Rule 46 requires — and the errors to avoid.',
     intro:
@@ -160,6 +171,11 @@ export const blogPosts6: BlogPost[] = [
         a: 'For B2B invoices where your turnover requires HSN disclosure, missing codes are a compliance defect that can attract penalties and complicate the buyer’s credit. For B2C invoices under ₹5 crore turnover, HSN is optional. When in doubt, include the code — it costs nothing.',
       },
     ],
+    references: [
+      { label: 'GST Portal — Official GST India', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — GST Invoice Notification', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Council', url: 'https://gstcouncil.gov.in' },
+    ],
     relatedSlugs: ['gst-in-quotations', 'free-invoice-maker-online-guide', 'credit-note-debit-note-explained'],
   },
 
@@ -179,9 +195,12 @@ export const blogPosts6: BlogPost[] = [
       'how to create purchase order',
       'vendor management small business',
     ],
-    date: '2026-07-18',
+    date: '2026-07-16',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Business Documentation',
+    heroImage: '/blog/purchase-order-guide.svg',
+    heroAlt: 'Purchase order process flow diagram from PR to payment release',
     excerpt:
       'Businesses that buy on the phone overpay and under-document. A simple PO process — order, deliver, match, pay — fixes both. Here is how to run it.',
     intro:
@@ -232,6 +251,10 @@ export const blogPosts6: BlogPost[] = [
         a: 'A PO orders goods or standard services from an external vendor. A work order describes a job to be executed, often internally or on a site. For buying materials and equipment, raise a PO; the same generator handles service orders by describing the service as the line item.',
       },
     ],
+    references: [
+      { label: 'MCA — Procurement Rules', url: 'https://www.mca.gov.in' },
+      { label: 'MSME — Government Procurement', url: 'https://msme.gov.in' },
+    ],
     relatedSlugs: ['purchase-order-vs-quotation', 'delivery-challan-complete-guide', 'free-invoice-maker-online-guide'],
   },
 
@@ -251,9 +274,12 @@ export const blogPosts6: BlogPost[] = [
       'challan generator online free',
       'e-way bill delivery challan',
     ],
-    date: '2026-07-18',
+    date: '2026-07-23',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'GST & Tax',
+    heroImage: '/blog/delivery-challan-guide.svg',
+    heroAlt: 'Delivery challan format showing when to use it for job work and branch transfers',
     excerpt:
       'Goods do not always move against an invoice — job work, exhibitions, approvals and branch transfers all travel on a delivery challan. Here is when and how to use one correctly.',
     intro:
@@ -305,6 +331,10 @@ export const blogPosts6: BlogPost[] = [
         a: 'As GST documents, retain them with your other records — at least 72 months from the due date of the annual return for the year concerned. For job work, retain the outward and corresponding return challans together so the material loop is provable.',
       },
     ],
+    references: [
+      { label: 'E-Way Bill System — NIC', url: 'https://ewaybillgst.gov.in' },
+      { label: 'CBIC — Delivery Challan Rules', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['gst-invoice-rules-guide', 'purchase-order-process-guide', 'free-invoice-maker-online-guide'],
   },
 
@@ -324,9 +354,12 @@ export const blogPosts6: BlogPost[] = [
       'credit note generator free',
       'debit note format gst',
     ],
-    date: '2026-07-18',
+    date: '2026-07-30',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'GST & Tax',
+    heroImage: '/blog/credit-debit-note.svg',
+    heroAlt: 'Side-by-side comparison of credit note and debit note purposes under GST',
     excerpt:
       'Invoices cannot be edited after issue — they are corrected with credit and debit notes. Here is exactly when to use which, with GST time limits and worked examples.',
     intro:
@@ -380,6 +413,10 @@ export const blogPosts6: BlogPost[] = [
         q: 'What details are mandatory on credit and debit notes?',
         a: 'Supplier details with GSTIN, a unique serial number and date, recipient details, the original invoice number(s) and date(s), the differential taxable value and tax, the reason, and an authorised signature — the same discipline as a tax invoice, applied to the correction.',
       },
+    ],
+    references: [
+      { label: 'GST Portal — Credit and Debit Notes', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Section 34 GST Act', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['gst-invoice-rules-guide', 'free-invoice-maker-online-guide', 'how-to-revise-a-quotation'],
   },

@@ -47,6 +47,9 @@ export const deliveryChallanContent: ToolContent = {
     features: 'grid',
     useCases: 'accordion',
     example: 'table',
+    whatIs: 'sidebar',
+    headingStyle: 'bar',
+    headingMarker: '→',
   },
   order: [
     'whatIs',

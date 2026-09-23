@@ -48,6 +48,9 @@ export const invoiceContent: ToolContent = {
     features: 'grid',
     useCases: 'cards',
     example: 'table',
+    whatIs: 'sidebar',
+    headingStyle: 'bar',
+    headingMarker: '₹',
   },
   order: [
     'widget',

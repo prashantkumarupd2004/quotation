@@ -66,8 +66,17 @@ export function Navbar() {
     >
       <nav className="container flex h-16 items-center justify-between gap-4" aria-label="Main">
         <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-lg shadow-primary/30">
-            <FileText className="h-5 w-5" />
+          {/* Premium logo mark: stylised Q with document corner fold */}
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#4f46e5] to-[#7c3aed] shadow-lg shadow-primary/30">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              {/* Document body */}
+              <path d="M4 2.5A1.5 1.5 0 0 1 5.5 1h8L17 4.5V19a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 4 19V2.5Z" fill="white" fillOpacity="0.95"/>
+              {/* Fold corner */}
+              <path d="M13.5 1 17 4.5h-3.5V1Z" fill="#c4b5fd"/>
+              {/* Q letter strokes */}
+              <circle cx="10.5" cy="11.5" r="3" stroke="#4f46e5" strokeWidth="1.5" fill="none"/>
+              <line x1="12.6" y1="13.6" x2="14.5" y2="15.5" stroke="#4f46e5" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
           </span>
           <span className="tracking-tight">
             Quotation<span className="gradient-text">Maker</span>

@@ -14,9 +14,12 @@ export const blogPosts2: BlogPost[] = [
       'freelancer quotation',
       'GST for freelancers',
     ],
-    date: '2026-07-06',
+    date: '2026-02-12',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Pricing',
+    heroImage: '/blog/freelancer-pricing.svg',
+    heroAlt: 'Freelancer minimum viable rate formula and GST registration threshold for Indian freelancers',
     excerpt:
       'A practical, India-specific framework for freelancers to price their work fairly, quote clients professionally, and avoid the classic underpricing trap.',
     intro:
@@ -75,6 +78,10 @@ export const blogPosts2: BlogPost[] = [
         a: 'Show the breakdown of deliverables and time involved rather than defending the number itself. If they still push back, offer a smaller scope at a lower price instead of discounting the same scope.',
       },
     ],
+    references: [
+      { label: 'Udyam Registration — MSME Portal', url: 'https://udyamregistration.gov.in' },
+      { label: 'GST Portal — Threshold Limits', url: 'https://www.gst.gov.in' },
+    ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'invoice-vs-quotation', 'small-business-sales-guide'],
   },
   {
@@ -90,9 +97,12 @@ export const blogPosts2: BlogPost[] = [
       'SEO proposal India',
       'social media marketing quotation',
     ],
-    date: '2026-07-06',
+    date: '2026-02-19',
+    author: 'Prashant Upadhyay',
     readingTime: 9,
     category: 'Sales & Negotiation',
+    heroImage: '/blog/digital-marketing-proposal.svg',
+    heroAlt: 'Digital marketing proposal structure with 6 must-have sections',
     excerpt:
       'A complete structure for writing digital marketing proposals that Indian clients actually approve, with pricing models and GST-compliant quoting tips.',
     intro:
@@ -154,6 +164,10 @@ export const blogPosts2: BlogPost[] = [
         a: 'Pricing should come after you\'ve established the strategy and value, typically in the second half of the proposal - leading with price before context often triggers premature rejection based on number alone.',
       },
     ],
+    references: [
+      { label: 'MeitY — Ministry of Electronics and IT', url: 'https://www.meity.gov.in' },
+      { label: 'GST Portal — SAC Code Finder', url: 'https://www.gst.gov.in' },
+    ],
     relatedSlugs: ['freelancer-pricing-guide', 'small-business-sales-guide', 'how-to-write-a-professional-quotation'],
   },
   {
@@ -169,9 +183,12 @@ export const blogPosts2: BlogPost[] = [
       'GST invoice vs quotation',
       'business documents India',
     ],
-    date: '2026-07-06',
+    date: '2026-02-26',
+    author: 'Prashant Upadhyay',
     readingTime: 7,
     category: 'Business Documentation',
+    heroImage: '/blog/invoice-vs-quotation.svg',
+    heroAlt: 'Sales process timeline showing quotation, acceptance, tax invoice and payment receipt stages',
     excerpt:
       'A clear, practical breakdown of quotations, proforma invoices, and tax invoices - what each one legally means and when Indian businesses should use them.',
     intro:
@@ -240,6 +257,10 @@ export const blogPosts2: BlogPost[] = [
         a: 'Even without GST registration, using quotations and proforma invoices correctly improves professionalism and reduces payment disputes. Once you cross the GST registration threshold, correct invoicing becomes a legal requirement.',
       },
     ],
+    references: [
+      { label: 'GST Portal — Invoice Rules', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Tax Invoice Format', url: 'https://www.cbic.gov.in' },
+    ],
     relatedSlugs: ['gst-in-quotations', 'quotation-vs-estimate', 'business-documentation-guide'],
   },
   {
@@ -255,9 +276,12 @@ export const blogPosts2: BlogPost[] = [
       'quotation invoice receipt difference',
       'MSME documentation checklist',
     ],
-    date: '2026-07-06',
+    date: '2026-03-05',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Business Documentation',
+    heroImage: '/blog/record-keeping.svg',
+    heroAlt: 'Business documentation checklist showing required documents and retention periods',
     excerpt:
       'A complete, practical checklist of the business documents every Indian small business and freelancer actually needs, and how to keep them organized.',
     intro:
@@ -326,6 +350,10 @@ export const blogPosts2: BlogPost[] = [
         a: 'You can for very small or repeat transactions with an established client, but for new clients or larger projects, a quotation protects both parties by documenting agreed scope and price before work begins.',
       },
     ],
+    references: [
+      { label: 'MCA — Document Filing Requirements', url: 'https://www.mca.gov.in' },
+      { label: 'MSME — Business Registration', url: 'https://msme.gov.in' },
+    ],
     relatedSlugs: ['invoice-vs-quotation', 'gst-in-quotations', 'quotation-format-in-india'],
   },
   {
@@ -341,9 +369,12 @@ export const blogPosts2: BlogPost[] = [
       'sales for small business',
       'handling price objections India',
     ],
-    date: '2026-07-06',
+    date: '2026-03-12',
+    author: 'Prashant Upadhyay',
     readingTime: 8,
     category: 'Sales & Negotiation',
+    heroImage: '/blog/win-more.svg',
+    heroAlt: 'Sales guide showing strategies to win more business with professional quotations',
     excerpt:
       'Practical, India-specific sales tactics for small businesses to send better quotations, follow up effectively, and close more deals without discounting blindly.',
     intro:
@@ -401,6 +432,10 @@ export const blogPosts2: BlogPost[] = [
         q: 'Is tiered pricing effective for small business quotations?',
         a: 'Yes, offering basic, standard, and premium options generally increases conversion by shifting the customer\'s decision from whether to buy to which option to choose.',
       },
+    ],
+    references: [
+      { label: 'MSME — Schemes for Small Businesses', url: 'https://msme.gov.in' },
+      { label: 'GST Portal — Composition Scheme', url: 'https://www.gst.gov.in' },
     ],
     relatedSlugs: ['freelancer-pricing-guide', 'digital-marketing-proposal-guide', 'how-to-write-a-professional-quotation'],
   },

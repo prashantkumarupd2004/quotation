@@ -1,0 +1,40 @@
+﻿<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <text x="40" y="140" font-size="40" font-weight="800" fill="#f1f5f9">GST in Quotations</text>
+  <text x="40" y="200" font-size="24" fill="#94a3b8">CGST, SGST &amp; IGST — Which to Apply and How</text>
+  <!-- CGST+SGST card -->
+  <rect x="40" y="240" width="340" height="200" rx="20" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="210" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#818cf8">CGST + SGST</text>
+  <text x="210" y="310" text-anchor="middle" font-size="12" fill="#64748b">Intra-state supply</text>
+  <text x="210" y="340" text-anchor="middle" font-size="12" fill="#64748b">(Buyer and Seller in same state)</text>
+  <text x="210" y="380" text-anchor="middle" font-size="22" font-weight="800" fill="#f1f5f9">9% + 9%</text>
+  <text x="210" y="410" text-anchor="middle" font-size="12" fill="#64748b">= 18% total on 18% item</text>
+  <!-- IGST card -->
+  <rect x="400" y="240" width="340" height="200" rx="20" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="570" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#67e8f9">IGST</text>
+  <text x="570" y="310" text-anchor="middle" font-size="12" fill="#64748b">Inter-state supply</text>
+  <text x="570" y="340" text-anchor="middle" font-size="12" fill="#64748b">(Buyer and Seller in different states)</text>
+  <text x="570" y="380" text-anchor="middle" font-size="22" font-weight="800" fill="#f1f5f9">18%</text>
+  <text x="570" y="410" text-anchor="middle" font-size="12" fill="#64748b">= same 18% total, collected as IGST</text>
+  <!-- Key rule -->
+  <rect x="40" y="460" width="700" height="120" rx="20" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="390" y="500" text-anchor="middle" font-size="14" font-weight="700" fill="#4ade80">Determining Factor: Place of Supply</text>
+  <text x="60" y="528" font-size="13" fill="#94a3b8">= the buyer's registered address (not your own location)</text>
+  <text x="60" y="555" font-size="12" fill="#64748b">Always state on quotation: "Place of Supply: [State Name]" to avoid disputes</text>
+  <!-- Sample right panel -->
+  <rect x="760" y="60" width="400" height="510" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="960" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="#f1f5f9">Sample GST Quotation Line</text>
+  <g font-size="12" fill="#64748b" transform="translate(780,140)">
+    <text>Service: Digital Marketing</text><text y="30">SAC Code: 998364</text>
+    <text y="60">Value: ₹20,000</text>
+    <text y="100" fill="#818cf8">If buyer in SAME state:</text>
+    <text y="125">CGST @ 9%: ₹1,800</text><text y="150">SGST @ 9%: ₹1,800</text>
+    <text y="175" font-weight="700" fill="#94a3b8">Total: ₹23,600</text>
+    <text y="215" fill="#67e8f9">If buyer in DIFFERENT state:</text>
+    <text y="240">IGST @ 18%: ₹3,600</text>
+    <text y="265" font-weight="700" fill="#94a3b8">Total: ₹23,600</text>
+    <text y="305" fill="#f87171">Common mistake:</text>
+    <text y="330" fill="#64748b">Using CGST/SGST for out-of-state</text>
+    <text y="355">buyer = GSTR-1 mismatch</text>
+  </g>
+</svg>

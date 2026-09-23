@@ -48,6 +48,22 @@ export type UseCasesVariant = 'cards' | 'accordion' | 'columns';
 export type ExampleVariant = 'table' | 'paper' | 'strip';
 export type IndustriesVariant = 'tiles' | 'rows' | 'ledger';
 
+/**
+ * WhatIs section treatment:
+ * - 'sidebar'  : Lead para in an accented icon card (Invoice, Receipt, Challan)
+ * - 'callout'  : Full-width highlighted blockquote (GST, Proforma, Credit Note)
+ * - 'prose'    : Clean formal paragraphs only (PO, Estimate, Debit Note)
+ */
+export type WhatIsVariant = 'sidebar' | 'callout' | 'prose';
+
+/**
+ * Decorative marker before every section heading:
+ * - 'bar'   : Colored vertical bar (accent border-left)
+ * - 'pill'  : Small colored pill chip before the text
+ * - 'plain' : Just a thin accent underline, no prefix
+ */
+export type HeadingStyle = 'bar' | 'pill' | 'plain';
+
 /** Renderable blocks, listed in `order` to control the page's section sequence. */
 export type SectionKey =
   | 'widget'
@@ -127,6 +143,21 @@ export interface ToolContent {
     example: ExampleVariant;
     /** Defaults to 'tiles' when omitted. */
     industries?: IndustriesVariant;
+    /**
+     * How the "What is a …" section is presented.
+     * Defaults to 'prose' when omitted.
+     */
+    whatIs?: WhatIsVariant;
+    /**
+     * Decorative style for every h2 SectionHeading on this page.
+     * Defaults to 'bar' when omitted.
+     */
+    headingStyle?: HeadingStyle;
+    /**
+     * Single character or short symbol shown as an accent before headings
+     * when headingStyle is 'bar'. Defaults to '▍'.
+     */
+    headingMarker?: string;
   };
   /** Section render sequence. Omitting a key omits the section entirely. */
   order: SectionKey[];
