@@ -5,6 +5,18 @@ export interface BlogSection {
   body: string;
   /** Optional bullet list rendered after the body. */
   bullets?: string[];
+  /** Optional numbered list rendered after bullets. */
+  numbered?: string[];
+  /** Optional table rendered after body. */
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
+  /** Optional callout box. */
+  callout?: {
+    type: 'tip' | 'warning' | 'important' | 'note';
+    text: string;
+  };
 }
 
 export interface BlogPost {

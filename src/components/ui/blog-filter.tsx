@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock, User } from "lucide-react";
+import { ArrowRight, Calendar, Clock, RefreshCw, User } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { formatDate } from "@/lib/format";
 
@@ -12,6 +12,7 @@ interface Post {
   category: string;
   excerpt: string;
   date: string;
+  updatedDate?: string;
   readingTime: number;
   author: string;
 }
@@ -54,9 +55,16 @@ export function BlogFilter({ posts, categories }: Props) {
               href={`/blog/${post.slug}`}
               className="glass-card group flex h-full flex-col p-6"
             >
-              <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                {post.category}
-              </span>
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <span className="w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  {post.category}
+                </span>
+                {post.updatedDate && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                    <RefreshCw className="h-2.5 w-2.5" /> Updated
+                  </span>
+                )}
+              </div>
               <h3 className="mt-3 font-display text-lg font-bold group-hover:text-primary">
                 {post.title}
               </h3>
@@ -65,7 +73,7 @@ export function BlogFilter({ posts, categories }: Props) {
               </p>
               <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" /> {formatDate(post.date)}
+                  <Calendar className="h-3.5 w-3.5" /> {formatDate(post.updatedDate ?? post.date)}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-3.5 w-3.5" /> {post.readingTime} min

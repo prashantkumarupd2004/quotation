@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowRight, Calendar, Clock, ExternalLink, RefreshCw, User } from 'lucide-react';
+import { ArrowRight, BookOpen, Calendar, Clock, ExternalLink, Instagram, Mail, RefreshCw, User } from 'lucide-react';
 import { blogPosts, getPostBySlug } from '@/data/blog';
 import { PageHero } from '@/components/layout/page-hero';
 import { Faq } from '@/components/ui/faq';
@@ -127,15 +127,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <article className="min-w-0">
           <p className="text-xl leading-relaxed text-muted-foreground">{post.intro}</p>
 
-          {/* "Last Verified" callout — shown on regulatory/GST posts that have an updatedDate */}
-          {post.updatedDate && post.category === 'GST & Tax' && (
+          {/* "Last Verified" callout — shown on ALL posts that have an updatedDate */}
+          {post.updatedDate && (
             <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4">
               <RefreshCw className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
               <div className="text-sm leading-relaxed">
                 <span className="font-semibold text-foreground">Last verified {formatDate(post.updatedDate)}.</span>{' '}
                 <span className="text-muted-foreground">
-                  GST rules, rates and thresholds change. This article reflects the position as of the date above.
-                  If you spot something outdated, please{' '}
+                  We review our guides regularly to keep them accurate. If you spot something outdated, please{' '}
                   <a href="/contact" className="font-medium text-primary hover:underline">let us know</a>.
                 </span>
               </div>
@@ -159,6 +158,57 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </li>
                   ))}
                 </ul>
+              ) : null}
+              {section.numbered?.length ? (
+                <ol className="mt-4 space-y-2 list-none">
+                  {section.numbered.map((item, idx) => (
+                    <li key={item} className="flex items-start gap-3 text-muted-foreground">
+                      <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                        {idx + 1}
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              ) : null}
+              {section.table ? (
+                <div className="mt-5 overflow-x-auto rounded-xl border border-border">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/50">
+                        {section.table.headers.map((h) => (
+                          <th key={h} className="px-4 py-3 text-left font-semibold text-foreground">{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row, ri) => (
+                        <tr key={ri} className={ri % 2 === 0 ? 'bg-background' : 'bg-muted/20'}>
+                          {row.map((cell, ci) => (
+                            <td key={ci} className="px-4 py-3 text-muted-foreground">{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : null}
+              {section.callout ? (
+                <div className={`mt-5 flex items-start gap-3 rounded-2xl border p-4 ${
+                  section.callout.type === 'tip' ? 'border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-950/30' :
+                  section.callout.type === 'warning' ? 'border-amber-200 bg-amber-50/50 dark:border-amber-800 dark:bg-amber-950/30' :
+                  section.callout.type === 'important' ? 'border-primary/20 bg-primary/5' :
+                  'border-border bg-muted/30'
+                }`}>
+                  <span className={`mt-0.5 text-lg flex-shrink-0 ${
+                    section.callout.type === 'tip' ? 'text-emerald-600' :
+                    section.callout.type === 'warning' ? 'text-amber-600' :
+                    section.callout.type === 'important' ? 'text-primary' : 'text-muted-foreground'
+                  }`}>
+                    {section.callout.type === 'tip' ? '💡' : section.callout.type === 'warning' ? '⚠️' : section.callout.type === 'important' ? '📌' : 'ℹ️'}
+                  </span>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{section.callout.text}</p>
+                </div>
               ) : null}
             </section>
           ))}
@@ -202,6 +252,51 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <Link href={tool.path} className="btn-primary mt-5">
               Open the {tool.label} <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+
+          {/* Author bio card — inline E-E-A-T signal for AdSense and Google */}
+          <div className="mt-12 flex items-start gap-5 rounded-3xl border border-border bg-muted/30 p-6 sm:p-8">
+            <Link
+              href="/author/prashant-upadhyay"
+              className="flex-shrink-0 grid h-16 w-16 place-items-center rounded-2xl bg-primary/10 text-primary font-display text-2xl font-bold hover:bg-primary/20 transition-colors"
+              aria-label="View author profile"
+            >
+              PU
+            </Link>
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Written by</p>
+              <Link
+                href="/author/prashant-upadhyay"
+                className="mt-1 font-display text-lg font-bold hover:text-primary transition-colors"
+              >
+                {post.author}
+              </Link>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Independent developer and founder of QuotationMaker.in. Builds free GST-compliant business document tools for Indian freelancers and MSMEs. Writes practical guides on quotations, invoicing and getting paid.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  href="/author/prashant-upadhyay"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                >
+                  <BookOpen className="h-3.5 w-3.5" /> All guides by this author
+                </Link>
+                <a
+                  href="mailto:hello@quotationmaker.in"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="h-3.5 w-3.5" /> hello@quotationmaker.in
+                </a>
+                <a
+                  href="https://www.instagram.com/prashantkrupd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Instagram className="h-3.5 w-3.5" /> @prashantkrupd
+                </a>
+              </div>
+            </div>
           </div>
         </article>
 

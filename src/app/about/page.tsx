@@ -78,6 +78,22 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* ---- Social proof stats ---- */}
+        <section className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {[
+            { value: `${DOCUMENT_TYPE_LIST.length}`, label: 'Document generators', sub: 'Free, no signup' },
+            { value: `${TEMPLATE_COUNT}+`, label: 'Print-ready templates', sub: 'Professional designs' },
+            { value: `${blogPosts.length}+`, label: 'Written guides', sub: 'GST, quoting & invoicing' },
+            { value: `${industries.length}+`, label: 'Industry pages', sub: 'With sample line items' },
+          ].map((stat) => (
+            <div key={stat.label} className="rounded-2xl border border-border bg-card p-5 text-center">
+              <p className="font-display text-3xl font-extrabold text-primary">{stat.value}</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">{stat.label}</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{stat.sub}</p>
+            </div>
+          ))}
+        </section>
+
         <article className="mt-14 space-y-6 text-lg leading-relaxed text-muted-foreground">
           <h2 className="font-display text-2xl font-bold text-foreground">Why this site exists</h2>
           <p>
