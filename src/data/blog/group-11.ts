@@ -5,7 +5,7 @@ export const blogPosts11: BlogPost[] = [
     slug: 'gst-input-tax-credit-guide',
     title: 'GST Input Tax Credit: What It Is, What You Can Claim, and What You Cannot',
     seoTitle: 'GST Input Tax Credit Guide India 2026 | ITC Eligibility, Rules and Mistakes',
-    metaDescription: 'A practical guide to GST input tax credit for Indian businesses — what ITC is, which purchases qualify, which are blocked, how to reconcile GSTR-2B, and how to avoid ITC reversals.',
+    metaDescription: 'A practical guide to GST input tax credit for Indian businesses â€" what ITC is, which purchases qualify, which are blocked, how to reconcile GSTR-2B, and how to avoid ITC reversals.',
     keywords: ['gst input tax credit', 'itc under gst', 'blocked credits gst', 'gst itc eligibility', 'gst itc reversal', 'gstr-2b reconciliation'],
     date: '2026-09-10',
     updatedDate: '2026-09-24',
@@ -19,7 +19,7 @@ export const blogPosts11: BlogPost[] = [
     sections: [
       {
         heading: 'What input tax credit actually means',
-        body: 'When you buy goods or services for your business, you pay GST on those purchases — that is called input tax. When you sell goods or services, you collect GST from customers — that is called output tax.\n\nInput tax credit lets you subtract your input tax from your output tax before remitting to the government. If you collected Rs 18,000 in GST on sales and paid Rs 12,000 on purchases, you remit only Rs 6,000. Without ITC, GST would cascade — you would pay tax on top of tax at every stage of the supply chain.',
+        body: 'When you buy goods or services for your business, you pay GST on those purchases â€" that is called input tax. When you sell goods or services, you collect GST from customers â€" that is called output tax.\n\nInput tax credit lets you subtract your input tax from your output tax before remitting to the government. If you collected Rs 18,000 in GST on sales and paid Rs 12,000 on purchases, you remit only Rs 6,000. Without ITC, GST would cascade â€" you would pay tax on top of tax at every stage of the supply chain.',
       },
       {
         heading: 'What you can claim ITC on',
@@ -28,31 +28,31 @@ export const blogPosts11: BlogPost[] = [
       },
       {
         heading: 'What you cannot claim: the blocked credits',
-        body: 'Section 17(5) of the CGST Act lists blocked credits — categories where ITC is not available even with a valid tax invoice.\n\nThe most commonly encountered blocked credits are: motor vehicles unless you are in the transportation business, food and beverages and outdoor catering, club memberships, health and life insurance unless legally required to be provided by the employer, works contracts for construction of immovable property, and goods or services used for personal consumption.\n\nThis is where most ITC claims go wrong. A company car, a team dinner, a gym membership — these are business expenses for income tax purposes but ITC on them is blocked under GST.',
+        body: 'Section 17(5) of the CGST Act lists blocked credits â€" categories where ITC is not available even with a valid tax invoice.\n\nThe most commonly encountered blocked credits are: motor vehicles unless you are in the transportation business, food and beverages and outdoor catering, club memberships, health and life insurance unless legally required to be provided by the employer, works contracts for construction of immovable property, and goods or services used for personal consumption.\n\nThis is where most ITC claims go wrong. A company car, a team dinner, a gym membership â€" these are business expenses for income tax purposes but ITC on them is blocked under GST.',
       },
       {
         heading: 'How to reconcile your ITC with GSTR-2B',
-        body: 'ITC can now only be claimed to the extent it appears in your GSTR-2B — an auto-generated statement showing all invoices your suppliers uploaded against your GSTIN.\n\nIf a supplier files their GSTR-1 and includes your invoice, it appears in your GSTR-2B and you can claim it. If the supplier delays filing, the credit does not appear and you cannot claim it — even if you have their physical invoice.\n\nReconcile your purchase register against GSTR-2B every month before filing GSTR-3B. Any purchase where credit has not appeared should be followed up with the supplier promptly.',
+        body: 'ITC can now only be claimed to the extent it appears in your GSTR-2B â€" an auto-generated statement showing all invoices your suppliers uploaded against your GSTIN.\n\nIf a supplier files their GSTR-1 and includes your invoice, it appears in your GSTR-2B and you can claim it. If the supplier delays filing, the credit does not appear and you cannot claim it â€" even if you have their physical invoice.\n\nReconcile your purchase register against GSTR-2B every month before filing GSTR-3B. Any purchase where credit has not appeared should be followed up with the supplier promptly.',
       },
       {
         heading: 'Common ITC mistakes and how to avoid them',
-        body: 'Claiming ITC on invoices not in GSTR-2B: a physical invoice alone is not enough — the credit must appear in GSTR-2B.\n\nClaiming ITC on blocked items: motor vehicles, food, club memberships — check Section 17(5) before claiming anything borderline.\n\nForgetting to reverse ITC when goods are used for exempt supplies or personal use: if you claim credit on something and later use it for an exempt purpose, reverse the credit proportionately.\n\nMissing the time limit: ITC for a financial year must be claimed by the earlier of the due date of September return of the following year or the date of filing the annual return.',
+        body: 'Claiming ITC on invoices not in GSTR-2B: a physical invoice alone is not enough â€" the credit must appear in GSTR-2B.\n\nClaiming ITC on blocked items: motor vehicles, food, club memberships â€" check Section 17(5) before claiming anything borderline.\n\nForgetting to reverse ITC when goods are used for exempt supplies or personal use: if you claim credit on something and later use it for an exempt purpose, reverse the credit proportionately.\n\nMissing the time limit: ITC for a financial year must be claimed by the earlier of the due date of September return of the following year or the date of filing the annual return.',
       },
     ],
     faqs: [
       { q: 'Can I claim ITC if my supplier has not filed their GST return?', a: 'No. Under current rules ITC is available only to the extent it appears in your GSTR-2B. If your supplier has not filed GSTR-1, their invoices will not appear and you cannot claim the credit. Follow up with the supplier to file their return.' },
       { q: 'What is the time limit for claiming ITC?', a: 'ITC must be claimed by the earlier of: the due date of the return for September of the following financial year, or the date of filing the annual return. After that, the credit lapses.' },
-      { q: 'Can I claim ITC on goods purchased before GST registration?', a: 'Yes, for capital goods and stock in hand on the date of registration — not for goods already consumed. File Form GST ITC-01 within 30 days of registration to claim this opening credit.' },
+      { q: 'Can I claim ITC on goods purchased before GST registration?', a: 'Yes, for capital goods and stock in hand on the date of registration â€" not for goods already consumed. File Form GST ITC-01 within 30 days of registration to claim this opening credit.' },
     ],
     relatedSlugs: ['gst-invoice-rules-guide', 'gst-registration-guide-for-small-business', 'hsn-code-guide-for-small-business'],
-    references: [{ label: 'CGST Act Section 16 and 17 — Input Tax Credit', url: 'https://www.cbic.gov.in/resources//htdocs-cbec/gst/cgst-act.pdf' }],
+    references: [{ label: 'CGST Act Section 16 and 17 â€" Input Tax Credit', url: 'https://www.cbic.gov.in/resources//htdocs-cbec/gst/cgst-act.pdf' }],
   },
 
   {
     slug: 'msme-registration-guide',
     title: 'MSME Registration in India: What It Is, Why It Matters, and How to Register in 10 Minutes',
     seoTitle: 'MSME Registration Guide India 2026 | Udyam Registration Benefits and Process',
-    metaDescription: 'What MSME and Udyam registration are, who qualifies, what benefits registration gives you — delayed payment protection, priority lending, government procurement — and how to register free in minutes.',
+    metaDescription: 'What MSME and Udyam registration are, who qualifies, what benefits registration gives you â€" delayed payment protection, priority lending, government procurement â€" and how to register free in minutes.',
     keywords: ['msme registration', 'udyam registration', 'msme registration india', 'msme benefits', 'udyam registration process', 'small business registration india'],
     date: '2026-09-09',
     updatedDate: '2026-09-24',
@@ -62,7 +62,7 @@ export const blogPosts11: BlogPost[] = [
     heroImage: '/blog/purchase-order-guide.svg',
     heroAlt: 'MSME Udyam registration certificate and small business owner accessing government scheme benefits',
     excerpt: 'MSME registration is free, takes minutes, and gives your business statutory rights on delayed payments that most small suppliers do not know they have.',
-    intro: 'MSME registration — now done through the Udyam portal — is one of the most underused tools available to Indian small businesses. It is free, takes about 10 minutes, and gives you access to priority lending, delayed payment protection, lower dispute resolution costs, and various government scheme benefits. Most eligible businesses simply do not register because they assume it is complicated or only for manufacturers. It is neither.',
+    intro: 'MSME registration â€" now done through the Udyam portal â€" is one of the most underused tools available to Indian small businesses. It is free, takes about 10 minutes, and gives you access to priority lending, delayed payment protection, lower dispute resolution costs, and various government scheme benefits. Most eligible businesses simply do not register because they assume it is complicated or only for manufacturers. It is neither.',
     sections: [
       {
         heading: 'What MSME and Udyam registration actually are',
@@ -70,7 +70,7 @@ export const blogPosts11: BlogPost[] = [
       },
       {
         heading: 'Who can register',
-        body: 'Any proprietorship, partnership, LLP, company, or other undertaking engaged in manufacturing or services that falls within the turnover and investment limits can register. There is no minimum size — even a solo freelancer or sole proprietor qualifies as a micro enterprise if annual turnover is under Rs 5 crore.\n\nRegistration is based on self-declaration. You declare your investment and turnover, and the system cross-checks with your ITR data. No document upload needed — integration with the Income Tax department handles verification.',
+        body: 'Any proprietorship, partnership, LLP, company, or other undertaking engaged in manufacturing or services that falls within the turnover and investment limits can register. There is no minimum size â€" even a solo freelancer or sole proprietor qualifies as a micro enterprise if annual turnover is under Rs 5 crore.\n\nRegistration is based on self-declaration. You declare your investment and turnover, and the system cross-checks with your ITR data. No document upload needed â€" integration with the Income Tax department handles verification.',
         bullets: ['Proprietorships, partnerships, LLPs, companies all eligible', 'Manufacturers and service providers both qualify', 'Solo freelancers and consultants qualify as micro enterprises', 'No minimum size requirement'],
       },
       {
@@ -87,7 +87,7 @@ export const blogPosts11: BlogPost[] = [
       },
     ],
     faqs: [
-      { q: 'Is Udyam registration mandatory?', a: 'No. It is voluntary. However, without it you cannot avail MSME-specific benefits — delayed payment protection, priority lending, government procurement quotas, and the CGTMSE credit guarantee all require a valid Udyam registration number.' },
+      { q: 'Is Udyam registration mandatory?', a: 'No. It is voluntary. However, without it you cannot avail MSME-specific benefits â€" delayed payment protection, priority lending, government procurement quotas, and the CGTMSE credit guarantee all require a valid Udyam registration number.' },
       { q: 'Does MSME registration expire?', a: 'No. Udyam registration is permanent and does not need renewal. However, if your turnover grows beyond the medium enterprise ceiling, update your registration accordingly.' },
       { q: 'Can a freelancer register as MSME?', a: 'Yes. Service-sector businesses including freelancers, consultants, designers, and developers can register. A solo consultant with turnover under Rs 5 crore qualifies as a micro enterprise.' },
     ],
@@ -108,21 +108,21 @@ export const blogPosts11: BlogPost[] = [
     category: 'Business Basics',
     heroImage: '/blog/terms-conditions.svg',
     heroAlt: 'Service agreement document with pen and highlighted key clauses for Indian small businesses',
-    excerpt: 'A service agreement is not just legal protection — it is the document that prevents 90% of client disputes from happening in the first place.',
+    excerpt: 'A service agreement is not just legal protection â€" it is the document that prevents 90% of client disputes from happening in the first place.',
     intro: 'Most small businesses and freelancers in India operate on trust, a quoted price, and a handshake. That works right up until a client says they expected something different, refuses to pay the final invoice, or demands unlimited revisions because scope was never defined. A service agreement does not have to be a 20-page legal document. Two clear pages covering the right clauses prevents most disputes before they start.',
     sections: [
       {
         heading: 'What a service agreement is and when you need one',
-        body: 'A service agreement is a written contract between you and a client specifying what you will do, for how much, by when, and under what conditions. Under the Indian Contract Act 1872, a valid contract requires: offer, acceptance, consideration (the price), and intention to create legal relations. A signed agreement is cleaner to enforce than an email thread.\n\nYou need one for any engagement worth more than you would be comfortable losing — in practice, any project above Rs 25,000 or any ongoing retainer relationship.',
+        body: 'A service agreement is a written contract between you and a client specifying what you will do, for how much, by when, and under what conditions. Under the Indian Contract Act 1872, a valid contract requires: offer, acceptance, consideration (the price), and intention to create legal relations. A signed agreement is cleaner to enforce than an email thread.\n\nYou need one for any engagement worth more than you would be comfortable losing â€" in practice, any project above Rs 25,000 or any ongoing retainer relationship.',
       },
       {
         heading: 'The clauses you must include',
-        body: 'Scope of work: a specific description of what you will deliver. Not website design but: Website design for five pages — Home, About, Services, Portfolio, Contact. Responsive for mobile and desktop. Two rounds of revisions. Hosting setup not included. The scope defines the boundary between what is included and what is extra.\n\nDeliverables and timeline: list each deliverable and delivery date, subject to receiving client inputs by specified dates.\n\nPayment terms: amount, schedule (advance, milestone, completion), accepted payment modes, due dates, and late payment clause.\n\nClient responsibilities: what you need from the client — content, approvals, feedback within a specified number of business days.\n\nIntellectual property: ownership of the work transfers to the client on receipt of full payment. Until then, you retain all rights.',
-        bullets: ['Scope of work — specific deliverables, exclusions listed explicitly', 'Timeline — dates for each deliverable, client input deadlines', 'Payment terms — amounts, schedule, due dates, late payment clause', 'Client responsibilities — what you need and when', 'IP transfer — ownership passes to client on full payment'],
+        body: 'Scope of work: a specific description of what you will deliver. Not website design but: Website design for five pages â€" Home, About, Services, Portfolio, Contact. Responsive for mobile and desktop. Two rounds of revisions. Hosting setup not included. The scope defines the boundary between what is included and what is extra.\n\nDeliverables and timeline: list each deliverable and delivery date, subject to receiving client inputs by specified dates.\n\nPayment terms: amount, schedule (advance, milestone, completion), accepted payment modes, due dates, and late payment clause.\n\nClient responsibilities: what you need from the client â€" content, approvals, feedback within a specified number of business days.\n\nIntellectual property: ownership of the work transfers to the client on receipt of full payment. Until then, you retain all rights.',
+        bullets: ['Scope of work â€" specific deliverables, exclusions listed explicitly', 'Timeline â€" dates for each deliverable, client input deadlines', 'Payment terms â€" amounts, schedule, due dates, late payment clause', 'Client responsibilities â€" what you need and when', 'IP transfer â€" ownership passes to client on full payment'],
       },
       {
         heading: 'How to handle scope creep',
-        body: 'Scope creep is the most common cause of profit erosion in service businesses. The client asks for one more thing, and then another, and each time you say yes because saying no feels confrontational.\n\nThe fix is a change order clause: any work beyond the agreed scope will be quoted separately and requires written approval before it begins. When a client asks for something outside scope, reply: That sounds good — let me send you a quote for that as a separate item. Most clients accept this without conflict when it is how you always operate.',
+        body: 'Scope creep is the most common cause of profit erosion in service businesses. The client asks for one more thing, and then another, and each time you say yes because saying no feels confrontational.\n\nThe fix is a change order clause: any work beyond the agreed scope will be quoted separately and requires written approval before it begins. When a client asks for something outside scope, reply: That sounds good â€" let me send you a quote for that as a separate item. Most clients accept this without conflict when it is how you always operate.',
       },
       {
         heading: 'How to make it enforceable under Indian law',
@@ -146,7 +146,7 @@ export const blogPosts11: BlogPost[] = [
     slug: 'quotation-rejection-how-to-respond',
     title: 'Your Quotation Got Rejected: How to Respond, What to Learn, and How to Win the Next One',
     seoTitle: 'Quotation Rejected? How to Respond and Win More Deals India 2026',
-    metaDescription: 'What to do when a client rejects your quotation — how to respond professionally, what questions to ask, how to improve your next quote, and when rejection actually means the client is still interested.',
+    metaDescription: 'What to do when a client rejects your quotation â€" how to respond professionally, what questions to ask, how to improve your next quote, and when rejection actually means the client is still interested.',
     keywords: ['quotation rejected', 'how to respond to rejected quotation', 'lost quotation', 'why clients reject quotations', 'improve quotation win rate', 'quotation follow up after rejection'],
     date: '2026-09-04',
     updatedDate: '2026-09-24',
@@ -156,7 +156,7 @@ export const blogPosts11: BlogPost[] = [
     heroImage: '/blog/quotation-rejection.svg',
     heroAlt: 'Business owner reviewing rejected quotation and planning improved follow-up response strategy',
     excerpt: 'A rejected quotation is not a closed door. How you respond in the next 48 hours often determines whether you lose the deal permanently or bring it back.',
-    intro: 'Every business that sends quotations will have some rejected — a 100% close rate would just mean you are pricing too low. But a rejected quotation is not simply a dead end. Most businesses make the same mistake: they either disappear when a quotation is rejected, or they immediately offer a discount without understanding why they lost. Both responses leave money on the table.',
+    intro: 'Every business that sends quotations will have some rejected â€" a 100% close rate would just mean you are pricing too low. But a rejected quotation is not simply a dead end. Most businesses make the same mistake: they either disappear when a quotation is rejected, or they immediately offer a discount without understanding why they lost. Both responses leave money on the table.',
     sections: [
       {
         heading: 'First, understand why it was rejected',
@@ -180,7 +180,7 @@ export const blogPosts11: BlogPost[] = [
       },
     ],
     faqs: [
-      { q: 'Should I offer a discount when a quotation is rejected?', a: 'Not immediately, and not without understanding why. If budget-based, offer to revisit scope — not your margin. If not budget-based, a discount does not solve the actual problem.' },
+      { q: 'Should I offer a discount when a quotation is rejected?', a: 'Not immediately, and not without understanding why. If budget-based, offer to revisit scope â€" not your margin. If not budget-based, a discount does not solve the actual problem.' },
       { q: 'How long should I follow up after a rejected quotation?', a: 'Follow up once within 48 hours to acknowledge and ask for feedback. If they share a timing or budget reason, follow up again at the relevant point. Beyond that, put them in a periodic check-in list.' },
       { q: 'Is it unprofessional to ask why a quotation was rejected?', a: 'No. Asking for honest feedback is professional, not desperate. Frame it as wanting to improve future proposals rather than arguing with the decision.' },
     ],
@@ -192,7 +192,7 @@ export const blogPosts11: BlogPost[] = [
     slug: 'how-to-price-a-service-business',
     title: 'How to Price Your Services: A Practical Guide for Indian Freelancers and Small Businesses',
     seoTitle: 'How to Price Your Services India 2026 | Service Pricing Strategy for Freelancers',
-    metaDescription: 'How to set the right price for your services as a freelancer or small business in India — cost-plus pricing, value-based pricing, market research, when to raise your rates, and how to present pricing to clients.',
+    metaDescription: 'How to set the right price for your services as a freelancer or small business in India â€" cost-plus pricing, value-based pricing, market research, when to raise your rates, and how to present pricing to clients.',
     keywords: ['how to price services india', 'service pricing strategy', 'freelancer pricing india', 'how to charge for services', 'value based pricing', 'raise service rates india'],
     date: '2026-09-03',
     updatedDate: '2026-09-24',
@@ -201,24 +201,24 @@ export const blogPosts11: BlogPost[] = [
     category: 'Business Basics',
     heroImage: '/blog/pricing-strategy.svg',
     heroAlt: 'Freelancer calculating service pricing on calculator with project documents and rate card',
-    excerpt: 'Most freelancers price too low at the start, then feel trapped at that rate. Here is how to price confidently — and how to raise your rates without losing clients.',
-    intro: 'Pricing is the decision that has more impact on your business income than any other single choice — more than how many clients you have, more than how hard you work, more than your marketing. Yet most Indian freelancers arrive at their price by guessing what the client might accept, matching a competitor rate, or charging what they charged their last client.',
+    excerpt: 'Most freelancers price too low at the start, then feel trapped at that rate. Here is how to price confidently â€" and how to raise your rates without losing clients.',
+    intro: 'Pricing is the decision that has more impact on your business income than any other single choice â€" more than how many clients you have, more than how hard you work, more than your marketing. Yet most Indian freelancers arrive at their price by guessing what the client might accept, matching a competitor rate, or charging what they charged their last client.',
     sections: [
       {
         heading: 'The two pricing methods that work',
-        body: 'Cost-plus pricing starts with your costs and adds a margin. Calculate how much it costs you to do the work — your time at an hourly rate you want to earn, any direct expenses, software or tools used, and your overhead share — then add your profit margin. This ensures you never price below what the work actually costs you, which is the most common mistake among new freelancers.\n\nValue-based pricing starts with the value the work creates for the client and works backward. If you are building a website for a business expecting Rs 10 lakh in online revenue from it, your Rs 1 lakh fee is a 10x return for them. The client is buying a revenue asset, not hours of your time, and the price should reflect that.',
+        body: 'Cost-plus pricing starts with your costs and adds a margin. Calculate how much it costs you to do the work â€" your time at an hourly rate you want to earn, any direct expenses, software or tools used, and your overhead share â€" then add your profit margin. This ensures you never price below what the work actually costs you, which is the most common mistake among new freelancers.\n\nValue-based pricing starts with the value the work creates for the client and works backward. If you are building a website for a business expecting Rs 10 lakh in online revenue from it, your Rs 1 lakh fee is a 10x return for them. The client is buying a revenue asset, not hours of your time, and the price should reflect that.',
       },
       {
         heading: 'How to research the market without underselling yourself',
-        body: 'Market research for pricing means understanding what comparable professionals charge — not matching the lowest rate you find. Look at what experienced, well-reviewed professionals in your city and sector charge. Look at international platforms like Upwork for your category. Talk to peers who are a year or two ahead of you.\n\nThe mistake most freelancers make is benchmarking against the bottom of the market. If you price at Rs 500 an hour because that is what someone on a bidding platform charges, you have assumed you are competing with the cheapest option available.',
+        body: 'Market research for pricing means understanding what comparable professionals charge â€" not matching the lowest rate you find. Look at what experienced, well-reviewed professionals in your city and sector charge. Look at international platforms like Upwork for your category. Talk to peers who are a year or two ahead of you.\n\nThe mistake most freelancers make is benchmarking against the bottom of the market. If you price at Rs 500 an hour because that is what someone on a bidding platform charges, you have assumed you are competing with the cheapest option available.',
       },
       {
         heading: 'What to do when a client says your price is too high',
-        body: 'Most client price objections are not about money — they are about uncertainty. The client is not sure the result will be worth the price.\n\nThe right response is not to immediately offer a discount. Instead, revisit the scope: which part of what I have proposed is most important to you, and would you like me to show you what a smaller scope would look like at a lower price? This reframes the conversation from you are expensive to let us find the right package for your budget.',
+        body: 'Most client price objections are not about money â€" they are about uncertainty. The client is not sure the result will be worth the price.\n\nThe right response is not to immediately offer a discount. Instead, revisit the scope: which part of what I have proposed is most important to you, and would you like me to show you what a smaller scope would look like at a lower price? This reframes the conversation from you are expensive to let us find the right package for your budget.',
       },
       {
         heading: 'When and how to raise your rates',
-        body: 'Raise your rates when: you have more work than you can handle, you are consistently closing proposals without pushback on price, you have new skills that increase your market value, or your costs have increased significantly.\n\nFor existing retainer clients, give notice before the increase — typically one full billing cycle: I am increasing my monthly rate from Rs 30,000 to Rs 35,000 from November. Most long-term clients who value the relationship will accept a reasonable increase.',
+        body: 'Raise your rates when: you have more work than you can handle, you are consistently closing proposals without pushback on price, you have new skills that increase your market value, or your costs have increased significantly.\n\nFor existing retainer clients, give notice before the increase â€" typically one full billing cycle: I am increasing my monthly rate from Rs 30,000 to Rs 35,000 from November. Most long-term clients who value the relationship will accept a reasonable increase.',
       },
       {
         heading: 'How to present your pricing professionally',
@@ -227,7 +227,7 @@ export const blogPosts11: BlogPost[] = [
     ],
     faqs: [
       { q: 'Should I charge by the hour or by the project?', a: 'Project-based pricing is almost always better beyond the beginner stage. It gives clients budget certainty and rewards your efficiency. Reserve hourly billing for genuinely open-ended advisory work where scope cannot be defined upfront.' },
-      { q: 'How do I know if I am undercharging?', a: 'The clearest signal is that clients almost never negotiate your price and you are booked solid. A healthy close rate is roughly 50 to 70 percent of qualified proposals — some pushback on price means you are near the right level.' },
+      { q: 'How do I know if I am undercharging?', a: 'The clearest signal is that clients almost never negotiate your price and you are booked solid. A healthy close rate is roughly 50 to 70 percent of qualified proposals â€" some pushback on price means you are near the right level.' },
       { q: 'Is it okay to charge different rates for different clients?', a: 'Yes, within reason. Charging a large corporate client more than a small NGO for the same work is a legitimate business decision. Each price should reflect the value you are providing in that relationship.' },
     ],
     relatedSlugs: ['how-to-price-your-services', 'freelancer-pricing-guide', 'quotation-terms-and-conditions-checklist'],
