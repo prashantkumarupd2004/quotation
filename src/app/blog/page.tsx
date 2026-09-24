@@ -8,7 +8,6 @@ import { Reveal } from "@/components/ui/reveal";
 import { JsonLd } from "@/components/json-ld";
 import { buildMetadata } from "@/lib/seo";
 import { blogSchema, breadcrumbSchema } from "@/lib/schema";
-import { formatDate } from "@/lib/format";
 import { BlogFilter } from "@/components/ui/blog-filter";
 
 export const metadata: Metadata = buildMetadata({
@@ -109,7 +108,7 @@ export default function BlogPage() {
 
         {/* Category-filterable grid */}
         <div className="mt-14">
-          <BlogFilter posts={rest} categories={categories} formatDate={formatDate} />
+          <BlogFilter posts={rest} categories={categories} />
         </div>
       </section>
     </>

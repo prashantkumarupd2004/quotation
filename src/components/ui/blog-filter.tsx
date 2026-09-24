@@ -1,9 +1,10 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { formatDate } from "@/lib/format";
 
 interface Post {
   slug: string;
@@ -18,10 +19,9 @@ interface Post {
 interface Props {
   posts: Post[];
   categories: string[];
-  formatDate: (d: string) => string;
 }
 
-export function BlogFilter({ posts, categories, formatDate }: Props) {
+export function BlogFilter({ posts, categories }: Props) {
   const [active, setActive] = useState<string>("All");
 
   const filtered =
