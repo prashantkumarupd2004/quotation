@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { JsonLd } from "@/components/json-ld";
 import { buildMetadata } from "@/lib/seo";
 import { blogSchema, breadcrumbSchema } from "@/lib/schema";
+import { formatDate } from "@/lib/format";
 import { BlogFilter } from "@/components/ui/blog-filter";
 
 export const metadata: Metadata = buildMetadata({
