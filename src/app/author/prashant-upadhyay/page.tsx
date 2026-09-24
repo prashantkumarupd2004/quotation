@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Instagram, Mail, Shield } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
@@ -63,9 +64,19 @@ export default function AuthorPage() {
         {/* Identity card */}
         <section className="rounded-3xl border border-border bg-muted/30 p-8">
           <div className="flex items-start gap-4">
-            <span className="grid h-16 w-16 flex-shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary font-display text-2xl font-bold">
-              PU
-            </span>
+            <Link
+              href="/author/prashant-upadhyay"
+              className="flex-shrink-0 overflow-hidden rounded-2xl border-2 border-border"
+            >
+              <Image
+                src="/pk.jpg"
+                alt="Prashant Upadhyay — Developer & Founder of QuotationMaker.in"
+                width={64}
+                height={64}
+                className="h-16 w-16 object-cover"
+                priority
+              />
+            </Link>
             <div className="min-w-0">
               <h2 className="font-display text-xl font-bold">Prashant Upadhyay</h2>
               <p className="text-sm text-muted-foreground mt-1">

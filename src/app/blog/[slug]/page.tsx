@@ -258,10 +258,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="mt-12 flex items-start gap-5 rounded-3xl border border-border bg-muted/30 p-6 sm:p-8">
             <Link
               href="/author/prashant-upadhyay"
-              className="flex-shrink-0 grid h-16 w-16 place-items-center rounded-2xl bg-primary/10 text-primary font-display text-2xl font-bold hover:bg-primary/20 transition-colors"
+              className="flex-shrink-0 overflow-hidden rounded-2xl border-2 border-border transition-opacity hover:opacity-80"
               aria-label="View author profile"
             >
-              PU
+              <Image
+                src="/pk.jpg"
+                alt="Prashant Upadhyay"
+                width={64}
+                height={64}
+                className="h-16 w-16 object-cover"
+              />
             </Link>
             <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Written by</p>
