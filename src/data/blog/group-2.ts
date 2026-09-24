@@ -28,7 +28,7 @@ export const blogPosts2: BlogPost[] = [
     sections: [
       {
         heading: 'Why most freelancers underprice themselves',
-        body: `New freelancers in India almost always start by asking "what will the client accept?" instead of "what do I need to earn?" This leads to rates copied from a friend, a random Upwork listing, or a client's budget hint - none of which account for your actual costs, taxes, non-billable time, or the value you deliver.\n\nThe fix is to work backwards from your income goal. If you want to earn â‚¹80,000 a month after expenses and taxes, and you can realistically bill 100 hours a month (the rest goes to admin, proposals, learning, and client calls), your minimum viable rate is â‚¹800/hour before you even factor in profit margin or market positioning.`,
+        body: `New freelancers in India almost always start by asking "what will the client accept?" instead of "what do I need to earn?" This leads to rates copied from a friend, a random Upwork listing, or a client's budget hint - none of which account for your actual costs, taxes, non-billable time, or the value you deliver.\n\nThe fix is to work backwards from your income goal. If you want to earn ₹80,000 a month after expenses and taxes, and you can realistically bill 100 hours a month (the rest goes to admin, proposals, learning, and client calls), your minimum viable rate is ₹800/hour before you even factor in profit margin or market positioning.`,
       },
       {
         heading: 'Hourly vs project-based vs retainer pricing',
@@ -36,17 +36,17 @@ export const blogPosts2: BlogPost[] = [
         bullets: [
           'Hourly rate: best for ongoing, unpredictable scope work like maintenance, support, or consulting where effort varies week to week.',
           'Project-based (fixed price): best when scope is clearly defined - a logo design, a website build, a 10-video content package. Clients in India generally prefer this because it removes surprise billing.',
-          'Retainer: best for long-term relationships - a fixed monthly fee for a set number of hours or deliverables (e.g., â‚¹25,000/month for 4 blog posts and 2 revisions). Retainers give you predictable cash flow and reduce the sales effort of finding new clients every month.',
+          'Retainer: best for long-term relationships - a fixed monthly fee for a set number of hours or deliverables (e.g., ₹25,000/month for 4 blog posts and 2 revisions). Retainers give you predictable cash flow and reduce the sales effort of finding new clients every month.',
           'Value-based pricing: charging based on the outcome you create (e.g., a percentage of ad spend managed, or a flat fee tied to leads generated) - works well for marketing, sales copy, and consulting once you have case studies to back your claims.',
         ],
       },
       {
         heading: 'Calculating your real hourly rate',
-        body: `Start with your target annual income, then add business costs (software subscriptions, internet, a portion of rent if you work from home, accounting fees) and taxes. Divide this total by your realistic billable hours per year - not your total working hours.\n\nMost freelancers overestimate billable hours. If you work 5 days a week, 48 weeks a year, that's 240 working days. But only 50-65% of that time is typically billable once you subtract client acquisition, admin, revisions, and skill-building. So a freelancer working 8-hour days has roughly 960-1,250 billable hours a year, not 1,920.\n\nExample: Target income â‚¹9,00,000/year + costs â‚¹1,20,000 + estimated tax â‚¹80,000 = â‚¹11,00,000 required. Divide by 1,100 billable hours = â‚¹1,000/hour minimum rate.`,
+        body: `Start with your target annual income, then add business costs (software subscriptions, internet, a portion of rent if you work from home, accounting fees) and taxes. Divide this total by your realistic billable hours per year - not your total working hours.\n\nMost freelancers overestimate billable hours. If you work 5 days a week, 48 weeks a year, that's 240 working days. But only 50-65% of that time is typically billable once you subtract client acquisition, admin, revisions, and skill-building. So a freelancer working 8-hour days has roughly 960-1,250 billable hours a year, not 1,920.\n\nExample: Target income ₹9,00,000/year + costs ₹1,20,000 + estimated tax ₹80,000 = ₹11,00,000 required. Divide by 1,100 billable hours = ₹1,000/hour minimum rate.`,
       },
       {
         heading: 'GST and invoicing rules freelancers must know',
-        body: `If your annual freelance income (turnover) crosses â‚¹20 lakh (â‚¹10 lakh in some special category states) you must register for GST and charge it on your invoices - typically 18% for most professional and creative services under SAC codes for IT, design, consulting, and marketing services.\n\nEven below the threshold, many freelancers register voluntarily because larger clients (agencies, corporates) prefer working with GST-registered vendors and it lets you claim input tax credit on business expenses like laptops, software, and coworking space.\n\nAlways issue a proper quotation before starting work, and a GST-compliant invoice after delivery, showing your GSTIN, SAC code, taxable value, and GST amount separately. A free tool like QuotationMaker.in lets you generate both quickly without needing accounting software.`,
+        body: `If your annual freelance income (turnover) crosses ₹20 lakh (₹10 lakh in some special category states) you must register for GST and charge it on your invoices - typically 18% for most professional and creative services under SAC codes for IT, design, consulting, and marketing services.\n\nEven below the threshold, many freelancers register voluntarily because larger clients (agencies, corporates) prefer working with GST-registered vendors and it lets you claim input tax credit on business expenses like laptops, software, and coworking space.\n\nAlways issue a proper quotation before starting work, and a GST-compliant invoice after delivery, showing your GSTIN, SAC code, taxable value, and GST amount separately. A free tool like QuotationMaker.in lets you generate both quickly without needing accounting software.`,
       },
       {
         heading: 'How to present your price without losing the client',
@@ -60,10 +60,10 @@ export const blogPosts2: BlogPost[] = [
     faqs: [
       {
         q: 'What is a fair hourly rate for a beginner freelancer in India?',
-        a: 'Beginners in writing, design, or virtual assistance typically start between â‚¹300-â‚¹700/hour depending on skill and niche, while developers and specialized consultants often start at â‚¹800-â‚¹1,500/hour. Use the backward-calculation method in this guide rather than copying a generic number.',
+        a: 'Beginners in writing, design, or virtual assistance typically start between ₹300-₹700/hour depending on skill and niche, while developers and specialized consultants often start at ₹800-₹1,500/hour. Use the backward-calculation method in this guide rather than copying a generic number.',
       },
       {
-        q: 'Should I charge GST if my income is below â‚¹20 lakh?',
+        q: 'Should I charge GST if my income is below ₹20 lakh?',
         a: 'You are not legally required to, but you can register voluntarily. Some clients, especially agencies and larger companies, prefer GST-registered freelancers because they can claim input tax credit.',
       },
       {
@@ -80,8 +80,8 @@ export const blogPosts2: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'Udyam Registration â€" MSME Portal', url: 'https://udyamregistration.gov.in' },
-      { label: 'GST Portal â€" Threshold Limits', url: 'https://www.gst.gov.in' },
+      { label: 'Udyam Registration — MSME Portal', url: 'https://udyamregistration.gov.in' },
+      { label: 'GST Portal — Threshold Limits', url: 'https://www.gst.gov.in' },
     ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'invoice-vs-quotation', 'small-business-sales-guide'],
   },
@@ -129,7 +129,7 @@ export const blogPosts2: BlogPost[] = [
       },
       {
         heading: 'Pricing models for digital marketing services',
-        body: `Retainer pricing is the norm for ongoing digital marketing in India - typically monthly fees ranging from â‚¹15,000 for a solo freelancer managing basic social media, to â‚¹75,000-â‚¹3,00,000+ for full-service agencies handling SEO, paid ads, and content together.\n\nFor performance-heavy services like Google Ads or Meta Ads, separate your management fee from the ad spend clearly - clients often confuse the two and assume your fee includes the budget spent on ads. State it explicitly: "Management fee â‚¹20,000/month + ad spend budget (client-funded, recommended minimum â‚¹30,000/month)."\n\nSEO is best sold in 3-6 month packages since results take time - a single-month SEO proposal signals inexperience to informed clients.`,
+        body: `Retainer pricing is the norm for ongoing digital marketing in India - typically monthly fees ranging from ₹15,000 for a solo freelancer managing basic social media, to ₹75,000-₹3,00,000+ for full-service agencies handling SEO, paid ads, and content together.\n\nFor performance-heavy services like Google Ads or Meta Ads, separate your management fee from the ad spend clearly - clients often confuse the two and assume your fee includes the budget spent on ads. State it explicitly: "Management fee ₹20,000/month + ad spend budget (client-funded, recommended minimum ₹30,000/month)."\n\nSEO is best sold in 3-6 month packages since results take time - a single-month SEO proposal signals inexperience to informed clients.`,
       },
       {
         heading: 'Setting realistic expectations and KPIs',
@@ -159,7 +159,7 @@ export const blogPosts2: BlogPost[] = [
       },
       {
         q: 'What is a reasonable retainer for a small business in a tier-2 city?',
-        a: 'Many freelancers and small agencies quote â‚¹12,000-â‚¹30,000/month for basic social media and local SEO management in tier-2 cities, scaling up with scope and ad management complexity.',
+        a: 'Many freelancers and small agencies quote ₹12,000-₹30,000/month for basic social media and local SEO management in tier-2 cities, scaling up with scope and ad management complexity.',
       },
       {
         q: 'Should pricing be on the first page or the last page of the proposal?',
@@ -167,8 +167,8 @@ export const blogPosts2: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'MeitY â€" Ministry of Electronics and IT', url: 'https://www.meity.gov.in' },
-      { label: 'GST Portal â€" SAC Code Finder', url: 'https://www.gst.gov.in' },
+      { label: 'MeitY — Ministry of Electronics and IT', url: 'https://www.meity.gov.in' },
+      { label: 'GST Portal — SAC Code Finder', url: 'https://www.gst.gov.in' },
     ],
     relatedSlugs: ['freelancer-pricing-guide', 'small-business-sales-guide', 'how-to-write-a-professional-quotation'],
   },
@@ -261,8 +261,8 @@ export const blogPosts2: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'GST Portal â€" Invoice Rules', url: 'https://www.gst.gov.in' },
-      { label: 'CBIC â€" Tax Invoice Format', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Portal — Invoice Rules', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Tax Invoice Format', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['gst-in-quotations', 'quotation-vs-estimate', 'business-documentation-guide'],
   },
@@ -355,8 +355,8 @@ export const blogPosts2: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'MCA â€" Document Filing Requirements', url: 'https://www.mca.gov.in' },
-      { label: 'MSME â€" Business Registration', url: 'https://msme.gov.in' },
+      { label: 'MCA — Document Filing Requirements', url: 'https://www.mca.gov.in' },
+      { label: 'MSME — Business Registration', url: 'https://msme.gov.in' },
     ],
     relatedSlugs: ['invoice-vs-quotation', 'gst-in-quotations', 'quotation-format-in-india'],
   },
@@ -439,8 +439,8 @@ export const blogPosts2: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'MSME â€" Schemes for Small Businesses', url: 'https://msme.gov.in' },
-      { label: 'GST Portal â€" Composition Scheme', url: 'https://www.gst.gov.in' },
+      { label: 'MSME — Schemes for Small Businesses', url: 'https://msme.gov.in' },
+      { label: 'GST Portal — Composition Scheme', url: 'https://www.gst.gov.in' },
     ],
     relatedSlugs: ['freelancer-pricing-guide', 'digital-marketing-proposal-guide', 'how-to-write-a-professional-quotation'],
   },

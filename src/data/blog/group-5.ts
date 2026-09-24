@@ -41,7 +41,7 @@ export const blogPosts5: BlogPost[] = [
       },
       {
         heading: 'A real-world service quotation example',
-        body: 'Let us look at a typical quote for a graphic design agency pitching a "Brand Identity Package for Mehta Logistics". Instead of a lump-sum figure, the quotation lists itemized services: "Logo design (3 initial options, 2 rounds of revisions) â€" Rs 12,000; Stationery design (Business cards, letterhead, email signature) â€" Rs 4,000; Brand style guidelines document â€" Rs 6,000; Subtotal: Rs 22,000; GST @ 18%: Rs 3,960; Total: Rs 25,960."\n\nBy separating the package into distinct elements, the client sees exactly where their money is going, making it much easier to approve compared to a single line item of Rs 25,960 for "branding services" which might feel arbitrary.'
+        body: 'Let us look at a typical quote for a graphic design agency pitching a "Brand Identity Package for Mehta Logistics". Instead of a lump-sum figure, the quotation lists itemized services: "Logo design (3 initial options, 2 rounds of revisions) — Rs 12,000; Stationery design (Business cards, letterhead, email signature) — Rs 4,000; Brand style guidelines document — Rs 6,000; Subtotal: Rs 22,000; GST @ 18%: Rs 3,960; Total: Rs 25,960."\n\nBy separating the package into distinct elements, the client sees exactly where their money is going, making it much easier to approve compared to a single line item of Rs 25,960 for "branding services" which might feel arbitrary.'
       }
     ],
     faqs: [
@@ -50,8 +50,8 @@ export const blogPosts5: BlogPost[] = [
       { q: 'Should I offer discounts on my service rates?', a: 'If a client asks for a discount, do not just cut your price. Instead, adjust the scope. For instance, say: "I can reduce the cost from Rs 20,000 to Rs 16,000 by removing the stationery design from this package." This maintains the value of your services while respecting their budget constraints.' }
     ],
     references: [
-      { label: 'GST Portal â€" Services Under GST', url: 'https://www.gst.gov.in' },
-      { label: 'CBIC â€" SAC Code Reference', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Portal — Services Under GST', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — SAC Code Reference', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'payment-terms-in-quotations', 'quotation-negotiation-tips']
   },
@@ -69,7 +69,7 @@ export const blogPosts5: BlogPost[] = [
     heroImage: '/blog/terms-conditions.svg',
     heroAlt: 'Document containing checkboxes representing terms and conditions clauses',
     excerpt: 'Most business disputes in India can be avoided by having a solid set of Terms and Conditions in your quotation. Here is your essential T&C checklist.',
-    intro: 'In the Indian business ecosystem, many transactions are executed without elaborate, formal multi-page contracts. For thousands of SMEs and freelancers, the quotation itselfâ€"once acceptedâ€"serves as the primary contract. This means the terms and conditions printed at the bottom of your quote are not just legal boilerplate; they are your primary legal defense in case of late payments, scope disagreements, or project cancellations.',
+    intro: 'In the Indian business ecosystem, many transactions are executed without elaborate, formal multi-page contracts. For thousands of SMEs and freelancers, the quotation itself—once accepted—serves as the primary contract. This means the terms and conditions printed at the bottom of your quote are not just legal boilerplate; they are your primary legal defense in case of late payments, scope disagreements, or project cancellations.',
     sections: [
       {
         heading: 'Why your quotation terms are your first line of defense',
@@ -108,8 +108,8 @@ export const blogPosts5: BlogPost[] = [
       { q: 'How do I handle cancellation or termination terms?', a: 'Add a cancellation clause: "Either party may terminate this agreement with 7 days\' written notice. In the event of cancellation, the client will be billed for all work completed up to the termination date, and any advance payment is non-refundable."' }
     ],
     references: [
-      { label: 'MCA â€" Contract Enforcement', url: 'https://www.mca.gov.in' },
-      { label: 'CBIC â€" Tax Liability on Supply', url: 'https://www.cbic.gov.in' },
+      { label: 'MCA — Contract Enforcement', url: 'https://www.mca.gov.in' },
+      { label: 'CBIC — Tax Liability on Supply', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['payment-terms-in-quotations', 'quotation-validity-period-guide', 'common-quotation-mistakes']
   },
@@ -131,7 +131,7 @@ export const blogPosts5: BlogPost[] = [
     sections: [
       {
         heading: 'The unique complexity of interior design pricing in India',
-        body: 'A winning interior design quote is always organized room-by-room rather than category-by-category. Clients find it much easier to digest costs when they see exactly how much is being spent on the master bedroom, the modular kitchen, and the living room separately.\n\nWithin each room, break down items into logical sub-items: woodwork (wardrobes, TV units), electrical, false ceiling, and wall finishes. This itemized format also allows you to handle scope changes easilyâ€"if the client wants to reduce the budget, you can simply remove the bedroom dressing table line item without recalculating the entire project.'
+        body: 'A winning interior design quote is always organized room-by-room rather than category-by-category. Clients find it much easier to digest costs when they see exactly how much is being spent on the master bedroom, the modular kitchen, and the living room separately.\n\nWithin each room, break down items into logical sub-items: woodwork (wardrobes, TV units), electrical, false ceiling, and wall finishes. This itemized format also allows you to handle scope changes easily—if the client wants to reduce the budget, you can simply remove the bedroom dressing table line item without recalculating the entire project.'
       },
       {
         heading: 'Turnkey execution vs. Design-only consultancy',
@@ -139,7 +139,7 @@ export const blogPosts5: BlogPost[] = [
       },
       {
         heading: 'Structuring an itemized room-by-room breakdown',
-        body: 'In your quotation, organize the costing table room-by-room. For example, under "Living Room Woodwork," list: "TV Unit (Century MR Ply, Merino Laminate finish) â€" 8x6 ft â€" Rs 35,000." Under "Modular Kitchen," list: "Base Cabinets (BWP Marine Ply, Acrylic shutters, Hettich soft-close hinges) â€" 12 running feet â€" Rs 90,000."\n\nThis level of transparency prevents the client from feeling in the dark. It also proves that you have put thought into the specific material requirements for each space.',
+        body: 'In your quotation, organize the costing table room-by-room. For example, under "Living Room Woodwork," list: "TV Unit (Century MR Ply, Merino Laminate finish) — 8x6 ft — Rs 35,000." Under "Modular Kitchen," list: "Base Cabinets (BWP Marine Ply, Acrylic shutters, Hettich soft-close hinges) — 12 running feet — Rs 90,000."\n\nThis level of transparency prevents the client from feeling in the dark. It also proves that you have put thought into the specific material requirements for each space.',
         bullets: [
           'Organize quotes room-by-room (Living Room, Kitchen, Master Bedroom, Balcony) for easy reading.',
           'Specify the exact materials and brands (e.g., CenturyPly commercial MR plywood, Merino laminate, Hafele soft-close channels).',
@@ -149,7 +149,7 @@ export const blogPosts5: BlogPost[] = [
       },
       {
         heading: 'Managing client revisions and moodboard approvals',
-        body: 'One of the largest drains on an interior designer\'s profitability is "unlimited revisions"â€"when a client asks for major layout or 3D changes after you have started procurement or final renders. Your quotation must contain terms that govern this process.\n\nInclude a revision clause: "This quotation includes up to 2 rounds of 2D/3D design revisions. Additional design revisions or changes requested after 3D approvals will be charged at Rs 5,000 per drawing/view." Having this clause ensures the client takes the initial design phase seriously and avoids endless redesign loops.'
+        body: 'One of the largest drains on an interior designer\'s profitability is "unlimited revisions"—when a client asks for major layout or 3D changes after you have started procurement or final renders. Your quotation must contain terms that govern this process.\n\nInclude a revision clause: "This quotation includes up to 2 rounds of 2D/3D design revisions. Additional design revisions or changes requested after 3D approvals will be charged at Rs 5,000 per drawing/view." Having this clause ensures the client takes the initial design phase seriously and avoids endless redesign loops.'
       },
       {
         heading: 'GST compliance for interior work',
@@ -162,8 +162,8 @@ export const blogPosts5: BlogPost[] = [
       { q: 'How do I charge for supervision and site visits?', a: 'If you are doing design-only consulting, your quotation should specify the number of included site visits (e.g., "10 site visits during execution"). Any additional visits should be priced per visit (e.g., "Rs 2,000 per extra site visit").' }
     ],
     references: [
-      { label: 'CBIC â€" GST on Interior Work', url: 'https://www.cbic.gov.in' },
-      { label: 'CPWD â€" Schedule of Rates', url: 'https://www.cpwd.gov.in' },
+      { label: 'CBIC — GST on Interior Work', url: 'https://www.cbic.gov.in' },
+      { label: 'CPWD — Schedule of Rates', url: 'https://www.cpwd.gov.in' },
     ],
     relatedSlugs: ['best-construction-quotation-examples', 'payment-terms-in-quotations', 'gst-in-quotations']
   },
@@ -181,7 +181,7 @@ export const blogPosts5: BlogPost[] = [
     heroImage: '/blog/revise-quotation.svg',
     heroAlt: 'Quotation document with edit pen and version arrows',
     excerpt: 'Handling client requests for price or scope changes is a normal part of business. Here is how to revise quotations professionally without losing profit margins.',
-    intro: 'A client asking for a revision is a positive signâ€"it means they are engaged and considering your offer, but want to align it with their specific budget or requirements. However, many business owners handle revisions poorly: they either discount their price immediately (which signals their original quote was overpriced) or they get defensive and lose the client. Managing quotation revisions professionally requires clear version control, objective reasoning, and structured communication.',
+    intro: 'A client asking for a revision is a positive sign—it means they are engaged and considering your offer, but want to align it with their specific budget or requirements. However, many business owners handle revisions poorly: they either discount their price immediately (which signals their original quote was overpriced) or they get defensive and lose the client. Managing quotation revisions professionally requires clear version control, objective reasoning, and structured communication.',
     sections: [
       {
         heading: 'Why quote revisions are a critical part of the sales cycle',
@@ -216,8 +216,8 @@ export const blogPosts5: BlogPost[] = [
       { q: 'What if the client references an older version by mistake?', a: 'Always confirm the revision suffix in writing before starting work: "We are proceeding with work as per our agreed revised quotation Ref: QTN-2026-045-R2 dated July 10. Please reply to this email to confirm." This simple step prevents legal disputes over which version\'s scope applies.' }
     ],
     references: [
-      { label: 'GST Portal â€" Revised Invoice Rules', url: 'https://www.gst.gov.in' },
-      { label: 'CBIC â€" Amendment to Supply', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Portal — Revised Invoice Rules', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Amendment to Supply', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['quotation-negotiation-tips', 'how-to-send-quotation-by-email', 'common-quotation-mistakes']
   },
@@ -239,7 +239,7 @@ export const blogPosts5: BlogPost[] = [
     sections: [
       {
         heading: 'The art and science of quoting for food services',
-        body: 'A poorly formatted catering quoteâ€"such as a messy WhatsApp text with a price list and list of dishesâ€"creates anxiety for the buyer. How will the food be presented? Are plates and cutlery included? Who pays for the transport? A professional catering quotation answers all of these questions upfront, showing that you are organized and reliable.'
+        body: 'A poorly formatted catering quote—such as a messy WhatsApp text with a price list and list of dishes—creates anxiety for the buyer. How will the food be presented? Are plates and cutlery included? Who pays for the transport? A professional catering quotation answers all of these questions upfront, showing that you are organized and reliable.'
       },
       {
         heading: 'Per-plate pricing vs. Itemized event costing',
@@ -270,8 +270,8 @@ export const blogPosts5: BlogPost[] = [
       { q: 'How much advance is standard for catering in India?', a: 'Caterers typically charge a 50% advance booking deposit to secure the date and purchase raw materials, 40% on the day before the event, and the remaining 10% immediately upon completion of the event before the team leaves the venue.' }
     ],
     references: [
-      { label: 'FSSAI â€" Food Business Licensing', url: 'https://www.fssai.gov.in' },
-      { label: 'CBIC â€" GST on Catering Services', url: 'https://www.cbic.gov.in' },
+      { label: 'FSSAI — Food Business Licensing', url: 'https://www.fssai.gov.in' },
+      { label: 'CBIC — GST on Catering Services', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'payment-terms-in-quotations', 'common-quotation-mistakes']
   }

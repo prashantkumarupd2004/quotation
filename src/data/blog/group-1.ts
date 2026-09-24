@@ -46,7 +46,7 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'Step 3: Show tax calculation transparently',
-        body: `Show the subtotal, then GST calculated correctly based on whether the transaction is intra-state (CGST + SGST) or inter-state (IGST). Never bury tax inside a single lump-sum figure â€" separate line items build trust and prevent disputes when the actual invoice is raised later.\n\nIf you are not GST registered (turnover below the threshold), state clearly "GST not applicable" instead of leaving it blank, so the customer does not assume you forgot it.`,
+        body: `Show the subtotal, then GST calculated correctly based on whether the transaction is intra-state (CGST + SGST) or inter-state (IGST). Never bury tax inside a single lump-sum figure — separate line items build trust and prevent disputes when the actual invoice is raised later.\n\nIf you are not GST registered (turnover below the threshold), state clearly "GST not applicable" instead of leaving it blank, so the customer does not assume you forgot it.`,
       },
       {
         heading: 'Step 4: Add payment terms and validity clearly',
@@ -60,7 +60,7 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'Step 5: Include terms and conditions',
-        body: `A short terms section prevents 90% of future disputes. Cover warranty or support period, what happens if scope changes mid-project, cancellation policy, and who bears transport or installation charges.\n\nKeep it to 4-6 bullet points in plain language rather than dense legal text â€" clients are more likely to actually read and respect short, clear terms.`,
+        body: `A short terms section prevents 90% of future disputes. Cover warranty or support period, what happens if scope changes mid-project, cancellation policy, and who bears transport or installation charges.\n\nKeep it to 4-6 bullet points in plain language rather than dense legal text — clients are more likely to actually read and respect short, clear terms.`,
       },
       {
         heading: 'Step 6: Close with a clear call to action',
@@ -90,8 +90,8 @@ export const blogPosts1: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'GST Portal â€" GST Invoice Rules', url: 'https://www.gst.gov.in' },
-      { label: 'CBIC â€" Central Tax Notifications', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Portal — GST Invoice Rules', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — Central Tax Notifications', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['quotation-format-in-india', 'quotation-vs-estimate', 'gst-in-quotations'],
   },
@@ -116,7 +116,7 @@ export const blogPosts1: BlogPost[] = [
     heroImage: '/blog/quotation-vs-estimate.svg',
     heroAlt: 'Side-by-side comparison of quotation vs estimate showing key legal and practical differences',
     excerpt:
-      'Quotations and estimates look similar but carry very different commitments â€" here is how to tell them apart and use each correctly.',
+      'Quotations and estimates look similar but carry very different commitments — here is how to tell them apart and use each correctly.',
     intro:
       'Business owners often use "quotation" and "estimate" interchangeably, but they mean different things to clients and carry different legal weight. Choosing the wrong one can lead to disputes over final pricing. Here is a clear breakdown of when to send which.',
     sections: [
@@ -126,7 +126,7 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'When to use a quotation',
-        body: `Use a quotation when the scope of work is fully known and measurable in advance â€" for example, supplying 500 units of a product, printing 1,000 brochures, or building a website with a fixed feature list. Because the inputs are predictable, you can commit to an exact price.\n\nQuotations are also expected in formal B2B procurement, government tenders, and any situation where the buyer needs a firm number to get internal approval or compare vendors on price.`,
+        body: `Use a quotation when the scope of work is fully known and measurable in advance — for example, supplying 500 units of a product, printing 1,000 brochures, or building a website with a fixed feature list. Because the inputs are predictable, you can commit to an exact price.\n\nQuotations are also expected in formal B2B procurement, government tenders, and any situation where the buyer needs a firm number to get internal approval or compare vendors on price.`,
         bullets: [
           'Scope, quantity and specifications are fully defined',
           'Materials and labor costs are known and stable',
@@ -136,11 +136,11 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'When to use an estimate',
-        body: `Use an estimate when the final scope depends on conditions you cannot fully assess until work starts â€" common in construction, renovation, repair work, and custom fabrication. For instance, a contractor cannot know the exact quantity of cement or labor hours needed until they inspect site conditions, so they give a range.\n\nEstimates are also useful for early-stage client conversations where you want to give a ballpark figure without committing, before doing a detailed site visit or requirement-gathering session that will lead to a formal quotation later.`,
+        body: `Use an estimate when the final scope depends on conditions you cannot fully assess until work starts — common in construction, renovation, repair work, and custom fabrication. For instance, a contractor cannot know the exact quantity of cement or labor hours needed until they inspect site conditions, so they give a range.\n\nEstimates are also useful for early-stage client conversations where you want to give a ballpark figure without committing, before doing a detailed site visit or requirement-gathering session that will lead to a formal quotation later.`,
       },
       {
         heading: 'How construction and interior businesses should handle this',
-        body: `In India, contractors commonly issue a rough estimate after a site visit, then a detailed quotation once material specifications, brands, and quantities are finalized. This two-step process protects both sides: the client gets an early number to plan budget, and the contractor is not locked into a price before knowing ground realities like wall condition, wiring, or plumbing complexity.\n\nAlways label documents clearly. Writing "Estimate â€" subject to site inspection" versus "Quotation â€" valid for 30 days" removes ambiguity about which number the client can hold you to.`,
+        body: `In India, contractors commonly issue a rough estimate after a site visit, then a detailed quotation once material specifications, brands, and quantities are finalized. This two-step process protects both sides: the client gets an early number to plan budget, and the contractor is not locked into a price before knowing ground realities like wall condition, wiring, or plumbing complexity.\n\nAlways label documents clearly. Writing "Estimate — subject to site inspection" versus "Quotation — valid for 30 days" removes ambiguity about which number the client can hold you to.`,
       },
       {
         heading: 'Legal and financial implications',
@@ -148,7 +148,7 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'A simple rule to decide which to send',
-        body: `If you can list every material, quantity and cost with confidence today, send a quotation. If there are unknowns that only a site visit, technical assessment, or further discussion can resolve, send an estimate first and follow up with a firm quotation once those unknowns are cleared.\n\nMany businesses lose client trust by calling a rough number a "quotation" and then revising it upward later â€" using the right label from the start avoids that friction entirely.`,
+        body: `If you can list every material, quantity and cost with confidence today, send a quotation. If there are unknowns that only a site visit, technical assessment, or further discussion can resolve, send an estimate first and follow up with a firm quotation once those unknowns are cleared.\n\nMany businesses lose client trust by calling a rough number a "quotation" and then revising it upward later — using the right label from the start avoids that friction entirely.`,
       },
     ],
     faqs: [
@@ -174,8 +174,8 @@ export const blogPosts1: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'MSME India â€" Procurement Policy', url: 'https://msme.gov.in' },
-      { label: 'CBIC â€" Supply of Goods and Services', url: 'https://www.cbic.gov.in' },
+      { label: 'MSME India — Procurement Policy', url: 'https://msme.gov.in' },
+      { label: 'CBIC — Supply of Goods and Services', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'best-construction-quotation-examples', 'invoice-vs-quotation'],
   },
@@ -207,7 +207,7 @@ export const blogPosts1: BlogPost[] = [
     sections: [
       {
         heading: 'The basic GST structure in India',
-        body: `GST in India is split based on whether a transaction happens within the same state or across state lines. For intra-state supply (buyer and seller in the same state), tax is split equally into CGST (Central GST) and SGST (State GST). For inter-state supply (buyer and seller in different states), a single IGST (Integrated GST) applies instead.\n\nFor example, on an 18% GST item sold within Maharashtra, you charge 9% CGST + 9% SGST. The same item sold from Maharashtra to a buyer in Gujarat is charged as 18% IGST. The total tax rate is identical either way â€" only the split changes.`,
+        body: `GST in India is split based on whether a transaction happens within the same state or across state lines. For intra-state supply (buyer and seller in the same state), tax is split equally into CGST (Central GST) and SGST (State GST). For inter-state supply (buyer and seller in different states), a single IGST (Integrated GST) applies instead.\n\nFor example, on an 18% GST item sold within Maharashtra, you charge 9% CGST + 9% SGST. The same item sold from Maharashtra to a buyer in Gujarat is charged as 18% IGST. The total tax rate is identical either way — only the split changes.`,
       },
       {
         heading: 'How to determine which applies on your quotation',
@@ -221,7 +221,7 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'HSN and SAC codes: why they matter on a quotation',
-        body: `HSN (Harmonised System of Nomenclature) codes classify goods, while SAC (Services Accounting Code) classifies services. Including the correct code on your quotation is not just a formality â€" it determines the applicable GST rate and is increasingly expected by B2B buyers for their own compliance and input credit matching.\n\nBusinesses with annual turnover above Rs 5 crore are required to mention 6-digit HSN/SAC codes on tax invoices, and many procurement teams now expect the same detail even at the quotation stage to avoid rework later.`,
+        body: `HSN (Harmonised System of Nomenclature) codes classify goods, while SAC (Services Accounting Code) classifies services. Including the correct code on your quotation is not just a formality — it determines the applicable GST rate and is increasingly expected by B2B buyers for their own compliance and input credit matching.\n\nBusinesses with annual turnover above Rs 5 crore are required to mention 6-digit HSN/SAC codes on tax invoices, and many procurement teams now expect the same detail even at the quotation stage to avoid rework later.`,
       },
       {
         heading: 'Common GST rates you will encounter',
@@ -263,8 +263,8 @@ export const blogPosts1: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'GST Portal â€" Official GST India', url: 'https://www.gst.gov.in' },
-      { label: 'CBIC â€" GST Tax Rates', url: 'https://www.cbic.gov.in' },
+      { label: 'GST Portal — Official GST India', url: 'https://www.gst.gov.in' },
+      { label: 'CBIC — GST Tax Rates', url: 'https://www.cbic.gov.in' },
       { label: 'GST Council', url: 'https://gstcouncil.gov.in' },
     ],
     relatedSlugs: ['quotation-format-in-india', 'how-to-write-a-professional-quotation', 'invoice-vs-quotation'],
@@ -296,7 +296,7 @@ export const blogPosts1: BlogPost[] = [
     sections: [
       {
         heading: 'The standard sections every Indian quotation should have',
-        body: `Regardless of industry, a well-structured quotation follows a predictable layout: header (business identity), quotation metadata (number, date, validity), customer details, itemized table, tax breakdown, terms and conditions, and a signature block. Missing any of these sections is what typically causes clients to ask for a revised copy.\n\nThe order matters too â€" customers scan top to bottom expecting business identity first, then what they're being charged for, then the final number, then the fine print. Breaking this flow makes a quotation feel unprofessional even if the content is accurate.`,
+        body: `Regardless of industry, a well-structured quotation follows a predictable layout: header (business identity), quotation metadata (number, date, validity), customer details, itemized table, tax breakdown, terms and conditions, and a signature block. Missing any of these sections is what typically causes clients to ask for a revised copy.\n\nThe order matters too — customers scan top to bottom expecting business identity first, then what they're being charged for, then the final number, then the fine print. Breaking this flow makes a quotation feel unprofessional even if the content is accurate.`,
       },
       {
         heading: 'Header section: business and customer identity',
@@ -352,8 +352,8 @@ export const blogPosts1: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'GST Portal â€" E-Invoice System', url: 'https://www.gst.gov.in' },
-      { label: 'MCA â€" Ministry of Corporate Affairs', url: 'https://www.mca.gov.in' },
+      { label: 'GST Portal — E-Invoice System', url: 'https://www.gst.gov.in' },
+      { label: 'MCA — Ministry of Corporate Affairs', url: 'https://www.mca.gov.in' },
     ],
     relatedSlugs: ['how-to-write-a-professional-quotation', 'gst-in-quotations', 'business-documentation-guide'],
   },
@@ -388,7 +388,7 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'Example 1: Residential interior work quotation',
-        body: `A typical 2BHK interior quotation should separate work by room and by category: civil work (masonry, plastering), electrical (wiring, switches, points), plumbing, false ceiling, painting, and modular furniture. Each category lists material brand (e.g., "Asian Paints Royale," "Havells wiring"), quantity, rate, and amount.\n\nFor example: "Living room false ceiling â€" POP, 180 sq ft @ Rs 65/sq ft = Rs 11,700" is far more defensible than a lump-sum "False ceiling work â€" Rs 45,000" which invites the question "for which rooms and what material?"`,
+        body: `A typical 2BHK interior quotation should separate work by room and by category: civil work (masonry, plastering), electrical (wiring, switches, points), plumbing, false ceiling, painting, and modular furniture. Each category lists material brand (e.g., "Asian Paints Royale," "Havells wiring"), quantity, rate, and amount.\n\nFor example: "Living room false ceiling — POP, 180 sq ft @ Rs 65/sq ft = Rs 11,700" is far more defensible than a lump-sum "False ceiling work — Rs 45,000" which invites the question "for which rooms and what material?"`,
         bullets: [
           'Civil work: masonry, plastering, waterproofing',
           'Electrical: wiring, points, switches, fixtures',
@@ -402,19 +402,19 @@ export const blogPosts1: BlogPost[] = [
       },
       {
         heading: 'Example 3: Renovation/repair work quotation',
-        body: `Repair and renovation quotations should separate demolition/removal charges, new material cost, and labor for installation, since clients often underestimate demolition and debris removal costs. For example: "Bathroom renovation â€" Tile removal & debris disposal: Rs 3,500; New tiles (Kajaria, 2x2 ft) 120 sq ft @ Rs 55 = Rs 6,600; Labor for tiling @ Rs 35/sq ft = Rs 4,200."\n\nThis breakdown also makes it easy to adjust the quotation if the client later decides to change tile brand or add scope, since each line is independently priced.`,
+        body: `Repair and renovation quotations should separate demolition/removal charges, new material cost, and labor for installation, since clients often underestimate demolition and debris removal costs. For example: "Bathroom renovation — Tile removal & debris disposal: Rs 3,500; New tiles (Kajaria, 2x2 ft) 120 sq ft @ Rs 55 = Rs 6,600; Labor for tiling @ Rs 35/sq ft = Rs 4,200."\n\nThis breakdown also makes it easy to adjust the quotation if the client later decides to change tile brand or add scope, since each line is independently priced.`,
       },
       {
         heading: 'GST and payment terms specific to construction',
-        body: `Works contracts (a mix of goods and services, like most construction jobs) are generally taxed at 18% GST under the works contract service category, though certain affordable housing and specified residential construction schemes attract lower rates like 1% or 5% without input tax credit â€" verify the applicable rate for your specific project type before quoting.\n\nPayment terms in construction are almost always milestone-based rather than single advance/balance: for example, 20% on booking, 30% on completion of civil work, 30% on completion of finishing, and 20% on final handover. Stating these milestones clearly in the quotation avoids payment disputes as the project progresses.`,
+        body: `Works contracts (a mix of goods and services, like most construction jobs) are generally taxed at 18% GST under the works contract service category, though certain affordable housing and specified residential construction schemes attract lower rates like 1% or 5% without input tax credit — verify the applicable rate for your specific project type before quoting.\n\nPayment terms in construction are almost always milestone-based rather than single advance/balance: for example, 20% on booking, 30% on completion of civil work, 30% on completion of finishing, and 20% on final handover. Stating these milestones clearly in the quotation avoids payment disputes as the project progresses.`,
       },
       {
         heading: 'Common mistakes contractors make in quotations',
-        body: `The most frequent issues are: quoting a flat number without a material specification sheet, omitting labor charges as a separate line (leading clients to assume it's included in material cost), not accounting for wastage percentage (typically 5-10% extra material needed for cutting/breakage), and failing to state who bears costs for site cleanup, scaffolding, or equipment rental.\n\nAnother common gap is not including an escalation clause for long projects â€" e.g., "Steel and cement prices are subject to revision if project duration exceeds 90 days from quotation date" â€" which protects contractors from absorbing raw material price hikes on their own margin.`,
+        body: `The most frequent issues are: quoting a flat number without a material specification sheet, omitting labor charges as a separate line (leading clients to assume it's included in material cost), not accounting for wastage percentage (typically 5-10% extra material needed for cutting/breakage), and failing to state who bears costs for site cleanup, scaffolding, or equipment rental.\n\nAnother common gap is not including an escalation clause for long projects — e.g., "Steel and cement prices are subject to revision if project duration exceeds 90 days from quotation date" — which protects contractors from absorbing raw material price hikes on their own margin.`,
       },
       {
         heading: 'Using a template to save time on every quotation',
-        body: `Since construction quotations repeat similar line items across projects (cement, steel, tiles, paint, standard labor rates), building a reusable template in a tool like QuotationMaker.in saves significant time â€" you can duplicate a previous project's structure, adjust quantities and rates, and generate a clean, GST-compliant PDF within minutes instead of rebuilding the BOQ from scratch each time.`,
+        body: `Since construction quotations repeat similar line items across projects (cement, steel, tiles, paint, standard labor rates), building a reusable template in a tool like QuotationMaker.in saves significant time — you can duplicate a previous project's structure, adjust quantities and rates, and generate a clean, GST-compliant PDF within minutes instead of rebuilding the BOQ from scratch each time.`,
       },
     ],
     faqs: [
@@ -444,8 +444,8 @@ export const blogPosts1: BlogPost[] = [
       },
     ],
     references: [
-      { label: 'CPWD â€" Standard Schedule of Rates', url: 'https://www.cpwd.gov.in' },
-      { label: 'CBIC â€" GST on Construction Works', url: 'https://www.cbic.gov.in' },
+      { label: 'CPWD — Standard Schedule of Rates', url: 'https://www.cpwd.gov.in' },
+      { label: 'CBIC — GST on Construction Works', url: 'https://www.cbic.gov.in' },
     ],
     relatedSlugs: ['quotation-vs-estimate', 'quotation-format-in-india', 'how-to-write-a-professional-quotation'],
   },
