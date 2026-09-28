@@ -35,9 +35,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/refund-policy', priority: 0.3, freq: 'yearly' },
   ];
 
+  /*
+   * lastModified is deliberately omitted for evergreen pages: stamping every
+   * entry with the build time would tell Google the whole site changed on each
+   * deploy, diluting crawl attention for genuinely new or updated content.
+   * Blog entries below carry their real publish/update dates instead.
+   */
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
     url: `${base}${r.path === '/' ? '' : r.path}`,
-    lastModified: now,
     changeFrequency: r.freq,
     priority: r.priority,
   }));
@@ -45,14 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Every document generator tool page, straight from the registry.
   const toolEntries: MetadataRoute.Sitemap = DOCUMENT_TYPE_LIST.filter((t) => t.id !== 'quotation').map((t) => ({
     url: `${base}${t.path}`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
 
   const industryEntries: MetadataRoute.Sitemap = industries.map((i) => ({
     url: `${base}/industries/${i.slug}`,
-    lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.75,
   }));

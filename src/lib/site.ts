@@ -64,10 +64,11 @@ export const siteConfig = {
    *  1. Go to https://search.google.com/search-console
    *  2. Add property → quotationmaker.in → choose "HTML tag" method
    *  3. Copy ONLY the content="..." value (not the full <meta> tag)
-   *  4. Paste it below and redeploy.
+   *  4. Set it as the GOOGLE_SITE_VERIFICATION env var and redeploy
+   *     (e.g. in .env.local or the PM2 ecosystem file on the server).
    * Leaving it empty omits the meta tag harmlessly.
    */
-  googleSiteVerification: '',
+  googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION ?? '',
 } as const;
 
 export interface NavItem {
