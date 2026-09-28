@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#a78bfa"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">E-Invoicing in India</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">IRN &amp; QR Explained</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Thresholds, process &amp; what changes on your bill</text>
+  <g transform="translate(730,150)">
+    <rect x="0" y="0" width="180" height="180" rx="14" fill="#ffffff"/>
+    <g fill="#0f172a">
+      <rect x="18" y="18" width="46" height="46" rx="6"/>
+      <rect x="116" y="18" width="46" height="46" rx="6"/>
+      <rect x="18" y="116" width="46" height="46" rx="6"/>
+      <rect x="28" y="28" width="26" height="26" rx="4" fill="#ffffff"/>
+      <rect x="126" y="28" width="26" height="26" rx="4" fill="#ffffff"/>
+      <rect x="28" y="126" width="26" height="26" rx="4" fill="#ffffff"/>
+      <rect x="80" y="80" width="20" height="20"/>
+      <rect x="110" y="110" width="20" height="20"/>
+      <rect x="80" y="120" width="14" height="14"/>
+      <rect x="130" y="80" width="14" height="14"/>
+    </g>
+    <text x="90" y="215" text-anchor="middle" font-size="18" fill="#c4b5fd" font-weight="700">IRN QR Code</text>
+    <g transform="translate(210,10)">
+      <rect x="0" y="0" width="170" height="110" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+      <text x="16" y="38" font-size="16" fill="#94a3b8">Invoice No.</text>
+      <text x="16" y="66" font-size="20" font-weight="700" fill="#c4b5fd">INV-2026-041</text>
+      <text x="16" y="92" font-size="15" fill="#64748b">IRN generated ✓</text>
+    </g>
+    <text x="0" y="270" font-size="19" fill="#94a3b8">Turnover ≥ ₹5 crore → e-invoice mandatory</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

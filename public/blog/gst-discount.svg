@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#fb7185"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">GST on Discounts</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">in India</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Trade discount vs cash discount — with examples</text>
+  <g transform="translate(720,160)">
+    <g transform="rotate(-12 100 100)">
+      <rect x="20" y="20" width="160" height="160" rx="18" fill="#1e293b" stroke="#fb7185" stroke-width="2.5"/>
+      <circle cx="100" cy="60" r="14" fill="#0f172a" stroke="#fb7185" stroke-width="3"/>
+      <text x="100" y="135" text-anchor="middle" font-size="44" font-weight="800" fill="#fda4af">-10%</text>
+    </g>
+    <g font-size="20" transform="translate(230,30)">
+      <rect x="0" y="0" width="210" height="64" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <text x="16" y="40" fill="#94a3b8">MRP <tspan fill="#64748b" text-decoration="line-through">₹1,000</tspan></text>
+      <rect x="0" y="80" width="210" height="64" rx="10" fill="#fb7185" opacity="0.14"/>
+      <text x="16" y="120" fill="#94a3b8">You pay <tspan fill="#fda4af" font-weight="700">₹900</tspan></text>
+      <rect x="0" y="160" width="210" height="64" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <text x="16" y="200" fill="#94a3b8">GST on <tspan fill="#fda4af" font-weight="700">₹900</tspan></text>
+    </g>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

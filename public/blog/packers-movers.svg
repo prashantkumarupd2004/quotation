@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#10b981"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Packers &amp; Movers</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Quotation Guide</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Binding estimates, insurance &amp; red flags</text>
+  <g transform="translate(720,170)">
+    <g>
+      <rect x="0" y="60" width="130" height="110" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+      <line x1="0" y1="95" x2="130" y2="95" stroke="#10b981" stroke-width="2"/>
+      <line x1="65" y1="60" x2="65" y2="170" stroke="#10b981" stroke-width="2" opacity="0.5"/>
+      <rect x="150" y="100" width="100" height="70" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+      <line x1="150" y1="125" x2="250" y2="125" stroke="#334155" stroke-width="2"/>
+      <rect x="270" y="40" width="90" height="130" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+      <line x1="270" y1="80" x2="360" y2="80" stroke="#334155" stroke-width="2"/>
+      <text x="65" y="200" text-anchor="middle" font-size="18" fill="#6ee7b7">32 boxes</text>
+    </g>
+    <g transform="translate(0,240)">
+      <rect x="0" y="0" width="360" height="56" rx="10" fill="#10b981" opacity="0.12"/>
+      <text x="20" y="36" font-size="19" font-weight="700" fill="#6ee7b7">Binding estimate: ₹18,500</text>
+    </g>
+    <g transform="translate(0,310)">
+      <rect x="0" y="0" width="360" height="56" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <text x="20" y="36" font-size="19" fill="#94a3b8">Insurance: 3% of declared value</text>
+    </g>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>
