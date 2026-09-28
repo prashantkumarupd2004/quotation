@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#fbbf24"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Price Escalation</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Clause Guide</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Protect long projects from rising material costs</text>
+  <g transform="translate(700,150)">
+    <rect x="0" y="0" width="400" height="280" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <g stroke="#334155" stroke-width="1">
+      <line x1="40" y1="240" x2="360" y2="240"/>
+      <line x1="40" y1="240" x2="40" y2="30"/>
+    </g>
+    <polyline points="40,210 110,195 180,205 250,150 320,110" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="320" cy="110" r="8" fill="#fbbf24"/>
+    <text x="250" y="90" font-size="18" font-weight="700" fill="#fbbf24">+18%</text>
+    <text x="40" y="270" font-size="16" fill="#64748b">Jan</text>
+    <text x="320" y="270" font-size="16" fill="#64748b">Jun</text>
+    <text x="60" y="60" font-size="17" fill="#94a3b8">Steel price trend</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

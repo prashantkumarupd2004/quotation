@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Sora } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/layout/navbar';
@@ -10,6 +11,7 @@ import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/site';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { CookieConsent } from '@/components/cookie-consent';
+import { ConsentMode } from '@/components/consent-mode';
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID ?? 'G-R49PCT53VW';
 
@@ -55,6 +57,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sora.variable}`}>
       <body className="min-h-screen font-sans">
+        {/*
+          Google Consent Mode v2 defaults — MUST run before any Google tag.
+          beforeInteractive inlines this into <head> so it executes before
+          the GA/AdSense scripts. Everything starts denied; the cookie
+          banner upgrades to granted only when the user accepts.
+        */}
+        <Script
+          id="consent-mode-defaults"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                analytics_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              });
+            `,
+          }}
+        />
+        <ConsentMode />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <JsonLd data={[organizationSchema(), websiteSchema(), webAppSchema()]} />
           <a

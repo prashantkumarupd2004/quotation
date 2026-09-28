@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Cookie, X } from 'lucide-react';
 
-const STORAGE_KEY = 'qm-cookie-consent';
+import { updateConsent, CONSENT_STORAGE_KEY } from './consent-mode';
 
 type ConsentState = 'accepted' | 'declined' | null;
 
@@ -13,7 +13,7 @@ export function CookieConsent() {
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY) as ConsentState | null;
+      const stored = localStorage.getItem(CONSENT_STORAGE_KEY) as ConsentState | null;
       setConsent(stored);
     } catch {
       setConsent(null);
@@ -21,11 +21,8 @@ export function CookieConsent() {
   }, []);
 
   const handleConsent = (decision: 'accepted' | 'declined') => {
-    try {
-      localStorage.setItem(STORAGE_KEY, decision);
-    } catch {
-      /* storage blocked — banner still hides */
-    }
+    // Push the choice to Google Consent Mode (gtag) and persist it.
+    updateConsent(decision === 'accepted');
     setConsent(decision);
   };
 
