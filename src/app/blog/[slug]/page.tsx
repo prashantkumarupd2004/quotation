@@ -40,6 +40,9 @@ export async function generateMetadata({
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
     keywords: post.keywords,
+    // Per-article social card so shares show the article's own hero art
+    // instead of the generic site card.
+    ogImage: post.heroImage,
     article: { publishedTime: post.date, section: post.category, tags: post.keywords },
   });}
 

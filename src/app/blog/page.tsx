@@ -11,7 +11,7 @@ import { blogSchema, breadcrumbSchema } from "@/lib/schema";
 import { formatDate } from "@/lib/format";
 import { BlogFilter } from "@/components/ui/blog-filter";
 
-export const metadata: Metadata = buildMetadata({
+const _blogBaseMetadata = buildMetadata({
   title: "Business Guides — Quotations, GST, Invoicing & Payments in India",
   description:
     "Practical, India-focused guides on writing quotations, GST invoice rules, pricing your services, recovering late payments and keeping business records. Written for small businesses and freelancers.",
@@ -25,6 +25,15 @@ export const metadata: Metadata = buildMetadata({
     "service pricing guide",
   ],
 });
+
+export const metadata: Metadata = {
+  ..._blogBaseMetadata,
+  // RSS autodiscovery — lets feed readers and aggregators find the feed.
+  alternates: {
+    ..._blogBaseMetadata.alternates,
+    types: { "application/rss+xml": "/rss.xml" },
+  },
+};
 
 export default function BlogPage() {
   const [featured, ...rest] = blogPosts;
