@@ -1,0 +1,17 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">How to Fire</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">a Bad Client</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Professionally, without burning bridges</text>
+  <g transform="translate(700,150)">
+<g stroke-width="10" stroke-linecap="round">
+      <path d="M120 200 q50 -60 95 0" stroke="#fbbf24" fill="none"/>
+      <path d="M310 200 q-50 -60 -95 0" stroke="#94a3b8" fill="none"/>
+    </g>
+    <line x1="215" y1="120" x2="215" y2="260" stroke="#ef4444" stroke-width="6" stroke-dasharray="14,10"/>
+    <text x="120" y="300" text-anchor="middle" font-size="20" fill="#94a3b8">Thank you,</text>
+    <text x="310" y="300" text-anchor="middle" font-size="20" fill="#94a3b8">moving on.</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

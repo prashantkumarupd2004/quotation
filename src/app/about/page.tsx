@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Instagram, Mail, ShieldCheck, User, Wrench } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, Instagram, Mail, ShieldCheck, Wrench } from 'lucide-react';
 import { PageHero } from '@/components/layout/page-hero';
 import { buildMetadata } from '@/lib/seo';
 import { JsonLd } from '@/components/json-ld';
@@ -41,9 +42,13 @@ export default function AboutPage() {
         {/* ---- Operator identity: who is actually accountable for this site ---- */}
         <section className="rounded-3xl border border-border bg-muted/30 p-6 sm:p-8">
           <div className="flex items-start gap-4">
-            <span className="grid h-12 w-12 flex-shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
-              <User className="h-6 w-6" />
-            </span>
+            <Image
+              src="/pk.jpg"
+              alt="Prashant Upadhyay, the independent developer who builds and operates QuotationMaker.in"
+              width={96}
+              height={96}
+              className="h-16 w-16 flex-shrink-0 rounded-2xl border border-border object-cover sm:h-20 sm:w-20"
+            />
             <div>
               <h2 className="font-display text-xl font-bold">Site operator</h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">

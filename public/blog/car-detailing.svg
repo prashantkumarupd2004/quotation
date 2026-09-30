@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Car Detailing</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Quotation Format</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Packages, ceramic coating & add-ons</text>
+  <g transform="translate(700,150)">
+<path d="M60 220 q0 -40 50 -45 l60 -55 q10 -12 30 -12 h120 q20 0 30 12 l60 55 q50 5 50 45 l0 40 q0 15 -15 15 h-370 q-15 0 -15 -15 z" fill="#1e293b" stroke="#f59e0b" stroke-width="2.5"/>
+    <rect x="180" y="135" width="120" height="40" rx="6" fill="#0c4a6e" stroke="#fbbf24" stroke-width="1.5"/>
+    <circle cx="140" cy="275" r="26" fill="#0f172a" stroke="#94a3b8" stroke-width="4"/>
+    <circle cx="330" cy="275" r="26" fill="#0f172a" stroke="#94a3b8" stroke-width="4"/>
+    <g fill="#fbbf24" opacity="0.9"><circle cx="380" cy="120" r="8"/><circle cx="410" cy="90" r="6"/><circle cx="395" cy="150" r="5"/></g>
+    <text x="235" y="330" text-anchor="middle" font-size="20" font-weight="700" fill="#fbbf24">Full detail · ₹2,499</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>
