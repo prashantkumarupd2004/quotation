@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Place of Supply</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Rules in GST</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">CGST+SGST vs IGST — with examples</text>
+  <g transform="translate(700,150)">
+<g>
+      <circle cx="130" cy="150" r="14" fill="#ef4444"/>
+      <circle cx="130" cy="150" r="26" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.6"/>
+      <text x="130" y="220" text-anchor="middle" font-size="20" fill="#94a3b8">Maharashtra</text>
+      <circle cx="300" cy="110" r="14" fill="#10b981"/>
+      <circle cx="300" cy="110" r="26" fill="none" stroke="#10b981" stroke-width="3" opacity="0.6"/>
+      <text x="300" y="180" text-anchor="middle" font-size="20" fill="#94a3b8">Karnataka</text>
+      <line x1="150" y1="140" x2="280" y2="115" stroke="#fbbf24" stroke-width="4" stroke-dasharray="12,8"/>
+      <text x="215" y="110" text-anchor="middle" font-size="22" font-weight="800" fill="#fbbf24">IGST 18%</text>
+    </g>
+    <text x="215" y="290" text-anchor="middle" font-size="20" font-weight="700" fill="#fbbf24">Same state? CGST+SGST</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

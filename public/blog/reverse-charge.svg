@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Reverse Charge (RCM)</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">GST Guide 2026</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">When the buyer pays the GST instead</text>
+  <g transform="translate(700,150)">
+<g stroke="#fbbf24" stroke-width="10" fill="none" stroke-linecap="round">
+      <path d="M90 110 h200 a30 30 0 0 1 0 60 h-160"/>
+      <path d="M330 230 h-200 a30 30 0 0 0 0 60 h160"/>
+    </g>
+    <polygon points="290,140 250,170 290,200" fill="#fbbf24"/>
+    <polygon points="130,200 170,230 130,260" fill="#fbbf24"/>
+    <text x="90" y="70" font-size="22" font-weight="700" fill="#f1f5f9">Supplier</text>
+    <text x="255" y="330" font-size="22" font-weight="700" fill="#f1f5f9">Buyer pays GST</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

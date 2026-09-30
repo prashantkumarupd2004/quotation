@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Plumbing Work</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Quotation Guide</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Pipes, fittings & labour-per-point pricing</text>
+  <g transform="translate(700,150)">
+<g stroke="#f59e0b" stroke-width="26" stroke-linecap="round" fill="none">
+      <line x1="80" y1="60" x2="80" y2="240"/>
+      <line x1="80" y1="150" x2="330" y2="150"/>
+    </g>
+    <circle cx="80" cy="150" r="26" fill="#fbbf24"/>
+    <g fill="#fbbf24">
+      <circle cx="150" cy="240" r="14"/><circle cx="190" cy="265" r="14"/><circle cx="230" cy="240" r="14"/>
+    </g>
+    <text x="205" y="320" text-anchor="middle" font-size="20" font-weight="700" fill="#fbbf24">Bathroom set · ₹8,500 labour</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

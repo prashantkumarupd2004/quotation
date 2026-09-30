@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Shops & Establishment</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Registration Guide</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">State-wise process for small businesses</text>
+  <g transform="translate(700,150)">
+<rect x="80" y="130" width="270" height="130" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2.5"/>
+    <polygon points="60,130 215,60 370,130" fill="#0c4a6e" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="185" y="180" width="60" height="80" rx="4" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="110" y="160" width="50" height="40" rx="4" fill="#0c4a6e" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="270" y="160" width="50" height="40" rx="4" fill="#0c4a6e" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="215" y="310" text-anchor="middle" font-size="20" font-weight="700" fill="#fbbf24">Gumasta · Shops Act licence</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

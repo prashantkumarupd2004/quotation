@@ -1,0 +1,15 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">GSTR-9 Annual Return</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Filing Guide 2026</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Due dates, tables & costly mistakes</text>
+  <g transform="translate(700,150)">
+<rect x="130" y="50" width="170" height="230" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2.5"/>
+    <g stroke="#94a3b8" stroke-width="3"><line x1="155" y1="100" x2="275" y2="100"/><line x1="155" y1="130" x2="275" y2="130"/><line x1="155" y1="160" x2="240" y2="160"/></g>
+    <circle cx="215" cy="225" r="30" fill="none" stroke="#10b981" stroke-width="6"/>
+    <polyline points="200,225 212,237 232,212" stroke="#10b981" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <text x="215" y="320" text-anchor="middle" font-size="20" font-weight="700" fill="#fbbf24">Due 31 Dec · file carefully</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">Solar Panel Installation</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Quotation Guide India</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">Per-kW cost, subsidy & net metering</text>
+  <g transform="translate(700,150)">
+<circle cx="330" cy="70" r="44" fill="#fbbf24"/>
+    <g transform="rotate(-12 180 200)">
+      <rect x="60" y="120" width="240" height="160" rx="8" fill="#0c4a6e" stroke="#f59e0b" stroke-width="2.5"/>
+      <g stroke="#fbbf24" stroke-width="2" opacity="0.8">
+        <line x1="140" y1="120" x2="140" y2="280"/><line x1="220" y1="120" x2="220" y2="280"/>
+        <line x1="60" y1="200" x2="300" y2="200"/>
+      </g>
+    </g>
+    <rect x="140" y="300" width="80" height="30" fill="#334155"/>
+    <text x="180" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#fbbf24">3 kW · ₹1.8L – subsidy</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>
