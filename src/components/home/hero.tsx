@@ -53,8 +53,8 @@ const floatingCards = [
 ];
 
 const miniStats = [
-  { value: '10+', label: 'Document Tools' },
-  { value: '25+', label: 'Templates' },
+  { value: '10', label: 'Document Tools' },
+  { value: '25', label: 'Templates' },
   { value: '₹0', label: 'Cost' },
 ];
 
@@ -89,7 +89,7 @@ export function Hero() {
             className="section-eyebrow mb-5"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            India&apos;s #1 Free Business Document Platform
+            Free Business Document Platform for Indian Businesses
           </motion.span>
 
           <motion.h1
@@ -310,7 +310,6 @@ export function Hero() {
                       <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <div className="text-[9px] text-gray-400">Loved by 1000s</div>
                 </div>
               </div>
             </motion.div>

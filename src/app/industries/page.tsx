@@ -10,9 +10,9 @@ import { buildMetadata } from '@/lib/seo';
 import { breadcrumbSchema, collectionSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Industry Quotation Makers — 20+ Trades & Services',
+  title: 'Industry Quotation Makers — 20 Trades & Services',
   description:
-    'Free, tailored quotation makers for construction, interior design, freelancers, IT, photography, transport and 20+ more industries. Industry-specific formats, sample items and expert tips.',
+    'Free, tailored quotation makers for construction, interior design, freelancers, IT, photography, transport and 14 more industries. Industry-specific formats, sample items and expert tips.',
   path: '/industries',
   keywords: ['industry quotation maker', 'contractor quotation', 'service quotation format', 'business quotation india'],
 });
@@ -36,7 +36,7 @@ export default function IndustriesPage() {
         ]}
       />
       <PageHero
-        eyebrow="20+ Industries"
+        eyebrow="20 Industries"
         title="A quotation maker tailored to your trade"
         description="Each industry page comes with the right format, realistic sample line items, common HSN/SAC codes and practical tips written for that specific business."
         crumbs={[

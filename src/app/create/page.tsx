@@ -12,7 +12,6 @@ import {
   FileText,
   Lightbulb,
   Smartphone,
-  Star,
   XCircle,
   Zap,
 } from 'lucide-react';
@@ -316,37 +315,10 @@ const faqs = [
 
 const relatedTools = [
   { label: 'Invoice Maker', href: '/invoice-maker', description: 'Professional invoices with payment tracking', icon: '📄' },
-  { label: 'GST Invoice Maker', href: '/gst-invoice-maker', description: 'GST-compliant invoices with IRN support', icon: '🧾' },
+  { label: 'GST Invoice Maker', href: '/gst-invoice-maker', description: 'GST-compliant invoices with CGST/SGST & IGST', icon: '🧾' },
   { label: 'Estimate Generator', href: '/estimate-maker', description: 'Flexible cost estimates for any project', icon: '📊' },
   { label: 'Purchase Order', href: '/purchase-order-generator', description: 'Formal POs with approval workflow fields', icon: '🛒' },
   { label: 'Payment Receipt', href: '/payment-receipt-generator', description: 'Instant receipts for payments received', icon: '✅' },
-];
-
-const testimonials = [
-  {
-    name: 'Ramesh Patil',
-    role: 'Civil Contractor',
-    city: 'Pune',
-    avatar: 'RP',
-    rating: 5,
-    text: 'Mein pehle Excel mein quotation banata tha — poora din lag jata tha. Iss tool se 5 minute mein professional GST quotation ready ho jata hai. Client bhi impressed rehte hain.',
-  },
-  {
-    name: 'Anjali Singh',
-    role: 'Freelance Graphic Designer',
-    city: 'Jaipur',
-    avatar: 'AS',
-    rating: 5,
-    text: 'The branded quotation templates made me look like an agency. I won 3 new clients in the first month just because my quotes looked so professional. Completely free is just a bonus.',
-  },
-  {
-    name: 'Mohammed Irfan',
-    role: 'Auto Parts Dealer',
-    city: 'Hyderabad',
-    avatar: 'MI',
-    rating: 5,
-    text: 'GST calculation used to be a headache. Now I just enter the items and rate — the tool splits CGST and SGST automatically. No more calling my accountant for every quotation.',
-  },
 ];
 
 const relatedBlogSlugs = [
@@ -836,45 +808,7 @@ export default function CreatePage() {
           </section>
         )}
 
-        {/* ── 13. TESTIMONIALS ─────────────────────────────────────────────── */}
-        <section>
-          <Reveal>
-            <div className="mb-8 text-center">
-              <span className="section-eyebrow mb-3">Customer stories</span>
-              <h2 className="mt-4 font-display text-2xl font-extrabold sm:text-3xl">
-                What Indian Business Owners Say
-              </h2>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-5 sm:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 0.07}>
-                <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:shadow-lg">
-                  <div className="flex gap-1">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <blockquote className="flex-1 text-sm leading-relaxed text-foreground">
-                    &ldquo;{t.text}&rdquo;
-                  </blockquote>
-                  <div className="flex items-center gap-3 border-t border-border/60 pt-4">
-                    <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-full bg-gradient-to-br from-blue-600 to-violet-600 text-sm font-bold text-white">
-                      {t.avatar}
-                    </span>
-                    <div>
-                      <div className="text-sm font-semibold">{t.name}</div>
-                      <div className="text-xs text-muted-foreground">{t.role} · {t.city}</div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        {/* ── 14. CALL TO ACTION ───────────────────────────────────────────── */}
+        {/* ── 13. CALL TO ACTION ──────────────────────────────────────────── */}
         <section>
           <Reveal>
             <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-600 via-violet-600 to-blue-700 px-8 py-14 text-center text-white">

@@ -158,13 +158,13 @@ export const homeWhyUs = [
 export const homeUserHighlights = [
   {
     icon: 'Building2',
-    stat: '10+',
+    stat: '10',
     label: 'Document types',
     detail: 'Quotation, invoice, GST bill, purchase order, challan and more',
   },
   {
     icon: 'LayoutTemplate',
-    stat: '25+',
+    stat: '25',
     label: 'Free templates',
     detail: 'Print-ready, GST-compliant, switch anytime without re-entering data',
   },
