@@ -284,7 +284,7 @@ export default function HomePage() {
       >
         <div className="container">
           <SectionHeader
-            eyebrow={`${industries.length}+ industry guides`}
+            eyebrow={`${industries.length} industry guides`}
             title="Tailored for Every Trade & Profession"
             description="Whether you are a contractor, freelancer, doctor or event planner — we have industry-specific templates, sample line items and expert guides for you."
           />

@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">GSTR-1 vs GSTR-3B</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Explained Simply</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">What you sold vs what you pay — due dates &amp; mistakes</text>
+  <g transform="translate(700,150)">
+    <rect x="0" y="30" width="180" height="260" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2.5"/>
+    <rect x="24" y="58" width="132" height="14" rx="7" fill="#f59e0b"/>
+    <rect x="24" y="96" width="132" height="10" rx="5" fill="#334155"/>
+    <rect x="24" y="118" width="100" height="10" rx="5" fill="#334155"/>
+    <rect x="24" y="140" width="118" height="10" rx="5" fill="#334155"/>
+    <text x="90" y="200" text-anchor="middle" font-size="30" font-weight="800" fill="#fbbf24">11th</text>
+    <text x="90" y="230" text-anchor="middle" font-size="16" fill="#94a3b8">GSTR-1 · sales report</text>
+    <rect x="230" y="30" width="180" height="260" rx="14" fill="#1e293b" stroke="#10b981" stroke-width="2.5"/>
+    <rect x="254" y="58" width="132" height="14" rx="7" fill="#10b981"/>
+    <rect x="254" y="96" width="132" height="10" rx="5" fill="#334155"/>
+    <rect x="254" y="118" width="100" height="10" rx="5" fill="#334155"/>
+    <rect x="254" y="140" width="118" height="10" rx="5" fill="#334155"/>
+    <text x="320" y="200" text-anchor="middle" font-size="30" font-weight="800" fill="#10b981">20th</text>
+    <text x="320" y="230" text-anchor="middle" font-size="16" fill="#94a3b8">GSTR-3B · tax payment</text>
+    <text x="205" y="180" text-anchor="middle" font-size="40" font-weight="800" fill="#475569">vs</text>
+  </g>
+  <text x="40" y="590" font-size="16" fill="#475569">QuotationMaker.in</text>
+</svg>
