@@ -17,12 +17,12 @@ const gaId = process.env.NEXT_PUBLIC_GA_ID ?? 'G-R49PCT53VW';
 
 /**
  * Google AdSense publisher ID.
- * Set NEXT_PUBLIC_ADSENSE_PUB_ID=ca-pub-XXXXXXXXXXXXXXXX in your .env.production
- * once Google AdSense approves your site and assigns you a publisher ID.
- * Leave empty (the default) before approval — adding an unapproved ID causes
- * AdSense to show a policy warning on your site.
+ * Defaults to the site's verified publisher ID (the same ID published in
+ * ads.txt) so the AdSense code is present on every page for site review and
+ * verification. Can still be overridden with NEXT_PUBLIC_ADSENSE_PUB_ID in
+ * .env.production if the account ever changes.
  */
-const adsensePubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID ?? '';
+const adsensePubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID ?? 'ca-pub-3608853244915716';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -39,6 +39,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   ...buildMetadata(),
+  other: { 'google-adsense-account': 'ca-pub-3608853244915716' },
   manifest: '/manifest.webmanifest',
   applicationName: siteConfig.name,
   appleWebApp: { capable: true, title: siteConfig.shortName, statusBarStyle: 'default' },
@@ -105,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </body>
       {process.env.NODE_ENV === 'production' && gaId ? <GoogleAnalytics gaId={gaId} /> : null}
-      {/* AdSense: activates automatically once NEXT_PUBLIC_ADSENSE_PUB_ID is set post-approval */}
+      {/* AdSense code — loads in production with the verified publisher ID (see adsensePubId above) */}
       {process.env.NODE_ENV === 'production' && adsensePubId ? (
         <script
           async
