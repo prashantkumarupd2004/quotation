@@ -1,0 +1,37 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="40" y="60" width="64" height="8" rx="4" fill="#f59e0b"/>
+  <text x="40" y="140" font-size="44" font-weight="800" fill="#f1f5f9">GST on Rent in India</text>
+  <text x="40" y="192" font-size="44" font-weight="800" fill="#f1f5f9">Landlords &amp; Tenants</text>
+  <text x="40" y="244" font-size="22" fill="#94a3b8">18% rate · reverse charge · RCM traps · TDS on rent</text>
+
+  <!-- buildings -->
+  <g>
+    <rect x="640" y="220" width="170" height="300" rx="10" fill="#1e293b"/>
+    <g fill="#f59e0b">
+      <rect x="665" y="250" width="34" height="34" rx="4"/>
+      <rect x="725" y="250" width="34" height="34" rx="4"/>
+      <rect x="665" y="310" width="34" height="34" rx="4"/>
+      <rect x="725" y="310" width="34" height="34" rx="4"/>
+      <rect x="665" y="370" width="34" height="34" rx="4"/>
+      <rect x="725" y="370" width="34" height="34" rx="4"/>
+    </g>
+    <rect x="850" y="300" width="130" height="220" rx="10" fill="#334155"/>
+    <rect x="880" y="330" width="70" height="60" rx="6" fill="#e2e8f0"/>
+    <rect x="905" y="420" width="50" height="100" rx="6" fill="#f59e0b"/>
+  </g>
+
+  <!-- rent invoice card -->
+  <g transform="translate(60,330)">
+    <rect width="460" height="230" rx="14" fill="#f8fafc"/>
+    <text x="28" y="44" font-size="20" font-weight="700" fill="#0f172a">RENT INVOICE</text>
+    <rect x="28" y="62" width="404" height="2" fill="#e2e8f0"/>
+    <text x="28" y="104" font-size="18" fill="#475569">Monthly rent</text>
+    <text x="330" y="104" font-size="18" font-weight="700" fill="#0f172a">₹50,000</text>
+    <text x="28" y="140" font-size="18" fill="#475569">GST @ 18%</text>
+    <text x="330" y="140" font-size="18" font-weight="700" fill="#b45309">₹9,000</text>
+    <rect x="28" y="160" width="404" height="2" fill="#e2e8f0"/>
+    <text x="28" y="200" font-size="20" font-weight="800" fill="#0f172a">Total payable</text>
+    <text x="330" y="200" font-size="20" font-weight="800" fill="#0f172a">₹59,000</text>
+  </g>
+</svg>
